@@ -1,0 +1,245 @@
+/**
+ * The Ball v2 Print Stylesheet.
+ *
+ * Implements styling of pages when they are printed.
+ *
+ * @package The_Ball_v2
+ */
+
+@media print {
+
+	/* Reset elements other than Google Maps */
+	section:not(.event-venue-map *),
+	div:not(.event-venue-map *),
+	h1:not(.event-venue-map *),
+	h2:not(.event-venue-map *),
+	h3:not(.event-venue-map *),
+	h4:not(.event-venue-map *),
+	h5:not(.event-venue-map *),
+	h6:not(.event-venue-map *),
+	p:not(.event-venue-map *),
+	ol:not(.event-venue-map *),
+	ul:not(.event-venue-map *),
+	li:not(.event-venue-map *)
+	{
+		width: auto !important;
+		height: auto !important;
+		min-height: 0 !important;
+		color: #000;
+		position: static !important;
+	}
+
+	/* Set sensible defaults other than Google Maps */
+	*:not(.event-venue-map *),
+	*:not(.event-venue-map *):before,
+	*:not(.event-venue-map *):after,
+	*:not(.event-venue-map *) *,
+	*:not(.event-venue-map *) *:before,
+	*:not(.event-venue-map *) *:after
+	{
+		-webkit-transition: none !important;
+		-moz-transition: none !important;
+		transition: none !important;
+		/* background: white !important; */
+		box-sizing: inherit;
+	}
+
+	body
+	{
+		background: white !important;
+		background-color: white !important;
+		color: #000;
+		font-size: 9pt;
+		/* Text should be "readable" */
+		font-family: serif;
+		margin: 24pt;
+		padding: 0;
+	}
+
+	/* Link style */
+	a
+	{
+		color: #000 !important;
+		text-decoration: underline;
+		text-decoration: none !important
+	}
+
+	/* Headings should be "legible" */
+	h1, h2, h3, h4, h5, h6,
+	.post h1, .post h2, .post h3, .post h4, .post h5, .post h6
+	{
+		padding-left: 0;
+		padding-right: 0;
+		color: #000 !important;
+		font-weight: bold;
+		font-family: sans-serif;
+		/* Avoid printed page breaks immediately after headers, or in middle of images or blockquotes */
+		page-break-after: avoid;
+		page-break-inside: avoid;
+		text-transform: none;
+	}
+
+	/* Headings as links are superfluous */
+	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
+	{
+		color: #000 !important
+		text-decoration: none !important
+	}
+
+	/* Remove unnecessary elements */
+	.header-widgets,
+	#the-ball-v2-search,
+	.the-ball-v2-search-trigger,
+	.footer-widgets,
+	.sof_network,
+
+	/* Inserts */
+	#news,
+	#news .post:after,
+	#events,
+
+	/* JetPack sharing */
+	div.sharedaddy,
+	#content div.sharedaddy,
+	#main div.sharedaddy,
+
+	/* WordPress */
+	#wpadminbar,
+	#site-navigation,
+	.navigation,
+	.edit-link,
+	.reply,
+	.footer-menu,
+
+	/* Force comment form to be hidden */
+	#respond
+	{
+		display: none !important
+	}
+
+	/* Restore layout to elements that need it */
+	#masthead
+	{
+		position: static !important;
+	}
+
+	/* Elements that must have white backgrounds */
+	section,
+	#masthead,
+	#colophon,
+	.site-title,
+	#main .hentry,
+	.wp-caption-text,
+	#comments,
+	a:after,
+	.post-type-archive-event #primary .event-list .event .entry-header a:after,
+	#events .event .entry-header a:after
+	{
+		background: white !important;
+		background-color: white !important;
+	}
+
+	/* Try not to break inside these elements */
+	#news .post,
+	.post-type-archive-event #primary .event-list .event,
+	#events .event,
+	.wp-caption
+	{
+		page-break-inside: avoid;
+	}
+
+	/* Restore site title */
+	.site-title
+	{
+		position: static !important;
+		float: none !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		top: auto !important;
+		left: auto !important;
+		text-align: center;
+	}
+
+	.site-title a
+	{
+		display: inline;
+		width: auto !important;
+		height: auto !important;
+		clip: auto !important;
+		color: #000 !important;
+		text-indent: 0;
+		font-size: 11pt;
+		margin: 0;
+		padding: 0;
+	}
+
+	/* Handle page titles */
+	.singular #primary .entry-header
+	{
+		height: auto;
+		background-color: white !important;
+	}
+
+	.singular #primary .has-post-thumbnail .entry-header
+	{
+		height: 128pt;
+	}
+
+	.singular #primary .entry-header h1,
+	.singular #primary .entry-header h2
+	{
+		padding-top: 0;
+		font-size: 24pt;
+		color: #000;
+	}
+
+	.singular #primary .has-post-thumbnail .entry-header h1,
+	.singular #primary .has-post-thumbnail .entry-header h2
+	{
+		color: #fff;
+		padding-top: 48pt;
+		text-align: center;
+	}
+
+	#primary .entry-header h1,
+	#primary .entry-header h2,
+	#primary .blog-header h1,
+	#primary .blog-header h2
+	{
+		margin-top: 10pt;
+		padding: 0;
+	}
+
+	/* Page titles overlaid on images */
+	.has-post-thumbnail h1,
+	.has-post-thumbnail h2
+	{
+		color: #fff !important
+	}
+
+	/* Handle blockquotes */
+	.entry-content blockquote
+	{
+		margin-left: 5pt;
+		margin-right: 5pt;
+	}
+
+	.entry-content blockquote p:before,
+	.entry-content blockquote p:after
+	{
+		color: #000;
+	}
+
+	/* Handle images in content */
+	.entry-content .wp-caption,
+	.entry-content img
+	{
+		max-width: 60%;
+	}
+
+	.entry-content .wp-caption img
+	{
+		max-width: 100%;
+	}
+
+}
