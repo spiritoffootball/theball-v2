@@ -199,6 +199,7 @@ input[type="submit"] {
 button[disabled],
 html input[disabled] {
 	cursor: default;
+	opacity: 0.75;
 }
 
 button::-moz-focus-inner,
@@ -393,11 +394,11 @@ big {
 }
 
 /* Code for Firefox */
-::-moz-selection {
+*:not(input, textarea)::-moz-selection {
 	color: #fff;
 }
 
-::selection {
+*:not(input, textarea)::selection {
 	color: #fff;
 	background: rgb(0 0 0 / 50%);
 }
@@ -488,8 +489,8 @@ input[type="submit"] {
 	background: #e6e6e6;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
 	color: rgba(0, 0, 0, .8);
-	font-size: 12px;
-	font-size: 0.75rem;
+	font-size: 16px;
+	font-size: 1rem;
 	line-height: 1;
 	padding: .6em 1em;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
@@ -1239,6 +1240,14 @@ ol.comment-list ol {
 ## Comment Form
 --------------------------------------------------------------*/
 
+#respond
+{
+	padding: 0 1em;
+	border: 1px solid #535f89;
+	margin-bottom: 2em;
+	background: #535f89;
+}
+
 #respond #cancel-comment-reply-link
 {
 	float: right;
@@ -1848,7 +1857,7 @@ img.avatar
 #primary .comments-area .comments-inner
 {
 	width: 50%;
-	margin: 0 auto;
+	margin: 2em auto;
 }
 
 /* Tables */
@@ -3362,7 +3371,7 @@ img.avatar
 
 .single .navigation
 {
-	padding-bottom: 1.5em;
+	padding: 1em 0 2em 0;
 	background-color: #535f89;
 }
 

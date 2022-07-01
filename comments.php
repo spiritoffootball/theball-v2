@@ -69,9 +69,9 @@ if ( post_password_required() ) {
 				<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'the-ball-v2' ); ?></p>
 			<?php endif; ?>
 
-			<?php comment_form(); ?>
+			<?php endif; ?>
 
-		<?php endif; ?>
+		<?php comment_form(); ?>
 
 	</div><!-- .comments-inner -->
 </div><!-- #comments -->
