@@ -55,9 +55,11 @@ class The_Ball_v2_Theme {
 			return;
 		}
 
+		/*
 		// Include global scope Theme Functions.
-		//include get_template_directory() . '/includes/functions-theme.php';
-		//include get_template_directory() . '/includes/functions-geomashup.php';
+		include get_template_directory() . '/includes/functions-theme.php';
+		include get_template_directory() . '/includes/functions-geomashup.php';
+		*/
 
 		// We're done.
 		$done = true;
