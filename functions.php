@@ -17,6 +17,31 @@ defined( 'ABSPATH' ) || exit;
  */
 define( 'THE_BALL_V2_THEME_VERSION', '1.0.1' );
 
+/**
+ * Bootstraps theme object and returns instance.
+ *
+ * @since 1.0.1
+ *
+ * @return The_Ball_v2_Theme $theme The theme instance.
+ */
+function the_ball_v2_theme() {
+
+	// Declare as static.
+	static $theme;
+
+	// Instantiate theme class if not yet instantiated.
+	if ( ! isset( $theme ) ) {
+		require get_template_directory() . '/includes/classes/class-theme.php';
+		$theme = new The_Ball_v2_Theme();
+	}
+
+	// --<
+	return $theme;
+
+}
+
+// Bootstrap immediately.
+the_ball_v2_theme();
 
 
 if ( ! function_exists( 'the_ball_v2_setup' ) ) :
