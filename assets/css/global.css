@@ -1657,10 +1657,12 @@ a.feature-cutoff-right
 .header-widgets .widget.widget_custom_html a
 {
 	display: inline-block;
-	font-size: 70%;
+	font-size: 90%;
 	font-weight: bold;
 	text-transform: uppercase;
 	margin-top: 0.3em;
+	padding: 0.5em 1em;
+	background: #37a148;
 }
 
 /*--------------------------------------------------------------
@@ -3715,11 +3717,23 @@ img.avatar
 		margin-right: 0;
 	}
 
+	#masthead .header-widgets .widget_custom_html
+	{
+		position: absolute;
+		left: 10px;
+	}
+
 	.site-title
 	{
 		width: 260px;
 		background-size: 220%;
-		background-position: -360px 14px;
+		background-position: -360px 4px;
+		top: -25px;
+	}
+
+	.site-title a
+	{
+		margin-top: 10px;
 	}
 
 	/* Widen column */
