@@ -576,6 +576,8 @@ input[type="color"] {
 
 select {
 	border: 1px solid #ccc;
+	padding: 0.3em 0.3em;
+	border-radius: 3px;
 }
 
 textarea {
@@ -3337,7 +3339,7 @@ img.avatar
 .not-found
 {
 	width: auto;
-	padding: 1px 0;
+	padding: 1px 0 20px 0;
 	background-color: #535f89;
 	color: #fff;
 }

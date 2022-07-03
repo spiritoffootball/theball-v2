@@ -17,11 +17,11 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'That page can&rsquo;t be found.', 'the-ball-v2' ); ?></h1>
+				<header class="entry-header">
+					<h1 class="page-title"><?php esc_html_e( 'You&rsquo;re offside', 'the-ball-v2' ); ?></h1>
 				</header><!-- .page-header -->
 
-				<div class="page-content">
+				<div class="entry-content">
 					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'the-ball-v2' ); ?></p>
 
 					<?php
