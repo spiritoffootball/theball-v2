@@ -21,10 +21,24 @@ $pledge_form_enabled = get_field( 'pledge_form_enabled' );
 // Get the Event.
 $event = get_queried_object();
 
-// Build "event" attribute.
+// Init attributes.
 $attr = '';
+
+// Build "event" attributes.
 if ( ! empty( $event->ID ) ) {
+
+	// Add Event ID.
 	$attr = ' event="' . $event->ID . '"';
+
+	// Maybe get ISO Country Code.
+	$pledge_form_use_country = get_field( 'pledge_form_use_country' );
+	if ( ! empty( $pledge_form_use_country ) && defined( 'SOF_PLEDGEBALL_VERSION' ) ) {
+		$country_code = sof_pledgeball()->event->countrycode_get_by_event_id( $event->ID );
+		if ( ! empty( $country_code ) ) {
+			$attr .= ' country="' . $country_code . '"';
+		}
+	}
+
 }
 
 // The Pledge Form must be enabled and there must be an Event.
