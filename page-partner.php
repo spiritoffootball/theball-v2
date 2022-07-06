@@ -43,10 +43,10 @@ get_header(); ?>
 		// Do the query.
 		$partners = new WP_Query( $partners_args );
 
-		if ( is_user_logged_in() && $partners->have_posts() ) :
+		if ( $partners->have_posts() ) :
 			?>
 
-			<section class="organisation-list partner-list clear">
+			<section class="organisation-list insert-aera partner-list clear">
 				<div class="organisation-list-inner partner-list-inner">
 				<?php
 

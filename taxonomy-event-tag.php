@@ -34,7 +34,7 @@ get_header(); ?>
 				</article><!-- #post-->
 			</section>
 
-			<section class="event-list clear">
+			<section class="event-list insert-area clear">
 				<div class="event-list-inner">
 				<?php
 

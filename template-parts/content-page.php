@@ -19,6 +19,12 @@ defined( 'ABSPATH' ) || exit;
 		<?php the_ball_v2_feature_image_caption(); ?>
 	</header><!-- .entry-header -->
 
+	<?php if ( is_front_page() ) : ?>
+		<?php if ( $teaser = locate_template( 'template-parts/loop-teasers.php' ) ) : ?>
+			<?php load_template( $teaser ); ?>
+		<?php endif; ?>
+	<?php endif; ?>
+
 	<div class="entry-content">
 		<?php
 		the_content();

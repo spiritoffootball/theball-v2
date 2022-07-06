@@ -43,10 +43,10 @@ get_header(); ?>
 		// Do the query.
 		$organisations = new WP_Query( $organisations_args );
 
-		if ( is_user_logged_in() && $organisations->have_posts() ) :
+		if ( $organisations->have_posts() ) :
 			?>
 
-			<section class="organisation-list clear">
+			<section class="organisation-list insert-area clear">
 				<div class="organisation-list-inner">
 				<?php
 

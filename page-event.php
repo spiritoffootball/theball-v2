@@ -45,10 +45,10 @@ get_header(); ?>
 			// Do the query.
 			$events = new WP_Query( $events_args );
 
-			if ( is_user_logged_in() && $events->have_posts() ) :
+			if ( $events->have_posts() ) :
 				?>
 
-				<section class="event-list clear">
+				<section class="event-list insert-area clear">
 					<div class="event-list-inner">
 						<?php global $sof_featured_events; ?>
 						<?php if ( $sof_featured_events === true ) : ?>

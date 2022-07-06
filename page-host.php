@@ -43,10 +43,10 @@ get_header(); ?>
 		// Do the query.
 		$hosts = new WP_Query( $hosts_args );
 
-		if ( is_user_logged_in() && $hosts->have_posts() ) :
+		if ( $hosts->have_posts() ) :
 			?>
 
-			<section class="organisation-list host-list clear">
+			<section class="organisation-list insert-area host-list clear">
 				<div class="organisation-list-inner host-list-inner">
 				<?php
 

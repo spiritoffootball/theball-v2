@@ -20,8 +20,6 @@ $featured_events_args = [
 	'no_found_rows' => true,
 	'meta_key' => 'featured_event',
 	'meta_value' => '1',
-
-	/*
 	'tax_query' => [
 		[
 			'taxonomy' => 'event-type',
@@ -29,8 +27,6 @@ $featured_events_args = [
 			'terms'    => 'featured',
 		],
 	],
-	*/
-
 ];
 
 // The query.
@@ -47,7 +43,7 @@ if ( $featured_events->have_posts() ) :
 		<div class="events-inner clear">
 
 			<header class="events-header">
-				<h2 class="events-title"><?php esc_html_e( 'Featured', 'the-ball-v2' ); ?></h2>
+				<!--<h2 class="events-title"><?php esc_html_e( 'Featured', 'the-ball-v2' ); ?></h2>-->
 			</header><!-- .events-header -->
 
 			<?php
@@ -61,7 +57,7 @@ if ( $featured_events->have_posts() ) :
 				$featured_events->the_post();
 
 				// Get mini template.
-				get_template_part( 'template-parts/content-event-mini' );
+				get_template_part( 'template-parts/content-event-featured' );
 
 			endwhile;
 

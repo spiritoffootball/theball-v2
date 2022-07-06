@@ -708,6 +708,7 @@ a:active {
 	box-shadow: none;
 	margin: 0;
 	padding: 0;
+	background: transparent;
 }
 
 .main-navigation ul ul ul {
@@ -779,13 +780,30 @@ a:active {
 	padding-top: 7em;
 }
 
-.main-navigation.toggled ul a {
+.main-navigation.toggled ul a
+{
 	text-align: center;
-	margin: 1em 0;
+	margin: 0.2em 0 0 0;
 	color: #fff;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 120%;
+	line-height: 1;
 }
 
-@media screen and (min-width: 728px) {
+.main-navigation.toggled ul ul a
+{
+	font-size: 95%;
+	color: #fef6dd;
+}
+
+.main-navigation.toggled ul li:after
+{
+	height: auto;
+}
+
+@media screen and (min-width: 940px) {
 	.menu-toggle
 	{
 		display: none;
@@ -1374,7 +1392,7 @@ object {
 ## "Angled Side" Feature Image Base CSS
 --------------------------------------------------------------*/
 
-.feature-cutoff-right
+.angled-right
 {
 	display: table;
 	position: relative;
@@ -1382,32 +1400,33 @@ object {
 	height: 160px;
 	background-size: cover;
 	background-position: 50% 50%;
+	background-color: inherit;
 	color: #111;
-	border: 1px solid #7c6f6a;
+/* 	border: 1px solid #fff; */
 }
 
-.feature-cutoff-right:hover
+.angled-right:hover
 {
-	border: 1px solid #ffcc00;
+/* 	border: 1px solid #ffcc00; */
 }
 
-.feature-cutoff-right:focus
+.angled-right:focus
 {
 	outline: 0;
-	border: 1px solid #ffcc00;
+/* 	border: 1px solid #ffcc00; */
 }
 
-.feature-cutoff-right:active
+.angled-right:active
 {
-	border: 1px solid #1d1d1b;
+/* 	border: 1px solid #1d1d1b; */
 }
 
-.feature-cutoff-right:after
+.angled-right:after
 {
 	height: 166px;
 	width: 44px;
-	background: #fff;
-	border-left: 1px solid #7c6f6a;
+	background-color: inherit;
+/* 	border-left: 1px solid #7c6f6a; */
 	position: absolute;
 	content: '';
 	top: 1.2px;
@@ -1419,22 +1438,22 @@ object {
 	-o-transform: rotate(345deg) translate(99%);
 }
 
-.feature-cutoff-right:hover:after
+.angled-right:hover:after
 {
-	border-left: 1px solid #ffcc00;
+/* 	border-left: 1px solid #ffcc00; */
 }
 
-.feature-cutoff-right:focus:after
+.angled-right:focus:after
 {
-	border-left: 1px solid #ffcc00;
+/* 	border-left: 1px solid #ffcc00; */
 }
 
-.feature-cutoff-right:active:after
+.angled-right:active:after
 {
-	border-left: 1px solid #1d1d1b;
+/* 	border-left: 1px solid #1d1d1b; */
 }
 
-a.feature-cutoff-right
+a.angled-right
 {
 	text-decoration: none;
 	text-transform: uppercase;
@@ -1444,7 +1463,7 @@ a.feature-cutoff-right
 }
 
 /* Vertically-aligned, center-aligned text */
-.feature-cutoff-right span
+.angled-right span
 {
 	display: table-cell;
 	vertical-align: middle;
@@ -1454,27 +1473,38 @@ a.feature-cutoff-right
 }
 
 /* Without text */
-.feature-cutoff-right.textless
+.angled-right.textless
 {
 	text-indent: -9999px;
 }
 
-/*--------------------------------------------------------------
-## "Angled Side" Featured Event CSS
---------------------------------------------------------------*/
+.angled-right.angled-medium
+{
+	height: 400px;
+}
 
-#events.events-featured .feature-cutoff-right
+.angled-right.angled-medium:after
+{
+	height: 417px;
+	width: 108px;
+	right: 52px;
+	top: 7px;
+}
+
+.angled-right.angled-full
 {
 	height: 460px;
 }
 
-#events.events-featured .feature-cutoff-right:after
+.angled-right.angled-full:after
 {
 	height: 476.7px;
 	width: 124px;
 	right: 58px;
 	top: 6.5px;
 }
+
+
 
 /*--------------------------------------------------------------
 ## "Cut Off Corner" Button/Link Base CSS
@@ -1933,6 +1963,11 @@ img.avatar
 	display: none;
 }
 
+#colophon .hentry
+{
+	background: transparent;
+}
+
 #colophon .sof_network
 {
 	width: 300px;
@@ -2036,6 +2071,16 @@ img.avatar
 	height: 75px;
 }
 
+#colophon .powered-by
+{
+	margin-top: 1.5em;
+}
+
+#colophon .powered-by p
+{
+	margin: 0 0 0.5em 0;
+}
+
 /*--------------------------------------------------------------
 ## Homepage
 --------------------------------------------------------------*/
@@ -2090,6 +2135,10 @@ img.avatar
 ## Includes Common
 --------------------------------------------------------------*/
 
+.insert-area h3 a:visited {
+	color: #ffcc00;
+}
+
 .loop-insert-footer
 {
 	clear: left;
@@ -2117,6 +2166,7 @@ img.avatar
 	position: relative;
 }
 
+/*
 .loop-insert-footer a:after {
 	height: 12px;
 	width: 12px;
@@ -2132,6 +2182,7 @@ img.avatar
 	-moz-transform: rotate(-62deg) translate(83%);
 	-o-transform: rotate(-62deg) translate(83%);
 }
+ */
 
 /*--------------------------------------------------------------
 ## Events Archive and Events Includes Common
@@ -2151,9 +2202,7 @@ img.avatar
 #events.events-featured .event
 {
 	width: auto;
-	margin-right: 0;
-	margin-top: 1em;
-	margin-bottom: 1em;
+	margin: 2em 0 1em 0;
 	float: none;
 	background-color: inherit;
 	/* Make text slightly larger */
@@ -2189,7 +2238,7 @@ img.avatar
 #events .event .entry-header a
 {
 	width: 100%;
-	border: 1px solid #fff;
+/* 	border: 1px solid #fff; */
 	background-color: inherit;
 }
 
@@ -2198,19 +2247,19 @@ img.avatar
 #primary .event-list .event .entry-header a:focus,
 #events .event .entry-header a:focus
 {
-	border: 1px solid #ffcc00;
+/* 	border: 1px solid #ffcc00; */
 }
 
 #primary .event-list .event .entry-header a:active,
 #events .event .entry-header a:active
 {
-	border: 1px solid #1d1d1b;
+/* 	border: 1px solid #1d1d1b; */
 }
 
 #primary .event-list .event .entry-header a:after,
 #events .event .entry-header a:after
 {
-	border-left: 1px solid #fff;
+/* 	border-left: 1px solid #fff; */
 	background-color: inherit;
 }
 
@@ -2222,19 +2271,19 @@ img.avatar
 #primary .event-list .event .entry-header a:hover:after,
 #events .event .entry-header a:hover:after
 {
-	border-left: 1px solid #ffcc00;
+/* 	border-left: 1px solid #ffcc00; */
 }
 
 #primary .event-list .event .entry-header a:focus:after,
 #events .event .entry-header a:focus:after
 {
-	border-left: 1px solid #ffcc00;
+/* 	border-left: 1px solid #ffcc00; */
 }
 
 #primary .event-list .event .entry-header a:active:after,
 #events .event .entry-header a:active:after
 {
-	border-left: 1px solid #1d1d1b;
+/* 	border-left: 1px solid #1d1d1b; */
 }
 
 #primary .event-list .event > .entry-title,
@@ -2248,7 +2297,7 @@ img.avatar
 #events .event > .entry-title a
 {
 	text-decoration: none;
-	color: #ffe299;
+/* 	color: #ffe299; */
 }
 
 #primary .event-list .event .entry-content,
@@ -2332,7 +2381,7 @@ img.avatar
 
 #events a
 {
-	color: #fff;
+/* 	color: #fff; */
 }
 
 #events .events-title,
@@ -2355,10 +2404,12 @@ img.avatar
 	color: #fff;
 }
 
+/*
 #events .loop-insert-footer a:after {
 	background: #f04845;
 	border-left: 1px solid #fff;
 }
+ */
 
 /*--------------------------------------------------------------
 ## Single Event
@@ -2433,8 +2484,97 @@ img.avatar
 .single-event .the-ball-v2-page-menu li a
 {
 /* 	color: #fff; */
-	text-decoration: none;
+/* 	text-decoration: none; */
 }
+
+/*--------------------------------------------------------------
+## Teaser Include
+--------------------------------------------------------------*/
+
+#teaser
+{
+	padding: 2.4em 0 1em 0;
+	background-color: #535f89;
+	color: #fff;
+}
+
+#teaser .teaser-inner
+{
+/*
+	width: 60%;
+	margin: 0 auto;
+ */
+	background-color: inherit;
+}
+
+#teaser a
+{
+	color: #fff;
+}
+
+#teaser .hentry
+{
+	margin-bottom: 1.5em;
+	background-color: inherit;
+}
+
+#teaser .hentry .teaser-header
+{
+	background-color: inherit;
+	float: left;
+	width: 50%;
+	overflow: hidden;
+}
+
+#teaser .hentry .teaser-header a
+{
+	width: 100%;
+	background-color: inherit;
+}
+
+#teaser .hentry .teaser-title
+{
+	margin-bottom: 0;
+	font-size: 110%;
+}
+
+#teaser .hentry .teaser-content
+{
+	float: left;
+	width: 49%;
+	margin-top: 1.2em;
+	font-size: 110%;
+	color: #fff;
+}
+
+#teaser .hentry .teaser-content-inner
+{
+	padding: 0 4em 0;
+}
+
+#teaser .hentry .teaser-content p
+{
+	margin-top: 0;
+	margin-bottom: 0.5em;
+}
+
+#teaser .hentry .teaser-content a
+{
+	color: #111;
+}
+
+#teaser .loop-insert-footer a
+{
+	border: 1px solid #fff;
+	color: #fff;
+}
+
+/*
+#teaser .loop-insert-footer a:after {
+	background: #535f89;
+	border-left: 1px solid #fff;
+}
+ */
 
 /*--------------------------------------------------------------
 ## Pledge Form Include
@@ -2513,10 +2653,12 @@ img.avatar
 	color: #fff;
 }
 
+/*
 #pledge .loop-insert-footer a:after {
 	background: #535f89;
 	border-left: 1px solid #fff;
 }
+ */
 
 /*--------------------------------------------------------------
 ## Pledge Form Include in Single Events
@@ -2742,10 +2884,12 @@ img.avatar
 	color: #fff;
 }
 
+/*
 #organisations .loop-insert-footer a:after {
 	background: #535f89;
 	border-left: 1px solid #fff;
 }
+ */
 
 /*--------------------------------------------------------------
 ## Organisations Include in Single Events
@@ -2925,7 +3069,7 @@ img.avatar
 #news .post .entry-header a
 {
 	width: 100%;
-	border: 1px solid #fff;
+/* 	border: 1px solid #fff; */
 }
 
 #blog .has-post-thumbnail .entry-header a:visited
@@ -2983,7 +3127,7 @@ img.avatar
 #news .post .entry-header a
 {
 	width: 100%;
-	border: 1px solid #fff;
+/* 	border: 1px solid #fff; */
 }
 
 #blog .post .entry-header a:hover,
@@ -2991,7 +3135,7 @@ img.avatar
 #news .post .entry-header a:hover,
 #news .post .entry-header a:focus
 {
-	border: 1px solid #ffcc00;
+/* 	border: 1px solid #ffcc00; */
 }
 
 #blog .post .entry-header a:active,
@@ -2999,14 +3143,14 @@ img.avatar
 #news .post .entry-header a:active,
 #news .post .entry-header a:active
 {
-	border: 1px solid #1d1d1b;
+/* 	border: 1px solid #1d1d1b; */
 }
 
 #blog .post .entry-header a:after,
 #news .post .entry-header a:after
 {
 	background: #535f89;
-	border-left: 1px solid #fff;
+/* 	border-left: 1px solid #fff; */
 }
 
 #blog .post .entry-header a:hover:after,
@@ -3014,13 +3158,13 @@ img.avatar
 #news .post .entry-header a:hover:after,
 #news .post .entry-header a:focus:after
 {
-	border-left: 1px solid #ffcc00;
+/* 	border-left: 1px solid #ffcc00; */
 }
 
 #blog .post .entry-header a:active:after,
 #news .post .entry-header a:active:after
 {
-	border-left: 1px solid #1d1d1b;
+/* 	border-left: 1px solid #1d1d1b; */
 }
 
 #blog .post .entry-title,
@@ -3033,7 +3177,7 @@ img.avatar
 #news .post .entry-title a
 {
 	text-decoration: none;
-	color: #ffe299;
+/* 	color: #ffe299; */
 }
 
 #blog .post .entry-content,
@@ -3079,7 +3223,7 @@ img.avatar
 
 #news a
 {
-	color: #fff;
+/* 	color: #fff; */
 }
 
 #news .news-title
@@ -3088,10 +3232,15 @@ img.avatar
 	padding: 1em 0;
 }
 
+#news .post .entry-header
+{
+	background-color: inherit;
+}
+
 #news .post .entry-header a:after
 {
-	background: #2b99ca;
-	border-left: 1px solid #fff;
+	background-color: inherit;
+/* 	border-left: 1px solid #fff; */
 }
 
 #news .loop-insert-footer a
@@ -3100,11 +3249,13 @@ img.avatar
 	color: #fff;
 }
 
+/*
 #news .loop-insert-footer a:after
 {
 	background: #2b99ca;
 	border-left: 1px solid #fff;
 }
+ */
 
 /*--------------------------------------------------------------
 ## News/Blog Meta
@@ -3418,6 +3569,11 @@ img.avatar
 	{
 	}
 
+	#teaser .hentry .teaser-content
+	{
+		font-size: 100%;
+	}
+
 	/* Widen column */
 	#primary #archive-header .entry-content,
 	#primary .entry-header,
@@ -3457,6 +3613,11 @@ img.avatar
 
 @media all and (max-width: 1040px) {
 
+	.main-navigation li a
+	{
+		padding: 1em 0.5em 0.7em 0.5em;
+	}
+
 }
 
 @media all and (max-width: 1024px) {
@@ -3482,6 +3643,12 @@ img.avatar
 
 	#masthead .header-inner .header-widgets
 	{
+	}
+
+	#teaser .hentry .teaser-content-inner
+	{
+		padding-left: 2.5em;
+		padding-right: 2em;
 	}
 
 	/* Widen column */
@@ -3522,7 +3689,12 @@ img.avatar
 
 }
 
-@media all and (max-width: 1000px) {
+@media all and (max-width: 950px) {
+
+	.main-navigation li a
+	{
+/* 		font-size: 90%; */
+	}
 
 }
 
@@ -3539,6 +3711,19 @@ img.avatar
 	#masthead .header-inner .header-widgets
 	{
 	}
+
+	#teaser .hentry .teaser-content
+	{
+		font-size: 95%;
+	}
+
+/*
+	#teaser .hentry .teaser-content-inner
+	{
+		padding-left: 2.5em;
+		padding-right: 2em;
+	}
+ */
 
 	/* Widen column */
 	#primary #archive-header .entry-content,
@@ -3577,6 +3762,23 @@ img.avatar
 	{
 		font-size: 3em;
 		padding: 4.5em 0 1.5em 0;
+	}
+
+}
+
+@media all and (max-width: 876px) {
+
+	#teaser .hentry .teaser-header
+	{
+		float: none;
+		width: 90%;
+	}
+
+	#teaser .hentry .teaser-content
+	{
+		float: none;
+		width: 90%;
+		margin: 1em auto 0;
 	}
 
 }
