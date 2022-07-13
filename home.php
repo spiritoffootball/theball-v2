@@ -18,10 +18,10 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<section id="blog" class="content-area clear">
+			<section id="blog" class="content-area has-post-thumbnail clear">
 				<div class="blog-inner">
 
-					<header class="blog-header">
+					<header class="entry-header"<?php echo the_ball_v2_get_home_feature_image_style(); ?>>
 						<h2 class="blog-title"><?php esc_html_e( 'News', 'the-ball-v2' ); ?></h2>
 					</header><!-- .blog-header -->
 
