@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="teaser-header">
-		<?php echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark"' . the_ball_v2_get_feature_image_style( 'the-ball-v2-listings' ) . ' class="angled-right angled-medium"></a>'; ?>
+		<?php echo '<span' . the_ball_v2_get_feature_image_style( 'the-ball-v2-feature' ) . ' class="angled-right angled-medium"></span>'; ?>
 	</header><!-- .teaser-header -->
 
 	<div class="entry-content teaser-content">
