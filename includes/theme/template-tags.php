@@ -232,6 +232,7 @@ if ( ! function_exists( 'the_ball_v2_get_feature_image_style' ) ) :
 
 		}
 
+		/*
 		// Make an exception for singular Event.
 		if ( 'event' == get_post_type( get_the_ID() ) && is_singular( 'event' ) ) {
 			return ' style="background: transparent"';
@@ -245,6 +246,36 @@ if ( ! function_exists( 'the_ball_v2_get_feature_image_style' ) ) :
 		// Make an exception for singular Pages.
 		if ( 'page' == get_post_type( get_the_ID() ) && is_page() ) {
 			return '';
+		}
+		*/
+
+		// Return blank inline style.
+		return '';
+
+	}
+
+endif;
+
+
+
+if ( ! function_exists( 'the_ball_v2_get_home_feature_image_style' ) ) :
+
+	/**
+	 * Gets the feature image for the "Blog Home" page as an inline style.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $size The name of the size of the feature image.
+	 */
+	function the_ball_v2_get_home_feature_image_style( $size = 'the-ball-v2-feature' ) {
+
+		// Get URL array for this page's feature image.
+		$blog_page_id = get_option( 'page_for_posts' );
+		if (! empty( $blog_page_id ) ) {
+			$image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $blog_page_id ), $size );
+			if ( ! empty( $image_url[0] ) ) {
+				return ' style="background-image: url(' . esc_url( $image_url[0] ) . ');"';
+			}
 		}
 
 		// Return blank inline style.
