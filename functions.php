@@ -81,15 +81,23 @@ if ( ! function_exists( 'the_ball_v2_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		/*
 		// Define a full-size custom image size, cropped to fit.
 		add_image_size(
 			'the-ball-v2-feature',
 			apply_filters( 'the_ball_v2_feature_image_width', 1280 ),
 			apply_filters( 'the_ball_v2_feature_image_height', 720 ),
-			true // Crop.
+			false // Crop.
 		);
 
+		// Define a small custom image size, cropped to fit.
+		add_image_size(
+			'the-ball-v2-listings',
+			apply_filters( 'the_ball_v2_listings_image_width', 553 ),
+			apply_filters( 'the_ball_v2_listings_image_height', 320 ),
+			false // Crop.
+		);
+
+		/*
 		// Define a medium-large custom image size, cropped to fit.
 		add_image_size(
 			'the-ball-v2-mediumlarge',
@@ -103,14 +111,6 @@ if ( ! function_exists( 'the_ball_v2_setup' ) ) :
 			'the-ball-v2-medium',
 			apply_filters( 'the_ball_v2_medium_image_width', 480 ),
 			apply_filters( 'the_ball_v2_medium_image_height', 270 ),
-			true // Crop.
-		);
-
-		// Define a small custom image size, cropped to fit.
-		add_image_size(
-			'the-ball-v2-listings',
-			apply_filters( 'the_ball_v2_listings_image_width', 256 ),
-			apply_filters( 'the_ball_v2_listings_image_height', 144 ),
 			true // Crop.
 		);
 
