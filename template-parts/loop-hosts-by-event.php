@@ -10,17 +10,20 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+// Get current Event object.
+$event = get_queried_object();
+
 // Get the Ball Host Post IDs from the ACF Field.
-$ball_host_ids = get_field( 'ball_hosts' );
+$ball_host_ids = get_field( 'ball_hosts', $event->ID );
 
 // Skip if there aren't any.
 if ( ! empty( $ball_host_ids ) ) :
 
 	// Define query args.
 	$ball_hosts_args = [
-		'include' => $ball_host_ids,
 		'post_type' => 'host',
 		'post_status' => 'publish',
+		'post__in' => $ball_host_ids,
 		'nopaging' => true,
 		'no_found_rows' => true,
 	];
