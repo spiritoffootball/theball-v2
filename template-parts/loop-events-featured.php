@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for embedding a display of Events.
+ * Template part for embedding a display of featured Events.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -18,8 +18,6 @@ $featured_events_args = [
 	'post_type' => 'event',
 	'post_status' => 'publish',
 	'no_found_rows' => true,
-	'meta_key' => 'featured_event',
-	'meta_value' => '1',
 	'tax_query' => [
 		[
 			'taxonomy' => 'event-type',

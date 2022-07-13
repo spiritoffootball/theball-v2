@@ -26,49 +26,41 @@ $events = new WP_Query( $events_args );
 
 if ( $events->have_posts() ) : ?>
 
-	<!-- loop-events-other.php -->
-	<section id="blog-meta" class="content-area insert-area clear">
-		<div class="blog-meta-inner">
+	<!-- loop-events.php -->
+	<section id="events" class="content-area insert-area clear">
+		<div class="events-inner">
 
-			<div class="blog-meta-list">
-				<header class="blog-meta-header">
-					<h2 class="blog-meta-title"><?php esc_html_e( 'Other Events', 'the-ball-v2' ); ?></h2>
-				</header><!-- .blog-meta-header -->
+			<header class="events-header">
+				<h2 class="events-title"><?php esc_html_e( 'Other Events', 'the-ball-v2' ); ?></h2>
+			</header><!-- .events-header -->
 
-				<p>
-					<?php
+			<?php
 
-					// Init counter for giving items classes.
-					$post_loop_counter = new The_Ball_v2_Counter();
+			// Init counter for giving items classes.
+			$post_loop_counter = new The_Ball_v2_Counter();
 
-					// Start the loop.
-					while ( $events->have_posts() ) :
+			// Start the loop.
+			while ( $events->have_posts() ) :
 
-						$events->the_post();
+				$events->the_post();
 
-						// Show link.
-						?>
-						<a href="<?php echo get_permalink(); ?>" class="term-link"><?php echo the_title(); ?></a>
-						<?php
+				// Get mini template.
+				get_template_part( 'template-parts/content-event-mini' );
 
-					endwhile;
+			endwhile;
 
-					// Ditch counter.
-					$post_loop_counter->remove_filter();
-					unset( $post_loop_counter );
+			// Ditch counter.
+			$post_loop_counter->remove_filter();
+			unset( $post_loop_counter );
 
-					?>
+			?>
 
-				</p>
+			<footer class="loop-insert-footer events-footer">
+				<p><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'events' ) ) ); ?>" class="archive-link"><?php esc_html_e( 'View All Events', 'the-ball-v2' ); ?></a></p>
+			</footer><!-- .events-footer -->
 
-			</div><!-- .blog-meta-list -->
-
-			<footer class="loop-insert-footer news-footer">
-				<p><a href="/events/" class="archive-link"><?php esc_html_e( 'View All Events', 'the-ball-v2' ); ?></a></p>
-			</footer><!-- .news-footer -->
-
-		</div><!-- .blog-meta-inner -->
-	</section><!-- #blog-meta -->
+		</div><!-- .events-inner -->
+	</section><!-- #events -->
 
 	<?php
 
