@@ -17,6 +17,11 @@ defined( 'ABSPATH' ) || exit;
  */
 define( 'THE_BALL_V2_THEME_VERSION', '1.0.1' );
 
+// Set theme debugging state.
+if ( ! defined( 'THE_BALL_V2_THEME_DEBUG' ) ) {
+	define( 'THE_BALL_V2_THEME_DEBUG', false );
+}
+
 /**
  * Bootstraps theme object and returns instance.
  *
@@ -236,12 +241,18 @@ function the_ball_v2_remove_post_type_support() {
  */
 function the_ball_v2_styles() {
 
+	// Define version.
+	$version = THE_BALL_V2_THEME_DEBUG;
+	if ( true === THE_BALL_V2_THEME_DEBUG ) {
+		$version .= '-' . time();
+	}
+
 	// Screen stylesheet.
 	wp_enqueue_style(
 		'the-ball-v2-global',
 		get_template_directory_uri() . '/assets/css/global.css',
 		[],
-		THE_BALL_V2_THEME_VERSION . '-' . time(),
+		$version,
 		'all' // Media.
 	);
 
@@ -250,7 +261,7 @@ function the_ball_v2_styles() {
 		'the-ball-v2-print',
 		get_template_directory_uri() . '/assets/css/print.css',
 		[ 'the-ball-v2-global' ],
-		THE_BALL_V2_THEME_VERSION, // . '-' . time(),
+		$version,
 		'print' // Media.
 	);
 
