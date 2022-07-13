@@ -1118,7 +1118,6 @@ ul.the-ball-v2-footer li:last-child:after {
 	speak: none;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-/* 	color: #ccc; */
 }
 
 .no-customize-support #the-ball-v2-search
@@ -1220,8 +1219,6 @@ ol.comment-list ol {
 
 .comment-author a
 {
-/* 	text-decoration: none; */
-/* 	color: #fff; */
 	font-weight: normal;
 }
 
@@ -1596,7 +1593,6 @@ a.angled-right
 
 .site-branding
 {
-/* 	position: relative; */
 }
 
 .site-title
@@ -1633,7 +1629,6 @@ a.angled-right
 .header-widgets
 {
 	position: absolute;
-/* 	right: 1em; */
 	top: -60px;
 	width: 100%;
 	height: 60px;
@@ -1663,7 +1658,6 @@ a.angled-right
 #masthead .header-widgets a:focus,
 #masthead .header-widgets a:visited
 {
-/* 	color: #eee; */
 	text-decoration: none;
 	text-shadow: 0 0 1px black;
 }
@@ -1752,8 +1746,7 @@ img.avatar
 {
 	font-size: 6em;
 	text-align: center;
-	padding: 3.2em 0 2.1em 0;
-/* 	padding: 5em 0 0.8em 0; */
+	padding: 3.2em 0.5em 1.6em 0.5em;
 	margin: 0;
 	color: #fff;
 	line-height: 1;
@@ -1920,6 +1913,12 @@ img.avatar
 	text-align: left;
 }
 
+.entry-content p.outstanding
+{
+	padding: 1em;
+	background-color: #313f73;
+}
+
 /*--------------------------------------------------------------
 ## Article Footer
 --------------------------------------------------------------*/
@@ -1954,7 +1953,6 @@ img.avatar
 #colophon a:focus,
 #colophon a:visited
 {
-/* 	color: #fff; */
 	text-decoration: none;
 }
 
@@ -2289,7 +2287,6 @@ img.avatar
 #primary .event-list .event > .entry-title,
 #events .event > .entry-title
 {
-/* 	font-weight: bold; */
 	margin: 0.5em 0 0 0;
 }
 
@@ -2297,7 +2294,6 @@ img.avatar
 #events .event > .entry-title a
 {
 	text-decoration: none;
-/* 	color: #ffe299; */
 }
 
 #primary .event-list .event .entry-content,
@@ -2477,13 +2473,11 @@ img.avatar
 .single-event .the-ball-v2-page-menu li a:focus,
 .single-event .the-ball-v2-page-menu li a:active
 {
-/* 	text-decoration: underline; */
 	outline: none;
 }
 
 .single-event .the-ball-v2-page-menu li a
 {
-/* 	color: #fff; */
 /* 	text-decoration: none; */
 }
 
@@ -2526,7 +2520,7 @@ img.avatar
 	overflow: hidden;
 }
 
-#teaser .hentry .teaser-header a
+#teaser .hentry .teaser-header span
 {
 	width: 100%;
 	background-color: inherit;
@@ -2737,7 +2731,6 @@ img.avatar
 #primary .organisation-list .hentry > .entry-title,
 #organisations .hentry > .entry-title
 {
-/* 	font-weight: bold; */
 	margin: 0.5em 0 0 0;
 }
 
@@ -2852,7 +2845,6 @@ img.avatar
 	margin: 0;
 	padding: 0;
 	width: 80%;
-	border-radius: 50%;
 }
 
 #organisations .hentry .entry-title
@@ -2892,12 +2884,18 @@ img.avatar
  */
 
 /*--------------------------------------------------------------
-## Organisations Include in Single Events
+## Organisations Include "Hosts by Event" in Single Events
 --------------------------------------------------------------*/
 
-.single-event #organisations
+#organisations.hosts-by-event
 {
 	background-color: #2b99ca;
+}
+
+#organisations.hosts-by-event .entry-content,
+#organisations.hosts-by-event .entry-title
+{
+	display: none;
 }
 
 /*--------------------------------------------------------------
@@ -3177,7 +3175,6 @@ img.avatar
 #news .post .entry-title a
 {
 	text-decoration: none;
-/* 	color: #ffe299; */
 }
 
 #blog .post .entry-content,
@@ -3693,7 +3690,6 @@ img.avatar
 
 	.main-navigation li a
 	{
-/* 		font-size: 90%; */
 	}
 
 }
@@ -3804,6 +3800,30 @@ img.avatar
 	#masthead .header-inner .header-widgets .widget
 	{
 		margin-top: 10px;
+	}
+
+	.angled-right.angled-full
+	{
+		height: 260px;
+	}
+
+	.angled-right.angled-full:after
+	{
+		height: 276px;
+		width: 98px;
+		right: 39px;
+	}
+
+	.angled-right.angled-medium
+	{
+		height: 200px;
+	}
+
+	.angled-right.angled-medium:after
+	{
+		height: 227px;
+		width: 98px;
+		right: 23px;
 	}
 
 	/* Two items per row */
@@ -3927,15 +3947,16 @@ img.avatar
 
 	.site-title
 	{
-		width: 260px;
-		background-size: 220%;
-		background-position: -360px 4px;
+		width: 180px;
+		background-size: 300%;
+		background-position: -370px 4px;
 		top: -25px;
 	}
 
 	.site-title a
 	{
-		margin-top: 10px;
+		background-size: 80%;
+		margin: 5px 0 0 0;
 	}
 
 	/* Widen column */
@@ -4000,12 +4021,6 @@ img.avatar
 	.blog-header
 	{
 		padding: 0;
-	}
-
-	#events .event > .entry-title,
-	#events .event .entry-content
-	{
-		display: none;
 	}
 
 	#news .news-inner,
