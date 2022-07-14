@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for embedding a display of Partners.
+ * Template part for embedding a display of all Partners.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -16,6 +16,7 @@ $partners_args = [
 	'post_status' => 'publish',
 	'order' => 'ASC',
 	'orderby' => 'title',
+	'posts_per_page' => -1,
 ];
 
 // The query.
