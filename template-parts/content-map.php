@@ -28,7 +28,7 @@ defined( 'ABSPATH' ) || exit;
 				'map_content' => 'global',
 				'object_name' => 'post',
 				'map_post_type' => 'ball,event,host,partner',
-				'zoom' => 3,
+				'zoom' => 'auto',
 				'remove_geo_mashup_logo' => 'true',
 				'auto_info_open' => 'false',
 				'add_overview_control' => 'false',
