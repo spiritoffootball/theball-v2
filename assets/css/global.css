@@ -2296,7 +2296,9 @@ img.avatar
 #primary .event-list .event > .entry-title,
 #events .event > .entry-title
 {
-	margin: 0.5em 0 0 0;
+	margin: 0.3em 0 0.3em 0;
+	font-size: 150%;
+	line-height: 1.2;
 }
 
 #primary .event-list .event > .entry-title a,
@@ -2735,6 +2737,7 @@ img.avatar
 	min-height: 160px;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 }
 
 #primary .organisation-list .hentry > .entry-title,
@@ -3858,6 +3861,8 @@ img.avatar
 	#primary .event-list .event.third-plus-one,
 	#events .event.third-plus-one,
 	#primary .organisation-list .organisation.third-plus-one,
+	#primary .organisation-list .partner.third-plus-one,
+	#primary .organisation-list .host.third-plus-one,
 	#organisations .hentry.third-plus-one,
 	#news .post.third-plus-one,
 	#blog .post.third-plus-one

@@ -38,6 +38,7 @@ get_header(); ?>
 			'post_status' => 'publish',
 			'order' => 'ASC',
 			'orderby' => 'title',
+			'posts_per_page' => -1,
 		];
 
 		// Do the query.

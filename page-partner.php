@@ -38,6 +38,7 @@ get_header(); ?>
 			'post_status' => 'publish',
 			'order' => 'ASC',
 			'orderby' => 'title',
+			'posts_per_page' => -1,
 		];
 
 		// Do the query.
@@ -58,8 +59,8 @@ get_header(); ?>
 
 					$partners->the_post();
 
-					// Get mini template.
-					get_template_part( 'template-parts/content-organisation-mini' );
+					// Get logo template.
+					get_template_part( 'template-parts/content-partner-logo' );
 
 				endwhile;
 

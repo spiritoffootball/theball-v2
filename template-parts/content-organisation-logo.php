@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying an Organisation logos.
+ * Template part for displaying an Organisation logo.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || exit;
 
 ?>
 
-<!-- content-organsation-logo.php -->
+<!-- content-organisation-logo.php -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php the_ball_v2_partner_image( 'the-ball-v2-partner' ); ?></a>

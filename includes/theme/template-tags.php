@@ -305,7 +305,8 @@ if ( ! function_exists( 'the_ball_v2_partner_image' ) ) :
 				$src = $logo['sizes']['medium'];
 				$width = ( $logo['sizes']['medium-width'] / 2 );
 				$height = ( $logo['sizes']['medium-height'] / 2 );
-				echo '<img src="' . $src . '" width="' . ( $logo['sizes']['medium-width'] / 2 ) . '" height="' . $height . '">';
+				$title = empty( $logo['title'] ) ? __( 'Partner logo', 'the-ball-v2' ) : $logo['title'];
+				echo '<img src="' . $src . '" width="' . $width . '" height="' . $height . '" title="' . esc_attr( $title ) . '">';
 			}
 			return;
 		}

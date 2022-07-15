@@ -40,6 +40,7 @@ get_header(); ?>
 			$events_args = [
 				'post_type' => 'event',
 				'post_status' => 'publish',
+				'posts_per_page' => -1,
 			];
 
 			// Do the query.
