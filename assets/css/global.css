@@ -3180,7 +3180,9 @@ img.avatar
 #blog .post .entry-title,
 #news .post .entry-title
 {
-	margin: 0.5em 0 0 0;
+	margin: 0.3em 0 0.3em 0;
+	font-size: 150%;
+	line-height: 1.2;
 }
 
 #blog .post .entry-title a,
@@ -3816,14 +3818,15 @@ img.avatar
 
 	.angled-right.angled-full
 	{
-		height: 260px;
+		height: 230px;
 	}
 
 	.angled-right.angled-full:after
 	{
-		height: 276px;
-		width: 98px;
-		right: 39px;
+		height: 244px;
+		width: 65px;
+		right: 30px;
+		top: 0;
 	}
 
 	.angled-right.angled-medium
@@ -3925,6 +3928,11 @@ img.avatar
 	/* Hide third organisation status */
 	.third .organisation-status {
 		display: none;
+	}
+
+	#teaser .hentry .teaser-content-inner
+	{
+		padding: 0;
 	}
 
 }
@@ -4096,6 +4104,18 @@ img.avatar
 		clear: left;
 		width: auto;
 		margin-right: 0;
+	}
+
+	/* Singular Titles */
+	#primary .has-post-thumbnail .entry-header h1,
+	#primary .has-post-thumbnail .entry-header h2
+	{
+		padding: 7em 0 2em 0;
+	}
+
+	#teaser .hentry
+	{
+		margin-bottom: 0.5em;
 	}
 
 	.entry-content blockquote

@@ -47,7 +47,7 @@ if ( $partners->have_posts() ) :
 				$partners->the_post();
 
 				// Get mini template.
-				get_template_part( 'template-parts/content-organisation-logos' );
+				get_template_part( 'template-parts/content-organisation-logo' );
 
 			endwhile;
 
