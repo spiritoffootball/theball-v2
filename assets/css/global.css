@@ -2196,7 +2196,8 @@ img.avatar
 --------------------------------------------------------------*/
 
 #primary .event-list .event,
-#events .event
+#events .event,
+#events-past .event
 {
 	width: 32%;
 	margin-right: 2%;
@@ -2216,33 +2217,38 @@ img.avatar
 	font-size: 125%;
 }
 
-#events .event
+#events .event,
+#events-past .event
 {
-	background-color: #f04845;
+	background-color: inherit;
 }
 
 /* Every third-plus-one item starts a new row */
 #primary .event-list .event.third-plus-one,
-#events .event.third-plus-one
+#events .event.third-plus-one,
+#events-past .event.third-plus-one
 {
 	clear: left;
 }
 
 /* Every third item ends a row */
 #primary .event-list .event.third,
-#events .event.third
+#events .event.third,
+#events-past .event.third
 {
 	margin-right: 0;
 }
 
 #primary .event-list .event .entry-header h3,
-#events .event .entry-header h3
+#events .event .entry-header h3,
+#events-past .event .entry-header h3
 {
 	margin: 0;
 }
 
 #primary .event-list .event .entry-header a,
-#events .event .entry-header a
+#events .event .entry-header a,
+#events-past .event .entry-header a
 {
 	width: 100%;
 /* 	border: 1px solid #fff; */
@@ -2251,50 +2257,59 @@ img.avatar
 
 #primary .event-list .event .entry-header a:hover,
 #events .event .entry-header a:hover,
+#events-past .event .entry-header a:hover,
 #primary .event-list .event .entry-header a:focus,
-#events .event .entry-header a:focus
+#events .event .entry-header a:focus,
+#events-past .event .entry-header a:focus
 {
 /* 	border: 1px solid #ffcc00; */
 }
 
 #primary .event-list .event .entry-header a:active,
-#events .event .entry-header a:active
+#events .event .entry-header a:active,
+#events-past .event .entry-header a:active
 {
 /* 	border: 1px solid #1d1d1b; */
 }
 
 #primary .event-list .event .entry-header a:after,
-#events .event .entry-header a:after
+#events .event .entry-header a:after,
+#events-past .event .entry-header a:after
 {
 /* 	border-left: 1px solid #fff; */
 	background-color: inherit;
 }
 
-#events .event .entry-header a:after
+#events .event .entry-header a:after,
+#events-past .event .entry-header a:after
 {
 	background-color: inherit;
 }
 
 #primary .event-list .event .entry-header a:hover:after,
-#events .event .entry-header a:hover:after
+#events .event .entry-header a:hover:after,
+#events-past .event .entry-header a:hover:after
 {
 /* 	border-left: 1px solid #ffcc00; */
 }
 
 #primary .event-list .event .entry-header a:focus:after,
-#events .event .entry-header a:focus:after
+#events .event .entry-header a:focus:after,
+#events-past .event .entry-header a:focus:after
 {
 /* 	border-left: 1px solid #ffcc00; */
 }
 
 #primary .event-list .event .entry-header a:active:after,
-#events .event .entry-header a:active:after
+#events .event .entry-header a:active:after,
+#events-past .event .entry-header a:active:after
 {
 /* 	border-left: 1px solid #1d1d1b; */
 }
 
 #primary .event-list .event > .entry-title,
-#events .event > .entry-title
+#events .event > .entry-title,
+#events-past .event > .entry-title
 {
 	margin: 0.3em 0 0.3em 0;
 	font-size: 150%;
@@ -2302,13 +2317,15 @@ img.avatar
 }
 
 #primary .event-list .event > .entry-title a,
-#events .event > .entry-title a
+#events .event > .entry-title a,
+#events-past .event > .entry-title a
 {
 	text-decoration: none;
 }
 
 #primary .event-list .event .entry-content,
-#events .event .entry-content
+#events .event .entry-content,
+#events-past .event .entry-content
 {
 	margin: 0;
 	color: #fff;
@@ -2317,7 +2334,8 @@ img.avatar
 }
 
 #primary .event-list .event .entry-content p,
-#events .event .entry-content p
+#events .event .entry-content p,
+#events-past .event .entry-content p
 {
 	margin-top: 0;
 }
@@ -2339,7 +2357,7 @@ img.avatar
 
 #primary .event-list
 {
-	background-color: #f04845;
+	background-color: #95163d;
 	color: #fff;
 }
 
@@ -2361,19 +2379,27 @@ img.avatar
 --------------------------------------------------------------*/
 
 #events,
+#events-past,
 #events.events-featured
 {
 	padding: 1px 0;
-	background-color: #f04845;
+	background-color: #95163d;
 	color: #fff;
 }
 
-#events.events-featured
+#events-past
+{
+	background-color: #f04845;
+}
+
+#events.events-featured,
+#events-past.events-featured
 {
 	background-color: #535f89;
 }
 
-#events .events-inner
+#events .events-inner,
+#events-past .events-inner
 {
 	width: 60%;
 	margin: 0 auto;
@@ -2381,17 +2407,21 @@ img.avatar
 }
 
 #events .events-header,
-#events .entry-header
+#events-past .events-header,
+#events .entry-header,
+#events-past .entry-header
 {
 	background-color: inherit;
 }
 
-#events a
+#events a,
+#events-past a
 {
 /* 	color: #fff; */
 }
 
 #events .events-title,
+#events-past .events-title,
 .event-list-inner > .events-title
 {
 	text-transform: uppercase;
@@ -2405,14 +2435,17 @@ img.avatar
 	padding-top: 0;
 }
 
-#events .loop-insert-footer a
+#events .loop-insert-footer a,
+#events-past .loop-insert-footer a
 {
 	border: 1px solid #fff;
 	color: #fff;
 }
 
 /*
-#events .loop-insert-footer a:after {
+#events .loop-insert-footer a:after,
+#events-past .loop-insert-footer a:after
+{
 	background: #f04845;
 	border-left: 1px solid #fff;
 }
@@ -3594,6 +3627,7 @@ img.avatar
 	.page-template-page-event #primary .event-intro-inner,
 	#primary .event-list-inner,
 	#events .events-inner,
+	#events-past .events-inner,
 	#pledge .pledge-inner,
 	#primary .organisation-list-inner,
 	#primary .organisation-list-inner,
@@ -3670,6 +3704,7 @@ img.avatar
 	#colophon .footer-inner,
 	#primary .event-list-inner,
 	#events .events-inner,
+	#events-past .events-inner,
 	#pledge .pledge-inner,
 	#primary .organisation-list-inner,
 	#organisations .organisations-inner,
@@ -3744,6 +3779,7 @@ img.avatar
 	.page-template-page-event #primary .event-intro-inner,
 	#primary .event-list-inner,
 	#events .events-inner,
+	#events-past .events-inner,
 	#pledge .pledge-inner,
 	#primary .organisation-list-inner,
 	#primary .organisation-list-inner,
@@ -3844,6 +3880,7 @@ img.avatar
 	/* Two items per row */
 	#primary .event-list .event,
 	#events .event,
+	#events-past .event,
 	#primary .organisation-list .hentry,
 	#organisations .hentry,
 	#news .post,
@@ -3863,6 +3900,7 @@ img.avatar
 	/* Every third-plus-one item no longer starts a new row */
 	#primary .event-list .event.third-plus-one,
 	#events .event.third-plus-one,
+	#events-past .event.third-plus-one,
 	#primary .organisation-list .organisation.third-plus-one,
 	#primary .organisation-list .partner.third-plus-one,
 	#primary .organisation-list .host.third-plus-one,
@@ -3876,6 +3914,7 @@ img.avatar
 	/* Every third item no longer ends a row */
 	#primary .event-list .event.third,
 	#events .event.third,
+	#events-past .event.third,
 	#primary .organisation-list .hentry.third,
 	#organisations .hentry.third,
 	#news .post.third,
@@ -3893,6 +3932,7 @@ img.avatar
 	/* Every even-plus-one item starts a new row */
 	#primary .event-list .event.even-plus-one,
 	#events .event.even-plus-one,
+	#events-past .event.even-plus-one,
 	#primary .organisation-list .hentry.even-plus-one,
 	#organisations .hentry.even-plus-one,
 	#news .post.even-plus-one,
@@ -3904,6 +3944,7 @@ img.avatar
 	/* Every even item ends a row */
 	#primary .event-list .event.even,
 	#events .event.even,
+	#events-past .event.even,
 	#primary .organisation-list .hentry.even,
 	#organisations .hentry.even,
 	#news .post.even,
@@ -3986,6 +4027,7 @@ img.avatar
 	.page-template-page-event #primary .event-intro-inner,
 	#primary .event-list-inner,
 	#events .events-inner,
+	#events-past .events-inner,
 	#pledge .pledge-inner,
 	#primary .organisation-list-inner,
 	#organisations .organisations-inner,
@@ -4032,6 +4074,7 @@ img.avatar
 	/* Adjust content of includes */
 	#primary .event-list .event,
 	#events .event,
+	#events-past .event,
 	#primary .organisation-list .hentry,
 	#organisations .hentry
 	{
@@ -4050,6 +4093,7 @@ img.avatar
 	#blog-meta .blog-meta-inner,
 	#subpages .subpages-inner,
 	#events .events-inner,
+	#events-past .events-inner,
 	#pledge .pledge-inner,
 	#organisations .organisations-inner
 	{
@@ -4072,6 +4116,7 @@ img.avatar
 	/* Every even-plus-one item no longer starts a new row */
 	#primary .event-list .event.even-plus-one,
 	#events .event.even-plus-one,
+	#events-past .event.even-plus-one,
 	#primary .organisation-list .hentry.even-plus-one,
 	#organisations .hentry.even-plus-one,
 	#news .post.even-plus-one,
@@ -4084,6 +4129,7 @@ img.avatar
 	/* Every even item no longer ends a row */
 	#primary .event-list .event.even,
 	#events .event.even,
+	#events-past .event.even,
 	#primary .organisation-list .hentry.even,
 	#organisations .hentry.even,
 	#news .post.even,
@@ -4095,6 +4141,7 @@ img.avatar
 	/* Every item starts a new row */
 	#primary .event-list .event,
 	#events .event,
+	#events-past .event,
 	#primary .organisation-list .hentry,
 	#organisations .hentry,
 	#news .post,

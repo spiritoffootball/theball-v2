@@ -15,19 +15,32 @@ $events_args = [
 	'post_type' => 'event',
 	'post_status' => 'publish',
 	'no_found_rows' => true,
+	'suppress_filters' => false,
+	'showpastevents' => true,
+	'event_start_before' => 'today',
+	'event_end_before' => 'today',
 ];
 
 // The query.
 $events = new WP_Query( $events_args );
 
+$e = new \Exception();
+$trace = $e->getTraceAsString();
+error_log( print_r( [
+	'method' => __METHOD__,
+	'events_args' => $events_args,
+	'events' => $events,
+	//'backtrace' => $trace,
+], true ) );
+
 if ( $events->have_posts() ) : ?>
 
-	<!-- loop-events.php -->
-	<section id="events" class="content-area insert-area clear">
+	<!-- loop-events-past.php -->
+	<section id="events-past" class="content-area insert-area events-past clear">
 		<div class="events-inner">
 
 			<header class="events-header">
-				<h2 class="events-title"><?php esc_html_e( 'Ongoing Events', 'the-ball-v2' ); ?></h2>
+				<h2 class="events-title"><?php esc_html_e( 'Past Events', 'the-ball-v2' ); ?></h2>
 			</header><!-- .events-header -->
 
 			<?php

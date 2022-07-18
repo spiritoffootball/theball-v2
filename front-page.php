@@ -48,6 +48,10 @@ get_header(); ?>
 		<?php load_template( $event_loop ); ?>
 	<?php endif; ?>
 
+	<?php if ( $past_loop = locate_template( 'template-parts/loop-events-past.php' ) ) : ?>
+		<?php load_template( $past_loop ); ?>
+	<?php endif; ?>
+
 	<?php if ( $news_loop = locate_template( 'template-parts/loop-news.php' ) ) : ?>
 		<?php load_template( $news_loop ); ?>
 	<?php endif; ?>

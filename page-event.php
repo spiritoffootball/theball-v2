@@ -53,7 +53,7 @@ get_header(); ?>
 					<div class="event-list-inner">
 						<?php global $sof_featured_events; ?>
 						<?php if ( $sof_featured_events === true ) : ?>
-							<h2 class="events-title"><?php esc_html_e( 'All Events', 'the-ball-v2' ); ?></h2>
+							<h2 class="events-title"><?php esc_html_e( 'Ongoing Events', 'the-ball-v2' ); ?></h2>
 						<?php endif; ?>
 
 						<?php
@@ -92,6 +92,12 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+
+	<?php if ( $past_loop = locate_template( 'template-parts/loop-events-past.php' ) ) : ?>
+		<?php the_ball_v2_theme()->loop_link_disable(); ?>
+		<?php load_template( $past_loop ); ?>
+		<?php the_ball_v2_theme()->loop_link_enable(); ?>
+	<?php endif; ?>
 
 <?php
 
