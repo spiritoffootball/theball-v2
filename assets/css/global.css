@@ -2404,7 +2404,7 @@ img.avatar
 {
 	background-color: inherit;
 	width: 100%;
-	margin: 0 auto;
+	margin: 0 auto 2em 0;
 }
 
 #primary #event-the-ball .hentry
@@ -3161,6 +3161,12 @@ img.avatar
 {
 	width: 100% !important;
 	height: 660px !important;
+}
+
+.page-template-page-map #primary .entry-footer
+{
+	padding-top: 1.5em;
+	padding-bottom: 0;
 }
 
 /*--------------------------------------------------------------

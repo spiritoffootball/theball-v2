@@ -43,6 +43,7 @@ defined( 'ABSPATH' ) || exit;
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
+		<?php echo do_shortcode( '[sof_pledgeball_data]' ); ?>
 		<?php
 			/*
 			// Edit Post link ditched.
@@ -57,5 +58,6 @@ defined( 'ABSPATH' ) || exit;
 			);
 			*/
 		?>
+
 	</footer><!-- .entry-footer -->
 </article><!-- #post-->
