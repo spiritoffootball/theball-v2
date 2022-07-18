@@ -26,6 +26,12 @@ defined( 'ABSPATH' ) || exit;
 	<?php endif; ?>
 
 	<div class="entry-content">
+		<?php /* ?>
+		<?php if ( is_front_page() ) : ?>
+			<?php echo do_shortcode( '[sof_pledgeball_data]' ); ?>
+		<?php endif; ?>
+		<?php */ ?>
+
 		<?php
 		the_content();
 

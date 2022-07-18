@@ -2794,6 +2794,103 @@ img.avatar
 ## Organisations Archive and Organisations Include Common
 --------------------------------------------------------------*/
 
+/* Give enclosing element the same margins as a paragraph */
+.pledge-data-display
+{
+	margin: 0 0 1.5em 0;
+	padding: 1em;
+	background-color: #29386d;
+}
+
+.pledge-data-display h2
+{
+	margin-top: 0;
+	text-align: center;
+}
+
+.pledge-data-display .pledge-data-display-list
+{
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+	width: 98%;
+}
+
+.pledge-data-display .pledge-data-display-list li.data-item
+{
+	float: left;
+	display: block;
+	min-width: 27%;
+	border-right: 1px solid #fff;
+	margin-bottom: 1em;
+}
+
+.pledge-data-display .pledge-data-display-list li.data-item:last-child
+{
+	border-right: none;
+}
+
+/* Widen Kg saved item */
+.pledge-data-display .pledge-data-display-list li.data-item-3
+{
+	min-width: 46%;
+}
+
+.pledge-data-display .pledge-data-display-list .data-item-number
+{
+	display: block;
+	font-weight: 700;
+	font-size: 4em;
+	color: #ffcc00;
+	padding-bottom: 0.1em;
+	text-align: center;
+	line-height: 1;
+}
+
+.pledge-data-display .pledge-data-display-list .data-item-text
+{
+	display: block;
+	font-weight: normal;
+	font-size: 1em;
+	color: #fff;
+	text-align: center;
+}
+
+@media all and (max-width: 640px) {
+
+	.pledge-data-display .pledge-data-display-list li.data-item
+	{
+		min-width: 32%;
+	}
+
+	.pledge-data-display .pledge-data-display-list li.data-item-1
+	{
+		margin-left: 8%;
+		min-width: 42%;
+	}
+
+	.pledge-data-display .pledge-data-display-list li.data-item-2
+	{
+		border-right: none;
+	}
+
+	.pledge-data-display .pledge-data-display-list li.data-item-3
+	{
+		clear: left;
+		min-width: 100%;
+	}
+
+	.pledge-data-display .pledge-data-display-list .data-item-number
+	{
+		padding-bottom: 0;
+	}
+
+}
+
+/*--------------------------------------------------------------
+## Organisations Archive and Organisations Include Common
+--------------------------------------------------------------*/
+
 #primary .organisation-list .hentry,
 #organisations .hentry
 {
