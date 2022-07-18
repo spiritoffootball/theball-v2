@@ -62,12 +62,6 @@ if ( ! function_exists( 'the_ball_v2_setup' ) ) :
 	 */
 	function the_ball_v2_setup() {
 
-		/*
-		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 */
-		load_theme_textdomain( 'the-ball-v2', get_template_directory() . '/languages' );
-
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 

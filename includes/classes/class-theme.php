@@ -100,6 +100,27 @@ class The_Ball_v2_Theme {
 	 */
 	public function register_hooks() {
 
+		// Set up this theme's defaults.
+		add_action( 'after_setup_theme', [ $this, 'theme_setup' ] );
+
+	}
+
+	/**
+	 * Augment the Base Theme's setup function.
+	 *
+	 * @since 1.0.0
+	 */
+	public function theme_setup() {
+
+		/*
+		 * Make theme available for translation.
+		 * Translations can be filed in the /languages/ directory.
+		 */
+		load_theme_textdomain(
+			'the-ball-v2',
+			get_template_directory() . '/languages'
+		);
+
 	}
 
 	/**

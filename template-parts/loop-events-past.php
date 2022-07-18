@@ -24,15 +24,6 @@ $events_args = [
 // The query.
 $events = new WP_Query( $events_args );
 
-$e = new \Exception();
-$trace = $e->getTraceAsString();
-error_log( print_r( [
-	'method' => __METHOD__,
-	'events_args' => $events_args,
-	'events' => $events,
-	//'backtrace' => $trace,
-], true ) );
-
 if ( $events->have_posts() ) : ?>
 
 	<!-- loop-events-past.php -->

@@ -1731,6 +1731,7 @@ img.avatar
 	position: relative;
 	background-size: cover;
 	background-position: 50% 50%;
+	background-color: inherit;
 	color: #fff;
 }
 
@@ -2317,6 +2318,7 @@ img.avatar
 }
 
 #primary .event-list .event > .entry-title a,
+#primary #event-the-ball .entry-title a,
 #events .event > .entry-title a,
 #events-past .event > .entry-title a
 {
@@ -2396,6 +2398,65 @@ img.avatar
 #events-past.events-featured
 {
 	background-color: #535f89;
+}
+
+#event-the-ball
+{
+	background-color: inherit;
+	width: 100%;
+	margin: 0 auto;
+}
+
+#primary #event-the-ball .hentry
+{
+	padding: 1em;
+	background-color: #29386d;
+}
+
+#primary #event-the-ball .entry-title a
+{
+	color: #ffcc00;
+}
+
+#primary #event-the-ball .entry-title
+{
+	margin: 0 0 0.5em 0;
+	font-size: 150%;
+	line-height: 1.2;
+}
+
+#primary #event-the-ball .has-post-thumbnail .entry-header a
+{
+	width: 100%;
+}
+
+#primary #event-the-ball .entry-content
+{
+	width: 100%;
+}
+
+#primary #event-the-ball .entry-content .eo-event-date
+{
+	margin: 0.5em 0 0 0;
+	font-size: 110%;
+}
+
+#primary #event-the-ball .entry-content p
+{
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+#primary #event-the-ball .entry-content h3
+{
+	margin-top: 1em;
+	margin-bottom: 0.2em;
+}
+
+#primary #event-the-ball .entry-content h3 a.button
+{
+	font-size: 100%;
+	color: green;
 }
 
 #events .events-inner,
