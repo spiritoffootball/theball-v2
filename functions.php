@@ -236,7 +236,7 @@ function the_ball_v2_remove_post_type_support() {
 function the_ball_v2_styles() {
 
 	// Define version.
-	$version = THE_BALL_V2_THEME_DEBUG;
+	$version = THE_BALL_V2_THEME_VERSION;
 	if ( true === THE_BALL_V2_THEME_DEBUG ) {
 		$version .= '-' . time();
 	}
