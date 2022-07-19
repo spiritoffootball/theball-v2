@@ -10,6 +10,9 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+// Enable OpenGraph.
+add_filter( 'jetpack_enable_open_graph', '__return_true', 100 );
+
 /**
  * Jetpack setup function.
  *
@@ -50,7 +53,7 @@ function the_ball_v2_jetpack_setup() {
 
 }
 
-add_action( 'after_setup_theme', 'the_ball_v2_jetpack_setup' );
+//add_action( 'after_setup_theme', 'the_ball_v2_jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.

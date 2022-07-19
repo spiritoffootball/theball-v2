@@ -351,5 +351,4 @@ require get_template_directory() . '/includes/theme/template-tags.php';
 require get_template_directory() . '/includes/theme/extras.php';
 require get_template_directory() . '/includes/theme/login-screen.php';
 require get_template_directory() . '/includes/theme/customizer.php';
-// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
-//require get_template_directory() . '/includes/theme/jetpack.php';
+require get_template_directory() . '/includes/theme/jetpack.php';
