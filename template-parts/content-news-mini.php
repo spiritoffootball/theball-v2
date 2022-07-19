@@ -20,6 +20,8 @@ defined( 'ABSPATH' ) || exit;
 
 	<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
 
+	<?php the_ball_v2_post_date(); ?>
+
 	<div class="entry-content">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-content -->
