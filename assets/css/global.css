@@ -2411,6 +2411,7 @@ img.avatar
 {
 	padding: 1em;
 	background-color: #29386d;
+	border-radius: 5px;
 }
 
 #primary #event-the-ball .entry-title a
@@ -2800,6 +2801,7 @@ img.avatar
 	margin: 0 0 1.5em 0;
 	padding: 1em;
 	background-color: #29386d;
+	border-radius: 5px;
 }
 
 .pledge-data-display h2
