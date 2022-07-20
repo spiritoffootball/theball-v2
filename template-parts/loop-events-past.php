@@ -18,7 +18,7 @@ $events_args = [
 	'suppress_filters' => false,
 	'showpastevents' => true,
 	'event_start_before' => 'today',
-	'event_end_before' => 'today',
+	'event_end_before' => 'now',
 ];
 
 // The query.
