@@ -73,4 +73,26 @@ jQuery(document).ready( function($) {
 		event.stopPropagation();
 	});
 
+	/**
+	 * Enable responsive videos.
+	 *
+	 * @since 1.1.3
+	 */
+	$('.post, .page, .has_feature_video').fitVids({
+		customSelector: "iframe.dfb-video"
+	});
+
+	/**
+	 * Refresh responsive videos after any AJAX event completes.
+	 *
+	 * @since 1.1.3
+	 */
+	$(document).ajaxComplete( function() {
+		setTimeout( function() {
+			$('.post, .page, .has_feature_video').fitVids({
+				customSelector: "iframe.dfb-video"
+			});
+		}, 200 );
+	});
+
 });

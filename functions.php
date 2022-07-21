@@ -241,6 +241,9 @@ function the_ball_v2_styles() {
 		$version .= '-' . time();
 	}
 
+	// Use dashicons.
+	wp_enqueue_style( 'dashicons' );
+
 	// Screen stylesheet.
 	wp_enqueue_style(
 		'the-ball-v2-global',
@@ -277,6 +280,15 @@ function the_ball_v2_scripts() {
 		'the-ball-v2-navigation',
 		get_template_directory_uri() . '/assets/js/navigation.js',
 		[],
+		THE_BALL_V2_THEME_VERSION,
+		true
+	);
+
+	// Add responsive videos script.
+	wp_enqueue_script(
+		'theball_fitvids',
+		get_template_directory_uri() . '/assets/js/jquery.fitvids.js',
+		[ 'jquery' ],
 		THE_BALL_V2_THEME_VERSION,
 		true
 	);
