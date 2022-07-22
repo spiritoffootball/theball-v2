@@ -1408,6 +1408,7 @@ object {
 	background-position: 50% 50%;
 	background-color: inherit;
 	color: #111;
+	overflow: hidden;
 /* 	border: 1px solid #fff; */
 }
 
@@ -2400,6 +2401,63 @@ img.avatar
 	background-color: #535f89;
 }
 
+#events .events-inner,
+#events-past .events-inner
+{
+	width: 60%;
+	margin: 0 auto;
+	background-color: inherit;
+}
+
+#events .events-header,
+#events-past .events-header,
+#events .entry-header,
+#events-past .entry-header
+{
+	background-color: inherit;
+}
+
+#events a,
+#events-past a
+{
+/* 	color: #fff; */
+}
+
+#events .events-title,
+#events-past .events-title,
+.event-list-inner > .events-title
+{
+	text-transform: uppercase;
+	text-align: center;
+	padding: 1em 0 0.5em 0;
+	margin: 0;
+}
+
+.event-list-inner > .events-title
+{
+	padding-top: 0;
+}
+
+#events .loop-insert-footer a,
+#events-past .loop-insert-footer a
+{
+	border: 1px solid #fff;
+	color: #fff;
+}
+
+/*
+#events .loop-insert-footer a:after,
+#events-past .loop-insert-footer a:after
+{
+	background: #f04845;
+	border-left: 1px solid #fff;
+}
+ */
+
+/*--------------------------------------------------------------
+## "Make your Pledge with The Ball" Event Include
+--------------------------------------------------------------*/
+
 #event-the-ball
 {
 	background-color: inherit;
@@ -2460,58 +2518,15 @@ img.avatar
 	color: green;
 }
 
-#events .events-inner,
-#events-past .events-inner
-{
-	width: 60%;
-	margin: 0 auto;
-	background-color: inherit;
+@media all and (max-width: 640px) {
+
+	#event-the-ball
+	{
+		font-size: 70%;
+	}
+
 }
 
-#events .events-header,
-#events-past .events-header,
-#events .entry-header,
-#events-past .entry-header
-{
-	background-color: inherit;
-}
-
-#events a,
-#events-past a
-{
-/* 	color: #fff; */
-}
-
-#events .events-title,
-#events-past .events-title,
-.event-list-inner > .events-title
-{
-	text-transform: uppercase;
-	text-align: center;
-	padding: 1em 0 0.5em 0;
-	margin: 0;
-}
-
-.event-list-inner > .events-title
-{
-	padding-top: 0;
-}
-
-#events .loop-insert-footer a,
-#events-past .loop-insert-footer a
-{
-	border: 1px solid #fff;
-	color: #fff;
-}
-
-/*
-#events .loop-insert-footer a:after,
-#events-past .loop-insert-footer a:after
-{
-	background: #f04845;
-	border-left: 1px solid #fff;
-}
- */
 
 /*--------------------------------------------------------------
 ## Single Event
@@ -2860,31 +2875,50 @@ img.avatar
 
 @media all and (max-width: 640px) {
 
+	.pledge-data-display
+	{
+		font-size: 65%;
+	}
+
+}
+
+@media all and (max-width: 400px) {
+
+	.pledge-data-display
+	{
+		font-size: 50%;
+	}
+
 	.pledge-data-display .pledge-data-display-list li.data-item
 	{
-		min-width: 32%;
+		min-width: 24%;
 	}
 
 	.pledge-data-display .pledge-data-display-list li.data-item-1
 	{
-		margin-left: 8%;
-		min-width: 42%;
+		margin-left: auto;
+		min-width: 24%;
 	}
 
 	.pledge-data-display .pledge-data-display-list li.data-item-2
 	{
-		border-right: none;
+		border-right: 1px solid #fff;
 	}
 
 	.pledge-data-display .pledge-data-display-list li.data-item-3
 	{
-		clear: left;
-		min-width: 100%;
+		clear: none;
+		min-width: 52%;
 	}
 
 	.pledge-data-display .pledge-data-display-list .data-item-number
 	{
-		padding-bottom: 0;
+		padding-bottom: 0.1em;
+	}
+
+	.pledge-data-display .pledge-data-display-list .data-item-text
+	{
+		font-size: 1.2em;
 	}
 
 }
@@ -4323,7 +4357,13 @@ img.avatar
 	#primary .has-post-thumbnail .entry-header h1,
 	#primary .has-post-thumbnail .entry-header h2
 	{
-		padding: 7em 0 2em 0;
+		padding: 6em 0 1em 0;
+		font-size: 2.3em;
+	}
+
+	#teaser
+	{
+		padding-bottom: 0;
 	}
 
 	#teaser .hentry
@@ -4333,7 +4373,29 @@ img.avatar
 
 	.entry-content blockquote
 	{
-		font-size: 1.2em;
+		font-size: 1.1em;
+	}
+
+	#primary #event-the-ball .entry-content
+	{
+		font-size: 120%;
+	}
+
+}
+
+@media all and (max-width: 400px) {
+
+	.angled-right.angled-medium
+	{
+		height: 160px;
+	}
+
+	.angled-right.angled-medium:after
+	{
+		height: 173px;
+		width: 45px;
+		right: 21px;
+		top: 0;
 	}
 
 }
