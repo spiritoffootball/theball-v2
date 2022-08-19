@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || exit;
 
 ?>
 
-<!-- content-event-featured.php -->
+<!-- content-event-the-ball.php -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<h3 class="entry-title"><a href="<?php echo esc_url( get_permalink() . '#pledge' ); ?>" rel="bookmark"><?php esc_html_e( 'Make your pledge with The Ball', 'the-ball-v2' ); ?></a></h3>
 
