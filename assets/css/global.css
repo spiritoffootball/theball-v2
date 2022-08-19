@@ -1815,6 +1815,8 @@ img.avatar
 {
 	color: #ffcc00;
 	text-transform: uppercase;
+	line-height: 1.2;
+	margin-bottom: 0.5em;
 }
 
 .entry-content blockquote
@@ -2878,6 +2880,7 @@ img.avatar
 	.pledge-data-display
 	{
 		font-size: 65%;
+		margin-bottom: 3em;
 	}
 
 }
