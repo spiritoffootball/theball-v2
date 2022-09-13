@@ -15,6 +15,8 @@ $events_args = [
 	'post_type' => 'event',
 	'post_status' => 'publish',
 	'no_found_rows' => true,
+	'event_end_after' => 'now',
+	'posts_per_page' => -1,
 ];
 
 // The query.

@@ -19,6 +19,7 @@ $events_args = [
 	'showpastevents' => true,
 	'event_start_before' => 'today',
 	'event_end_before' => 'now',
+	'posts_per_page' => -1,
 ];
 
 // The query.

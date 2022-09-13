@@ -16,6 +16,7 @@ $events_args = [
 	'connected_items' => get_queried_object(),
 	'nopaging' => true,
 	'no_found_rows' => true,
+	'posts_per_page' => -1,
 ];
 
 // The query.
