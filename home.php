@@ -19,12 +19,11 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<section id="blog" class="content-area has-post-thumbnail clear">
+				<header class="entry-header"<?php echo the_ball_v2_get_home_feature_image_style(); ?>>
+					<h2 class="blog-title"><?php esc_html_e( 'News', 'the-ball-v2' ); ?></h2>
+				</header><!-- .blog-header -->
+
 				<div class="blog-inner">
-
-					<header class="entry-header"<?php echo the_ball_v2_get_home_feature_image_style(); ?>>
-						<h2 class="blog-title"><?php esc_html_e( 'News', 'the-ball-v2' ); ?></h2>
-					</header><!-- .blog-header -->
-
 					<div class="blog-posts clear">
 
 					<?php
@@ -49,7 +48,6 @@ get_header(); ?>
 					?>
 
 					</div><!-- .blog-posts -->
-
 					<footer class="blog-footer">
 						<?php the_posts_navigation(); ?>
 					</footer><!-- .blog-footer -->
