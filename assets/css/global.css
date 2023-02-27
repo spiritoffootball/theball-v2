@@ -3603,7 +3603,7 @@ span.quote-date
 
 .term-pledge #primary .quote-type-pledge-list .quote-citation p
 {
-	margin: 0.2em;
+	margin: 0.2em 0;
 }
 
 .term-pledge #primary .quote-type-pledge-list blockquote,
