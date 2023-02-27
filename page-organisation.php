@@ -12,79 +12,81 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-get_header(); ?>
+get_header();
 
-	<!-- page-organisation.php -->
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+?>
 
-		<section id="archive-header" class="content-area">
+<!-- page-organisation.php -->
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
+
+	<section id="archive-header" class="content-area">
+		<?php
+		while ( have_posts() ) :
+
+			the_post();
+
+			get_template_part( 'template-parts/content', 'page' );
+
+		endwhile; // End of the loop.
+		?>
+	</section>
+
+	<?php
+
+	// Define query args.
+	$organisations_args = [
+		'post_type' => 'organisation',
+		'post_status' => 'publish',
+		'order' => 'ASC',
+		'orderby' => 'title',
+		'posts_per_page' => -1,
+	];
+
+	// Do the query.
+	$organisations = new WP_Query( $organisations_args );
+
+	if ( $organisations->have_posts() ) :
+		?>
+
+		<section class="organisation-list insert-area clear">
+			<div class="organisation-list-inner">
 			<?php
-			while ( have_posts() ) :
 
-				the_post();
+			// Init counter for giving items classes.
+			$post_loop_counter = new The_Ball_v2_Counter();
 
-				get_template_part( 'template-parts/content', 'page' );
+			// Start the loop.
+			while ( $organisations->have_posts() ) :
 
-			endwhile; // End of the loop.
+				$organisations->the_post();
+
+				// Get mini template.
+				get_template_part( 'template-parts/content-organisation-mini' );
+
+			endwhile;
+
+			// Ditch counter.
+			$post_loop_counter->remove_filter();
+			unset( $post_loop_counter );
+
 			?>
-		</section>
+			</div>
+		</section><!-- .organisation-list -->
 
 		<?php
 
-		// Define query args.
-		$organisations_args = [
-			'post_type' => 'organisation',
-			'post_status' => 'publish',
-			'order' => 'ASC',
-			'orderby' => 'title',
-			'posts_per_page' => -1,
-		];
+		the_posts_navigation();
 
-		// Do the query.
-		$organisations = new WP_Query( $organisations_args );
+	else :
 
-		if ( $organisations->have_posts() ) :
-			?>
+		get_template_part( 'template-parts/content', 'coming-soon' );
 
-			<section class="organisation-list insert-area clear">
-				<div class="organisation-list-inner">
-				<?php
+	endif;
+	?>
 
-				// Init counter for giving items classes.
-				$post_loop_counter = new The_Ball_v2_Counter();
-
-				// Start the loop.
-				while ( $organisations->have_posts() ) :
-
-					$organisations->the_post();
-
-					// Get mini template.
-					get_template_part( 'template-parts/content-organisation-mini' );
-
-				endwhile;
-
-				// Ditch counter.
-				$post_loop_counter->remove_filter();
-				unset( $post_loop_counter );
-
-				?>
-				</div>
-			</section><!-- .organisation-list -->
-
-			<?php
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'coming-soon' );
-
-		endif;
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	</main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
 

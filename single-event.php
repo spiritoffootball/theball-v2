@@ -10,40 +10,42 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-get_header(); ?>
+get_header();
 
-	<!-- single-event.php -->
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+?>
 
-		<?php
-		while ( have_posts() ) :
+<!-- single-event.php -->
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
 
-			the_post();
+	<?php
+	while ( have_posts() ) :
 
-			get_template_part( 'template-parts/content', get_post_type() );
+		the_post();
 
-		endwhile; // End of the loop.
-		?>
+		get_template_part( 'template-parts/content', get_post_type() );
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	endwhile; // End of the loop.
+	?>
 
-	<?php if ( $hosts_loop = locate_template( 'template-parts/loop-hosts-by-event.php' ) ) : ?>
-		<?php load_template( $hosts_loop ); ?>
-	<?php endif; ?>
+	</main><!-- #main -->
+</div><!-- #primary -->
 
-	<?php if ( $pledge_form = locate_template( 'template-parts/form-pledge-single.php' ) ) : ?>
-		<?php load_template( $pledge_form ); ?>
-	<?php endif; ?>
+<?php if ( $hosts_loop = locate_template( 'template-parts/loop-hosts-by-event.php' ) ) : ?>
+	<?php load_template( $hosts_loop ); ?>
+<?php endif; ?>
 
-	<?php if ( $news_loop = locate_template( 'template-parts/loop-news-by-event.php' ) ) : ?>
-		<?php load_template( $news_loop ); ?>
-	<?php endif; ?>
+<?php if ( $pledge_form = locate_template( 'template-parts/form-pledge-single.php' ) ) : ?>
+	<?php load_template( $pledge_form ); ?>
+<?php endif; ?>
 
-	<?php if ( $event_loop = locate_template( 'template-parts/loop-events-other.php' ) ) : ?>
-		<?php load_template( $event_loop ); ?>
-	<?php endif; ?>
+<?php if ( $news_loop = locate_template( 'template-parts/loop-news-by-event.php' ) ) : ?>
+	<?php load_template( $news_loop ); ?>
+<?php endif; ?>
+
+<?php if ( $event_loop = locate_template( 'template-parts/loop-events-other.php' ) ) : ?>
+	<?php load_template( $event_loop ); ?>
+<?php endif; ?>
 
 <?php
 

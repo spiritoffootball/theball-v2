@@ -12,24 +12,26 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-get_header(); ?>
+get_header();
 
-	<!-- page-map.php -->
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+?>
 
-		<?php
-		while ( have_posts() ) :
+<!-- page-map.php -->
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
 
-			the_post();
+	<?php
+	while ( have_posts() ) :
 
-			get_template_part( 'template-parts/content', 'map' );
+		the_post();
 
-		endwhile; // End of the loop.
-		?>
+		get_template_part( 'template-parts/content', 'map' );
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	endwhile; // End of the loop.
+	?>
+
+	</main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
 

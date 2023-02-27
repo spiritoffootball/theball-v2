@@ -10,55 +10,57 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-get_header(); ?>
+get_header();
 
-	<!-- front-page.php -->
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+?>
 
-			<?php
-			while ( have_posts() ) :
+<!-- front-page.php -->
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
 
-				the_post();
+		<?php
+		while ( have_posts() ) :
 
-				get_template_part( 'template-parts/content', 'page' );
+			the_post();
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+			get_template_part( 'template-parts/content', 'page' );
 
-			endwhile; // End of the loop.
-			?>
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		endwhile; // End of the loop.
+		?>
 
-	<?php
+	</main><!-- #main -->
+</div><!-- #primary -->
 
-	/*
-	if ( $featured_event_loop = locate_template( 'template-parts/loop-events-featured.php' ) ) : ?>
-		<?php load_template( $featured_event_loop ); ?>
-	<?php endif;
-	*/
+<?php
 
-	?>
+/*
+if ( $featured_event_loop = locate_template( 'template-parts/loop-events-featured.php' ) ) : ?>
+	<?php load_template( $featured_event_loop ); ?>
+<?php endif;
+*/
 
-	<?php if ( $event_loop = locate_template( 'template-parts/loop-events.php' ) ) : ?>
-		<?php load_template( $event_loop ); ?>
-	<?php endif; ?>
+?>
 
-	<?php
-	/*
-	if ( $past_loop = locate_template( 'template-parts/loop-events-past.php' ) ) : ?>
-		<?php load_template( $past_loop ); ?>
-	<?php endif;
-	*/
-	?>
+<?php if ( $event_loop = locate_template( 'template-parts/loop-events.php' ) ) : ?>
+	<?php load_template( $event_loop ); ?>
+<?php endif; ?>
 
-	<?php if ( $news_loop = locate_template( 'template-parts/loop-news.php' ) ) : ?>
-		<?php load_template( $news_loop ); ?>
-	<?php endif; ?>
+<?php
+/*
+if ( $past_loop = locate_template( 'template-parts/loop-events-past.php' ) ) : ?>
+	<?php load_template( $past_loop ); ?>
+<?php endif;
+*/
+?>
+
+<?php if ( $news_loop = locate_template( 'template-parts/loop-news.php' ) ) : ?>
+	<?php load_template( $news_loop ); ?>
+<?php endif; ?>
 
 <?php
 

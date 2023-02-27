@@ -10,69 +10,71 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-get_header(); ?>
+get_header();
 
-	<!-- taxonomy-event-category.php -->
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+?>
 
-		<?php if ( have_posts() ) : ?>
+<!-- taxonomy-event-category.php -->
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
 
-			<section id="archive-header" class="content-area">
-				<article <?php post_class(); ?>>
-					<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
-						<h2 class="blog-title"><?php printf( __( '%s Events', 'the-ball-v2' ), single_cat_title( '', false ) ); ?></h2>
+	<?php if ( have_posts() ) : ?>
 
-						<?php
-						// If the category has a description display it.
-						$category_description = category_description();
-						if ( ! empty( $category_description ) ) {
-							echo apply_filters( 'category_archive_meta', '<div class="category-archive-meta">' . $category_description . '</div>' );
-						}
-						?>
-					</header><!-- .entry-header -->
-				</article><!-- #post-->
-			</section>
+		<section id="archive-header" class="content-area">
+			<article <?php post_class(); ?>>
+				<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
+					<h2 class="blog-title"><?php printf( __( '%s Events', 'the-ball-v2' ), single_cat_title( '', false ) ); ?></h2>
 
-			<section class="event-list insert-area clear">
-				<div class="event-list-inner">
-				<?php
+					<?php
+					// If the category has a description display it.
+					$category_description = category_description();
+					if ( ! empty( $category_description ) ) {
+						echo apply_filters( 'category_archive_meta', '<div class="category-archive-meta">' . $category_description . '</div>' );
+					}
+					?>
+				</header><!-- .entry-header -->
+			</article><!-- #post-->
+		</section>
 
-				// Init counter for giving items classes.
-				$post_loop_counter = new The_Ball_v2_Counter();
+		<section class="event-list insert-area clear">
+			<div class="event-list-inner">
+			<?php
 
-				// Start the loop.
-				while ( have_posts() ) :
+			// Init counter for giving items classes.
+			$post_loop_counter = new The_Ball_v2_Counter();
 
-					the_post();
+			// Start the loop.
+			while ( have_posts() ) :
 
-					// Get mini template.
-					get_template_part( 'template-parts/content-event-mini' );
+				the_post();
 
-				endwhile;
+				// Get mini template.
+				get_template_part( 'template-parts/content-event-mini' );
 
-				// Ditch counter.
-				$post_loop_counter->remove_filter();
-				unset( $post_loop_counter );
+			endwhile;
 
-				?>
-				</div>
-			</section><!-- .event-list -->
+			// Ditch counter.
+			$post_loop_counter->remove_filter();
+			unset( $post_loop_counter );
 
-			<footer class="blog-footer">
-				<?php the_posts_navigation(); ?>
-			</footer><!-- .blog-footer -->
+			?>
+			</div>
+		</section><!-- .event-list -->
 
-		<?php
-		else :
+		<footer class="blog-footer">
+			<?php the_posts_navigation(); ?>
+		</footer><!-- .blog-footer -->
 
-			get_template_part( 'template-parts/content', 'none' );
+	<?php
+	else :
 
-		endif;
-		?>
+		get_template_part( 'template-parts/content', 'none' );
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	endif;
+	?>
+
+	</main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
 

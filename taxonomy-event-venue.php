@@ -10,79 +10,81 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-get_header(); ?>
+get_header();
 
-	<!-- taxonomy-event-venue.php -->
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+?>
 
-		<?php if ( have_posts() ) : ?>
+<!-- taxonomy-event-venue.php -->
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
 
-			<section id="archive-header" class="content-area">
-				<article <?php post_class(); ?>>
-					<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
-						<?php $venue_id = get_queried_object_id(); ?>
-						<h1 class="page-title">
-							<?php printf( __( 'Events at: %s', 'the-ball-v2' ), '<span>' . eo_get_venue_name( $venue_id ) . '</span>' ); ?>
-						</h1>
+	<?php if ( have_posts() ) : ?>
 
-						<?php if ( $venue_description = eo_get_venue_description( $venue_id ) ) : ?>
-							<div class="venue-archive-meta"><?php echo $venue_description; ?></div>
-						<?php endif; ?>
+		<section id="archive-header" class="content-area">
+			<article <?php post_class(); ?>>
+				<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
+					<?php $venue_id = get_queried_object_id(); ?>
+					<h1 class="page-title">
+						<?php printf( __( 'Events at: %s', 'the-ball-v2' ), '<span>' . eo_get_venue_name( $venue_id ) . '</span>' ); ?>
+					</h1>
 
-						<?php
-						// Display the venue map. If specifying a class, ensure that class has height/width dimensions.
-						if ( eo_venue_has_latlng( $venue_id ) ) {
-							$venue_map_args = [
-								'width' => '100%',
-								'height' => '300px',
-							];
-							echo eo_get_venue_map( $venue_id, $venue_map_args );
-						}
-						?>
-					</header><!-- .entry-header -->
-				</article><!-- #post-->
-			</section>
+					<?php if ( $venue_description = eo_get_venue_description( $venue_id ) ) : ?>
+						<div class="venue-archive-meta"><?php echo $venue_description; ?></div>
+					<?php endif; ?>
 
-			<section class="event-list insert-area clear">
-				<div class="event-list-inner">
-				<?php
+					<?php
+					// Display the venue map. If specifying a class, ensure that class has height/width dimensions.
+					if ( eo_venue_has_latlng( $venue_id ) ) {
+						$venue_map_args = [
+							'width' => '100%',
+							'height' => '300px',
+						];
+						echo eo_get_venue_map( $venue_id, $venue_map_args );
+					}
+					?>
+				</header><!-- .entry-header -->
+			</article><!-- #post-->
+		</section>
 
-				// Init counter for giving items classes.
-				$post_loop_counter = new The_Ball_v2_Counter();
+		<section class="event-list insert-area clear">
+			<div class="event-list-inner">
+			<?php
 
-				// Start the loop.
-				while ( have_posts() ) :
+			// Init counter for giving items classes.
+			$post_loop_counter = new The_Ball_v2_Counter();
 
-					the_post();
+			// Start the loop.
+			while ( have_posts() ) :
 
-					// Get mini template.
-					get_template_part( 'template-parts/content-event-mini' );
+				the_post();
 
-				endwhile;
+				// Get mini template.
+				get_template_part( 'template-parts/content-event-mini' );
 
-				// Ditch counter.
-				$post_loop_counter->remove_filter();
-				unset( $post_loop_counter );
+			endwhile;
 
-				?>
-				</div>
-			</section><!-- .event-list -->
+			// Ditch counter.
+			$post_loop_counter->remove_filter();
+			unset( $post_loop_counter );
 
-			<footer class="blog-footer">
-				<?php the_posts_navigation(); ?>
-			</footer><!-- .blog-footer -->
+			?>
+			</div>
+		</section><!-- .event-list -->
 
-		<?php
-		else :
+		<footer class="blog-footer">
+			<?php the_posts_navigation(); ?>
+		</footer><!-- .blog-footer -->
 
-			get_template_part( 'template-parts/content', 'none' );
+	<?php
+	else :
 
-		endif;
-		?>
+		get_template_part( 'template-parts/content', 'none' );
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	endif;
+	?>
+
+	</main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
 

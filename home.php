@@ -10,65 +10,67 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-get_header(); ?>
+get_header();
 
-	<!-- home.php -->
-	<div id="primary" class="content-area yuck">
-		<main id="main" class="site-main" role="main">
+?>
 
-		<?php if ( have_posts() ) : ?>
+<!-- home.php -->
+<div id="primary" class="content-area yuck">
+	<main id="main" class="site-main" role="main">
 
-			<section id="blog" class="content-area has-post-thumbnail clear">
-				<header class="entry-header"<?php echo the_ball_v2_get_home_feature_image_style(); ?>>
-					<h2 class="blog-title"><?php esc_html_e( 'News', 'the-ball-v2' ); ?></h2>
-				</header><!-- .blog-header -->
+	<?php if ( have_posts() ) : ?>
 
-				<div class="blog-inner">
-					<div class="blog-posts clear">
+		<section id="blog" class="content-area has-post-thumbnail clear">
+			<header class="entry-header"<?php echo the_ball_v2_get_home_feature_image_style(); ?>>
+				<h2 class="blog-title"><?php esc_html_e( 'News', 'the-ball-v2' ); ?></h2>
+			</header><!-- .blog-header -->
 
-					<?php
+			<div class="blog-inner">
+				<div class="blog-posts clear">
 
-					// Init counter for giving items classes.
-					$post_loop_counter = new The_Ball_v2_Counter();
+				<?php
 
-					// Start the loop.
-					while ( have_posts() ) :
+				// Init counter for giving items classes.
+				$post_loop_counter = new The_Ball_v2_Counter();
 
-						the_post();
+				// Start the loop.
+				while ( have_posts() ) :
 
-						// Get mini template.
-						get_template_part( 'template-parts/content-news-mini' );
+					the_post();
 
-					endwhile;
+					// Get mini template.
+					get_template_part( 'template-parts/content-news-mini' );
 
-					// Ditch counter.
-					$post_loop_counter->remove_filter();
-					unset( $post_loop_counter );
+				endwhile;
 
-					?>
+				// Ditch counter.
+				$post_loop_counter->remove_filter();
+				unset( $post_loop_counter );
 
-					</div><!-- .blog-posts -->
-					<footer class="blog-footer">
-						<?php the_posts_navigation(); ?>
-					</footer><!-- .blog-footer -->
+				?>
 
-				</div><!-- .blog-inner -->
-			</section><!-- #blog -->
+				</div><!-- .blog-posts -->
+				<footer class="blog-footer">
+					<?php the_posts_navigation(); ?>
+				</footer><!-- .blog-footer -->
 
-		<?php
-		else :
+			</div><!-- .blog-inner -->
+		</section><!-- #blog -->
 
-			get_template_part( 'template-parts/content', 'none' );
+	<?php
+	else :
 
-		endif;
-		?>
+		get_template_part( 'template-parts/content', 'none' );
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	endif;
+	?>
 
-	<?php if ( $meta_loop = locate_template( 'template-parts/loop-news-meta.php' ) ) : ?>
-		<?php load_template( $meta_loop ); ?>
-	<?php endif; ?>
+	</main><!-- #main -->
+</div><!-- #primary -->
+
+<?php if ( $meta_loop = locate_template( 'template-parts/loop-news-meta.php' ) ) : ?>
+	<?php load_template( $meta_loop ); ?>
+<?php endif; ?>
 
 <?php
 

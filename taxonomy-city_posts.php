@@ -10,62 +10,64 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-get_header(); ?>
+get_header();
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+?>
 
-		<?php if ( have_posts() ) : ?>
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
 
-			<section id="blog" class="content-area clear">
-				<div class="blog-inner">
+	<?php if ( have_posts() ) : ?>
 
-					<header class="blog-header">
-						<h2 class="blog-title"><?php echo sprintf( __( '%s News', 'the-ball-v2' ), single_cat_title( '', false ) ); ?></h2>
-					</header><!-- .blog-header -->
+		<section id="blog" class="content-area clear">
+			<div class="blog-inner">
 
-					<div class="blog-posts clear">
+				<header class="blog-header">
+					<h2 class="blog-title"><?php echo sprintf( __( '%s News', 'the-ball-v2' ), single_cat_title( '', false ) ); ?></h2>
+				</header><!-- .blog-header -->
 
-					<?php
+				<div class="blog-posts clear">
 
-					// Init counter for giving items classes.
-					$post_loop_counter = new The_Ball_v2_Counter();
+				<?php
 
-					// Start the loop.
-					while ( have_posts() ) :
+				// Init counter for giving items classes.
+				$post_loop_counter = new The_Ball_v2_Counter();
 
-						the_post();
+				// Start the loop.
+				while ( have_posts() ) :
 
-						// Get mini template.
-						get_template_part( 'template-parts/content-news-mini' );
+					the_post();
 
-					endwhile;
+					// Get mini template.
+					get_template_part( 'template-parts/content-news-mini' );
 
-					// Ditch counter.
-					$post_loop_counter->remove_filter();
-					unset( $post_loop_counter );
+				endwhile;
 
-					?>
+				// Ditch counter.
+				$post_loop_counter->remove_filter();
+				unset( $post_loop_counter );
 
-					</div><!-- .blog-posts -->
+				?>
 
-					<footer class="blog-footer">
-						<?php the_posts_navigation(); ?>
-					</footer><!-- .blog-footer -->
+				</div><!-- .blog-posts -->
 
-				</div><!-- .blog-inner -->
-			</section><!-- #blog -->
+				<footer class="blog-footer">
+					<?php the_posts_navigation(); ?>
+				</footer><!-- .blog-footer -->
 
-		<?php
-		else :
+			</div><!-- .blog-inner -->
+		</section><!-- #blog -->
 
-			get_template_part( 'template-parts/content', 'none' );
+	<?php
+	else :
 
-		endif;
-		?>
+		get_template_part( 'template-parts/content', 'none' );
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	endif;
+	?>
+
+	</main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
 
