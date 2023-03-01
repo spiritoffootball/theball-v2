@@ -25,25 +25,6 @@ get_header();
 
 		global $post;
 
-		///*
-		$e = new \Exception();
-		$trace = $e->getTraceAsString();
-		error_log( print_r( [
-			'method' => __METHOD__,
-			'post' => $post,
-			//'backtrace' => $trace,
-		], true ) );
-
-		$e = new \Exception();
-		$trace = $e->getTraceAsString();
-		error_log( print_r( [
-			'method' => __METHOD__,
-			'is-pledge' => has_term( 'pledge', 'quote-type' ) ? 'yes' : 'no',
-			'is-statement' => has_term( 'statement', 'quote-type' ) ? 'yes' : 'no',
-			//'backtrace' => $trace,
-		], true ) );
-		//*/
-
 		if ( has_term( 'pledge', 'quote-type' ) ) {
 			get_template_part( 'template-parts/content', 'quote-pledge' );
 		} elseif ( has_term( 'statement', 'quote-type' ) ) {

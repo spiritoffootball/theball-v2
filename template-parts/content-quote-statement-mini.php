@@ -36,19 +36,7 @@ defined( 'ABSPATH' ) || exit;
 		</header><!-- .entry-header -->
 
 		<div class="entry-content clear">
-			<?php $image = get_field( 'image' );
-
-			/*
-			$e = new \Exception();
-			$trace = $e->getTraceAsString();
-			error_log( print_r( [
-				'method' => __METHOD__,
-				'image' => $image,
-				//'backtrace' => $trace,
-			], true ) );
-			*/
-
-			?>
+			<?php $image = get_field( 'image' ); ?>
 			<?php if ( ! empty( $image ) ) : ?>
 				<div class="quote-image">
 					<img src="<?php echo $image['url']; ?>">
