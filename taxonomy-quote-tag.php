@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying Quotes of type Statement.
+ * The template for displaying an archive of Quotes with a Tag.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -14,7 +14,7 @@ get_header();
 
 ?>
 
-<!-- taxonomy-quote-type-statement.php -->
+<!-- taxonomy-quote-tag.php -->
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 
@@ -23,7 +23,7 @@ get_header();
 		<section id="archive-header" class="content-area">
 			<article <?php post_class(); ?>>
 				<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
-					<h2 class="blog-title"><?php esc_html_e( 'Statements', 'the-ball-v2' ); ?></h2>
+					<h2 class="blog-title"><?php echo single_tag_title(); ?></h2>
 
 					<?php
 					// If the category has a description display it.
@@ -43,15 +43,27 @@ get_header();
 			// Init counter for giving items classes.
 			$post_loop_counter = new The_Ball_v2_Counter();
 
-			// Start the loop.
-			while ( have_posts() ) :
+			?>
 
-				the_post();
+			<?php while ( have_posts() ) : ?>
 
-				// Get mini template.
-				get_template_part( 'template-parts/content-quote-statement-mini' );
+				<?php the_post(); ?>
 
-			endwhile;
+				<?php if ( has_term( 'pledge', 'quote-type' ) ) : ?>
+					<div class="quote-type quote-type-pledge-inner">
+						<?php get_template_part( 'template-parts/content', 'quote-pledge' ); ?>
+					</div>
+				<?php elseif ( has_term( 'statement', 'quote-type' ) ) : ?>
+					<div class="quote-type quote-type-statement-inner">
+						<?php get_template_part( 'template-parts/content', 'quote-statement' ); ?>
+					</div>
+				<?php else: ?>
+					<?php get_template_part( 'template-parts/content', 'quote' ); ?>
+				<?php endif; ?>
+
+			<?php endwhile; ?>
+
+			<?php
 
 			// Ditch counter.
 			$post_loop_counter->remove_filter();

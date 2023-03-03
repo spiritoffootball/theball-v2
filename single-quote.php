@@ -23,17 +23,19 @@ get_header();
 		<?php the_post(); ?>
 		<?php global $post; ?>
 
-		<?php if ( has_term( 'pledge', 'quote-type' ) ) : ?>
-			<div class="quote-type quote-type-pledge-inner">
-				<?php get_template_part( 'template-parts/content', 'quote-pledge' ); ?>
+		<section class="quote-container insert-area clear">
+			<div class="quote-container-inner">
+
+				<?php if ( has_term( 'pledge', 'quote-type' ) ) : ?>
+					<?php get_template_part( 'template-parts/content', 'quote-pledge' ); ?>
+				<?php elseif ( has_term( 'statement', 'quote-type' ) ) : ?>
+					<?php get_template_part( 'template-parts/content', 'quote-statement' ); ?>
+				<?php else: ?>
+					<?php get_template_part( 'template-parts/content', 'quote' ); ?>
+				<?php endif; ?>
+
 			</div>
-		<?php elseif ( has_term( 'statement', 'quote-type' ) ) : ?>
-			<div class="quote-type quote-type-statement-inner">
-				<?php get_template_part( 'template-parts/content', 'quote-statement' ); ?>
-			</div>
-		<?php else: ?>
-			<?php get_template_part( 'template-parts/content', 'quote' ); ?>
-		<?php endif; ?>
+		</section><!-- .quote-container -->
 
 	<?php endwhile; ?>
 

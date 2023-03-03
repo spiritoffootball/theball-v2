@@ -36,8 +36,8 @@ get_header();
 			</article><!-- #post-->
 		</section>
 
-		<section class="quote-type-pledge-list insert-area clear">
-			<div class="quote-type-pledge-list-inner">
+		<section class="quote-container insert-area clear">
+			<div class="quote-container-inner">
 			<?php
 
 			// Init counter for giving items classes.
@@ -59,7 +59,7 @@ get_header();
 
 			?>
 			</div>
-		</section><!-- .quote-type-pledge-list -->
+		</section><!-- .quote-container -->
 
 		<footer class="blog-footer">
 			<?php the_posts_navigation(); ?>

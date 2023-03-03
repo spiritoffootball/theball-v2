@@ -3280,368 +3280,45 @@ img.avatar
 }
 
 /*--------------------------------------------------------------
-## Statement Quote Archive
---------------------------------------------------------------*/
-
-.term-statement #primary .quote-type-statement-list
-{
-	background-color: #535f89;
-}
-
-.term-statement #primary .quote-type-statement-list .quote
-{
-	background-color: #fff;
-	width: 60%;
-	margin: 3em auto;
-}
-
-.term-statement #primary .quote-type-statement-list .quote-inner
-{
-	padding: 2em;
-	position: relative;
-}
-
-.term-statement #primary .quote-type-statement-list .entry-header:before
-{
-	content: "";
-	display: block;
-	position: absolute;
-	background: transparent url("../images/textures/stripe-green.png") 0 0 no-repeat;
-	background-size: contain;
-	width: 52%;
-	height: 40%;
-}
-
-.term-statement #primary .quote-type-statement-list .entry-header
-{
-	float: left;
-	width: 49%;
-}
-
-.term-statement #primary .quote-type-statement-list .entry-header-inner
-{
-	transform: rotate(-4deg);
-	position: absolute;
-	top: 11%;
-	left: 11%;
-	width: 41%;
-}
-
-.term-statement #primary .quote-type-statement-list .quote .entry-title
-{
-	margin: 0;
-	font-size: 150%;
-	line-height: 1;
-	padding: 0;
-	text-align: left;
-	font-weight: bold;
-	white-space: nowrap;
-}
-
-.term-statement #primary .quote-type-statement-list .quote .quote-about,
-.term-statement #primary .quote-type-statement-list .quote .quote-date
-{
-	text-align: left;
-	line-height: 1.3;
-}
-
-.term-statement #primary .quote-type-statement-list .quote .entry-title a
-{
-	text-decoration: none;
-	color: #ffcc00;
-}
-
-.term-statement #primary .quote-type-statement-list .entry-content
-{
-	width: auto;
-}
-
-.term-statement #primary .quote-type-statement-list .quote-image
-{
-	float: right;
-	width: 50%;
-	line-height: 0;
-}
-
-.term-statement #primary .quote-type-statement-list .quote-content
-{
-	width: 44%;
-	margin: 0 2%;
-	margin-top: 20%;
-}
-
-.term-statement #primary .quote-type-statement-list blockquote,
-.term-statement #primary .quote-type-statement-list blockquote p:before,
-.term-statement #primary .quote-type-statement-list blockquote p:after
-{
-	color: #000;
-	font-size: 120%;
-}
-
-@media all and (max-width: 1200px) {
-
-	.term-statement #primary .quote-type-statement-list .quote-content
-	{
-		font-size: 80%;
-	}
-
-}
-
-@media all and (max-width: 782px) {
-
-	.term-statement #primary .quote-type-statement-list .entry-header
-	{
-		width: 60%;
-	}
-
-	.term-statement #primary .quote-type-statement-list .entry-header:before
-	{
-		width: 80%;
-		height: 40%;
-	}
-
-	.term-statement #primary .quote-type-statement-list .entry-header-inner
-	{
-		top: 6%;
-		left: 15%;
-		width: 60%;
-	}
-
-	.term-statement #primary .quote-type-statement-list .quote-inner
-	{
-		padding: 1.5em;
-	}
-
-	.term-statement #primary .quote-type-statement-list .quote-image
-	{
-		float: none;
-		width: auto;
-		margin-top: 15%;
-	}
-
-	.term-statement #primary .quote-type-statement-list .quote-image img
-	{
-		width: 100%;
-	}
-
-	.term-statement #primary .quote-type-statement-list .quote-content
-	{
-		width: 96%;
-		margin: 1em auto 0;
-		font-size: 100%;
-	}
-
-}
-
-@media all and (max-width: 600px) {
-
-	.term-statement #primary .quote-type-statement-list .entry-header:before
-	{
-		width: 100%;
-		background-size: cover;
-		height: 230px;
-		background-position: -170px -90px;
-		left: 0;
-		top: 0;
-	}
-
-	.term-statement #primary .quote-type-statement-list .quote-image
-	{
-		margin-top: 90px;
-	}
-
-	.term-statement #primary .quote-type-statement-list .entry-header-inner
-	{
-		top: 20px;
-		left: 20px;
-		width: 90%;
-		transform: none;
-	}
-
-	.term-statement #primary .quote-type-statement-list .quote .entry-title
-	{
-		white-space: normal;
-	}
-
-	.term-statement #primary .quote-type-statement-list blockquote,
-	.term-statement #primary .quote-type-statement-list blockquote p:before,
-	.term-statement #primary .quote-type-statement-list blockquote p:after
-	{
-		font-size: 100%;
-	}
-
-}
-
-/*--------------------------------------------------------------
-## Pledge Quote Archive
---------------------------------------------------------------*/
-
-.term-pledge #primary .quote-type-pledge-list
-{
-	background-color: #535f89;
-}
-
-.term-pledge #primary .quote-type-pledge-list .quote
-{
-	background-color: #fff;
-	width: 60%;
-	margin: 3em auto;
-}
-
-.term-pledge #primary .quote-type-pledge-list .quote-inner
-{
-	padding: 2em;
-	position: relative;
-}
-
-.term-pledge #primary .quote-type-pledge-list .quote .quote-about,
-.term-pledge #primary .quote-type-pledge-list .quote .quote-date
-{
-	text-align: left;
-	line-height: 1.3;
-	color: #000;
-}
-
-.term-pledge #primary .quote-type-pledge-list .entry-content
-{
-	width: auto;
-}
-
-.term-pledge #primary .quote-type-pledge-list .entry-content .entry-title
-{
-	clear: none;
-	color: #349936;
-	font-weight: bold;
-	line-height: 1;
-	margin: 0;
-	padding: 0;
-}
-
-.term-pledge #primary .quote-type-pledge-list .entry-content .quote-i-pledge .entry-title
-{
-	font-size: 300%;
-}
-
-.term-pledge #primary .quote-type-pledge-list .quote-image
-{
-	float: left;
-	width: 50%;
-	line-height: 0;
-}
-
-.term-pledge #primary .quote-type-pledge-list .entry-content .quote-i-pledge,
-.term-pledge #primary .quote-type-pledge-list .quote-content,
-.term-pledge #primary .quote-type-pledge-list .quote-citation
-{
-	margin-left: 52%;
-}
-
-.term-pledge #primary .quote-type-pledge-list .quote-content
-{
-	margin-bottom: 2em;
-}
-
-.term-pledge #primary .quote-type-pledge-list .quote-citation p
-{
-	margin: 0.2em 0;
-}
-
-.term-pledge #primary .quote-type-pledge-list blockquote,
-.term-pledge #primary .quote-type-pledge-list blockquote p:before,
-.term-pledge #primary .quote-type-pledge-list blockquote p:after
-{
-	color: #000;
-	font-size: 120%;
-}
-
-@media all and (max-width: 1200px) {
-
-	.term-pledge #primary .quote-type-pledge-list .quote-content
-	{
-		font-size: 80%;
-	}
-
-}
-
-@media all and (max-width: 782px) {
-
-	.term-pledge #primary .quote-type-pledge-list .quote-image
-	{
-		float: none;
-		width: auto;
-	}
-
-	.term-pledge #primary .quote-type-pledge-list .quote-image img
-	{
-		width: 100%;
-	}
-
-	.term-pledge #primary .quote-type-pledge-list .entry-content .quote-i-pledge,
-	.term-pledge #primary .quote-type-pledge-list .quote-content,
-	.term-pledge #primary .quote-type-pledge-list .quote-citation
-	{
-		margin: 0;
-	}
-
-	.term-pledge #primary .quote-type-pledge-list .entry-content .quote-i-pledge
-	{
-		position: absolute;
-		top: 1em;
-		font-size: 150%;
-	}
-
-	.term-pledge #primary .quote-type-pledge-list .entry-content .quote-i-pledge .entry-title
-	{
-		text-shadow: 0 0 20px #fff;
-	}
-
-}
-
-@media all and (max-width: 480px) {
-
-	.term-pledge #primary .quote-type-pledge-list .entry-content .quote-i-pledge .entry-title
-	{
-		font-size: 200%;
-	}
-
-}
-
-/*--------------------------------------------------------------
 ## Single Quote
 --------------------------------------------------------------*/
 
-.single-quote #primary .quote-type
+#primary .quote-container
 {
 	background-color: #535f89;
+}
+
+.single-quote #primary .quote-container
+{
 	padding: 9em 0 3em 0;
 }
 
-.single-quote #primary .quote-type .quote
+#primary .quote-container .quote
 {
 	background-color: #fff;
 	width: 60%;
 	margin: 3em auto;
 }
 
-.single-quote #primary .quote-type .quote-inner
+#primary .quote-container .quote-inner
 {
 	padding: 2em;
 	position: relative;
 }
 
-.single-quote .entry-header
+.quote-container .quote .entry-header
 {
 	padding-bottom: 1em;
 }
 
-span.quote-about,
-span.quote-date
+.quote-container .quote span.quote-about,
+.quote-container .quote span.quote-date
 {
 	display: block;
 }
 
-.single-quote .quote-about,
-.single-quote .quote-date
+.quote-container .quote .quote-about,
+.quote-container .quote .quote-date
 {
 	text-align: center;
 }
@@ -3650,7 +3327,7 @@ span.quote-date
 ## Single Statement Quote
 --------------------------------------------------------------*/
 
-.single-quote #primary .quote-type-statement-inner .entry-header:before
+#primary .quote-container .quote.quote-type-statement .entry-header:before
 {
 	content: "";
 	display: block;
@@ -3661,13 +3338,13 @@ span.quote-date
 	height: 40%;
 }
 
-.single-quote #primary .quote-type-statement-inner .entry-header
+#primary .quote-container .quote.quote-type-statement .entry-header
 {
 	float: left;
 	width: 49%;
 }
 
-.single-quote #primary .quote-type-statement-inner .entry-header-inner
+#primary .quote-container .quote.quote-type-statement .entry-header-inner
 {
 	transform: rotate(-4deg);
 	position: absolute;
@@ -3676,7 +3353,8 @@ span.quote-date
 	width: 41%;
 }
 
-.single-quote #primary .quote-type-statement-inner .quote h1.entry-title
+#primary .quote-container .quote.quote-type-statement h1.entry-title,
+#primary .quote-container .quote.quote-type-statement h2.entry-title
 {
 	margin: 0;
 	font-size: 150%;
@@ -3688,41 +3366,41 @@ span.quote-date
 	color: #ffcc00;
 }
 
-.single-quote #primary .quote-type-statement-inner .quote .quote-about,
-.single-quote #primary .quote-type-statement-inner .quote .quote-date
+#primary .quote-container .quote.quote-type-statement .quote-about,
+#primary .quote-container .quote.quote-type-statement .quote-date
 {
 	text-align: left;
 	line-height: 1.3;
 }
 
-.single-quote #primary .quote-type-statement-inner .quote .entry-title a
+#primary .quote-container .quote.quote-type-statement .entry-title a
 {
 	text-decoration: none;
 	color: #ffcc00;
 }
 
-.single-quote #primary .quote-type-statement-inner .entry-content
+#primary .quote-container .quote.quote-type-statement .entry-content
 {
 	width: auto;
 }
 
-.single-quote #primary .quote-type-statement-inner .quote-image
+#primary .quote-container .quote.quote-type-statement .quote-image
 {
 	float: right;
 	width: 50%;
 	line-height: 0;
 }
 
-.single-quote #primary .quote-type-statement-inner .quote-content
+#primary .quote-container .quote.quote-type-statement .quote-content
 {
 	width: 44%;
 	margin: 0 2%;
 	margin-top: 20%;
 }
 
-.single-quote #primary .quote-type-statement-inner blockquote,
-.single-quote #primary .quote-type-statement-inner blockquote p:before,
-.single-quote #primary .quote-type-statement-inner blockquote p:after
+#primary .quote-container .quote.quote-type-statement blockquote,
+#primary .quote-container .quote.quote-type-statement blockquote p:before,
+#primary .quote-container .quote.quote-type-statement blockquote p:after
 {
 	color: #000;
 	font-size: 120%;
@@ -3730,7 +3408,7 @@ span.quote-date
 
 @media all and (max-width: 1200px) {
 
-	.single-quote #primary .quote-type-statement-inner .quote-content
+	#primary .quote-container .quote.quote-type-statement .quote-content
 	{
 		font-size: 80%;
 	}
@@ -3739,42 +3417,42 @@ span.quote-date
 
 @media all and (max-width: 782px) {
 
-	.single-quote #primary .quote-type-statement-inner .entry-header
+	#primary .quote-container .quote.quote-type-statement .entry-header
 	{
 		width: 60%;
 	}
 
-	.single-quote #primary .quote-type-statement-inner .entry-header:before
+	#primary .quote-container .quote.quote-type-statement .entry-header:before
 	{
 		width: 80%;
 		height: 40%;
 	}
 
-	.single-quote #primary .quote-type-statement-inner .entry-header-inner
+	#primary .quote-container .quote.quote-type-statement .entry-header-inner
 	{
 		top: 6%;
 		left: 15%;
 		width: 60%;
 	}
 
-	.single-quote #primary .quote-type-statement-inner .quote-inner
+	#primary .quote-container .quote.quote-type-statement .quote-inner
 	{
 		padding: 1.5em;
 	}
 
-	.single-quote #primary .quote-type-statement-inner .quote-image
+	#primary .quote-container .quote.quote-type-statement .quote-image
 	{
 		float: none;
 		width: auto;
 		margin-top: 15%;
 	}
 
-	.single-quote #primary .quote-type-statement-inner .quote-image img
+	#primary .quote-container .quote.quote-type-statement .quote-image img
 	{
 		width: 100%;
 	}
 
-	.single-quote #primary .quote-type-statement-inner .quote-content
+	#primary .quote-container .quote.quote-type-statement .quote-content
 	{
 		width: 96%;
 		margin: 1em auto 0;
@@ -3785,7 +3463,7 @@ span.quote-date
 
 @media all and (max-width: 600px) {
 
-	.single-quote #primary .quote-type-statement-inner .entry-header:before
+	#primary .quote-container .quote.quote-type-statement .entry-header:before
 	{
 		width: 100%;
 		background-size: cover;
@@ -3795,12 +3473,12 @@ span.quote-date
 		top: 0;
 	}
 
-	.single-quote #primary .quote-type-statement-inner .quote-image
+	#primary .quote-container .quote.quote-type-statement .quote-image
 	{
 		margin-top: 90px;
 	}
 
-	.single-quote #primary .quote-type-statement-inner .entry-header-inner
+	#primary .quote-container .quote.quote-type-statement .entry-header-inner
 	{
 		top: 20px;
 		left: 20px;
@@ -3808,14 +3486,14 @@ span.quote-date
 		transform: none;
 	}
 
-	.single-quote #primary .quote-type-statement-inner .quote .entry-title
+	#primary .quote-container .quote.quote-type-statement .entry-title
 	{
 		white-space: normal;
 	}
 
-	.single-quote #primary .quote-type-statement-inner blockquote,
-	.single-quote #primary .quote-type-statement-inner blockquote p:before,
-	.single-quote #primary .quote-type-statement-inner blockquote p:after
+	#primary .quote-container .quote.quote-type-statement blockquote,
+	#primary .quote-container .quote.quote-type-statement blockquote p:before,
+	#primary .quote-container .quote.quote-type-statement blockquote p:after
 	{
 		font-size: 100%;
 	}
@@ -3826,20 +3504,20 @@ span.quote-date
 ## Single Pledge Quote
 --------------------------------------------------------------*/
 
-.single-quote #primary .quote-type-pledge-inner .quote .quote-about,
-.single-quote #primary .quote-type-pledge-inner .quote .quote-date
+#primary .quote.quote-type-pledge .quote-about,
+#primary .quote.quote-type-pledge .quote-date
 {
 	text-align: left;
 	line-height: 1.3;
 	color: #000;
 }
 
-.single-quote #primary .quote-type-pledge-inner .entry-content
+#primary .quote.quote-type-pledge .entry-content
 {
 	width: auto;
 }
 
-.single-quote #primary .quote-type-pledge-inner .entry-content .entry-title
+#primary .quote.quote-type-pledge .entry-content .entry-title
 {
 	clear: none;
 	color: #349936;
@@ -3849,38 +3527,38 @@ span.quote-date
 	padding: 0;
 }
 
-.single-quote #primary .quote-type-pledge-inner .entry-content .quote-i-pledge .entry-title
+#primary .quote.quote-type-pledge .entry-content .quote-i-pledge .entry-title
 {
 	font-size: 300%;
 }
 
-.single-quote #primary .quote-type-pledge-inner .quote-image
+#primary .quote.quote-type-pledge .quote-image
 {
 	float: left;
 	width: 50%;
 	line-height: 0;
 }
 
-.single-quote #primary .quote-type-pledge-inner .entry-content .quote-i-pledge,
-.single-quote #primary .quote-type-pledge-inner .quote-content,
-.single-quote #primary .quote-type-pledge-inner .quote-citation
+#primary .quote.quote-type-pledge .entry-content .quote-i-pledge,
+#primary .quote.quote-type-pledge .quote-content,
+#primary .quote.quote-type-pledge .quote-citation
 {
 	margin-left: 52%;
 }
 
-.single-quote #primary .quote-type-pledge-inner .quote-content
+#primary .quote.quote-type-pledge .quote-content
 {
 	margin-bottom: 2em;
 }
 
-.single-quote #primary .quote-type-pledge-inner .quote-citation p
+#primary .quote.quote-type-pledge .quote-citation p
 {
 	margin: 0.2em 0;
 }
 
-.single-quote #primary .quote-type-pledge-inner blockquote,
-.single-quote #primary .quote-type-pledge-inner blockquote p:before,
-.single-quote #primary .quote-type-pledge-inner blockquote p:after
+#primary .quote.quote-type-pledge blockquote,
+#primary .quote.quote-type-pledge blockquote p:before,
+#primary .quote.quote-type-pledge blockquote p:after
 {
 	color: #000;
 	font-size: 120%;
@@ -3888,7 +3566,7 @@ span.quote-date
 
 @media all and (max-width: 1200px) {
 
-	.single-quote #primary .quote-type-pledge-inner .quote-content
+	#primary .quote.quote-type-pledge .quote-content
 	{
 		font-size: 80%;
 	}
@@ -3897,32 +3575,32 @@ span.quote-date
 
 @media all and (max-width: 782px) {
 
-	.single-quote #primary .quote-type-pledge-inner .quote-image
+	#primary .quote.quote-type-pledge .quote-image
 	{
 		float: none;
 		width: auto;
 	}
 
-	.single-quote #primary .quote-type-pledge-inner .quote-image img
+	#primary .quote.quote-type-pledge .quote-image img
 	{
 		width: 100%;
 	}
 
-	.single-quote #primary .quote-type-pledge-inner .entry-content .quote-i-pledge,
-	.single-quote #primary .quote-type-pledge-inner .quote-content,
-	.single-quote #primary .quote-type-pledge-inner .quote-citation
+	#primary .quote.quote-type-pledge .entry-content .quote-i-pledge,
+	#primary .quote.quote-type-pledge .quote-content,
+	#primary .quote.quote-type-pledge .quote-citation
 	{
 		margin: 0;
 	}
 
-	.single-quote #primary .quote-type-pledge-inner .entry-content .quote-i-pledge
+	#primary .quote.quote-type-pledge .entry-content .quote-i-pledge
 	{
 		position: absolute;
 		top: 1em;
 		font-size: 150%;
 	}
 
-	.single-quote #primary .quote-type-pledge-inner .entry-content .quote-i-pledge .entry-title
+	#primary .quote.quote-type-pledge .entry-content .quote-i-pledge .entry-title
 	{
 		text-shadow: 0 0 20px #fff;
 	}
@@ -3931,7 +3609,7 @@ span.quote-date
 
 @media all and (max-width: 480px) {
 
-	.single-quote #primary .quote-type-pledge-inner .entry-content .quote-i-pledge .entry-title
+	#primary .quote.quote-type-pledge .entry-content .quote-i-pledge .entry-title
 	{
 		font-size: 200%;
 	}
@@ -4462,9 +4140,7 @@ span.quote-date
 
 @media all and (max-width: 1400px) {
 
-	.term-statement #primary .quote-type-statement-list .quote,
-	.term-pledge #primary .quote-type-pledge-list .quote,
-	.single-quote #primary .quote-type .quote
+	#primary .quote-container .quote
 	{
 		width: 80%;
 	}
@@ -4670,9 +4346,7 @@ span.quote-date
 	#primary .entry-content,
 	#organisations.hosts-by-event .organisations-inner,
 	#pledge .pledge-inner,
-	.term-statement #primary .quote-type-statement-list .quote,
-	.term-pledge #primary .quote-type-pledge-list .quote,
-	.single-quote #primary .quote-type .quote
+	#primary .quote-container .quote
 	{
 		width: 90%;
 	}
