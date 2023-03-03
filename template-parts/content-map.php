@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php the_ball_v2_feature_image_caption(); ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="entry-content sof-map">
 		<?php
 
 		// Skip if we do not have the Geo Mashup plugin.
@@ -40,6 +40,10 @@ defined( 'ABSPATH' ) || exit;
 		}
 
 		?>
+	</div><!-- .entry-content -->
+
+	<div class="entry-content">
+		<?php the_content(); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
