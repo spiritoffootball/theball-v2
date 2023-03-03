@@ -27,7 +27,7 @@ defined( 'ABSPATH' ) || exit;
 			$map_args = [
 				'map_content' => 'global',
 				'object_name' => 'post',
-				'map_post_type' => 'ball,event,host,partner',
+				'map_post_type' => 'ball,event,host,partner,post',
 				'zoom' => 'auto',
 				'remove_geo_mashup_logo' => 'true',
 				'auto_info_open' => 'false',
