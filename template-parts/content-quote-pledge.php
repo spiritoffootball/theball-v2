@@ -14,43 +14,48 @@ defined( 'ABSPATH' ) || exit;
 
 <!-- content-quote-pledge.php -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php $source = get_field( 'source' ); ?>
-	<?php $about = get_field( 'about' ); ?>
-	<?php $pledge_date = get_field( 'date' ); ?>
-
-	<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
-		<?php if ( is_single() ) : ?>
-			<h1 class="entry-title"><?php echo esc_html( $source ); ?></h1>
-		<?php else : ?>
-			<h2 class="entry-title"><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php echo esc_html( $source ); ?></a></h2>
-		<?php endif; ?>
-		<?php if ( ! empty( $about ) ) : ?>
-			<span class="quote-about"><?php echo esc_html( $about ); ?></span>
-		<?php endif; ?>
-		<?php if ( ! empty( $pledge_date ) ) : ?>
-			<span class="quote-date"><?php echo esc_html( $pledge_date ); ?></span>
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<div class="entry-content clear">
-		<?php $image = get_field( 'image' ); ?>
-		<?php if ( ! empty( $image ) ) : ?>
-			<div class="quote-image">
-				<p>
+	<div class="quote-inner">
+		<div class="entry-content clear">
+			<?php $image = get_field( 'image' ); ?>
+			<?php if ( ! empty( $image ) ) : ?>
+				<div class="quote-image">
 					<img src="<?php echo $image['url']; ?>">
-				</p>
-			</div>
-		<?php endif; ?>
+				</div>
+			<?php endif; ?>
 
-		<?php $content = get_field( 'content' ); ?>
-		<?php if ( ! empty( $content ) ) : ?>
-			<div class="quote-content">
-				<blockquote><?php echo $content; ?></blockquote>
+			<div class="quote-i-pledge">
+				<h2 class="entry-title"><?php esc_html_e( 'I pledge', 'the-ball-v2' ); ?></h2>
 			</div>
-		<?php endif; ?>
-	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php /* the_ball_v2_entry_footer(); */ ?>
-	</footer><!-- .entry-footer -->
+			<?php $content = get_field( 'content' ); ?>
+			<?php if ( ! empty( $content ) ) : ?>
+				<div class="quote-content">
+					<blockquote><?php echo $content; ?></blockquote>
+				</div>
+			<?php endif; ?>
+
+			<div class="quote-citation">
+				<?php $source = get_field( 'source' ); ?>
+				<?php if ( ! empty( $source ) ) : ?>
+					<div class="quote-source">
+						<h2 class="entry-title"><?php echo esc_html( $source ); ?></h2>
+					</div>
+				<?php endif; ?>
+
+				<?php $about = get_field( 'about' ); ?>
+				<?php if ( ! empty( $about ) ) : ?>
+					<p class="quote-about"><?php echo esc_html( $about ); ?></p>
+				<?php endif; ?>
+
+				<?php $pledge_date = get_field( 'date' ); ?>
+				<?php if ( ! empty( $pledge_date ) ) : ?>
+					<p class="quote-date"><?php echo esc_html( $pledge_date ); ?></p>
+				<?php endif; ?>
+			</div>
+
+			<footer class="entry-footer">
+				<?php /* the_ball_v2_entry_footer(); */ ?>
+			</footer><!-- .entry-footer -->
+		</div><!-- .entry-content -->
+	</div>
 </article><!-- #post-->

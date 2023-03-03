@@ -18,23 +18,24 @@ get_header();
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 
-	<?php
-	while ( have_posts() ) :
+	<?php while ( have_posts() ) : ?>
 
-		the_post();
+		<?php the_post(); ?>
+		<?php global $post; ?>
 
-		global $post;
+		<?php if ( has_term( 'pledge', 'quote-type' ) ) : ?>
+			<div class="quote-type quote-type-pledge-inner">
+				<?php get_template_part( 'template-parts/content', 'quote-pledge' ); ?>
+			</div>
+		<?php elseif ( has_term( 'statement', 'quote-type' ) ) : ?>
+			<div class="quote-type quote-type-statement-inner">
+				<?php get_template_part( 'template-parts/content', 'quote-statement' ); ?>
+			</div>
+		<?php else: ?>
+			<?php get_template_part( 'template-parts/content', 'quote' ); ?>
+		<?php endif; ?>
 
-		if ( has_term( 'pledge', 'quote-type' ) ) {
-			get_template_part( 'template-parts/content', 'quote-pledge' );
-		} elseif ( has_term( 'statement', 'quote-type' ) ) {
-			get_template_part( 'template-parts/content', 'quote-statement' );
-		} else {
-			get_template_part( 'template-parts/content', 'quote' );
-		}
-
-	endwhile; // End of the loop.
-	?>
+	<?php endwhile; ?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->
