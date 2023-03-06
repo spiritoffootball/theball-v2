@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: The Ball v2 1.1.5\n"
+"Project-Id-Version: The Ball v2 1.1.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/theball-v2\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-03-06T10:06:07+00:00\n"
+"POT-Creation-Date: 2023-03-06T14:05:10+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: the-ball-v2\n"
@@ -93,19 +93,19 @@ msgid "Primary"
 msgstr ""
 
 #: functions.php:128
-#: functions.php:338
+#: functions.php:356
 msgid "Footer"
 msgstr ""
 
-#: functions.php:327
+#: functions.php:345
 msgid "Header"
 msgstr ""
 
-#: functions.php:329
+#: functions.php:347
 msgid "An optional widget area in the header of this theme"
 msgstr ""
 
-#: functions.php:340
+#: functions.php:358
 msgid "An optional widget area in the footer of this theme"
 msgstr ""
 
@@ -231,10 +231,12 @@ msgid "Events at: %s"
 msgstr ""
 
 #: taxonomy-quote-type-pledge.php:26
+#: template-parts/loop-quotes-pledges.php:40
 msgid "Pledges"
 msgstr ""
 
 #: taxonomy-quote-type-statement.php:26
+#: template-parts/loop-quotes-statements.php:40
 msgid "Statements"
 msgstr ""
 
@@ -379,8 +381,6 @@ msgid "Latest News"
 msgstr ""
 
 #: template-parts/loop-organisations.php:31
-#: template-parts/loop-quotes-pledges.php:31
-#: template-parts/loop-quotes-statements.php:31
 #: template-parts/loop-quotes.php:31
 msgid "Organisations"
 msgstr ""
