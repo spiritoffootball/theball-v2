@@ -1,17 +1,17 @@
-# Copyright (C) 2022 Christian Wach
+# Copyright (C) 2023 Christian Wach
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: The Ball v2 1.1.4\n"
+"Project-Id-Version: The Ball v2 1.1.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/theball-v2\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-07-22T13:32:13+00:00\n"
+"POT-Creation-Date: 2023-03-06T10:06:07+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.6.0\n"
+"X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: the-ball-v2\n"
 
 #. Theme Name of the theme
@@ -34,120 +34,157 @@ msgstr ""
 msgid "https://haystack.co.uk"
 msgstr ""
 
+#: 404.php:23
 msgid "You&rsquo;re offside"
 msgstr ""
 
+#: 404.php:27
 msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
 msgstr ""
 
+#: 404.php:40
 msgid "Most Used Categories"
 msgstr ""
 
 #. translators: %1$s: smiley
+#: 404.php:60
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
 #. translators: 1: title.
+#: comments.php:39
 msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr ""
 
 #. translators: 1: comment count number, 2: title.
+#: comments.php:45
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
+#: comments.php:69
 msgid "Comments are closed."
 msgstr ""
 
+#: footer.php:71
 msgid "The SOF Network"
 msgstr ""
 
+#: footer.php:74
 msgid "Spirit of Football Brazil"
 msgstr ""
 
+#: footer.php:75
 msgid "Spirit of Football CIC"
 msgstr ""
 
+#: footer.php:76
 msgid "Spirit of Football Germany"
 msgstr ""
 
+#: footer.php:84
 msgid "Website content &copy; %1$s %2$s. All rights reserved."
 msgstr ""
 
+#: functions.php:127
 msgid "Primary"
 msgstr ""
 
+#: functions.php:128
+#: functions.php:338
 msgid "Footer"
 msgstr ""
 
+#: functions.php:327
 msgid "Header"
 msgstr ""
 
+#: functions.php:329
 msgid "An optional widget area in the header of this theme"
 msgstr ""
 
+#: functions.php:340
 msgid "An optional widget area in the footer of this theme"
 msgstr ""
 
+#: header.php:29
 msgid "Skip to content"
 msgstr ""
 
+#: header.php:94
 msgid "Primary Menu"
 msgstr ""
 
+#: home.php:25
 msgid "News"
 msgstr ""
 
+#: includes/theme/extras.php:137
 msgid "Read More"
 msgstr ""
 
+#: includes/theme/extras.php:153
 msgid "Search"
 msgstr ""
 
+#: includes/theme/extras.php:157
 msgid "Search The Ball 2022-2023"
 msgstr ""
 
+#: includes/theme/extras.php:218
 msgid "About this Event"
 msgstr ""
 
+#: includes/theme/extras.php:226
 msgid "Host Organisations"
 msgstr ""
 
+#: includes/theme/extras.php:232
+#: template-parts/form-pledge-single.php:52
 msgid "Make a Pledge"
 msgstr ""
 
 #. translators: %s: The time
+#: includes/theme/template-tags.php:67
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
 #. translators: %s: The Post author
+#: includes/theme/template-tags.php:73
 msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
+#: includes/theme/template-tags.php:98
+#: includes/theme/template-tags.php:105
 msgid ", "
 msgstr ""
 
 #. translators: %s: The list of categories
+#: includes/theme/template-tags.php:101
 msgid "Posted in %1$s"
 msgstr ""
 
 #. translators: %s: The list of tags
+#: includes/theme/template-tags.php:108
 msgid "Tagged %1$s"
 msgstr ""
 
 #. translators: %s: The post title
+#: includes/theme/template-tags.php:117
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
 #. translators: %s: Name of current post
+#: includes/theme/template-tags.php:125
 msgid "Edit %s"
 msgstr ""
 
+#: includes/theme/template-tags.php:337
 msgid "Partner logo"
 msgstr ""
 
@@ -155,6 +192,8 @@ msgstr ""
 msgid "Events Archive"
 msgstr ""
 
+#: page-event.php:58
+#: template-parts/loop-events.php:32
 msgid "Ongoing Events"
 msgstr ""
 
@@ -174,114 +213,179 @@ msgstr ""
 msgid "Partners Archive"
 msgstr ""
 
+#: search.php:26
 msgid "Search Results for: %s"
 msgstr ""
 
+#: taxonomy-city_posts.php:26
 msgid "%s News"
 msgstr ""
 
+#: taxonomy-event-category.php:26
+#: taxonomy-event-tag.php:26
 msgid "%s Events"
 msgstr ""
 
+#: taxonomy-event-venue.php:28
 msgid "Events at: %s"
 msgstr ""
 
+#: taxonomy-quote-type-pledge.php:26
+msgid "Pledges"
+msgstr ""
+
+#: taxonomy-quote-type-statement.php:26
+msgid "Statements"
+msgstr ""
+
+#: template-parts/content-coming-soon.php:19
 msgid "Coming Soon"
 msgstr ""
 
+#: template-parts/content-coming-soon.php:24
 msgid "We are busy building. Please check back later."
 msgstr ""
 
+#: template-parts/content-event-the-ball.php:17
+#: template-parts/loop-events-the-ball.php:37
 msgid "Make your pledge with The Ball"
 msgstr ""
 
+#: template-parts/content-event-the-ball.php:28
 msgid "Pledge now!"
 msgstr ""
 
+#: template-parts/content-event.php:43
 msgid "Event Details"
 msgstr ""
 
+#: template-parts/content-event.php:53
 msgid "This event is running from %1$s until %2$s. It is next occurring on %3$s"
 msgstr ""
 
+#: template-parts/content-event.php:58
 msgid "This event finished on %s"
 msgstr ""
 
+#: template-parts/content-event.php:68
 msgid "Date"
 msgstr ""
 
+#: template-parts/content-event.php:77
 msgid "Categories"
 msgstr ""
 
+#: template-parts/content-event.php:81
 msgid "Tags"
 msgstr ""
 
+#: template-parts/content-event.php:101
 msgid "Upcoming Dates"
 msgstr ""
 
 #. translators: %s: Name of current post.
+#: template-parts/content-event.php:145
+#: template-parts/content-organisation.php:86
+#: template-parts/content.php:36
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
+#: template-parts/content-event.php:150
+#: template-parts/content-organisation.php:91
+#: template-parts/content-page.php:39
+#: template-parts/content.php:41
 msgid "Pages:"
 msgstr ""
 
+#: template-parts/content-news.php:25
+#: template-parts/content-quote.php:26
 msgid "Read more"
 msgstr ""
 
+#: template-parts/content-none.php:19
 msgid "Nothing Found"
 msgstr ""
 
+#: template-parts/content-none.php:27
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
+#: template-parts/content-none.php:31
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
+#: template-parts/content-none.php:38
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
+#: template-parts/content-organisation.php:78
 msgid "%s website"
 msgstr ""
 
+#: template-parts/content-quote-pledge-mini.php:27
+#: template-parts/content-quote-pledge.php:27
+msgid "I pledge"
+msgstr ""
+
+#: template-parts/loop-events-by-host.php:32
 msgid "Hosted Events"
 msgstr ""
 
+#: template-parts/loop-events-featured.php:44
 msgid "Featured"
 msgstr ""
 
+#: template-parts/loop-events-other.php:34
 msgid "Other Events"
 msgstr ""
 
+#: template-parts/loop-events-other.php:59
+#: template-parts/loop-events-past.php:61
+#: template-parts/loop-events.php:58
 msgid "View All Events"
 msgstr ""
 
+#: template-parts/loop-events-past.php:35
 msgid "Past Events"
 msgstr ""
 
+#: template-parts/loop-hosts-by-event.php:41
 msgid "Hosted By"
 msgstr ""
 
+#: template-parts/loop-hosts.php:31
 msgid "Ball Hosts"
 msgstr ""
 
+#: template-parts/loop-news-by-event.php:41
 msgid "News about %s"
 msgstr ""
 
+#: template-parts/loop-news-by-event.php:66
 msgid "View News"
 msgstr ""
 
+#: template-parts/loop-news-meta.php:34
 msgid "News by Event"
 msgstr ""
 
+#: template-parts/loop-news-meta.php:48
+#: template-parts/loop-news.php:56
 msgid "View All News"
 msgstr ""
 
+#: template-parts/loop-news.php:31
 msgid "Latest News"
 msgstr ""
 
+#: template-parts/loop-organisations.php:31
+#: template-parts/loop-quotes-pledges.php:31
+#: template-parts/loop-quotes-statements.php:31
+#: template-parts/loop-quotes.php:31
 msgid "Organisations"
 msgstr ""
 
+#: template-parts/loop-partners.php:32
+#: template-parts/powered-by.php:37
 msgid "Partners"
 msgstr ""
