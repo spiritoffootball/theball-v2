@@ -3660,11 +3660,30 @@ img.avatar
 	color: #fff;
 }
 
+#primary #quotes-statements,
+#primary #quotes-pledges
+{
+	background-color: transparent;
+}
+
 #quotes-statements .quotes-statements-inner,
 #quotes-pledges .quotes-pledges-inner
 {
 	width: 60%;
 	margin: 0 auto;
+}
+
+#primary #quotes-statements .quotes-statements-inner,
+#primary #quotes-pledges .quotes-pledges-inner
+{
+	width: 100%;
+	margin: 0;
+}
+
+#primary #quotes-statements .quotes-statements-header,
+#primary #quotes-pledges .quotes-pledges-header
+{
+	display: none;
 }
 
 /* Fix slider arrows */
