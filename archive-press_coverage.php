@@ -18,7 +18,6 @@ get_header();
 <div id="primary" class="content-area yuck">
 	<main id="main" class="site-main" role="main">
 
-	<?php if ( have_posts() ) : ?>
 
 		<section id="blog" class="content-area has-post-thumbnail clear">
 			<header class="entry-header"<?php echo the_ball_v2_get_home_feature_image_style(); ?>>
@@ -28,26 +27,34 @@ get_header();
 			<div class="blog-inner">
 				<div class="blog-posts clear">
 
-				<?php
+					<?php if ( have_posts() ) : ?>
 
-				// Init counter for giving items classes.
-				$post_loop_counter = new The_Ball_v2_Counter();
+						<?php
 
-				// Start the loop.
-				while ( have_posts() ) :
+						// Init counter for giving items classes.
+						$post_loop_counter = new The_Ball_v2_Counter();
 
-					the_post();
+						// Start the loop.
+						while ( have_posts() ) :
 
-					// Get mini template.
-					get_template_part( 'template-parts/content-press-item-mini' );
+							the_post();
 
-				endwhile;
+							// Get mini template.
+							get_template_part( 'template-parts/content-press-item-mini' );
 
-				// Ditch counter.
-				$post_loop_counter->remove_filter();
-				unset( $post_loop_counter );
+						endwhile;
 
-				?>
+						// Ditch counter.
+						$post_loop_counter->remove_filter();
+						unset( $post_loop_counter );
+
+					else :
+
+						get_template_part( 'template-parts/content', 'none' );
+
+					endif;
+
+					?>
 
 				</div><!-- .blog-posts -->
 				<footer class="blog-footer">
@@ -56,14 +63,6 @@ get_header();
 
 			</div><!-- .blog-inner -->
 		</section><!-- #blog -->
-
-	<?php
-	else :
-
-		get_template_part( 'template-parts/content', 'none' );
-
-	endif;
-	?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->
