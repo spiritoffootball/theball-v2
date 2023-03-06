@@ -300,7 +300,7 @@ if ( ! function_exists( 'the_ball_v2_get_home_feature_image_style' ) ) :
 
 		// Get URL array for this page's feature image.
 		$blog_page_id = get_option( 'page_for_posts' );
-		if (! empty( $blog_page_id ) ) {
+		if ( ! empty( $blog_page_id ) ) {
 			$image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $blog_page_id ), $size );
 			if ( ! empty( $image_url[0] ) ) {
 				return ' style="background-image: url(' . esc_url( $image_url[0] ) . ');"';

@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all single Qootes.
+ * The template for displaying all single Quotes.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *

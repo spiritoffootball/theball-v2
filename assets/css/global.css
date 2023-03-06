@@ -3693,6 +3693,64 @@ img.avatar
 }
 
 /*--------------------------------------------------------------
+## Press Coverage Archive & Include Common
+--------------------------------------------------------------*/
+
+.archive #primary .press_coverage
+{
+	margin-bottom: 1.5em;
+}
+
+.archive #primary .press_coverage .entry-title
+{
+	margin: 0;
+}
+
+.archive #primary .press_coverage .entry-title a
+{
+	color: #ffcc00;
+	text-decoration: none;
+}
+
+.archive #primary .press_coverage p
+{
+	width: auto;
+	margin: 0.2em 0;
+}
+
+#primary .press-item-date,
+#primary .press-item-about,
+#primary .press-item-image,
+#primary .press-item-link
+{
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+#primary .press-item-link
+{
+	margin-bottom: 2em;
+}
+
+.archive #primary .press-item-date,
+.archive #primary .press-item-about,
+.archive #primary .press-item-image,
+.archive #primary .press-item-link
+{
+	text-align: left;
+	margin-bottom: 0;
+}
+
+.press-coverage-type
+{
+	font-size: 240%;
+	display: block;
+	text-align: center;
+	text-transform: uppercase;
+	background: rgba(0, 0, 0, 0.15);
+}
+
+/*--------------------------------------------------------------
 ## News Archive & News Include Common
 --------------------------------------------------------------*/
 
