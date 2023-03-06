@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for embedding a display of Organisations.
+ * Template part for embedding a display of Pledge Quotes.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -11,49 +11,68 @@
 defined( 'ABSPATH' ) || exit;
 
 // Define query args.
-$organisations_args = [
-	'post_type' => 'organisation',
+$pledges_args = [
+	'post_type' => 'quote',
 	'post_status' => 'publish',
 	'order' => 'ASC',
 	'orderby' => 'title',
+	'tax_query' => [
+		[
+			'taxonomy' => 'quote-type',
+			'field' => 'slug',
+			'terms' => 'pledge',
+		],
+	],
 ];
 
 // The query.
-$organisations = new WP_Query( $organisations_args );
+$pledges = new WP_Query( $pledges_args );
 
-if ( $organisations->have_posts() ) : ?>
+if ( $pledges->have_posts() ) :
 
-	<!-- loop-organisations.php -->
-	<section id="organisations" class="content-area insert-area clear">
-		<div class="organisations-inner">
+	?>
 
-			<header class="organisations-header">
-				<h2 class="organisations-title"><?php esc_html_e( 'Organisations', 'the-ball-v2' ); ?></h2>
-			</header><!-- .organisations-header -->
+	<!-- loop-quotes-pledges.php -->
+	<section id="quotes-pledges" class="content-area insert-area clear">
+		<div class="quotes-pledges-inner">
 
-			<?php
+			<header class="quotes-pledges-header">
+				<h2 class="quotes-pledges-title"><?php esc_html_e( 'Pledges', 'the-ball-v2' ); ?></h2>
+			</header><!-- .quotes-pledges-header -->
 
-			// Init counter for giving items classes.
-			$post_loop_counter = new The_Ball_v2_Counter();
+			<div class="flexslider">
+				<ul class="slides">
 
-			// Start the loop.
-			while ( $organisations->have_posts() ) :
+					<?php
 
-				$organisations->the_post();
+					// Init counter for giving items classes.
+					$post_loop_counter = new The_Ball_v2_Counter();
 
-				// Get mini template.
-				get_template_part( 'template-parts/content-organisation-mini' );
+					// Start the loop.
+					while ( $pledges->have_posts() ) :
+						$pledges->the_post();
 
-			endwhile;
+						?>
 
-			// Ditch counter.
-			$post_loop_counter->remove_filter();
-			unset( $post_loop_counter );
+						<li>
+							<?php get_template_part( 'template-parts/content-quote-pledge-mini' ); ?>
+						</li>
 
-			?>
+						<?php
 
-		</div><!-- .organisations-inner -->
-	</section><!-- #organisations -->
+					endwhile;
+
+					// Ditch counter.
+					$post_loop_counter->remove_filter();
+					unset( $post_loop_counter );
+
+					?>
+
+				</ul>
+			</div><!-- .flexslider -->
+
+		</div><!-- .quotes-pledges-inner -->
+	</section><!-- #quotes-pledges -->
 
 	<?php
 

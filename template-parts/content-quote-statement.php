@@ -22,9 +22,9 @@ defined( 'ABSPATH' ) || exit;
 		<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
 			<div class="entry-header-inner">
 				<?php if ( is_single() ) : ?>
-					<h1 class="entry-title"><?php echo esc_html( $source ); ?></h1>
+					<h1 class="quote-title"><?php echo esc_html( $source ); ?></h1>
 				<?php else : ?>
-					<h2 class="entry-title"><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php echo esc_html( $source ); ?></a></h2>
+					<h2 class="quote-title"><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php echo esc_html( $source ); ?></a></h2>
 				<?php endif; ?>
 				<?php if ( ! empty( $about ) ) : ?>
 					<span class="quote-about"><?php echo esc_html( $about ); ?></span>

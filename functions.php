@@ -253,6 +253,15 @@ function the_ball_v2_styles() {
 		'all' // Media.
 	);
 
+	// Slider stylesheet.
+	wp_enqueue_style(
+		'quote-slider-css',
+		get_template_directory_uri() . '/assets/css/flexslider.css',
+		[ 'the-ball-v2-global' ],
+		$version,
+		'all' // Media.
+	);
+
 	// Print stylesheet.
 	wp_enqueue_style(
 		'the-ball-v2-print',
@@ -288,6 +297,15 @@ function the_ball_v2_scripts() {
 	wp_enqueue_script(
 		'theball_fitvids',
 		get_template_directory_uri() . '/assets/js/jquery.fitvids.js',
+		[ 'jquery' ],
+		THE_BALL_V2_THEME_VERSION,
+		true
+	);
+
+	// Add slider script.
+	wp_enqueue_script(
+		'quote-slider-js',
+		get_template_directory_uri() . '/assets/js/jquery.flexslider.min.js',
 		[ 'jquery' ],
 		THE_BALL_V2_THEME_VERSION,
 		true

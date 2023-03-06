@@ -95,4 +95,15 @@ jQuery(document).ready( function($) {
 		}, 200 );
 	});
 
+	/**
+	 * Enable slider.
+	 *
+	 * @since 1.1.5
+	 */
+	$('.flexslider').flexslider({
+		selector: ".slides > li",
+		slideshow: false,
+		animation: "slide",
+	});
+
 });

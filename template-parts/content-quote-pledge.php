@@ -24,7 +24,7 @@ defined( 'ABSPATH' ) || exit;
 			<?php endif; ?>
 
 			<div class="quote-i-pledge">
-				<h2 class="entry-title"><?php esc_html_e( 'I pledge', 'the-ball-v2' ); ?></h2>
+				<h2 class="quote-title"><?php esc_html_e( 'I pledge', 'the-ball-v2' ); ?></h2>
 			</div>
 
 			<?php $content = get_field( 'content' ); ?>
@@ -38,7 +38,7 @@ defined( 'ABSPATH' ) || exit;
 				<?php $source = get_field( 'source' ); ?>
 				<?php if ( ! empty( $source ) ) : ?>
 					<div class="quote-source">
-						<h2 class="entry-title"><?php echo esc_html( $source ); ?></h2>
+						<h2 class="quote-title"><?php echo esc_html( $source ); ?></h2>
 					</div>
 				<?php endif; ?>
 

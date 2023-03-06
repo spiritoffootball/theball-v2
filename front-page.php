@@ -36,31 +36,29 @@ get_header();
 	</main><!-- #main -->
 </div><!-- #primary -->
 
-<?php
-
-/*
-if ( $featured_event_loop = locate_template( 'template-parts/loop-events-featured.php' ) ) : ?>
+<?php /* if ( $featured_event_loop = locate_template( 'template-parts/loop-events-featured.php' ) ) : ?>
 	<?php load_template( $featured_event_loop ); ?>
-<?php endif;
-*/
-
-?>
+<?php endif; */ ?>
 
 <?php if ( $event_loop = locate_template( 'template-parts/loop-events.php' ) ) : ?>
 	<?php load_template( $event_loop ); ?>
 <?php endif; ?>
 
-<?php
-/*
-if ( $past_loop = locate_template( 'template-parts/loop-events-past.php' ) ) : ?>
+<?php /* if ( $past_loop = locate_template( 'template-parts/loop-events-past.php' ) ) : ?>
 	<?php load_template( $past_loop ); ?>
-<?php endif;
-*/
-?>
+<?php endif; */ ?>
 
 <?php if ( $news_loop = locate_template( 'template-parts/loop-news.php' ) ) : ?>
 	<?php load_template( $news_loop ); ?>
 <?php endif; ?>
+
+<?php /* if ( $pledge_loop = locate_template( 'template-parts/loop-quotes-pledges.php' ) ) : ?>
+	<?php load_template( $pledge_loop ); ?>
+<?php endif; */ ?>
+
+<?php /* if ( $statement_loop = locate_template( 'template-parts/loop-quotes-statements.php' ) ) : ?>
+	<?php load_template( $statement_loop ); ?>
+<?php endif; */ ?>
 
 <?php
 

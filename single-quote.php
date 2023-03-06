@@ -23,7 +23,7 @@ get_header();
 		<?php the_post(); ?>
 		<?php global $post; ?>
 
-		<section class="quote-container insert-area clear">
+		<section class="quote-container clear">
 			<div class="quote-container-inner">
 
 				<?php if ( has_term( 'pledge', 'quote-type' ) ) : ?>

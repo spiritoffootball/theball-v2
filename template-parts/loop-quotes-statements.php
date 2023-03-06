@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for embedding a display of Organisations.
+ * Template part for embedding a display of Statement Quotes.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -11,49 +11,68 @@
 defined( 'ABSPATH' ) || exit;
 
 // Define query args.
-$organisations_args = [
-	'post_type' => 'organisation',
+$statements_args = [
+	'post_type' => 'quote',
 	'post_status' => 'publish',
 	'order' => 'ASC',
 	'orderby' => 'title',
+	'tax_query' => [
+		[
+			'taxonomy' => 'quote-type',
+			'field' => 'slug',
+			'terms' => 'statement',
+		],
+	],
 ];
 
 // The query.
-$organisations = new WP_Query( $organisations_args );
+$statements = new WP_Query( $statements_args );
 
-if ( $organisations->have_posts() ) : ?>
+if ( $statements->have_posts() ) :
 
-	<!-- loop-organisations.php -->
-	<section id="organisations" class="content-area insert-area clear">
-		<div class="organisations-inner">
+	?>
 
-			<header class="organisations-header">
-				<h2 class="organisations-title"><?php esc_html_e( 'Organisations', 'the-ball-v2' ); ?></h2>
-			</header><!-- .organisations-header -->
+	<!-- loop-quotes-statements.php -->
+	<section id="quotes-statements" class="content-area insert-area clear">
+		<div class="quotes-statements-inner">
 
-			<?php
+			<header class="quotes-statements-header">
+				<h2 class="quotes-statements-title"><?php esc_html_e( 'Statements', 'the-ball-v2' ); ?></h2>
+			</header><!-- .quotes-statements-header -->
 
-			// Init counter for giving items classes.
-			$post_loop_counter = new The_Ball_v2_Counter();
+			<div class="flexslider">
+				<ul class="slides">
 
-			// Start the loop.
-			while ( $organisations->have_posts() ) :
+					<?php
 
-				$organisations->the_post();
+					// Init counter for giving items classes.
+					$post_loop_counter = new The_Ball_v2_Counter();
 
-				// Get mini template.
-				get_template_part( 'template-parts/content-organisation-mini' );
+					// Start the loop.
+					while ( $statements->have_posts() ) :
+						$statements->the_post();
 
-			endwhile;
+						?>
 
-			// Ditch counter.
-			$post_loop_counter->remove_filter();
-			unset( $post_loop_counter );
+						<li>
+							<?php get_template_part( 'template-parts/content-quote-statement-mini' ); ?>
+						</li>
 
-			?>
+						<?php
 
-		</div><!-- .organisations-inner -->
-	</section><!-- #organisations -->
+					endwhile;
+
+					// Ditch counter.
+					$post_loop_counter->remove_filter();
+					unset( $post_loop_counter );
+
+					?>
+
+				</ul>
+			</div><!-- .flexslider -->
+
+		</div><!-- .quotes-statements-inner -->
+	</section><!-- #quotes-statements -->
 
 	<?php
 

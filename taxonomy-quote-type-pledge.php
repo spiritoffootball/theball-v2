@@ -36,7 +36,7 @@ get_header();
 			</article><!-- #post-->
 		</section>
 
-		<section class="quote-container insert-area clear">
+		<section class="quote-container clear">
 			<div class="quote-container-inner">
 			<?php
 
