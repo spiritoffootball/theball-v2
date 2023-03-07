@@ -24,6 +24,13 @@ defined( 'ABSPATH' ) || exit;
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
+		<?php $publisher = get_field( 'publisher' ); ?>
+		<?php if ( ! empty( $publisher ) ) : ?>
+			<div class="press-item-publisher">
+				<?php echo $publisher; ?>
+			</div>
+		<?php endif; ?>
+
 		<?php $date = get_field( 'date' ); ?>
 		<?php if ( ! empty( $date ) ) : ?>
 			<div class="press-item-date">
@@ -48,7 +55,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php $link = get_field( 'link' ); ?>
 		<?php if ( ! empty( $link ) ) : ?>
 			<div class="press-item-link">
-				<a href="<?php echo $link; ?>"><?php printf( __( 'Visit %s', 'the-ball-v2' ), get_the_title() ); ?></a>
+				<a href="<?php echo $link; ?>"><?php printf( __( 'Visit the %s website', 'the-ball-v2' ), $publisher ); ?></a>
 			</div>
 		<?php endif; ?>
 
