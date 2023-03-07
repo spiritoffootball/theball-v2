@@ -3175,6 +3175,75 @@ img.avatar
 }
 
 /*--------------------------------------------------------------
+## Individuals
+--------------------------------------------------------------*/
+
+.individual.hentry
+{
+	padding-bottom: 2em;
+}
+
+.individual .entry-title
+{
+	text-align: center;
+	margin-top: 0.5em;
+	text-transform: uppercase;
+	font-size: 150%;
+}
+
+.individual .entry-title a
+{
+	color: #ffcc00;
+	text-decoration: none;
+}
+
+.individual-image,
+.individual-tags,
+.individual-website,
+.individual-social-links
+{
+	text-align: center;
+}
+
+.individual-tags span a
+{
+	display: inline-block;
+	padding: 0.1em 0.4em;
+	border: 1px solid #fff;
+	margin: 0 0.5em;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.individual .entry-header img.avatar
+{
+	width: 100%;
+}
+
+#blog .individual
+{
+	width: 32%;
+	margin-right: 2%;
+	float: left;
+	color: #fff;
+	position: relative;
+	overflow: visible;
+	margin-bottom: 2em;
+}
+
+/* Every third item ends a row */
+#blog .individual.third
+{
+	margin-right: 0;
+}
+
+/* Every third-plus-one item starts a new row */
+#blog .individual.third-plus-one
+{
+	clear: left;
+}
+
+/*--------------------------------------------------------------
 ## Map Page
 --------------------------------------------------------------*/
 
@@ -3718,6 +3787,14 @@ img.avatar
 	margin: 0.2em 0;
 }
 
+#primary .press-item-publisher
+{
+	font-size: 150%;
+	text-align: center;
+	text-transform: uppercase;
+	color: #ffcc00;
+}
+
 #primary .press-item-date,
 #primary .press-item-about,
 #primary .press-item-image,
@@ -3732,6 +3809,7 @@ img.avatar
 	margin-bottom: 2em;
 }
 
+.archive #primary .press-item-publisher,
 .archive #primary .press-item-date,
 .archive #primary .press-item-about,
 .archive #primary .press-item-image,
@@ -3739,6 +3817,13 @@ img.avatar
 {
 	text-align: left;
 	margin-bottom: 0;
+}
+
+.archive #primary .press-item-publisher
+{
+	font-size: 100%;
+	text-transform: uppercase;
+	color: #fff;
 }
 
 .press-coverage-type
