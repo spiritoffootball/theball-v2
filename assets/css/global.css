@@ -3846,6 +3846,7 @@ img.avatar
 {
 	width: 60%;
 	margin: 0 auto;
+	text-align: center;
 }
 
 #blog .blog-posts
