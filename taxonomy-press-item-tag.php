@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying the Press Coverage archive.
+ * The template for displaying the Press Coverage tag archive.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -14,7 +14,7 @@ get_header();
 
 ?>
 
-<!-- archive-press_coverage.php -->
+<!-- taxonomy-press-item-tag.php -->
 <div id="primary" class="content-area yuck">
 	<main id="main" class="site-main" role="main">
 

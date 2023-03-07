@@ -14,7 +14,7 @@ get_header();
 
 ?>
 
-<!-- archive-press_coverage.php -->
+<!-- archive-press_resource.php -->
 <div id="primary" class="content-area yuck">
 	<main id="main" class="site-main" role="main">
 
