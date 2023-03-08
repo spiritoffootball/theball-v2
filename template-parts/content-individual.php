@@ -89,7 +89,7 @@ defined( 'ABSPATH' ) || exit;
 
 		<?php
 		$social_links = [];
-		foreach ( [ 'facebook', 'instagram', 'twitter', 'tiktok', 'youtube' ] as $selector ) :
+		foreach ( [ 'facebook', 'instagram', 'twitter', 'tiktok', 'snapchat', 'youtube', 'vimeo', 'tumblr', 'pinterest', 'github', 'wordpress' ] as $selector ) :
 			$field = get_field( $selector );
 			if ( ! empty( $field ) ) :
 				$social_links[ $selector ] = $field;
