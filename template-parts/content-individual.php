@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php the_ball_v2_feature_image_caption(); ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="entry-content" style="text-align: center">
 		<?php $image = get_field( 'picture' ); ?>
 		<div class="individual-image">
 			<?php if ( ! empty( $image ) ) : ?>
@@ -44,6 +44,46 @@ defined( 'ABSPATH' ) || exit;
 		<?php if ( ! empty( $about ) ) : ?>
 			<div class="individual-about">
 				<?php echo $about; ?>
+			</div>
+		<?php endif; ?>
+
+		<?php $appearances = get_field( 'appearances' ); ?>
+		<?php if ( ! empty( $appearances ) ) : ?>
+			<div class="individual-appearances">
+				<h3><?php esc_html_e( 'Appearances', 'the-ball-v2' ) ?></h3>
+				<?php echo $appearances; ?>
+			</div>
+		<?php endif; ?>
+
+		<?php $goals = get_field( 'goals' ); ?>
+		<?php if ( ! empty( $goals ) ) : ?>
+			<div class="individual-goals">
+				<h3><?php esc_html_e( 'Goals', 'the-ball-v2' ) ?></h3>
+				<?php echo $goals; ?>
+			</div>
+		<?php endif; ?>
+
+		<?php $on_the_pitch = get_field( 'on_the_pitch' ); ?>
+		<?php if ( ! empty( $on_the_pitch ) ) : ?>
+			<div class="individual-on_the_pitch">
+				<h3><?php esc_html_e( 'On The Pitch', 'the-ball-v2' ) ?></h3>
+				<?php echo $on_the_pitch; ?>
+			</div>
+		<?php endif; ?>
+
+		<?php $teams = get_field( 'teams' ); ?>
+		<?php if ( ! empty( $teams ) ) : ?>
+			<div class="individual-teams">
+				<h3><?php esc_html_e( 'Teams', 'the-ball-v2' ) ?></h3>
+				<?php echo $teams; ?>
+			</div>
+		<?php endif; ?>
+
+		<?php $achievements = get_field( 'achievements' ); ?>
+		<?php if ( ! empty( $achievements ) ) : ?>
+			<div class="individual-achievements">
+				<h3><?php esc_html_e( 'Achievements', 'the-ball-v2' ) ?></h3>
+				<?php echo $achievements; ?>
 			</div>
 		<?php endif; ?>
 
