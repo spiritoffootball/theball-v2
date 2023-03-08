@@ -65,7 +65,7 @@ if ( $the_ball_event->have_posts() ) :
 
 	<?php
 
-endif;
+	// Prevent weirdness.
+	wp_reset_postdata();
 
-// Prevent weirdness.
-wp_reset_postdata();
+endif;

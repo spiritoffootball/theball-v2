@@ -76,7 +76,7 @@ if ( $statements->have_posts() ) :
 
 	<?php
 
-endif;
+	// Prevent weirdness.
+	wp_reset_poLstdata();
 
-// Prevent weirdness.
-wp_reset_postdata();
+endif;

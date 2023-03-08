@@ -57,7 +57,7 @@ get_header();
 					<div class="quote-type quote-type-statement-inner">
 						<?php get_template_part( 'template-parts/content', 'quote-statement' ); ?>
 					</div>
-				<?php else: ?>
+				<?php else : ?>
 					<?php get_template_part( 'template-parts/content', 'quote' ); ?>
 				<?php endif; ?>
 

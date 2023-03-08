@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 	<?php $date = get_field( 'date' ); ?>
 	<?php if ( empty( $date ) ) : ?>
 		<?php $date = ''; ?>
-	<?php else: ?>
+	<?php else : ?>
 		<?php $date = ', ' . $date; ?>
 	<?php endif; ?>
 
@@ -27,7 +27,7 @@ defined( 'ABSPATH' ) || exit;
 	<div class="press-item-publisher">
 		<?php if ( ! empty( $publisher ) ) : ?>
 			<?php echo $publisher . esc_html( $date ); ?>
-		<?php else: ?>
+		<?php else : ?>
 			<?php echo $date; ?>
 		<?php endif; ?>
 	</div>
