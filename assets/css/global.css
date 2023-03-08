@@ -3186,7 +3186,7 @@ img.avatar
 .individual .entry-title
 {
 	text-align: center;
-	margin-top: 0.5em;
+	margin: 0.5em 0 0;
 	text-transform: uppercase;
 	font-size: 150%;
 }
@@ -3197,12 +3197,19 @@ img.avatar
 	text-decoration: none;
 }
 
+.individual-job-title,
 .individual-image,
 .individual-tags,
 .individual-website,
 .individual-social-links
 {
 	text-align: center;
+}
+
+.individual-job-title
+{
+	text-transform: uppercase;
+	font-size: 120%;
 }
 
 .individual-tags span a
@@ -3213,6 +3220,7 @@ img.avatar
 	margin: 0 0.5em;
 	text-decoration: none;
 	text-transform: uppercase;
+	margin-bottom: 0.5em;
 }
 
 .individual .entry-header img.avatar
@@ -3220,7 +3228,89 @@ img.avatar
 	width: 100%;
 }
 
-#blog .individual
+#individuals,
+#individuals-squad,
+#individuals-board,
+#individuals-staff,
+#individuals-supporters
+{
+	padding: 1px 0;
+	color: #fff;
+	overflow: hidden;
+}
+
+#individuals
+{
+	background-color: #535f89;
+}
+
+#individuals-squad
+{
+	background-color: #9c4f52;
+}
+
+#individuals-board
+{
+	background-color: #bf8083;
+}
+
+#individuals-staff
+{
+	background-color: #95163d;
+}
+
+#individuals-supporters
+{
+	background-color: #535f89;
+}
+
+#individuals .individuals-inner
+{
+	padding-top: 2em;
+}
+
+#individuals .individuals-inner,
+#individuals-squad .individuals-inner,
+#individuals-board .individuals-inner,
+#individuals-staff .individuals-inner,
+#individuals-supporters .individuals-inner
+{
+	width: 60%;
+	margin: 0 auto;
+	background-color: inherit;
+}
+
+#individuals .individuals-header,
+#individuals .entry-header,
+#individuals-squad .individuals-header,
+#individuals-squad .entry-inner,
+#individuals-board .individuals-header,
+#individuals-board .entry-inner,
+#individuals-staff .individuals-header,
+#individuals-staff .entry-inner,
+#individuals-supporters .individuals-header,
+#individuals-supporters .entry-inner
+{
+	background-color: inherit;
+}
+
+#individuals .individuals-title,
+#individuals-squad .individuals-title,
+#individuals-board .individuals-title,
+#individuals-staff .individuals-title,
+#individuals-supporters .individuals-title
+{
+	text-transform: uppercase;
+	text-align: center;
+	padding: 1em 0 0.5em 0;
+	margin: 0;
+}
+
+#individuals .individual,
+#individuals-squad .individual,
+#individuals-board .individual,
+#individuals-staff .individual,
+#individuals-supporters .individual
 {
 	width: 32%;
 	margin-right: 2%;
@@ -3231,16 +3321,61 @@ img.avatar
 	margin-bottom: 2em;
 }
 
+.individual.individual-type-the-squad,
+.individual.individual-type-advisory-board,
+.individual.individual-type-backroom-staff,
+.individual.individual-type-backroom-supporters
+{
+	background-color: inherit;
+}
+
+.single #primary .individual
+{
+	background-color: #535f89;
+}
+
 /* Every third item ends a row */
-#blog .individual.third
+#individuals .individual.third,
+#individuals-squad .individual.third,
+#individuals-board .individual.third,
+#individuals-staff .individual.third,
+#individuals-supporters .individual.third
 {
 	margin-right: 0;
 }
 
 /* Every third-plus-one item starts a new row */
-#blog .individual.third-plus-one
+#individuals .individual.third-plus-one,
+#individuals-squad .individual.third-plus-one,
+#individuals-board .individual.third-plus-one,
+#individuals-staff .individual.third-plus-one,
+#individuals-supporters .individual.third-plus-one
 {
 	clear: left;
+}
+
+.individual-type
+{
+	font-size: 120%;
+	display: block;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.has-post-thumbnail .individual-type
+{
+	font-size: 240%;
+	background: rgba(0, 0, 0, 0.15);
+}
+
+.page-template-page-people .type-page .entry-content
+{
+	padding: 1.5em 0;
+}
+
+.page-template-page-people .type-individual .individual-tags
+{
+	display: none;
 }
 
 /*--------------------------------------------------------------
@@ -4478,6 +4613,11 @@ img.avatar
 	#pledge .pledge-inner,
 	#quotes-pledges .quotes-pledges-inner,
 	#quotes-statements .quotes-statements-inner,
+	#individuals .individuals-inner,
+	#individuals-squad .individuals-inner,
+	#individuals-board .individuals-inner,
+	#individuals-staff .individuals-inner,
+	#individuals-supporters .individuals-inner,
 	#primary .organisation-list-inner,
 	#primary .organisation-list-inner,
 	#organisations .organisations-inner,
@@ -4557,6 +4697,11 @@ img.avatar
 	#pledge .pledge-inner,
 	#quotes-pledges .quotes-pledges-inner,
 	#quotes-statements .quotes-statements-inner,
+	#individuals .individuals-inner,
+	#individuals-squad .individuals-inner,
+	#individuals-board .individuals-inner,
+	#individuals-staff .individuals-inner,
+	#individuals-supporters .individuals-inner,
 	#primary .organisation-list-inner,
 	#organisations .organisations-inner,
 	#news .news-inner,
@@ -4634,6 +4779,11 @@ img.avatar
 	#pledge .pledge-inner,
 	#quotes-pledges .quotes-pledges-inner,
 	#quotes-statements .quotes-statements-inner,
+	#individuals .individuals-inner,
+	#individuals-squad .individuals-inner,
+	#individuals-board .individuals-inner,
+	#individuals-staff .individuals-inner,
+	#individuals-supporters .individuals-inner,
 	#primary .organisation-list-inner,
 	#primary .organisation-list-inner,
 	#organisations .organisations-inner,
@@ -4737,6 +4887,11 @@ img.avatar
 	#events-past .event,
 	#primary .organisation-list .hentry,
 	#organisations .hentry,
+	#individuals .hentry,
+	#individuals-squad .hentry,
+	#individuals-board .hentry,
+	#individuals-staff .hentry,
+	#individuals-supporters .hentry,
 	#news .post,
 	#blog .post
 	{
@@ -4759,6 +4914,11 @@ img.avatar
 	#primary .organisation-list .partner.third-plus-one,
 	#primary .organisation-list .host.third-plus-one,
 	#organisations .hentry.third-plus-one,
+	#individuals .hentry.third-plus-one,
+	#individuals-squad .hentry.third-plus-one,
+	#individuals-board .hentry.third-plus-one,
+	#individuals-staff .hentry.third-plus-one,
+	#individuals-supporters .hentry.third-plus-one,
 	#news .post.third-plus-one,
 	#blog .post.third-plus-one
 	{
@@ -4771,6 +4931,11 @@ img.avatar
 	#events-past .event.third,
 	#primary .organisation-list .hentry.third,
 	#organisations .hentry.third,
+	#individuals .hentry.third,
+	#individuals-squad .hentry.third,
+	#individuals-board .hentry.third,
+	#individuals-staff .hentry.third,
+	#individuals-supporters .hentry.third,
 	#news .post.third,
 	#blog .post.third
 	{
@@ -4789,6 +4954,11 @@ img.avatar
 	#events-past .event.even-plus-one,
 	#primary .organisation-list .hentry.even-plus-one,
 	#organisations .hentry.even-plus-one,
+	#individuals .hentry.even-plus-one,
+	#individuals-squad .hentry.even-plus-one,
+	#individuals-board .hentry.even-plus-one,
+	#individuals-staff .hentry.even-plus-one,
+	#individuals-supporters .hentry.even-plus-one,
 	#news .post.even-plus-one,
 	#blog .post.even-plus-one
 	{
@@ -4801,6 +4971,11 @@ img.avatar
 	#events-past .event.even,
 	#primary .organisation-list .hentry.even,
 	#organisations .hentry.even,
+	#individuals .hentry.even,
+	#individuals-squad .hentry.even,
+	#individuals-board .hentry.even,
+	#individuals-staff .hentry.even,
+	#individuals-supporters .hentry.even,
 	#news .post.even,
 	#blog .post.even
 	{
@@ -4892,6 +5067,11 @@ img.avatar
 	#pledge .pledge-inner,
 	#quotes-pledges .quotes-pledges-inner,
 	#quotes-statements .quotes-statements-inner,
+	#individuals .individuals-inner,
+	#individuals-squad .individuals-inner,
+	#individuals-board .individuals-inner,
+	#individuals-staff .individuals-inner,
+	#individuals-supporters .individuals-inner,
 	#primary .organisation-list-inner,
 	#organisations .organisations-inner,
 	#news .news-inner,
@@ -4960,6 +5140,11 @@ img.avatar
 	#pledge .pledge-inner,
 	#quotes-pledges .quotes-pledges-inner,
 	#quotes-statements .quotes-statements-inner,
+	#individuals .individuals-inner,
+	#individuals-squad .individuals-inner,
+	#individuals-board .individuals-inner,
+	#individuals-staff .individuals-inner,
+	#individuals-supporters .individuals-inner,
 	#organisations .organisations-inner
 	{
 		width: 90%;
@@ -4984,6 +5169,10 @@ img.avatar
 	#events-past .event.even-plus-one,
 	#primary .organisation-list .hentry.even-plus-one,
 	#organisations .hentry.even-plus-one,
+	#individuals .hentry.even-plus-one,
+	#individuals-squad .hentry.even-plus-one,
+	#individuals-board .hentry.even-plus-one,
+	#individuals-supporters .hentry.even-plus-one,
 	#news .post.even-plus-one,
 	#blog .post.even-plus-one
 	{
@@ -4997,6 +5186,10 @@ img.avatar
 	#events-past .event.even,
 	#primary .organisation-list .hentry.even,
 	#organisations .hentry.even,
+	#individuals .hentry.even,
+	#individuals-squad .hentry.even,
+	#individuals-board .hentry.even,
+	#individuals-supporters .hentry.even,
 	#news .post.even,
 	#blog .post.even
 	{
@@ -5009,6 +5202,10 @@ img.avatar
 	#events-past .event,
 	#primary .organisation-list .hentry,
 	#organisations .hentry,
+	#individuals .hentry,
+	#individuals-squad .hentry,
+	#individuals-board .hentry,
+	#individuals-supporters .hentry,
 	#news .post,
 	#blog .post
 	{
