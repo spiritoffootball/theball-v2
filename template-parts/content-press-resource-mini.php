@@ -12,14 +12,18 @@ defined( 'ABSPATH' ) || exit;
 
 ?>
 
-<!-- content-press-resource.php -->
+<!-- content-press-resource-mini.php -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<header class="entry-header">
+		<?php echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark"' . the_ball_v2_get_feature_image_style( 'the-ball-v2-listings' ) . ' class="angled-right"></a>'; ?>
+	</header><!-- .entry-header -->
+
 	<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
 
 	<?php $about = get_field( 'about' ); ?>
 	<?php if ( ! empty( $about ) ) : ?>
 		<div class="press-resource-about">
-			<?php echo wp_trim_words( $about, 40, '...' ); ?>
+			<?php echo wp_trim_words( $about, 40, '... <a href="' . esc_url( get_permalink() ) . '" rel="bookmark">[' . __( 'Read More', 'the-ball-v2' ) . ']</a>' ); ?>
 		</div>
 	<?php endif; ?>
 

@@ -3976,12 +3976,20 @@ img.avatar
 
 .archive #primary .press_resource
 {
-	margin-bottom: 1.5em;
+	width: 32%;
+	margin-right: 2%;
+	float: left;
+	color: #fff;
+	position: relative;
+	overflow: visible;
+	margin-bottom: 2em;
 }
 
 .archive #primary .press_resource .entry-title
 {
-	margin: 0;
+	margin: 0.3em 0 0.3em 0;
+	font-size: 150%;
+	line-height: 1.2;
 }
 
 .archive #primary .press_resource .entry-title a
@@ -4010,6 +4018,7 @@ img.avatar
 .archive #primary .press-resource-files
 {
 	text-align: left;
+	margin-top: 0.3em;
 	margin-bottom: 0;
 }
 
