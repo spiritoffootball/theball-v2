@@ -38,6 +38,9 @@ if ( $squad->have_posts() ) : ?>
 
 				<header class="individuals-header">
 					<h2 class="individuals-title"><?php esc_html_e( 'The Squad', 'the-ball-v2' ); ?></h2>
+					<div class="individuals-sub-title">
+						<p><?php esc_html_e( 'On The Road With The Ball', 'the-ball-v2' ); ?></p>
+					</div>
 				</header><!-- .individuals-header -->
 
 				<?php
