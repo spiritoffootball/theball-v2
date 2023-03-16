@@ -19,6 +19,7 @@ get_header();
 	<main id="main" class="site-main" role="main">
 
 		<section class="error-404 not-found has-post-thumbnail clear">
+
 			<header class="entry-header" style="background-image: url('https://theball.tv/2022/files/2022/08/21.7.2022-Everton-FITC_TheBallPitchsideGoodisonPark_2-scaled.jpg');">
 				<h1 class="page-title"><?php esc_html_e( 'You&rsquo;re offside', 'the-ball-v2' ); ?></h1>
 			</header><!-- .page-header -->

@@ -15,7 +15,7 @@ get_header();
 ?>
 
 <!-- archive-individual.php -->
-<div id="primary" class="content-area yuck">
+<div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 
 		<section id="individuals" class="content-area has-post-thumbnail clear">
@@ -56,11 +56,12 @@ get_header();
 					?>
 
 				</div><!-- .individuals-posts -->
-				<footer class="entry-footer">
-					<?php the_posts_navigation(); ?>
-				</footer><!-- .entry-footer -->
 
 			</div><!-- .individuals-inner -->
+
+			<footer class="archive-footer">
+				<?php the_posts_navigation(); ?>
+			</footer><!-- .archive-footer -->
 		</section><!-- #individuals -->
 
 	</main><!-- #main -->

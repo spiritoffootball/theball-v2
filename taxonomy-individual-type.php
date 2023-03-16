@@ -15,10 +15,11 @@ get_header();
 ?>
 
 <!-- taxonomy-individual-type.php -->
-<div id="primary" class="content-area yuck">
+<div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 
 		<section id="individuals" class="content-area has-post-thumbnail clear">
+
 			<header class="entry-header"<?php echo the_ball_v2_get_home_feature_image_style(); ?>>
 				<h2 class="entry-title"><?php esc_html_e( 'People', 'the-ball-v2' ); ?></h2>
 				<span class="individual-type"><?php single_cat_title(); ?></span>
@@ -57,11 +58,12 @@ get_header();
 					?>
 
 				</div><!-- .individuals-posts -->
-				<footer class="entry-footer">
-					<?php the_posts_navigation(); ?>
-				</footer><!-- .entry-footer -->
-
 			</div><!-- .individuals-inner -->
+
+			<footer class="archive-footer">
+				<?php the_posts_navigation(); ?>
+			</footer><!-- .archive-footer -->
+
 		</section><!-- #individuals -->
 
 	</main><!-- #main -->

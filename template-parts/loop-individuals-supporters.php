@@ -34,12 +34,12 @@ if ( $supporters->have_posts() ) : ?>
 	<!-- loop-individuals-supporters.php -->
 	<section id="individuals-supporters" class="content-area clear">
 		<div class="individuals-inner">
+
+			<header class="individuals-header">
+				<h2 class="individuals-title"><?php esc_html_e( 'Supporters', 'the-ball-v2' ); ?></h2>
+			</header><!-- .individuals-header -->
+
 			<div class="individuals-posts clear">
-
-				<header class="individuals-header">
-					<h2 class="individuals-title"><?php esc_html_e( 'Supporters', 'the-ball-v2' ); ?></h2>
-				</header><!-- .individuals-header -->
-
 				<?php
 
 				// Init counter for giving items classes.
@@ -60,11 +60,11 @@ if ( $supporters->have_posts() ) : ?>
 				unset( $post_loop_counter );
 
 				?>
-
 			</div><!-- .individuals-posts -->
-			<footer class="entry-footer">
-				<?php the_posts_navigation(); ?>
-			</footer><!-- .entry-footer -->
+
+			<footer class="individuals-footer">
+				<?php //the_posts_navigation(); ?>
+			</footer><!-- .individuals-footer -->
 
 		</div><!-- .individuals-inner -->
 	</section><!-- #individuals -->

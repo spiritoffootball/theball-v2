@@ -369,6 +369,27 @@ add_action( 'widgets_init', 'the_ball_v2_register_widget_areas' );
 
 
 /**
+ * Filters the number of search results per page.
+ *
+ * @since 1.2.1
+ */
+function the_ball_v2_search_posts_per_page( $query ) {
+
+	// Filter search query.
+	if ( $query->is_search ) {
+		$query->set( 'posts_per_page', '12' );
+	}
+
+	// --<
+	return $query;
+
+}
+
+add_filter( 'pre_get_posts', 'the_ball_v2_search_posts_per_page' );
+
+
+
+/**
  * Include class files.
  */
 require get_template_directory() . '/includes/classes/class-counter.php';

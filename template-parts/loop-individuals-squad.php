@@ -34,15 +34,15 @@ if ( $squad->have_posts() ) : ?>
 	<!-- loop-individuals-squad.php -->
 	<section id="individuals-squad" class="content-area clear">
 		<div class="individuals-inner">
+
+			<header class="individuals-header">
+				<h2 class="individuals-title"><?php esc_html_e( 'The Squad', 'the-ball-v2' ); ?></h2>
+				<div class="individuals-sub-title">
+					<p><?php esc_html_e( 'On The Road With The Ball', 'the-ball-v2' ); ?></p>
+				</div>
+			</header><!-- .individuals-header -->
+
 			<div class="individuals-posts clear">
-
-				<header class="individuals-header">
-					<h2 class="individuals-title"><?php esc_html_e( 'The Squad', 'the-ball-v2' ); ?></h2>
-					<div class="individuals-sub-title">
-						<p><?php esc_html_e( 'On The Road With The Ball', 'the-ball-v2' ); ?></p>
-					</div>
-				</header><!-- .individuals-header -->
-
 				<?php
 
 				// Init counter for giving items classes.
@@ -63,11 +63,11 @@ if ( $squad->have_posts() ) : ?>
 				unset( $post_loop_counter );
 
 				?>
-
 			</div><!-- .individuals-posts -->
-			<footer class="entry-footer">
-				<?php the_posts_navigation(); ?>
-			</footer><!-- .entry-footer -->
+
+			<footer class="individuals-footer">
+				<?php //the_posts_navigation(); ?>
+			</footer><!-- .individuals-footer -->
 
 		</div><!-- .individuals-inner -->
 	</section><!-- #individuals -->

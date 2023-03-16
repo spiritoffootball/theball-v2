@@ -21,7 +21,7 @@ get_header();
 	<?php if ( have_posts() ) : ?>
 
 		<section id="archive-header" class="content-area">
-			<article <?php post_class(); ?>>
+			<article class="hentry">
 				<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
 					<h2 class="blog-title"><?php esc_html_e( 'Statements', 'the-ball-v2' ); ?></h2>
 
@@ -61,9 +61,9 @@ get_header();
 			</div>
 		</section><!-- .quote-container -->
 
-		<footer class="blog-footer">
+		<footer class="archive-footer">
 			<?php the_posts_navigation(); ?>
-		</footer><!-- .blog-footer -->
+		</footer><!-- .archive-footer -->
 
 	<?php
 	else :

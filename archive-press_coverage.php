@@ -15,14 +15,14 @@ get_header();
 ?>
 
 <!-- archive-press_resource.php -->
-<div id="primary" class="content-area yuck">
+<div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 
-
 		<section id="blog" class="content-area has-post-thumbnail clear">
+
 			<header class="entry-header"<?php echo the_ball_v2_get_home_feature_image_style(); ?>>
 				<h2 class="blog-title"><?php esc_html_e( 'Press Coverage', 'the-ball-v2' ); ?></h2>
-			</header><!-- .blog-header -->
+			</header><!-- .entry-header -->
 
 			<div class="blog-inner">
 				<div class="blog-posts clear">
@@ -57,11 +57,12 @@ get_header();
 					?>
 
 				</div><!-- .blog-posts -->
-				<footer class="blog-footer">
-					<?php the_posts_navigation(); ?>
-				</footer><!-- .blog-footer -->
-
 			</div><!-- .blog-inner -->
+
+			<footer class="archive-footer">
+				<?php the_posts_navigation(); ?>
+			</footer><!-- .archive-footer -->
+
 		</section><!-- #blog -->
 
 	</main><!-- #main -->

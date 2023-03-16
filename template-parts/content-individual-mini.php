@@ -45,5 +45,5 @@ defined( 'ABSPATH' ) || exit;
 				<?php echo $tag_list; ?>
 			</div>
 		<?php endif; ?>
-	</footer><!-- .blog-footer -->
+	</footer><!-- .entry-footer -->
 </article><!-- #post-->

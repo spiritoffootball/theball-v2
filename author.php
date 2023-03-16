@@ -58,33 +58,31 @@ get_header();
 				</header><!-- .page-header -->
 
 				<div class="blog-posts clear">
+					<?php
 
-				<?php
+					// Init counter for giving items classes.
+					$post_loop_counter = new The_Ball_v2_Counter();
 
-				// Init counter for giving items classes.
-				$post_loop_counter = new The_Ball_v2_Counter();
+					// Start the loop.
+					while ( have_posts() ) :
 
-				// Start the loop.
-				while ( have_posts() ) :
+						the_post();
 
-					the_post();
+						// Get mini template.
+						get_template_part( 'template-parts/content-news-mini' );
 
-					// Get mini template.
-					get_template_part( 'template-parts/content-news-mini' );
+					endwhile;
 
-				endwhile;
+					// Ditch counter.
+					$post_loop_counter->remove_filter();
+					unset( $post_loop_counter );
 
-				// Ditch counter.
-				$post_loop_counter->remove_filter();
-				unset( $post_loop_counter );
-
-				?>
-
+					?>
 				</div><!-- .blog-posts -->
 
-				<footer class="blog-footer">
+				<footer class="archive-footer">
 					<?php the_posts_navigation(); ?>
-				</footer><!-- .blog-footer -->
+				</footer><!-- .archive-footer -->
 
 			</div><!-- .blog-inner -->
 		</section><!-- #blog -->

@@ -71,9 +71,9 @@ get_header();
 			</div>
 		</section><!-- .event-list -->
 
-		<footer class="blog-footer">
+		<footer class="archive-footer">
 			<?php the_posts_navigation(); ?>
-		</footer><!-- .blog-footer -->
+		</footer><!-- .archive-footer -->
 
 	<?php
 	else :
