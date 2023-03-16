@@ -3674,12 +3674,14 @@ img.avatar
 {
 	text-align: left;
 	line-height: 1.3;
+	font-size: 0.9vw;
 }
 
 .quote.quote-type-statement .quote-title a
 {
 	text-decoration: none;
 	color: #ffcc00;
+	font-size: 1.5vw;
 }
 
 #primary .quote.quote-type-statement .entry-content,
@@ -3711,11 +3713,41 @@ img.avatar
 	font-size: 120%;
 }
 
+@media all and (max-width: 1400px) {
+
+	.quote.quote-type-statement .quote-about,
+	.quote.quote-type-statement .quote-date
+	{
+		font-size: 1.2vw;
+	}
+
+	.quote.quote-type-statement .quote-title a
+	{
+		font-size: 1.8vw;
+	}
+
+}
+
 @media all and (max-width: 1200px) {
 
 	.quote.quote-type-statement .quote-content
 	{
 		font-size: 80%;
+	}
+
+}
+
+@media all and (max-width: 876px) {
+
+	.quote.quote-type-statement .quote-about,
+	.quote.quote-type-statement .quote-date
+	{
+		font-size: 1.4vw;
+	}
+
+	.quote.quote-type-statement .quote-title a
+	{
+		font-size: 2vw;
 	}
 
 }
@@ -3733,9 +3765,10 @@ img.avatar
 		height: 40%;
 	}
 
-	.quote.quote-type-statement .quote-header-inner
+	.quote.quote-type-statement .quote-header-inner,
+	.insert-area .quote.quote-type-statement .quote-header-inner
 	{
-		top: 6%;
+		top: 8%;
 		left: 15%;
 		width: 60%;
 	}
@@ -3764,6 +3797,17 @@ img.avatar
 		font-size: 100%;
 	}
 
+	.quote.quote-type-statement .quote-about,
+	.quote.quote-type-statement .quote-date
+	{
+		font-size: 2vw;
+	}
+
+	.quote.quote-type-statement .quote-title a
+	{
+		font-size: 4vw;
+	}
+
 }
 
 @media all and (max-width: 600px) {
@@ -3783,12 +3827,13 @@ img.avatar
 		margin-top: 90px;
 	}
 
-	.quote.quote-type-statement .quote-header-inner
+	.quote.quote-type-statement .quote-header-inner,
+	.insert-area .quote.quote-type-statement .quote-header-inner
 	{
 		top: 20px;
 		left: 20px;
 		width: 90%;
-		transform: none;
+		transform: rotate(-2deg);
 	}
 
 	.quote.quote-type-statement .quote-title
@@ -3801,6 +3846,17 @@ img.avatar
 	.quote.quote-type-statement blockquote p:after
 	{
 		font-size: 100%;
+	}
+
+	.quote.quote-type-statement .quote-about,
+	.quote.quote-type-statement .quote-date
+	{
+		font-size: 3vw;
+	}
+
+	.quote.quote-type-statement .quote-title a
+	{
+		font-size: 5vw;
 	}
 
 }
