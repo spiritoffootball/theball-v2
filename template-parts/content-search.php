@@ -14,6 +14,7 @@ defined( 'ABSPATH' ) || exit;
 
 <!-- content-search.php -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
 	<header class="entry-header">
 		<?php if ( in_array( get_post_type(), [ 'post', 'event', 'press_resource' ] ) ) : ?>
 			<?php echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark"' . the_ball_v2_get_feature_image_style( 'the-ball-v2-listings' ) . ' class="angled-right"></a>'; ?>
@@ -25,7 +26,7 @@ defined( 'ABSPATH' ) || exit;
 
 	<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
 
-	<?php if ( 'post' === get_post_type() ) : ?>
+	<?php if ( in_array( get_post_type(), [ 'post', 'press_resource' ] ) ) : ?>
 		<?php the_ball_v2_post_date(); ?>
 	<?php endif; ?>
 
@@ -37,8 +38,18 @@ defined( 'ABSPATH' ) || exit;
 		<?php endif; ?>
 
 		<?php the_excerpt(); ?>
+
+		<?php if ( 'press_resource' === get_post_type() ) : ?>
+			<?php $about = get_field( 'about' ); ?>
+			<?php if ( ! empty( $about ) ) : ?>
+				<div class="press-resource-about">
+					<?php echo wp_trim_words( $about, 40, '... <a href="' . esc_url( get_permalink() ) . '" rel="bookmark">[' . __( 'Read More', 'the-ball-v2' ) . ']</a>' ); ?>
+				</div>
+			<?php endif; ?>
+		<?php endif; ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
 	</footer><!-- .entry-footer -->
+
 </article><!-- #post-->
