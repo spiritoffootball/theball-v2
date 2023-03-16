@@ -19,8 +19,8 @@ defined( 'ABSPATH' ) || exit;
 		<?php $about = get_field( 'about' ); ?>
 		<?php $statement_date = get_field( 'date' ); ?>
 
-		<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
-			<div class="entry-header-inner">
+		<header class="quote-header"<?php the_ball_v2_feature_image_style(); ?>>
+			<div class="quote-header-inner">
 				<?php if ( is_single() ) : ?>
 					<h1 class="quote-title"><?php echo esc_html( $source ); ?></h1>
 				<?php else : ?>
@@ -33,7 +33,7 @@ defined( 'ABSPATH' ) || exit;
 					<span class="quote-date"><?php echo esc_html( $statement_date ); ?></span>
 				<?php endif; ?>
 			</div>
-		</header><!-- .entry-header -->
+		</header><!-- .quote-header -->
 
 		<div class="entry-content clear">
 			<?php $image = get_field( 'image' ); ?>

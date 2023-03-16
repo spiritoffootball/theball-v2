@@ -3600,7 +3600,7 @@ img.avatar
 	position: relative;
 }
 
-.quote .entry-header
+.quote .quote-header
 {
 	padding-bottom: 1em;
 }
@@ -3621,7 +3621,7 @@ img.avatar
 ## Single Statement Quote
 --------------------------------------------------------------*/
 
-.quote.quote-type-statement .entry-header:before
+.quote.quote-type-statement .quote-header:before
 {
 	content: "";
 	display: block;
@@ -3632,13 +3632,13 @@ img.avatar
 	height: 40%;
 }
 
-.quote.quote-type-statement .entry-header
+.quote.quote-type-statement .quote-header
 {
 	float: left;
 	width: 49%;
 }
 
-.quote.quote-type-statement .entry-header-inner
+.quote.quote-type-statement .quote-header-inner
 {
 	transform: rotate(-4deg);
 	position: absolute;
@@ -3647,7 +3647,7 @@ img.avatar
 	width: 41%;
 }
 
-.insert-area .quote.quote-type-statement .entry-header-inner
+.insert-area .quote.quote-type-statement .quote-header-inner
 {
 	top: 8.9%;
 	left: 10.2%;
@@ -3722,18 +3722,18 @@ img.avatar
 
 @media all and (max-width: 782px) {
 
-	.quote.quote-type-statement .entry-header
+	.quote.quote-type-statement .quote-header
 	{
 		width: 60%;
 	}
 
-	.quote.quote-type-statement .entry-header:before
+	.quote.quote-type-statement .quote-header:before
 	{
 		width: 80%;
 		height: 40%;
 	}
 
-	.quote.quote-type-statement .entry-header-inner
+	.quote.quote-type-statement .quote-header-inner
 	{
 		top: 6%;
 		left: 15%;
@@ -3768,7 +3768,7 @@ img.avatar
 
 @media all and (max-width: 600px) {
 
-	.quote.quote-type-statement .entry-header:before
+	.quote.quote-type-statement .quote-header:before
 	{
 		width: 100%;
 		background-size: cover;
@@ -3783,7 +3783,7 @@ img.avatar
 		margin-top: 90px;
 	}
 
-	.quote.quote-type-statement .entry-header-inner
+	.quote.quote-type-statement .quote-header-inner
 	{
 		top: 20px;
 		left: 20px;
