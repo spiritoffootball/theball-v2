@@ -1950,13 +1950,11 @@ img.avatar
 
 .entry-content blockquote + p cite
 {
-	font-size: 1.5em;
+	font-size: 120%;
 	font-style: normal;
-	text-transform: uppercase;
-	color: #666;
 	line-height: 0;
 	display: block;
-	padding-bottom: 1em;
+	padding-bottom: 0.5em;
 }
 
 #primary .comments-area
