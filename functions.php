@@ -203,7 +203,7 @@ add_action( 'after_setup_theme', 'the_ball_v2_setup' );
 function the_ball_v2_content_width() {
 
 	// The annoying default content width.
-	$GLOBALS['content_width'] = apply_filters( 'the_ball_v2_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'the_ball_v2_content_width', 1040 );
 
 }
 
