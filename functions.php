@@ -372,6 +372,9 @@ add_action( 'widgets_init', 'the_ball_v2_register_widget_areas' );
  * Filters the number of search results per page.
  *
  * @since 1.2.1
+ *
+ * @param object $query The query object.
+ * @return object $query The modified query object.
  */
 function the_ball_v2_search_posts_per_page( $query ) {
 
@@ -386,6 +389,46 @@ function the_ball_v2_search_posts_per_page( $query ) {
 }
 
 add_filter( 'pre_get_posts', 'the_ball_v2_search_posts_per_page' );
+
+
+
+/**
+ * Reverses the default Event sort order in WordPress admin.
+ *
+ * @since 1.2.2
+ *
+ * @param string $orderby The orderby query.
+ * @param object $query The query object.
+ * @return string $orderby The modified orderby query.
+ */
+function the_ball_v2_sort_events( $orderby, $query ) {
+
+	global $wpdb;
+
+	// Do not touch orderby on front-end.
+	if ( ! is_admin() ) {
+		return $orderby;
+	}
+
+	// Do not touch populated orderby queries.
+	if ( ! empty( $query->query_vars['orderby'] ) ) {
+		return $orderby;
+	}
+
+	// Bail if not exclusively an EO orderby query.
+	if ( ! eventorganiser_is_event_query( $query, true ) ) {
+		return $orderby;
+	}
+
+	// Define our orderby clause.
+	$orderby = " {$wpdb->eo_events}.StartDate DESC, {$wpdb->eo_events}.StartTime DESC";
+
+	// --<
+	return $orderby;
+
+}
+
+add_filter( 'posts_orderby', 'the_ball_v2_search_posts_per_page', 20, 2 );
 
 
 
