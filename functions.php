@@ -393,6 +393,31 @@ add_filter( 'pre_get_posts', 'the_ball_v2_search_posts_per_page' );
 
 
 /**
+ * Disables Event sorting by "Post types Order" plugin.
+ *
+ * @since 1.2.2
+ *
+ * @param string $orderby The orderby query.
+ * @param object $query The query object.
+ * @return string $orderby The modified orderby query.
+ */
+function the_ball_v2_events_post_order_skip( $skip, $orderby, $query ) {
+
+	// Bail if not an Event query.
+	if ( empty( $query->query_vars['post_type'] ) || 'event' !== $query->query_vars['post_type'] ) {
+		return $orderby;
+	}
+
+	// Skip Events.
+	return true;
+
+}
+
+add_filter( 'pto/posts_orderby/ignore', 'the_ball_v2_events_post_order_skip', 20, 3 );
+
+
+
+/**
  * Reverses the default Event sort order in WordPress admin.
  *
  * @since 1.2.2
@@ -401,7 +426,7 @@ add_filter( 'pre_get_posts', 'the_ball_v2_search_posts_per_page' );
  * @param object $query The query object.
  * @return string $orderby The modified orderby query.
  */
-function the_ball_v2_sort_events( $orderby, $query ) {
+function the_ball_v2_events_sort( $orderby, $query ) {
 
 	global $wpdb;
 
@@ -428,7 +453,7 @@ function the_ball_v2_sort_events( $orderby, $query ) {
 
 }
 
-add_filter( 'posts_orderby', 'the_ball_v2_search_posts_per_page', 20, 2 );
+add_filter( 'posts_orderby', 'the_ball_v2_events_sort', 20, 2 );
 
 
 
