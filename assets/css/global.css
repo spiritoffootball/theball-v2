@@ -4129,6 +4129,18 @@ img.avatar
 	margin-bottom: 2em;
 }
 
+/* Every third-plus-one item starts a new row */
+.archive #primary .press_resource.third-plus-one
+{
+	clear: left;
+}
+
+/* Every third item ends a row */
+.archive #primary .press_resource.third
+{
+	margin-right: 0;
+}
+
 .archive #primary .press_resource .entry-title
 {
 	margin: 0.3em 0 0.3em 0;
@@ -5059,7 +5071,8 @@ img.avatar
 	#individuals-staff .hentry,
 	#individuals-supporters .hentry,
 	#news .post,
-	#blog .post
+	#blog .post,
+	.archive #primary .press_resource
 	{
 		width: 48%;
 		margin-right: 4%;
@@ -5087,6 +5100,7 @@ img.avatar
 	#individuals-supporters .hentry.third-plus-one,
 	#news .post.third-plus-one,
 	#blog .post.third-plus-one
+	.archive #primary .press_resource.third-plus-one
 	{
 		clear: none;
 	}
@@ -5103,7 +5117,8 @@ img.avatar
 	#individuals-staff .hentry.third,
 	#individuals-supporters .hentry.third,
 	#news .post.third,
-	#blog .post.third
+	#blog .post.third,
+	.archive #primary .press_resource.third
 	{
 		margin-right: 4%;
 	}
@@ -5126,7 +5141,8 @@ img.avatar
 	#individuals-staff .hentry.even-plus-one,
 	#individuals-supporters .hentry.even-plus-one,
 	#news .post.even-plus-one,
-	#blog .post.even-plus-one
+	#blog .post.even-plus-one,
+	.archive #primary .press_resource.even-plus-one
 	{
 		clear: left;
 	}
@@ -5143,7 +5159,8 @@ img.avatar
 	#individuals-staff .hentry.even,
 	#individuals-supporters .hentry.even,
 	#news .post.even,
-	#blog .post.even
+	#blog .post.even,
+	.archive #primary .press_resource.even
 	{
 		margin-right: 0;
 	}
@@ -5344,7 +5361,8 @@ img.avatar
 	#individuals-board .hentry.even-plus-one,
 	#individuals-supporters .hentry.even-plus-one,
 	#news .post.even-plus-one,
-	#blog .post.even-plus-one
+	#blog .post.even-plus-one,
+	.archive #primary .press_resource.even-plus-one
 	{
 		clear: none;
 		margin-right: 0;
@@ -5361,7 +5379,8 @@ img.avatar
 	#individuals-board .hentry.even,
 	#individuals-supporters .hentry.even,
 	#news .post.even,
-	#blog .post.even
+	#blog .post.even,
+	.archive #primary .press_resource.even
 	{
 		margin-right: 0;
 	}
@@ -5377,7 +5396,8 @@ img.avatar
 	#individuals-board .hentry,
 	#individuals-supporters .hentry,
 	#news .post,
-	#blog .post
+	#blog .post,
+	.archive #primary .press_resource
 	{
 		float: none;
 		clear: left;
