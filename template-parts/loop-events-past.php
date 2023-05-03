@@ -22,8 +22,14 @@ $events_args = [
 	'posts_per_page' => -1,
 ];
 
+// Newest Events first.
+add_filter( 'posts_orderby', 'the_ball_v2_events_sort_desc', 20, 2 );
+
 // The query.
 $events = new WP_Query( $events_args );
+
+// Clear sort order filter.
+remove_filter( 'posts_orderby', 'the_ball_v2_events_sort_desc', 20 );
 
 if ( $events->have_posts() ) : ?>
 

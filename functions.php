@@ -458,6 +458,39 @@ add_filter( 'posts_orderby', 'the_ball_v2_events_sort', 20, 2 );
 
 
 /**
+ * Reverses the default Event sort order on WordPress front-end.
+ *
+ * @since 1.2.2
+ *
+ * @param string $orderby The orderby query.
+ * @param object $query The query object.
+ * @return string $orderby The modified orderby query.
+ */
+function the_ball_v2_events_sort_desc( $orderby, $query ) {
+
+	global $wpdb;
+
+	// Do not touch populated orderby queries.
+	if ( ! empty( $query->query_vars['orderby'] ) ) {
+		return $orderby;
+	}
+
+	// Bail if not exclusively an EO orderby query.
+	if ( ! eventorganiser_is_event_query( $query, true ) ) {
+		return $orderby;
+	}
+
+	// Define our orderby clause.
+	$orderby = " {$wpdb->eo_events}.StartDate DESC, {$wpdb->eo_events}.StartTime DESC";
+
+	// --<
+	return $orderby;
+
+}
+
+
+
+/**
  * Include class files.
  */
 require get_template_directory() . '/includes/classes/class-counter.php';
