@@ -84,7 +84,7 @@ defined( 'ABSPATH' ) || exit;
 
 			<div class="site-info">
 				<?php /* translators: 1: The opening anchor tag, 2: The closing anchor tag, 3: The current year. */ ?>
-				<p><?php printf( esc_html__( 'Website content &copy; %1$sSpirit of Football%2$s %3$s. All rights reserved.', 'the-ball-v2-2022' ), '<a href="https://spiritoffootball.com">', '</a>', esc_html( gmdate( 'Y' ) ) ); ?></p>
+				<p><?php printf( esc_html__( 'Website content &copy; %1$sSpirit of Football%2$s %3$s. All rights reserved.', 'the-ball-v2' ), '<a href="https://spiritoffootball.com">', '</a>', esc_html( gmdate( 'Y' ) ) ); ?></p>
 			</div><!-- .site-info -->
 
 		</div><!-- .footer-inner -->

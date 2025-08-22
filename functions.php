@@ -123,41 +123,50 @@ if ( ! function_exists( 'the_ball_v2_setup' ) ) :
 		*/
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( [
-			'primary' => esc_html__( 'Primary', 'the-ball-v2' ),
-			'footer' => esc_html__( 'Footer', 'the-ball-v2' ),
-		] );
+		register_nav_menus(
+			[
+				'primary' => esc_html__( 'Primary', 'the-ball-v2' ),
+				'footer'  => esc_html__( 'Footer', 'the-ball-v2' ),
+			]
+		);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support( 'html5', [
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-			'style',
-			'script',
-		] );
+		add_theme_support(
+			'html5',
+			[
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+				'style',
+				'script',
+			]
+		);
 
 		/*
 		 * Enable support for Post Formats.
 		 * @see https://developer.wordpress.org/themes/functionality/post-formats/
 		 */
-		add_theme_support( 'post-formats', [
-			'aside',
-			'image',
-			'video',
-			'quote',
-			'link',
-		] );
+		add_theme_support(
+			'post-formats',
+			[
+				'aside',
+				'image',
+				'video',
+				'quote',
+				'link',
+			]
+		);
 
 		// Set up the WordPress core custom background feature.
 		add_theme_support(
 			'custom-background',
-			apply_filters( 'the_ball_v2_custom_background_args',
+			apply_filters(
+				'the_ball_v2_custom_background_args',
 				[
 					'default-color' => 'ffffff',
 					'default-image' => '',
@@ -176,12 +185,15 @@ if ( ! function_exists( 'the_ball_v2_setup' ) ) :
 		 *
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
-		add_theme_support( 'custom-logo', [
-			'height'      => 250,
-			'width'       => 250,
-			'flex-width'  => true,
-			'flex-height' => true,
-		] );
+		add_theme_support(
+			'custom-logo',
+			[
+				'height'      => 250,
+				'width'       => 250,
+				'flex-width'  => true,
+				'flex-height' => true,
+			]
+		);
 
 	}
 
@@ -223,8 +235,10 @@ function the_ball_v2_remove_post_type_support() {
 
 }
 
-// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
-//add_action( 'init', 'the_ball_v2_remove_post_type_support', 1000 );
+/*
+// Disabled for now.
+add_action( 'init', 'the_ball_v2_remove_post_type_support', 1000 );
+*/
 
 
 
@@ -341,26 +355,30 @@ add_action( 'wp_enqueue_scripts', 'the_ball_v2_scripts', 50 );
 function the_ball_v2_register_widget_areas() {
 
 	// Define an area where a widget may be placed.
-	register_sidebar( [
-		'name' => __( 'Header', 'the-ball-v2' ),
-		'id' => 'header',
-		'description' => __( 'An optional widget area in the header of this theme', 'the-ball-v2' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	] );
+	register_sidebar(
+		[
+			'name'          => __( 'Header', 'the-ball-v2' ),
+			'id'            => 'header',
+			'description'   => __( 'An optional widget area in the header of this theme', 'the-ball-v2' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		]
+	);
 
 	// Define an area where a widget may be placed.
-	register_sidebar( [
-		'name' => __( 'Footer', 'the-ball-v2' ),
-		'id' => 'footer',
-		'description' => __( 'An optional widget area in the footer of this theme', 'the-ball-v2' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	] );
+	register_sidebar(
+		[
+			'name'          => __( 'Footer', 'the-ball-v2' ),
+			'id'            => 'footer',
+			'description'   => __( 'An optional widget area in the footer of this theme', 'the-ball-v2' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		]
+	);
 
 }
 
@@ -393,12 +411,13 @@ add_filter( 'pre_get_posts', 'the_ball_v2_search_posts_per_page' );
 
 
 /**
- * Disables Event sorting by "Post types Order" plugin.
+ * Disables Event sorting by "Post Types Order" plugin.
  *
  * @since 1.2.2
  *
- * @param string $orderby The orderby query.
- * @param object $query The query object.
+ * @param bool     $skip True skips the orderby query, false does not.
+ * @param string   $orderby The orderby query.
+ * @param WP_Query $query The query object.
  * @return string $orderby The modified orderby query.
  */
 function the_ball_v2_events_post_order_skip( $skip, $orderby, $query ) {

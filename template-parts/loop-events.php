@@ -12,11 +12,11 @@ defined( 'ABSPATH' ) || exit;
 
 // Define query args.
 $events_args = [
-	'post_type' => 'event',
-	'post_status' => 'publish',
-	'no_found_rows' => true,
+	'post_type'       => 'event',
+	'post_status'     => 'publish',
+	'no_found_rows'   => true,
 	'event_end_after' => 'now',
-	'posts_per_page' => -1,
+	'posts_per_page'  => -1,
 ];
 
 // Newest Events first.

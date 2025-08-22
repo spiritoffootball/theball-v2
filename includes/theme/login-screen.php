@@ -30,7 +30,7 @@ function the_ball_v2_enqueue_login_styles() {
 		#login h1 a,
 		.login h1 a
 		{
-			background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/logos/sof-logo-512-white.png);
+			background-image: url(<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logos/sof-logo-512-white.png);
 			background-size: 50%;
 			width: 256px;
 			height: 116px;

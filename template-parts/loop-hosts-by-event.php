@@ -21,10 +21,10 @@ if ( ! empty( $ball_host_ids ) ) :
 
 	// Define query args.
 	$ball_hosts_args = [
-		'post_type' => 'host',
-		'post_status' => 'publish',
-		'post__in' => $ball_host_ids,
-		'nopaging' => true,
+		'post_type'     => 'host',
+		'post_status'   => 'publish',
+		'post__in'      => $ball_host_ids,
+		'nopaging'      => true,
 		'no_found_rows' => true,
 	];
 

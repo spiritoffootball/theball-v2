@@ -12,16 +12,17 @@ defined( 'ABSPATH' ) || exit;
 
 // Define query args.
 $supporters_args = [
-	'post_type' => 'individual',
-	'post_status' => 'publish',
-	'order' => 'ASC',
-	'orderby' => 'title',
+	'post_type'      => 'individual',
+	'post_status'    => 'publish',
+	'order'          => 'ASC',
+	'orderby'        => 'title',
 	'posts_per_page' => -1,
-	'tax_query' => [
+	// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
+	'tax_query'      => [
 		[
 			'taxonomy' => 'individual-type',
-			'field' => 'slug',
-			'terms' => 'supporters',
+			'field'    => 'slug',
+			'terms'    => 'supporters',
 		],
 	],
 ];
@@ -63,7 +64,7 @@ if ( $supporters->have_posts() ) : ?>
 			</div><!-- .individuals-posts -->
 
 			<footer class="individuals-footer">
-				<?php //the_posts_navigation(); ?>
+				<?php /* the_posts_navigation(); */ ?>
 			</footer><!-- .individuals-footer -->
 
 		</div><!-- .individuals-inner -->

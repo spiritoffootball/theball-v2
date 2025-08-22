@@ -12,10 +12,10 @@ defined( 'ABSPATH' ) || exit;
 
 // Define query args.
 $hosts_args = [
-	'post_type' => 'host',
+	'post_type'   => 'host',
 	'post_status' => 'publish',
-	'order' => 'ASC',
-	'orderby' => 'title',
+	'order'       => 'ASC',
+	'orderby'     => 'title',
 ];
 
 // The query.

@@ -55,10 +55,12 @@ if ( post_password_required() ) {
 			<ol class="comment-list">
 				<?php
 
-				wp_list_comments( [
-					'style'      => 'ol',
-					'short_ping' => true,
-				] );
+				wp_list_comments(
+					[
+						'style'      => 'ol',
+						'short_ping' => true,
+					]
+				);
 
 				?>
 			</ol><!-- .comment-list -->

@@ -12,10 +12,10 @@ defined( 'ABSPATH' ) || exit;
 
 // Define query args.
 $organisations_args = [
-	'post_type' => 'organisation',
+	'post_type'   => 'organisation',
 	'post_status' => 'publish',
-	'order' => 'ASC',
-	'orderby' => 'title',
+	'order'       => 'ASC',
+	'orderby'     => 'title',
 ];
 
 // The query.

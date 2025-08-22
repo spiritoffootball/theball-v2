@@ -27,13 +27,14 @@ defined( 'ABSPATH' ) || exit;
 		<?php $logo = get_field( 'logo' ); ?>
 		<?php if ( ! empty( $logo ) ) : ?>
 			<div class="organisation-logo">
-				<img src="<?php echo $logo['sizes']['medium-640']; ?>" width="<?php echo ( $logo['sizes']['medium-640-width'] / 2 ); ?>" height="<?php echo ( $logo['sizes']['medium-640-height'] / 2 ); ?>">
+				<img src="<?php echo esc_url( $logo['sizes']['medium-640'] ); ?>" width="<?php echo esc_attr( $logo['sizes']['medium-640-width'] / 2 ); ?>" height="<?php echo esc_attr( $logo['sizes']['medium-640-height'] / 2 ); ?>">
 			</div>
 		<?php endif; ?>
 
 		<?php $about = get_field( 'about' ); ?>
 		<?php if ( ! empty( $about ) ) : ?>
 			<div class="organisation-about">
+				<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
 				<?php echo $about; ?>
 			</div>
 		<?php endif; ?>
@@ -41,6 +42,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php $why = get_field( 'why_partner' ); ?>
 		<?php if ( ! empty( $why ) ) : ?>
 			<div class="organisation-why-partner">
+				<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
 				<?php echo $why; ?>
 			</div>
 		<?php endif; ?>
@@ -59,11 +61,11 @@ defined( 'ABSPATH' ) || exit;
 			<div class="jetpack_widget_social_icons organisation-social-links">
 				<ul class="jetpack-social-widget-list size-large">
 				<?php foreach ( $social_links as $selector => $social_link ) : ?>
-					<li class="jetpack-social-widget-item organisation-social-link organisation-<?php echo $selector; ?>">
-						<a href="<?php echo $social_link; ?>" target="_self">
-							<span class="screen-reader-text"><?php echo ucfirst( $selector ); ?></span>
-							<svg class="icon icon-<?php echo $selector; ?>" aria-hidden="true" role="presentation">
-								<use href="#icon-<?php echo $selector; ?>" xlink:href="#icon-<?php echo $selector; ?>"></use>
+					<li class="jetpack-social-widget-item organisation-social-link organisation-<?php echo esc_attr( $selector ); ?>">
+						<a href="<?php echo esc_url( $social_link ); ?>" target="_self">
+							<span class="screen-reader-text"><?php echo esc_html( ucfirst( $selector ) ); ?></span>
+							<svg class="icon icon-<?php echo esc_attr( $selector ); ?>" aria-hidden="true" role="presentation">
+								<use href="#icon-<?php echo esc_attr( $selector ); ?>" xlink:href="#icon-<?php echo esc_attr( $selector ); ?>"></use>
 							</svg>
 						</a>
 					</li>
@@ -75,22 +77,27 @@ defined( 'ABSPATH' ) || exit;
 		<?php $website = get_field( 'website' ); ?>
 		<?php if ( ! empty( $website ) ) : ?>
 			<div class="organisation-website">
-				<a href="<?php echo $website; ?>"><?php printf( __( '%s website', 'the-ball-v2' ), get_the_title() ); ?></a>
+				<?php /* translators: %s: The name of the organisation. */ ?>
+				<a href="<?php echo esc_url( $website ); ?>"><?php printf( esc_html__( '%s website', 'the-ball-v2' ), esc_html( get_the_title() ) ); ?></a>
 			</div>
 		<?php endif; ?>
 
 		<?php
 
-		the_content( sprintf(
-			/* translators: %s: Name of current post. */
-			wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'the-ball-v2' ), [ 'span' => [ 'class' => [] ] ] ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-		) );
+		the_content(
+			sprintf(
+				/* translators: %s: Name of current post. */
+				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'the-ball-v2' ), [ 'span' => [ 'class' => [] ] ] ),
+				the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			)
+		);
 
-		wp_link_pages( [
+		$args = [
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'the-ball-v2' ),
 			'after'  => '</div>',
-		] );
+		];
+
+		wp_link_pages( $args );
 
 		?>
 	</div><!-- .entry-content -->

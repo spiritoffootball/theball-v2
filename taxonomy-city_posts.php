@@ -23,7 +23,8 @@ get_header();
 			<div class="blog-inner">
 
 				<header class="blog-header">
-					<h2 class="blog-title"><?php echo sprintf( __( '%s News', 'the-ball-v2' ), single_cat_title( '', false ) ); ?></h2>
+					<?php /* translators: %s: The category title. */ ?>
+					<h2 class="blog-title"><?php echo sprintf( esc_html__( '%s News', 'the-ball-v2' ), single_cat_title( '', false ) ); ?></h2>
 				</header><!-- .blog-header -->
 
 				<div class="blog-posts clear">
@@ -58,13 +59,11 @@ get_header();
 			</div><!-- .blog-inner -->
 		</section><!-- #blog -->
 
-	<?php
-	else :
+	<?php else : ?>
 
-		get_template_part( 'template-parts/content', 'none' );
+		<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-	endif;
-	?>
+	<?php endif; ?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->

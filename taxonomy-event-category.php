@@ -23,12 +23,14 @@ get_header();
 		<section id="archive-header" class="content-area">
 			<article <?php post_class(); ?>>
 				<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
-					<h2 class="blog-title"><?php printf( __( '%s Events', 'the-ball-v2' ), single_cat_title( '', false ) ); ?></h2>
+					<?php /* translators: %s: The category title. */ ?>
+					<h2 class="blog-title"><?php printf( esc_html__( '%s Events', 'the-ball-v2' ), single_cat_title( '', false ) ); ?></h2>
 
 					<?php
 					// If the category has a description display it.
 					$category_description = category_description();
 					if ( ! empty( $category_description ) ) {
+						// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						echo apply_filters( 'category_archive_meta', '<div class="category-archive-meta">' . $category_description . '</div>' );
 					}
 					?>
@@ -65,13 +67,11 @@ get_header();
 			<?php the_posts_navigation(); ?>
 		</footer><!-- .archive-footer -->
 
-	<?php
-	else :
+	<?php else : ?>
 
-		get_template_part( 'template-parts/content', 'none' );
+		<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-	endif;
-	?>
+	<?php endif; ?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->

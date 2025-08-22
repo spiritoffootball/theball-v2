@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 			<?php $image = get_field( 'image' ); ?>
 			<?php if ( ! empty( $image ) ) : ?>
 				<div class="quote-image">
-					<img src="<?php echo $image['url']; ?>">
+					<img src="<?php echo esc_url( $image['url'] ); ?>">
 				</div>
 			<?php endif; ?>
 
@@ -30,6 +30,7 @@ defined( 'ABSPATH' ) || exit;
 			<?php $content = get_field( 'content' ); ?>
 			<?php if ( ! empty( $content ) ) : ?>
 				<div class="quote-content">
+					<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
 					<blockquote><?php echo $content; ?></blockquote>
 				</div>
 			<?php endif; ?>

@@ -25,10 +25,12 @@ get_header();
 				<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
 					<?php $venue_id = get_queried_object_id(); ?>
 					<h1 class="page-title">
-						<?php printf( __( 'Events at: %s', 'the-ball-v2' ), '<span>' . eo_get_venue_name( $venue_id ) . '</span>' ); ?>
+						<?php /* translators: %s: The name of the venue. */ ?>
+						<?php printf( esc_html__( 'Events at: %s', 'the-ball-v2' ), '<span>' . esc_html( eo_get_venue_name( $venue_id ) ) . '</span>' ); ?>
 					</h1>
 
 					<?php if ( $venue_description = eo_get_venue_description( $venue_id ) ) : ?>
+						<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
 						<div class="venue-archive-meta"><?php echo $venue_description; ?></div>
 					<?php endif; ?>
 
@@ -36,9 +38,10 @@ get_header();
 					// Display the venue map. If specifying a class, ensure that class has height/width dimensions.
 					if ( eo_venue_has_latlng( $venue_id ) ) {
 						$venue_map_args = [
-							'width' => '100%',
+							'width'  => '100%',
 							'height' => '300px',
 						];
+						// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						echo eo_get_venue_map( $venue_id, $venue_map_args );
 					}
 					?>
@@ -75,13 +78,11 @@ get_header();
 			<?php the_posts_navigation(); ?>
 		</footer><!-- .archive-footer -->
 
-	<?php
-	else :
+	<?php else : ?>
 
-		get_template_part( 'template-parts/content', 'none' );
+		<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-	endif;
-	?>
+	<?php endif; ?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->

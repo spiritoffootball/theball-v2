@@ -36,7 +36,7 @@ if ( is_wp_error( $event_terms ) ) {
 
 				<p>
 					<?php foreach ( $event_terms as $event_term ) : ?>
-						<a href="<?php echo get_term_link( $event_term, 'event_posts' ); ?>" class="term-link"><?php echo esc_html( $event_term->name ); ?></a>
+						<a href="<?php echo esc_url( get_term_link( $event_term, 'event_posts' ) ); ?>" class="term-link"><?php echo esc_html( $event_term->name ); ?></a>
 					<?php endforeach; ?>
 				</p>
 
@@ -45,7 +45,7 @@ if ( is_wp_error( $event_terms ) ) {
 
 		<?php if ( ! is_home() ) : ?>
 			<footer class="loop-insert-footer news-footer">
-				<p><a href="<?php echo get_post_type_archive_link( 'post' ); ?>" class="archive-link"><?php esc_html_e( 'View All News', 'the-ball-v2' ); ?></a></p>
+				<p><a href="<?php echo esc_url( get_post_type_archive_link( 'post' ) ); ?>" class="archive-link"><?php esc_html_e( 'View All News', 'the-ball-v2' ); ?></a></p>
 			</footer><!-- .news-footer -->
 		<?php endif; ?>
 

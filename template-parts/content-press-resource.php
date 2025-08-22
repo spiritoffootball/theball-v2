@@ -28,31 +28,34 @@ defined( 'ABSPATH' ) || exit;
 		<?php $about = get_field( 'about' ); ?>
 		<?php if ( ! empty( $about ) ) : ?>
 			<div class="press-resource-about">
+				<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
 				<?php echo $about; ?>
 			</div>
 		<?php endif; ?>
 
 		<?php if ( have_rows( 'files' ) ) : ?>
 			<div class="press-resource-files">
-				<?php while( have_rows( 'files' ) ) : ?>
+				<?php while ( have_rows( 'files' ) ) : ?>
 
 					<?php the_row(); ?>
 					<?php $file = get_sub_field( 'file' ); ?>
 
 					<?php if ( ! empty( $file ) ) : ?>
-						<?php $title = empty( $file['title'] ) ? $file['filename'] : $file['title']; ?>
-						<?php $preview = get_sub_field( 'file_preview' ); ?>
+						<?php $file_title = empty( $file['title'] ) ? $file['filename'] : $file['title']; ?>
+						<?php $file_preview = get_sub_field( 'file_preview' ); ?>
 						<div class="press-resource-file">
-							<h2><?php echo esc_html( $title ); ?></h2>
-							<?php if ( ! empty( $preview ) ) : ?>
+							<h2><?php echo esc_html( $file_title ); ?></h2>
+							<?php if ( ! empty( $file_preview ) ) : ?>
 								<div class="press-resource-image">
-									<img src="<?php echo $preview['sizes']['medium_large']; ?>">
+									<img src="<?php echo esc_url( $file_preview['sizes']['medium_large'] ); ?>">
 								</div>
 							<?php endif; ?>
 							<?php if ( ! empty( $file['description'] ) ) : ?>
+								<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
 								<?php echo wpautop( wptexturize( $file['description'] ) ); ?>
 							<?php endif; ?>
-							<p><a href="<?php echo $file['url']; ?>"><?php printf( __( 'Download %s', 'the-ball-v2' ), $title ); ?></a></p>
+							<?php /* translators: %s: The name of the file. */ ?>
+							<p><a href="<?php echo esc_url( $file['url'] ); ?>"><?php printf( esc_html__( 'Download %s', 'the-ball-v2' ), esc_html( $file_title ) ); ?></a></p>
 						</div>
 					<?php endif; ?>
 
@@ -67,6 +70,7 @@ defined( 'ABSPATH' ) || exit;
 
 		$cat_list = get_the_term_list( get_the_ID(), 'press-resource-type', '<p class="press-resource-tags"><span>', '</span><span>', '</span></p>' );
 		if ( ! empty( $cat_list ) && ! is_wp_error( $cat_list ) ) {
+			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			echo $cat_list;
 		}
 
@@ -75,6 +79,7 @@ defined( 'ABSPATH' ) || exit;
 
 		$tag_list = get_the_term_list( get_the_ID(), 'press-resource-tag', '<p class="press-resource-tags"><span>', '</span><span>', '</span></p>' );
 		if ( ! empty( $tag_list ) && ! is_wp_error( $tag_list ) ) {
+			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			echo $tag_list;
 		}
 

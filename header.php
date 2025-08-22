@@ -58,12 +58,11 @@ defined( 'ABSPATH' ) || exit;
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php else : ?>
 					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-				endif;
+				<?php endif; ?>
 
-				$sof_description = get_bloginfo( 'description', 'display' );
-				if ( $sof_description || is_customize_preview() ) :
-					?>
+				<?php $sof_description = get_bloginfo( 'description', 'display' ); ?>
+				<?php if ( $sof_description || is_customize_preview() ) : ?>
+					<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
 					<p class="site-description"><?php echo $sof_description; ?></p>
 				<?php endif; ?>
 			</div><!-- .site-branding -->
@@ -93,10 +92,12 @@ defined( 'ABSPATH' ) || exit;
 			<nav id="site-navigation" class="main-navigation" role="navigation">
 				<span class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'the-ball-v2' ); ?></span>
 				<?php
-				wp_nav_menu( [
-					'theme_location' => 'primary',
-					'menu_id' => 'primary-menu',
-				] );
+				wp_nav_menu(
+					[
+						'theme_location' => 'primary',
+						'menu_id'        => 'primary-menu',
+					]
+				);
 				?>
 			</nav><!-- #site-navigation -->
 

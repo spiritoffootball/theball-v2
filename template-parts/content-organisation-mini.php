@@ -24,6 +24,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php $about = get_field( 'about' ); ?>
 		<?php if ( ! empty( $about ) ) : ?>
 			<div class="organisation-about">
+				<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
 				<?php echo $about; ?>
 			</div>
 		<?php endif; ?>

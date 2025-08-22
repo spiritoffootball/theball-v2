@@ -12,15 +12,16 @@ defined( 'ABSPATH' ) || exit;
 
 // Define query args.
 $pledges_args = [
-	'post_type' => 'quote',
+	'post_type'   => 'quote',
 	'post_status' => 'publish',
-	'order' => 'ASC',
-	'orderby' => 'title',
-	'tax_query' => [
+	'order'       => 'ASC',
+	'orderby'     => 'title',
+	// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
+	'tax_query'   => [
 		[
 			'taxonomy' => 'quote-type',
-			'field' => 'slug',
-			'terms' => 'pledge',
+			'field'    => 'slug',
+			'terms'    => 'pledge',
 		],
 	],
 ];

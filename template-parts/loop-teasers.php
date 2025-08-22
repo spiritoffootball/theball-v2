@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 // Define query args.
 $teaser_args = [
 	'post_type' => 'page',
-	'pagename' => 'homepage-teaser',
+	'pagename'  => 'homepage-teaser',
 ];
 
 // Do the query.

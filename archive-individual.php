@@ -19,7 +19,8 @@ get_header();
 	<main id="main" class="site-main" role="main">
 
 		<section id="individuals" class="content-area has-post-thumbnail clear">
-			<header class="entry-header"<?php echo the_ball_v2_get_home_feature_image_style(); ?>>
+
+			<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
 				<h2 class="entry-title"><?php esc_html_e( 'People', 'the-ball-v2' ); ?></h2>
 			</header><!-- .entry-header -->
 

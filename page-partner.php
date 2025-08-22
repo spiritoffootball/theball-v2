@@ -36,10 +36,10 @@ get_header();
 
 	// Define query args.
 	$partners_args = [
-		'post_type' => 'partner',
-		'post_status' => 'publish',
-		'order' => 'ASC',
-		'orderby' => 'title',
+		'post_type'      => 'partner',
+		'post_status'    => 'publish',
+		'order'          => 'ASC',
+		'orderby'        => 'title',
 		'posts_per_page' => -1,
 	];
 

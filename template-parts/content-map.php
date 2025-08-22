@@ -25,17 +25,18 @@ defined( 'ABSPATH' ) || exit;
 		// Skip if we do not have the Geo Mashup plugin.
 		if ( class_exists( 'GeoMashup' ) ) {
 			$map_args = [
-				'map_content' => 'global',
-				'object_name' => 'post',
-				'map_post_type' => 'ball,event,host,partner,post',
-				'zoom' => 'auto',
-				'remove_geo_mashup_logo' => 'true',
-				'auto_info_open' => 'false',
-				'add_overview_control' => 'false',
-				'marker_select_center' => 'false',
+				'map_content'             => 'global',
+				'object_name'             => 'post',
+				'map_post_type'           => 'ball,event,host,partner,post',
+				'zoom'                    => 'auto',
+				'remove_geo_mashup_logo'  => 'true',
+				'auto_info_open'          => 'false',
+				'add_overview_control'    => 'false',
+				'marker_select_center'    => 'false',
 				'marker_select_highlight' => 'false',
 			];
 
+			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			echo GeoMashup::map( $map_args );
 		}
 

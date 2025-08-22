@@ -40,8 +40,8 @@ get_header();
 
 		// Define query args.
 		$events_args = [
-			'post_type' => 'event',
-			'post_status' => 'publish',
+			'post_type'      => 'event',
+			'post_status'    => 'publish',
 			'posts_per_page' => -1,
 		];
 
@@ -60,7 +60,7 @@ get_header();
 			<section class="event-list insert-area clear">
 				<div class="event-list-inner">
 					<?php global $sof_featured_events; ?>
-					<?php if ( $sof_featured_events === true ) : ?>
+					<?php if ( true === $sof_featured_events ) : ?>
 						<h2 class="events-title"><?php esc_html_e( 'Ongoing Events', 'the-ball-v2' ); ?></h2>
 					<?php endif; ?>
 

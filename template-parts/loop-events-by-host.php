@@ -12,11 +12,11 @@ defined( 'ABSPATH' ) || exit;
 
 // Define query args.
 $events_args = [
-	'connected_type' => 'events_to_organisations',
+	'connected_type'  => 'events_to_organisations',
 	'connected_items' => get_queried_object(),
-	'nopaging' => true,
-	'no_found_rows' => true,
-	'posts_per_page' => -1,
+	'nopaging'        => true,
+	'no_found_rows'   => true,
+	'posts_per_page'  => -1,
 ];
 
 // The query.

@@ -63,7 +63,7 @@ class The_Ball_v2_Counter {
 	public function __construct( $mode = 'basic', $title = '' ) {
 
 		// Store params.
-		$this->mode = $mode;
+		$this->mode  = $mode;
 		$this->title = $title;
 
 		// Return the mode via a filter.

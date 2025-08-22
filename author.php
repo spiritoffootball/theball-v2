@@ -45,9 +45,10 @@ get_header();
 
 					$author_id = get_the_author_meta( 'ID' );
 					if ( ! empty( $author_id ) ) {
-						$author = new WP_User( $author_id );
+						$author        = new WP_User( $author_id );
 						$author_avatar = get_avatar( $author->user_email, $size = '320' );
 						if ( ! empty( $author_avatar ) ) {
+							// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 							echo '<div class="author-avatar">' . $author_avatar . '</div>';
 						}
 					}
@@ -87,13 +88,11 @@ get_header();
 			</div><!-- .blog-inner -->
 		</section><!-- #blog -->
 
-	<?php
-	else :
+	<?php else : ?>
 
-		get_template_part( 'template-parts/content', 'none' );
+		<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-	endif;
-	?>
+	<?php endif; ?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->

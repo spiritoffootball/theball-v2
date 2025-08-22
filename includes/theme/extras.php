@@ -89,10 +89,10 @@ function the_ball_v2_post_class( $classes ) {
 	}
 
 	// Find key for class name.
-	$key = array_search( 'has-post-thumbnail', $classes );
+	$key = array_search( 'has-post-thumbnail', $classes, true );
 
 	// Delete it if it's found.
-	if ( $key !== false ) {
+	if ( false !== $key ) {
 		unset( $classes[ $key ] );
 	}
 
@@ -132,7 +132,8 @@ add_filter( 'excerpt_length', 'the_ball_v2_excerpt_length' );
 function the_ball_v2_excerpt_more( $more ) {
 
 	// Override with custom text.
-	return '... ' . sprintf( '<a class="read-more" href="%1$s">[%2$s]</a>',
+	return '... ' . sprintf(
+		'<a class="read-more" href="%1$s">[%2$s]</a>',
 		get_permalink( get_the_ID() ),
 		__( 'Read More', 'the-ball-v2' )
 	);
@@ -172,9 +173,10 @@ function the_ball_v2_wpcv_eo_maps_info_window_content() {
 	return false;
 }
 
+/*
 // Add filter for content in GeoMashup map popups.
-// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
-//add_filter( 'wpcv_eo_maps/info_window/content', 'the_ball_v2_wpcv_eo_maps_info_window_content' );
+add_filter( 'wpcv_eo_maps/info_window/content', 'the_ball_v2_wpcv_eo_maps_info_window_content' );
+*/
 
 /**
  * Override Pledgeball scroll element.
@@ -214,7 +216,6 @@ function the_ball_v2_page_submenu() {
 
 	// Init menu with link to Event content.
 	$menu = [
-		//'<li><a href="#event-content">' . esc_html( sprintf( __( 'About %s', 'the-ball-v2' ), $event->post_title ) ) . '</a></li>',
 		'<li><a href="#event-content">' . esc_html( __( 'About this Event', 'the-ball-v2' ) ) . '</a></li>',
 	];
 
@@ -261,7 +262,7 @@ function the_ball_v2_page_submenu() {
 	// Show menu.
 	echo '<div class="the-ball-v2-page-menu">' . "\n";
 	echo '<ul>' . "\n";
-	echo implode( '', $menu );
+	echo implode( '', $menu ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	echo '</ul>' . "\n";
 	echo '</div>' . "\n";
 

@@ -16,17 +16,19 @@ defined( 'ABSPATH' ) || exit;
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<header class="entry-header">
-		<?php if ( in_array( get_post_type(), [ 'post', 'event', 'press_resource' ] ) ) : ?>
+		<?php if ( in_array( get_post_type(), [ 'post', 'event', 'press_resource' ], true ) ) : ?>
+			<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
 			<?php echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark"' . the_ball_v2_get_feature_image_style( 'the-ball-v2-listings' ) . ' class="angled-right"></a>'; ?>
 		<?php endif; ?>
-		<?php if ( in_array( get_post_type(), [ 'host', 'partner' ] ) ) : ?>
+		<?php if ( in_array( get_post_type(), [ 'host', 'partner' ], true ) ) : ?>
+			<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
 			<?php echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark"' . the_ball_v2_partner_image() . '></a>'; ?>
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
 	<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
 
-	<?php if ( in_array( get_post_type(), [ 'post', 'press_resource' ] ) ) : ?>
+	<?php if ( in_array( get_post_type(), [ 'post', 'press_resource' ], true ) ) : ?>
 		<?php the_ball_v2_post_date(); ?>
 	<?php endif; ?>
 
@@ -43,7 +45,8 @@ defined( 'ABSPATH' ) || exit;
 			<?php $about = get_field( 'about' ); ?>
 			<?php if ( ! empty( $about ) ) : ?>
 				<div class="press-resource-about">
-					<?php echo wp_trim_words( $about, 40, '... <a href="' . esc_url( get_permalink() ) . '" rel="bookmark">[' . __( 'Read More', 'the-ball-v2' ) . ']</a>' ); ?>
+					<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
+					<?php echo wp_trim_words( $about, 40, '... <a href="' . esc_url( get_permalink() ) . '" rel="bookmark">[' . esc_html__( 'Read More', 'the-ball-v2' ) . ']</a>' ); ?>
 				</div>
 			<?php endif; ?>
 		<?php endif; ?>

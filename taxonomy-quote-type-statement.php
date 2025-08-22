@@ -29,6 +29,7 @@ get_header();
 					// If the category has a description display it.
 					$category_description = category_description();
 					if ( ! empty( $category_description ) ) {
+						// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						echo apply_filters( 'category_archive_meta', '<div class="category-archive-meta">' . $category_description . '</div>' );
 					}
 					?>
@@ -65,13 +66,11 @@ get_header();
 			<?php the_posts_navigation(); ?>
 		</footer><!-- .archive-footer -->
 
-	<?php
-	else :
+	<?php else : ?>
 
-		get_template_part( 'template-parts/content', 'none' );
+		<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-	endif;
-	?>
+	<?php endif; ?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->

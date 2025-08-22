@@ -15,6 +15,7 @@ defined( 'ABSPATH' ) || exit;
 <!-- content-event-mini.php -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+		<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
 		<?php echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark"' . the_ball_v2_get_feature_image_style( 'the-ball-v2-listings' ) . ' class="angled-right"></a>'; ?>
 	</header><!-- .entry-header -->
 
@@ -22,6 +23,7 @@ defined( 'ABSPATH' ) || exit;
 
 	<div class="entry-content">
 		<div class="eo-event-date">
+			<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
 			<?php echo eo_format_event_occurrence(); ?>
 		</div>
 

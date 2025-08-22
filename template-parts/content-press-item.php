@@ -27,20 +27,21 @@ defined( 'ABSPATH' ) || exit;
 		<?php $publisher = get_field( 'publisher' ); ?>
 		<?php if ( ! empty( $publisher ) ) : ?>
 			<div class="press-item-publisher">
-				<?php echo $publisher; ?>
+				<?php echo esc_html( $publisher ); ?>
 			</div>
 		<?php endif; ?>
 
 		<?php $date = get_field( 'date' ); ?>
 		<?php if ( ! empty( $date ) ) : ?>
 			<div class="press-item-date">
-				<?php echo $date; ?>
+				<?php echo esc_html( $date ); ?>
 			</div>
 		<?php endif; ?>
 
 		<?php $about = get_field( 'about' ); ?>
 		<?php if ( ! empty( $about ) ) : ?>
 			<div class="press-item-about">
+				<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
 				<?php echo $about; ?>
 			</div>
 		<?php endif; ?>
@@ -48,29 +49,34 @@ defined( 'ABSPATH' ) || exit;
 		<?php $image = get_field( 'image' ); ?>
 		<?php if ( ! empty( $image ) ) : ?>
 			<div class="press-item-image">
-				<img src="<?php echo $image['url']; ?>">
+				<img src="<?php echo esc_url( $image['url'] ); ?>">
 			</div>
 		<?php endif; ?>
 
-		<?php $link = get_field( 'link' ); ?>
-		<?php if ( ! empty( $link ) ) : ?>
+		<?php $website_link = get_field( 'link' ); ?>
+		<?php if ( ! empty( $website_link ) ) : ?>
 			<div class="press-item-link">
-				<a href="<?php echo $link; ?>"><?php printf( __( 'Visit the %s website', 'the-ball-v2' ), $publisher ); ?></a>
+				<?php /* translators: %s: The name of publisher. */ ?>
+				<a href="<?php echo esc_url( $website_link ); ?>"><?php printf( esc_html__( 'Visit the %s website', 'the-ball-v2' ), esc_html( $publisher ) ); ?></a>
 			</div>
 		<?php endif; ?>
 
 		<?php
 
-		the_content( sprintf(
-			/* translators: %s: Name of current post. */
-			wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'the-ball-v2' ), [ 'span' => [ 'class' => [] ] ] ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-		) );
+		the_content(
+			sprintf(
+				/* translators: %s: Name of current post. */
+				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'the-ball-v2' ), [ 'span' => [ 'class' => [] ] ] ),
+				the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			)
+		);
 
-		wp_link_pages( [
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'the-ball-v2' ),
-			'after'  => '</div>',
-		] );
+		wp_link_pages(
+			[
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'the-ball-v2' ),
+				'after'  => '</div>',
+			]
+		);
 
 		?>
 	</div><!-- .entry-content -->

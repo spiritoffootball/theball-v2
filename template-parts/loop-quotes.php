@@ -12,10 +12,10 @@ defined( 'ABSPATH' ) || exit;
 
 // Define query args.
 $quotes_args = [
-	'post_type' => 'quote',
+	'post_type'   => 'quote',
 	'post_status' => 'publish',
-	'order' => 'ASC',
-	'orderby' => 'title',
+	'order'       => 'ASC',
+	'orderby'     => 'title',
 ];
 
 // The query.

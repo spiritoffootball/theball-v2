@@ -26,19 +26,19 @@ defined( 'ABSPATH' ) || exit;
 	<?php endif; ?>
 
 	<div class="entry-content">
-		<?php /* ?>
-		<?php if ( is_front_page() ) : ?>
+		<?php /* if ( is_front_page() ) : ?>
 			<?php echo do_shortcode( '[sof_pledgeball_data]' ); ?>
-		<?php endif; ?>
-		<?php */ ?>
+		<?php endif; */ ?>
 
 		<?php
 		the_content();
 
-		wp_link_pages( [
+		$args = [
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'the-ball-v2' ),
 			'after'  => '</div>',
-		] );
+		];
+
+		wp_link_pages( $args );
 		?>
 	</div><!-- .entry-content -->
 
@@ -48,7 +48,7 @@ defined( 'ABSPATH' ) || exit;
 			// Edit Post link ditched.
 			edit_post_link(
 				sprintf(
-					// Translators: %s: Name of current post
+					// Translators: %s: Name of current post.
 					esc_html__( 'Edit %s', 'the-ball-v2' ),
 					the_title( '<span class="screen-reader-text">"', '"</span>', false )
 				),

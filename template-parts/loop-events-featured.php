@@ -15,10 +15,11 @@ $sof_featured_events = false;
 
 // Define query args.
 $featured_events_args = [
-	'post_type' => 'event',
-	'post_status' => 'publish',
+	'post_type'     => 'event',
+	'post_status'   => 'publish',
 	'no_found_rows' => true,
-	'tax_query' => [
+	// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
+	'tax_query'     => [
 		[
 			'taxonomy' => 'event-type',
 			'field'    => 'slug',

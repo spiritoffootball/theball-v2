@@ -21,6 +21,7 @@ get_header();
 		<section id="search" class="content-area clear">
 
 			<header class="entry-header">
+				<?php /* translators: %s: The search query. */ ?>
 				<h1 class="blog-title"><?php printf( esc_html__( 'Search Results for: %s', 'the-ball-v2' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .entry-header -->
 
@@ -59,14 +60,11 @@ get_header();
 					<?php the_posts_navigation(); ?>
 				</footer><!-- .archive-footer -->
 
-			<?php
-			else :
+			<?php else : ?>
 
-				get_template_part( 'template-parts/content', 'none' );
+				<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-			endif;
-
-			?>
+			<?php endif; ?>
 
 		</section><!-- #search -->
 

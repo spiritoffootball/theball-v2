@@ -12,10 +12,10 @@ defined( 'ABSPATH' ) || exit;
 
 // Define query args.
 $news_args = [
-	'post_type' => 'post',
-	'post_status' => 'publish',
+	'post_type'      => 'post',
+	'post_status'    => 'publish',
 	'posts_per_page' => 3,
-	'no_found_rows' => true,
+	'no_found_rows'  => true,
 ];
 
 // The query.
@@ -53,7 +53,7 @@ if ( $news->have_posts() ) : ?>
 			?>
 
 			<footer class="loop-insert-footer news-footer">
-				<p><a href="<?php echo get_post_type_archive_link( 'post' ); ?>" class="archive-link"><?php esc_html_e( 'View All News', 'the-ball-v2' ); ?></a></p>
+				<p><a href="<?php echo esc_url( get_post_type_archive_link( 'post' ) ); ?>" class="archive-link"><?php esc_html_e( 'View All News', 'the-ball-v2' ); ?></a></p>
 			</footer><!-- .news-footer -->
 
 		</div><!-- .news-inner -->

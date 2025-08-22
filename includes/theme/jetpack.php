@@ -25,35 +25,44 @@ add_filter( 'jetpack_enable_open_graph', '__return_true', 100 );
 function the_ball_v2_jetpack_setup() {
 
 	// Add theme support for Infinite Scroll.
-	add_theme_support( 'infinite-scroll', [
-		'container' => 'main',
-		'render'    => 'the_ball_v2_infinite_scroll_render',
-		'footer'    => 'page',
-	] );
+	add_theme_support(
+		'infinite-scroll',
+		[
+			'container' => 'main',
+			'render'    => 'the_ball_v2_infinite_scroll_render',
+			'footer'    => 'page',
+		]
+	);
 
 	// Add theme support for Responsive Videos.
 	add_theme_support( 'jetpack-responsive-videos' );
 
 	// Add theme support for Content Options.
-	add_theme_support( 'jetpack-content-options', [
-		'post-details' => [
-			'stylesheet' => 'theball-v2-style',
-			'date'       => '.posted-on',
-			'categories' => '.cat-links',
-			'tags'       => '.tags-links',
-			'author'     => '.byline',
-			'comment'    => '.comments-link',
-		],
-		'featured-images' => [
-			'archive' => true,
-			'post'    => true,
-			'page'    => true,
-		],
-	] );
+	add_theme_support(
+		'jetpack-content-options',
+		[
+			'post-details'    => [
+				'stylesheet' => 'theball-v2-style',
+				'date'       => '.posted-on',
+				'categories' => '.cat-links',
+				'tags'       => '.tags-links',
+				'author'     => '.byline',
+				'comment'    => '.comments-link',
+			],
+			'featured-images' => [
+				'archive' => true,
+				'post'    => true,
+				'page'    => true,
+			],
+		]
+	);
 
 }
 
-//add_action( 'after_setup_theme', 'the_ball_v2_jetpack_setup' );
+/*
+// Disabled for now.
+add_action( 'after_setup_theme', 'the_ball_v2_jetpack_setup' );
+*/
 
 /**
  * Custom render function for Infinite Scroll.

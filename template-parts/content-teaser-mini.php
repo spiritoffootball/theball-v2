@@ -14,6 +14,7 @@ defined( 'ABSPATH' ) || exit;
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="teaser-header">
+		<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
 		<?php echo '<span' . the_ball_v2_get_feature_image_style( 'the-ball-v2-feature' ) . ' class="angled-right angled-medium"></span>'; ?>
 	</header><!-- .teaser-header -->
 

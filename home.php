@@ -22,7 +22,7 @@ get_header();
 
 		<section id="blog" class="content-area has-post-thumbnail clear">
 
-			<header class="entry-header"<?php echo the_ball_v2_get_home_feature_image_style(); ?>>
+			<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
 				<h2 class="blog-title"><?php esc_html_e( 'News', 'the-ball-v2' ); ?></h2>
 			</header><!-- .entry-header -->
 
@@ -60,13 +60,11 @@ get_header();
 
 		</section><!-- #blog -->
 
-	<?php
-	else :
+	<?php else : ?>
 
-		get_template_part( 'template-parts/content', 'none' );
+		<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-	endif;
-	?>
+	<?php endif; ?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->

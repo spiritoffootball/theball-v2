@@ -15,15 +15,16 @@ $event = get_queried_object();
 
 // Define query args.
 $args = [
-	'post_type' => 'post',
-	'post_status' => 'publish',
+	'post_type'      => 'post',
+	'post_status'    => 'publish',
 	'posts_per_page' => 3,
-	'no_found_rows' => true,
-	'tax_query' => [
+	'no_found_rows'  => true,
+	// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
+	'tax_query'      => [
 		[
 			'taxonomy' => 'event_posts',
-			'field' => 'slug',
-			'terms' => $event->post_name,
+			'field'    => 'slug',
+			'terms'    => $event->post_name,
 		],
 	],
 ];
@@ -38,7 +39,8 @@ if ( $news->have_posts() ) : ?>
 		<div class="news-inner">
 
 			<header class="news-header">
-				<h2 class="news-title"><?php echo sprintf( __( 'News about %s', 'the-ball-v2' ), $event->post_title ); ?></h2>
+				<?php /* translators: %s: The event title. */ ?>
+				<h2 class="news-title"><?php echo sprintf( esc_html__( 'News about %s', 'the-ball-v2' ), esc_html( $event->post_title ) ); ?></h2>
 			</header><!-- .news-header -->
 
 			<?php
@@ -63,7 +65,7 @@ if ( $news->have_posts() ) : ?>
 			?>
 
 			<footer class="loop-insert-footer news-footer">
-				<p><a href="<?php echo get_term_link( $event->post_name, 'event_posts' ); ?>" class="archive-link"><?php esc_html_e( 'View News', 'the-ball-v2' ); ?></a></p>
+				<p><a href="<?php echo esc_url( get_term_link( $event->post_name, 'event_posts' ) ); ?>" class="archive-link"><?php esc_html_e( 'View News', 'the-ball-v2' ); ?></a></p>
 			</footer><!-- .news-footer -->
 
 		</div><!-- .news-inner -->

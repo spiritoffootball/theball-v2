@@ -15,10 +15,10 @@ $event = get_queried_object();
 
 // Define query args.
 $events_args = [
-	'post_type' => 'event',
-	'post_status' => 'publish',
+	'post_type'     => 'event',
+	'post_status'   => 'publish',
 	'no_found_rows' => true,
-	'post__not_in' => [ $event->ID ],
+	'post__not_in'  => [ $event->ID ],
 ];
 
 // The query.

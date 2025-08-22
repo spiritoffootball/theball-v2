@@ -26,23 +26,25 @@ defined( 'ABSPATH' ) || exit;
 	<?php $publisher = get_field( 'publisher' ); ?>
 	<div class="press-item-publisher">
 		<?php if ( ! empty( $publisher ) ) : ?>
-			<?php echo $publisher . esc_html( $date ); ?>
+			<?php echo esc_html( $publisher ); ?> <?php echo esc_html( $date ); ?>
 		<?php else : ?>
-			<?php echo $date; ?>
+			<?php echo esc_html( $date ); ?>
 		<?php endif; ?>
 	</div>
 
 	<?php $about = get_field( 'about' ); ?>
 	<?php if ( ! empty( $about ) ) : ?>
 		<div class="press-item-about">
+			<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
 			<?php echo $about; ?>
 		</div>
 	<?php endif; ?>
 
-	<?php $link = get_field( 'link' ); ?>
-	<?php if ( ! empty( $link ) ) : ?>
+	<?php $website_link = get_field( 'link' ); ?>
+	<?php if ( ! empty( $website_link ) ) : ?>
 		<div class="press-item-link">
-			<a href="<?php echo $link; ?>"><?php printf( __( 'Visit the %s website', 'the-ball-v2' ), $publisher ); ?></a>
+			<?php /* translators: %s: The name of the publisher. */ ?>
+			<a href="<?php echo esc_url( $website_link ); ?>"><?php printf( esc_html__( 'Visit the %s website', 'the-ball-v2' ), esc_html( $publisher ) ); ?></a>
 		</div>
 	<?php endif; ?>
 </article><!-- #post-->

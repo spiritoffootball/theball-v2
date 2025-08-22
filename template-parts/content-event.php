@@ -49,13 +49,33 @@ defined( 'ABSPATH' ) || exit;
 
 				<?php if ( $next ) : ?>
 
-					<!-- If the event is occurring again in the future, display the date. -->
-					<?php printf( '<p>' . __( 'This event is running from %1$s until %2$s. It is next occurring on %3$s', 'the-ball-v2' ) . '</p>', eo_get_schedule_start( 'j F Y' ), eo_get_schedule_last( 'j F Y' ), $next ); ?>
+					<?php
+
+					// If the event is occurring again in the future, display the date.
+					printf(
+						/* translators: 1: The schedule start, 2: The schedule end, 3: The next occurrence */
+						'<p>' . esc_html__( 'This event is running from %1$s until %2$s. It is next occurring on %3$s', 'the-ball-v2' ) . '</p>',
+						// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						eo_get_schedule_start( 'j F Y' ),
+						// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						eo_get_schedule_last( 'j F Y' ),
+						// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						$next
+					); ?>
 
 				<?php else : ?>
 
-					<!-- Otherwise the event has finished - no more occurrences. -->
-					<?php printf( '<p>' . __( 'This event finished on %s', 'the-ball-v2' ) . '</p>', eo_get_schedule_last( 'd F Y', '' ) ); ?>
+					<?php
+
+					// Otherwise the event has finished - no more occurrences.
+					printf(
+						/* translators: 1: The schedule start, 2: The schedule end, 3: The next occurrence */
+						'<p>' . esc_html__( 'This event finished on %s', 'the-ball-v2' ) . '</p>',
+						// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						eo_get_schedule_last( 'd F Y', '' )
+					);
+
+					?>
 
 				<?php endif; ?>
 
@@ -65,6 +85,7 @@ defined( 'ABSPATH' ) || exit;
 
 				<?php if ( ! eo_recurs() ) : ?>
 					<!-- Single event. -->
+					<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
 					<li><strong><?php esc_html_e( 'Date', 'the-ball-v2' ); ?>:</strong> <?php echo eo_format_event_occurrence(); ?></li>
 				<?php endif; ?>
 
@@ -85,24 +106,28 @@ defined( 'ABSPATH' ) || exit;
 
 				if ( eo_recurs() ) {
 
-					// Event recurs - display dates.
-					$upcoming = new WP_Query( [
-						'post_type' => 'event',
+					$args = [
+						'post_type'         => 'event',
 						'event_start_after' => 'today',
-						'posts_per_page' => -1,
-						'event_series' => get_the_ID(),
-						'group_events_by' => 'occurrence',
-					] );
+						'posts_per_page'    => -1,
+						'event_series'      => get_the_ID(),
+						'group_events_by'   => 'occurrence',
+					];
+
+					// Event recurs - display dates.
+					$upcoming = new WP_Query( $args );
 
 					if ( $upcoming->have_posts() ) {
 
 						?>
 
-						<li><strong><?php esc_html_e( 'Upcoming Dates', 'the-ball-v2' ); ?>:</strong>
+						<li>
+							<strong><?php esc_html_e( 'Upcoming Dates', 'the-ball-v2' ); ?>:</strong>
 							<ul class="eo-upcoming-dates">
 								<?php
 								while ( $upcoming->have_posts() ) {
 									$upcoming->the_post();
+									// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 									echo '<li>' . eo_format_event_occurrence() . '</li>';
 								};
 								?>
@@ -129,7 +154,17 @@ defined( 'ABSPATH' ) || exit;
 
 			<?php if ( eo_get_venue() && eo_venue_has_latlng( eo_get_venue() ) ) : ?>
 				<div class="event-venue-map">
-					<?php echo eo_get_venue_map( eo_get_venue(), [ 'width' => '100%', 'height' => '300px' ] ); ?>
+					<?php
+
+					$args = [
+						'width'  => '100%',
+						'height' => '300px',
+					];
+
+					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					echo eo_get_venue_map( eo_get_venue(), $args );
+
+					?>
 				</div>
 			<?php endif; ?>
 
@@ -140,16 +175,20 @@ defined( 'ABSPATH' ) || exit;
 		<div id="event-content">
 			<?php
 
-			the_content( sprintf(
+			the_content(
+				sprintf(
 				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'the-ball-v2' ), [ 'span' => [ 'class' => [] ] ] ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
+					wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'the-ball-v2' ), [ 'span' => [ 'class' => [] ] ] ),
+					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+				)
+			);
 
-			wp_link_pages( [
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'the-ball-v2' ),
-				'after'  => '</div>',
-			] );
+			wp_link_pages(
+				[
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'the-ball-v2' ),
+					'after'  => '</div>',
+				]
+			);
 
 			?>
 		</div><!-- #event-content -->

@@ -26,13 +26,15 @@ if ( ! function_exists( 'the_ball_v2_post_date' ) ) :
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
-		$time_string = sprintf( $time_string,
+		$time_string = sprintf(
+			$time_string,
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() ),
 			esc_attr( get_the_modified_date( 'c' ) ),
 			esc_html( get_the_modified_date() )
 		);
 
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo '<span class="posted-on">' . $time_string . '</span>';
 
 	}
@@ -55,7 +57,8 @@ if ( ! function_exists( 'the_ball_v2_posted_on' ) ) :
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
-		$time_string = sprintf( $time_string,
+		$time_string = sprintf(
+			$time_string,
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() ),
 			esc_attr( get_the_modified_date( 'c' ) ),
@@ -74,6 +77,7 @@ if ( ! function_exists( 'the_ball_v2_posted_on' ) ) :
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
 
 	}
@@ -97,15 +101,23 @@ if ( ! function_exists( 'the_ball_v2_entry_footer' ) ) :
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'the-ball-v2' ) );
 			if ( $categories_list && the_ball_v2_blog_has_multiple_categories() ) {
-				/* translators: %s: The list of categories */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'the-ball-v2' ) . '</span>', $categories_list );
+				printf(
+					/* translators: %s: The list of categories */
+					'<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'the-ball-v2' ) . '</span>',
+					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					$categories_list
+				);
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'the-ball-v2' ) );
 			if ( $tags_list ) {
-				/* translators: %s: The list of tags */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'the-ball-v2' ) . '</span>', $tags_list );
+				printf(
+					/* translators: %s: The list of tags */
+					'<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'the-ball-v2' ) . '</span>',
+					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					$tags_list
+				);
 			}
 
 		}
@@ -148,12 +160,14 @@ function the_ball_v2_blog_has_multiple_categories() {
 	if ( false === $blog_categories ) {
 
 		// Get the array of all categories that are attached to posts.
-		$blog_categories = get_categories( [
-			'fields'     => 'ids',
-			'hide_empty' => 1,
-			// We only need to know if there is more than one category.
-			'number'     => 2,
-		] );
+		$blog_categories = get_categories(
+			[
+				'fields'     => 'ids',
+				'hide_empty' => 1,
+				// We only need to know if there is more than one category.
+				'number'     => 2,
+			]
+		);
 
 		// Count categories that are attached to posts.
 		$blog_categories = ! empty( $blog_categories ) ? count( $blog_categories ) : 0;
@@ -228,6 +242,7 @@ if ( ! function_exists( 'the_ball_v2_feature_image' ) ) :
 	function the_ball_v2_feature_image_style( $size = 'the-ball-v2-feature' ) {
 
 		// Print to screen.
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo the_ball_v2_get_feature_image_style( $size );
 
 	}
@@ -331,16 +346,18 @@ if ( ! function_exists( 'the_ball_v2_partner_image' ) ) :
 		if ( defined( 'ACF' ) ) {
 			$logo = get_field( 'logo' );
 			if ( ! empty( $logo ) ) {
-				$src = $logo['sizes']['medium'];
-				$width = ( $logo['sizes']['medium-width'] / 2 );
+				$src    = $logo['sizes']['medium'];
+				$width  = ( $logo['sizes']['medium-width'] / 2 );
 				$height = ( $logo['sizes']['medium-height'] / 2 );
-				$title = empty( $logo['title'] ) ? __( 'Partner logo', 'the-ball-v2' ) : $logo['title'];
+				$title  = empty( $logo['title'] ) ? __( 'Partner logo', 'the-ball-v2' ) : $logo['title'];
+				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				echo '<img src="' . $src . '" width="' . $width . '" height="' . $height . '" title="' . esc_attr( $title ) . '">';
 			}
 			return;
 		}
 
 		// Print to screen.
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo the_ball_v2_get_avatar_feature_image( $size );
 
 	}
@@ -406,6 +423,7 @@ if ( ! function_exists( 'the_ball_v2_feature_image_caption' ) ) :
 		}
 
 		// Print to screen.
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo the_ball_v2_get_feature_image_caption();
 
 		// Wrap?
