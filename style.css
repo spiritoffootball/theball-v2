@@ -1,14 +1,19 @@
 /**
- * Theme Name: The Ball v2
- * Theme URI: https://github.com/spiritoffootball/theball-v2
- * Author: Christian Wach
- * Author URI: https://haystack.co.uk
- * Description: A theme for the "The Ball 2022/23" website.
- * Version: 1.2.3
- * License: GNU General Public License v2 or later
- * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: the-ball-v2
- * Domain Path: /languages
+ * The Ball v2
+ *
+ * Theme Name:        The Ball v2
+ * Description:       A generic parent theme for the Spirit of Football website.
+ * Version:           1.2.3
+ * Theme URI:         https://github.com/spiritoffootball/theball-v2
+ * Author:            Christian Wach
+ * Author URI:        https://www.haystack.co.uk
+ * Requires at least: 5.0
+ * Tested up to:      6.8
+ * Requires PHP:      7.4
+ * Text Domain:       the-ball-v2
+ * Domain Path:       /languages
+ * License:           GNU General Public License v2 or later
+ * License URI:       https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
  * @see https://underscores.me/
  *
