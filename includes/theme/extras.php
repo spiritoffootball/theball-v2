@@ -126,8 +126,8 @@ add_filter( 'excerpt_length', 'the_ball_v2_excerpt_length' );
  *
  * @since 1.0.0
  *
- * @param str $more The existing more string (defaults to ellipsis).
- * @return str $more The modified more string.
+ * @param string $more The existing more string (defaults to ellipsis).
+ * @return string $more The modified more string.
  */
 function the_ball_v2_excerpt_more( $more ) {
 

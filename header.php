@@ -92,12 +92,14 @@ defined( 'ABSPATH' ) || exit;
 			<nav id="site-navigation" class="main-navigation" role="navigation">
 				<span class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'the-ball-v2' ); ?></span>
 				<?php
-				wp_nav_menu(
-					[
-						'theme_location' => 'primary',
-						'menu_id'        => 'primary-menu',
-					]
-				);
+
+				$args = [
+					'theme_location' => 'primary',
+					'menu_id'        => 'primary-menu',
+				];
+
+				wp_nav_menu( $args );
+
 				?>
 			</nav><!-- #site-navigation -->
 

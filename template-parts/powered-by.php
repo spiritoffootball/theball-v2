@@ -29,9 +29,9 @@ $partners_args = [
 // Do the query.
 $partners = new WP_Query( $partners_args );
 
-if ( $partners->have_posts() ) :
-	?>
+if ( $partners->have_posts() ) : ?>
 
+	<!-- powered-by.php -->
 	<section class="organisation-list partner-list powered-by clear">
 		<div class="organisation-list-inner partner-list-inner">
 

@@ -15,7 +15,6 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 
 ?>
-
 <!-- page-event.php -->
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
@@ -54,8 +53,9 @@ get_header();
 		// Clear sort order filter.
 		remove_filter( 'posts_orderby', 'the_ball_v2_events_sort_desc', 20 );
 
-		if ( $events->have_posts() ) :
-			?>
+		?>
+
+		<?php if ( $events->have_posts() ) : ?>
 
 			<section class="event-list insert-area clear">
 				<div class="event-list-inner">
@@ -87,16 +87,13 @@ get_header();
 				</div>
 			</section><!-- .event-list -->
 
-			<?php
+			<?php the_posts_navigation(); ?>
 
-			the_posts_navigation();
+		<?php else : ?>
 
-		else :
+			<?php get_template_part( 'template-parts/content', 'coming-soon' ); ?>
 
-			get_template_part( 'template-parts/content', 'coming-soon' );
-
-		endif;
-		?>
+		<?php endif; ?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->

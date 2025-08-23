@@ -29,9 +29,7 @@ $statements_args = [
 // The query.
 $statements = new WP_Query( $statements_args );
 
-if ( $statements->have_posts() ) :
-
-	?>
+if ( $statements->have_posts() ) : ?>
 
 	<!-- loop-quotes-statements.php -->
 	<section id="quotes-statements" class="content-area insert-area clear">

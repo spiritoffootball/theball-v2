@@ -444,7 +444,7 @@ if ( ! function_exists( 'the_ball_v2_get_feature_image_caption' ) ) :
 	 *
 	 * @since 1.0.0
 	 *
-	 * @return str The image caption if it has one, empty string otherwise.
+	 * @return string The image caption if it has one, empty string otherwise.
 	 */
 	function the_ball_v2_get_feature_image_caption() {
 

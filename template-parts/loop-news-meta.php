@@ -11,19 +11,12 @@
 defined( 'ABSPATH' ) || exit;
 
 // Get terms in the event_posts taxonomy.
-$event_terms = get_terms(
-	'event_posts',
-	[
-		'hide_empty' => false,
-	]
-);
-
+$event_terms = get_terms( 'event_posts', [ 'hide_empty' => false ] );
 if ( is_wp_error( $event_terms ) ) {
 	return;
 }
 
 ?>
-
 <!-- loop-news-meta.php -->
 <section id="blog-meta" class="content-area insert-area clear">
 	<div class="blog-meta-inner">

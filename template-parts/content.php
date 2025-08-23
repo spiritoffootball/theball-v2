@@ -11,7 +11,6 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
-
 <!-- content.php -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>

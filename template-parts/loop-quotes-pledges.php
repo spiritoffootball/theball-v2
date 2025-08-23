@@ -29,9 +29,7 @@ $pledges_args = [
 // The query.
 $pledges = new WP_Query( $pledges_args );
 
-if ( $pledges->have_posts() ) :
-
-	?>
+if ( $pledges->have_posts() ) : ?>
 
 	<!-- loop-quotes-pledges.php -->
 	<section id="quotes-pledges" class="content-area insert-area clear">

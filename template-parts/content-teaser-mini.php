@@ -11,7 +11,7 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
-
+<!-- content-teaser-mini.php -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="teaser-header">
 		<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>

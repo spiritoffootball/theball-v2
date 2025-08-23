@@ -11,7 +11,6 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
-
 <!-- content-search.php -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 

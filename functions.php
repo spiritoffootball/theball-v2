@@ -514,6 +514,8 @@ function the_ball_v2_events_sort_desc( $orderby, $query ) {
  */
 require get_template_directory() . '/includes/classes/class-counter.php';
 
+
+
 /**
  * Include functions files.
  */

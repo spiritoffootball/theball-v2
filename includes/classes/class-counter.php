@@ -26,12 +26,12 @@ class The_Ball_v2_Counter {
 	 *
 	 * @since 1.0.0
 	 * @access public
-	 * @var int $num The item counter.
+	 * @var integer
 	 */
 	public $num = 0;
 
 	/**
-	 * Mode.
+	 * The mode of this class - either 'basic' or 'header'.
 	 *
 	 * We sometimes want to distiguish between different contexts. For example,
 	 * we may want to base certain display decisions on the current item count,
@@ -39,16 +39,16 @@ class The_Ball_v2_Counter {
 	 *
 	 * @since 1.0.0
 	 * @access public
-	 * @var int $mode The mode of this class - either 'basic' or 'header'.
+	 * @var integer
 	 */
 	public $mode = 'basic';
 
 	/**
-	 * Title.
+	 * The title of the "parent" object being counted.
 	 *
 	 * @since 1.0.0
 	 * @access public
-	 * @var int $title The title of the "parent" object being counted.
+	 * @var integer
 	 */
 	public $title = '';
 
@@ -57,8 +57,8 @@ class The_Ball_v2_Counter {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param str $mode Puts this class into different modes depending on context.
-	 * @param str $title The title of the "parent" object being counted.
+	 * @param string $mode Puts this class into different modes depending on context.
+	 * @param string $title The title of the "parent" object being counted.
 	 */
 	public function __construct( $mode = 'basic', $title = '' ) {
 
@@ -96,8 +96,8 @@ class The_Ball_v2_Counter {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param str $mode The default mode of this object.
-	 * @return str $mode The mode of this object.
+	 * @param string $mode The default mode of this object.
+	 * @return string $mode The mode of this object.
 	 */
 	public function get_mode( $mode ) {
 
@@ -111,8 +111,8 @@ class The_Ball_v2_Counter {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param str $title The default title.
-	 * @return str $title The overridden title.
+	 * @param string $title The default title.
+	 * @return string $title The overridden title.
 	 */
 	public function get_title( $title ) {
 

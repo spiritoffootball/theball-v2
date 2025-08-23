@@ -11,7 +11,6 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
-
 <!-- content-press-item.php -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
@@ -71,12 +70,12 @@ defined( 'ABSPATH' ) || exit;
 			)
 		);
 
-		wp_link_pages(
-			[
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'the-ball-v2' ),
-				'after'  => '</div>',
-			]
-		);
+		$args =[
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'the-ball-v2' ),
+			'after'  => '</div>',
+		];
+
+		wp_link_pages( $args );
 
 		?>
 	</div><!-- .entry-content -->

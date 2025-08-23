@@ -22,6 +22,7 @@ $teasers = new WP_Query( $teaser_args );
 if ( $teasers->have_posts() ) :
 	?>
 
+	<!-- loop-teasers.php -->
 	<section id="teaser" name="teaser" class="teaser clear">
 		<div class="teaser-inner">
 

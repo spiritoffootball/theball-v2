@@ -11,7 +11,6 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
-
 <!-- content-press-item.php -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>

@@ -23,7 +23,6 @@ if ( post_password_required() ) {
 }
 
 ?>
-
 <!-- comments.php -->
 <div id="comments" class="comments-area">
 	<div class="comments-inner">
