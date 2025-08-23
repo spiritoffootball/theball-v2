@@ -11,7 +11,6 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
-
 <!-- content-coming-soon.php -->
 <section class="no-results not-found coming-soon">
 	<div class="not-found-inner">
