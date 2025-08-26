@@ -98,7 +98,7 @@ if ( ! function_exists( 'the_ball_v2_entry_footer' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 
-			/* translators: used between list items, there is a space after the comma */
+			/* translators: used between list items, there is a space after the comma. */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'the-ball-v2' ) );
 			if ( $categories_list && the_ball_v2_blog_has_multiple_categories() ) {
 				printf(
@@ -109,7 +109,7 @@ if ( ! function_exists( 'the_ball_v2_entry_footer' ) ) :
 				);
 			}
 
-			/* translators: used between list items, there is a space after the comma */
+			/* translators: used between list items, there is a space after the comma. */
 			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'the-ball-v2' ) );
 			if ( $tags_list ) {
 				printf(
@@ -125,15 +125,20 @@ if ( ! function_exists( 'the_ball_v2_entry_footer' ) ) :
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 
 			echo '<span class="comments-link">';
-			/* translators: %s: The post title */
-			comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'the-ball-v2' ), [ 'span' => [ 'class' => [] ] ] ), get_the_title() ) );
+			comments_popup_link(
+				sprintf(
+					/* translators: %s: The post title. */
+					wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'the-ball-v2' ), [ 'span' => [ 'class' => [] ] ] ),
+					get_the_title()
+				)
+			);
 			echo '</span>';
 
 		}
 
 		edit_post_link(
 			sprintf(
-				/* translators: %s: Name of current post */
+				/* translators: %s: Name of current post. */
 				esc_html__( 'Edit %s', 'the-ball-v2' ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			),
@@ -159,15 +164,16 @@ function the_ball_v2_blog_has_multiple_categories() {
 
 	if ( false === $blog_categories ) {
 
-		// Get the array of all categories that are attached to posts.
-		$blog_categories = get_categories(
-			[
-				'fields'     => 'ids',
-				'hide_empty' => 1,
-				// We only need to know if there is more than one category.
-				'number'     => 2,
-			]
-		);
+		// Quert for all categories that are attached to posts.
+		$args = [
+			'fields'     => 'ids',
+			'hide_empty' => 1,
+			// We only need to know if there is more than one category.
+			'number'     => 2,
+		];
+
+		// Get the array of categories.
+		$blog_categories = get_categories( $args );
 
 		// Count categories that are attached to posts.
 		$blog_categories = ! empty( $blog_categories ) ? count( $blog_categories ) : 0;
@@ -197,6 +203,7 @@ function the_ball_v2_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
 	}
+
 	// Like, beat it. Dig?
 	delete_transient( 'the_ball_v2_categories' );
 
@@ -377,12 +384,9 @@ if ( ! function_exists( 'the_ball_v2_get_avatar_feature_image' ) ) :
 	 */
 	function the_ball_v2_get_avatar_feature_image( $size = 'the-ball-v2-partner' ) {
 
-		// Do we have a featured image?
+		// Get image markup for this post's feature image if it has one.
 		if ( the_ball_v2_has_feature_image() ) {
-
-			// Get image markup for this post's feature image.
 			return get_the_post_thumbnail( get_the_ID(), $size );
-
 		}
 
 		/*

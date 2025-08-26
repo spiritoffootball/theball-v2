@@ -25,21 +25,27 @@ defined( 'ABSPATH' ) || exit;
  */
 function the_ball_v2_custom_header_setup() {
 
+	// Default args.
+	$args = [
+		'default-image'      => '',
+		'default-text-color' => '000000',
+		'width'              => 1280,
+		'height'             => 250,
+		'flex-height'        => true,
+		'wp-head-callback'   => 'the_ball_v2_header_style',
+	];
+
+	/**
+	 * Filters the default custom header args.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array $args The default custom header args.
+	 */
+	$args = apply_filters( 'the_ball_v2_custom_header_args', $args );
+
 	// Supported but not used.
-	add_theme_support(
-		'custom-header',
-		apply_filters(
-			'the_ball_v2_custom_header_args',
-			[
-				'default-image'      => '',
-				'default-text-color' => '000000',
-				'width'              => 1280,
-				'height'             => 250,
-				'flex-height'        => true,
-				'wp-head-callback'   => 'the_ball_v2_header_style',
-			]
-		)
-	);
+	add_theme_support( 'custom-header', $args );
 
 }
 

@@ -37,7 +37,7 @@ add_filter( 'map_meta_cap', 'the_ball_v2_add_unfiltered_html_capability_to_edito
  * @since 1.0.0
  *
  * @param array $classes Classes for the body element.
- * @return array
+ * @return array $classes The modified array of body classes.
  */
 function the_ball_v2_body_classes( $classes ) {
 
@@ -52,6 +52,7 @@ function the_ball_v2_body_classes( $classes ) {
 	}
 
 	return $classes;
+
 }
 
 // Add body class filter.
@@ -134,8 +135,8 @@ function the_ball_v2_excerpt_more( $more ) {
 	// Override with custom text.
 	return '... ' . sprintf(
 		'<a class="read-more" href="%1$s">[%2$s]</a>',
-		get_permalink( get_the_ID() ),
-		__( 'Read More', 'the-ball-v2' )
+		esc_url( get_permalink( get_the_ID() ) ),
+		esc_html__( 'Read More', 'the-ball-v2' )
 	);
 
 }
@@ -216,7 +217,7 @@ function the_ball_v2_page_submenu() {
 
 	// Init menu with link to Event content.
 	$menu = [
-		'<li><a href="#event-content">' . esc_html( __( 'About this Event', 'the-ball-v2' ) ) . '</a></li>',
+		'<li><a href="#event-content">' . esc_html__( 'About this Event', 'the-ball-v2' ) . '</a></li>',
 	];
 
 	// Get the Ball Host Post IDs from the ACF Field.
@@ -224,13 +225,13 @@ function the_ball_v2_page_submenu() {
 
 	// Add menu item if there are some.
 	if ( ! empty( $ball_host_ids ) ) {
-		$menu[] = '<li><a href="#organisations">' . esc_html( __( 'Host Organisations', 'the-ball-v2' ) ) . '</a></li>';
+		$menu[] = '<li><a href="#organisations">' . esc_html__( 'Host Organisations', 'the-ball-v2' ) . '</a></li>';
 	}
 
 	// Get enabled status from the ACF Field.
 	$pledge_form_enabled = get_field( 'pledge_form_enabled' );
 	if ( ! empty( $pledge_form_enabled ) ) {
-		$menu[] = '<li><a href="#pledge">' . esc_html( __( 'Make a Pledge', 'the-ball-v2' ) ) . '</a></li>';
+		$menu[] = '<li><a href="#pledge">' . esc_html__( 'Make a Pledge', 'the-ball-v2' ) . '</a></li>';
 	}
 
 	/*
