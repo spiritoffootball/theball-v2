@@ -258,11 +258,20 @@ function the_ball_v2_styles() {
 	// Use dashicons.
 	wp_enqueue_style( 'dashicons' );
 
+	// Variables stylesheet.
+	wp_enqueue_style(
+		'the-ball-v2-variables',
+		get_template_directory_uri() . '/assets/css/variables.css',
+		[],
+		$version,
+		'all' // Media.
+	);
+
 	// Screen stylesheet.
 	wp_enqueue_style(
 		'the-ball-v2-global',
 		get_template_directory_uri() . '/assets/css/global.css',
-		[],
+		[ 'the-ball-v2-variables' ],
 		$version,
 		'all' // Media.
 	);

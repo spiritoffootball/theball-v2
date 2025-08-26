@@ -68,10 +68,6 @@ get_header();
 	</main><!-- #main -->
 </div><!-- #primary -->
 
-<?php if ( $meta_loop = locate_template( 'template-parts/loop-news-meta.php' ) ) : ?>
-	<?php load_template( $meta_loop ); ?>
-<?php endif; ?>
-
 <?php
 
 get_sidebar();
