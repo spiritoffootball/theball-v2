@@ -1,0 +1,104 @@
+/**
+ * The Ball v2 Variables Stylesheet.
+ *
+ * Implements default styling variables for all media.
+ *
+ * @package The_Ball_v2
+ */
+
+:root {
+
+	/* Named. */
+	--sof-purple: #313f72;
+	--sof-purple-light: #535f89;
+	--sof-purple-menu: rgb(49 63 114 / 80%);
+	/* Usage. */
+	--sof-header-footer: #313f72;
+	--sof-background-caption: #313f72;
+	--sof-background: #535f89;
+	--sof-background-opaque: rgb(49 63 114 / 80%);
+
+	/* Named. */
+	--sof-blue-light: #2b99ca;
+	--sof-blue-dark: #29386d;
+	/* Usage. */
+	--sof-background-news: #2b99ca;
+	--sof-background-comments: #2b99ca;
+	--sof-background-events-hosts: #2b99ca;
+	--sof-background-organisations: #29386d;
+	--sof-background-pledgeball-widget: #29386d;
+
+	/* Named. */
+	--sof-green: #37a148;
+	--sof-green-bright: #349936;
+	/* Usage. */
+	--sof-background-donate-button: #37a148;
+	--sof-background-pledgeball-form: #37a148;
+	--sof-heading-quote: #349936;
+
+	/* Named. */
+	--sof-yellow: #ffcc00;
+	/* Usage. */
+	--sof-text-pledgeball-widget: #ffcc00;
+	--sof-text-pledgeball-form: #ffcc00;
+	--sof-text-heading: #ffcc00;
+	--sof-text-blockquote: #ffcc00;
+
+	/* Named. */
+	--sof-orange: #f04845;
+	/* Usage. */
+	--sof-background-events-past: #f04845;
+
+	/* Named. */
+	--sof-red-wine: #95163d;
+	--sof-red-rust: #9c4f52;
+	--sof-red-salmon: #bf8083;
+	/* Usage. */
+	--sof-background-events-ongoing: #95163d;
+	--sof-background-people-squad: #9c4f52;
+	--sof-background-people-board: #bf8083;
+	--sof-background-people-staff: #95163d;
+
+	/* Named. */
+	--sof-black: #000;
+	/* Usage. */
+	--sof-form-textarea-content: #000;
+	--sof-text-quote-blockquote: #000;
+	--sof-text-quote-chrome: #000;
+
+	/* Named. */
+	--sof-grey: #ccc;
+	--sof-grey-lighter: #e6e6e6;
+	--sof-grey-light: #c0c0c0;
+	--sof-grey-darkish: #666;
+	/* Usage. */
+	--sof-background-hr: #ccc;
+	--sof-table-divider: #e6e6e6;
+	--sof-form-fieldset-border: #c0c0c0;
+	--sof-text-cite: #666;
+
+	/* Named. */
+	--sof-white: #fff;
+
+	/* Text. */
+	--sof-background-body: #fff;
+	--sof-text-heading-overlaid: #fff;
+	--sof-text-heading-news: #fff;
+	--sof-text-footer: #fff;
+	--sof-text-teaser: #fff;
+	--sof-text-quote: #fff;
+	--sof-text-press: #fff;
+	--sof-text-pledgeball-form: #fff;
+	--sof-text-content: #fff;
+	--sof-text-highlight: #fff;
+
+	/* Links. */
+	--sof-text-link: #fff;
+	--sof-text-link-header: #ffcc00;
+	--sof-text-link-hover: #ffcc00;
+	--sof-text-link-focus: #ffe299;
+	--sof-text-link-active: #ffe299;
+	--sof-text-link-visited: #fef6dd;
+	--sof-text-link-toggled: #fef6dd;
+
+}
