@@ -33,13 +33,15 @@ class The_Ball_v2_Theme {
 	 */
 	public function __construct() {
 
-		// Include files.
+		// Only do this once.
+		static $done;
+		if ( isset( $done ) && true === $done ) {
+			return;
+		}
+
+		// Bootstrap object.
 		$this->include_files();
-
-		// Set up objects and references.
 		$this->setup_objects();
-
-		// Register hooks.
 		$this->register_hooks();
 
 		/**
@@ -49,6 +51,9 @@ class The_Ball_v2_Theme {
 		 */
 		do_action( 'the_ball_v2/theme/loaded' );
 
+		// We're done.
+		$done = true;
+
 	}
 
 	/**
@@ -56,22 +61,13 @@ class The_Ball_v2_Theme {
 	 *
 	 * @since 1.0.1
 	 */
-	public function include_files() {
-
-		// Only do this once.
-		static $done;
-		if ( isset( $done ) && true === $done ) {
-			return;
-		}
+	private function include_files() {
 
 		/*
 		// Include global scope Theme Functions.
 		include get_template_directory() . '/includes/functions-theme.php';
 		include get_template_directory() . '/includes/functions-geomashup.php';
 		*/
-
-		// We're done.
-		$done = true;
 
 	}
 
@@ -80,16 +76,7 @@ class The_Ball_v2_Theme {
 	 *
 	 * @since 1.0.1
 	 */
-	public function setup_objects() {
-
-		// Only do this once.
-		static $done;
-		if ( isset( $done ) && true === $done ) {
-			return;
-		}
-
-		// We're done.
-		$done = true;
+	private function setup_objects() {
 
 	}
 
@@ -98,7 +85,7 @@ class The_Ball_v2_Theme {
 	 *
 	 * @since 1.0.1
 	 */
-	public function register_hooks() {
+	private function register_hooks() {
 
 		// Set up this theme's defaults.
 		add_action( 'after_setup_theme', [ $this, 'theme_setup' ] );
