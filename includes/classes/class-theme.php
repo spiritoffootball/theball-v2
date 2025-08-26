@@ -65,8 +65,8 @@ class The_Ball_v2_Theme {
 
 		/*
 		// Include global scope Theme Functions.
-		include get_template_directory() . '/includes/functions-theme.php';
-		include get_template_directory() . '/includes/functions-geomashup.php';
+		require get_template_directory() . '/includes/functions-theme.php';
+		require get_template_directory() . '/includes/functions-geomashup.php';
 		*/
 
 	}
