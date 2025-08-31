@@ -70,7 +70,7 @@ defined( 'ABSPATH' ) || exit;
 			)
 		);
 
-		$args =[
+		$args = [
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'the-ball-v2' ),
 			'after'  => '</div>',
 		];

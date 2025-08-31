@@ -11,60 +11,66 @@
 	/* Named. */
 	--sof-purple: #313f72;
 	--sof-purple-light: #535f89;
+	--sof-purple-lighter: #696d8c;
 	--sof-purple-menu: rgb(49 63 114 / 80%);
 	/* Usage. */
-	--sof-header-footer: #313f72;
-	--sof-background-caption: #313f72;
-	--sof-background: #535f89;
-	--sof-background-opaque: rgb(49 63 114 / 80%);
+	--sof-header-footer: var(--sof-purple);
+	--sof-background-caption: var(--sof-purple);
+	--sof-background: var(--sof-purple-light);
+	--sof-background-opaque: var(--sof-purple-menu);
+	--sof-background-submenu: var(--sof-purple-lighter);
 
 	/* Named. */
 	--sof-blue-light: #2b99ca;
 	--sof-blue-dark: #29386d;
 	/* Usage. */
-	--sof-background-news: #2b99ca;
-	--sof-background-comments: #2b99ca;
-	--sof-background-events-hosts: #2b99ca;
-	--sof-background-organisations: #29386d;
-	--sof-background-pledgeball-widget: #29386d;
+	--sof-background-news: var(--sof-blue-light);
+	--sof-background-comments: var(--sof-blue-light);
+	--sof-background-events-hosts: var(--sof-blue-light);
+	--sof-background-organisations: var(--sof-blue-dark);
+	--sof-background-pledgeball-widget: var(--sof-blue-dark);
 
 	/* Named. */
 	--sof-green: #37a148;
 	--sof-green-bright: #349936;
 	/* Usage. */
-	--sof-background-donate-button: #37a148;
-	--sof-background-pledgeball-form: #37a148;
-	--sof-heading-quote: #349936;
+	--sof-background-donate-button: var(--sof-green);
+	--sof-background-pledgeball-form: var(--sof-green);
+	--sof-heading-quote: var(--sof-green-bright);
 
 	/* Named. */
 	--sof-yellow: #ffcc00;
+	--sof-yellow-lighter: #fef6dd;
+	--sof-yellow-darker: #ffe299;
 	/* Usage. */
-	--sof-text-pledgeball-widget: #ffcc00;
-	--sof-text-pledgeball-form: #ffcc00;
-	--sof-text-heading: #ffcc00;
-	--sof-text-blockquote: #ffcc00;
+	--sof-text-pledgeball-widget: var(--sof-yellow);
+	--sof-text-pledgeball-form: var(--sof-yellow);
+	--sof-text-heading: var(--sof-yellow);
+	--sof-text-blockquote: var(--sof-yellow);
 
 	/* Named. */
 	--sof-orange: #f04845;
 	/* Usage. */
-	--sof-background-events-past: #f04845;
+	--sof-background-events-past: var(--sof-orange);
 
 	/* Named. */
 	--sof-red-wine: #95163d;
 	--sof-red-rust: #9c4f52;
 	--sof-red-salmon: #bf8083;
 	/* Usage. */
-	--sof-background-events-ongoing: #95163d;
-	--sof-background-people-squad: #9c4f52;
-	--sof-background-people-board: #bf8083;
-	--sof-background-people-staff: #95163d;
+	--sof-background-events-ongoing: var(--sof-red-wine);
+	--sof-background-people-squad: var(--sof-red-rust);
+	--sof-background-people-board: var(--sof-red-salmon);
+	--sof-background-people-staff: var(--sof-red-wine);
+	--sof-background-people-supporters: var(--sof-background);
 
 	/* Named. */
 	--sof-black: #000;
 	/* Usage. */
-	--sof-form-textarea-content: #000;
-	--sof-text-quote-blockquote: #000;
-	--sof-text-quote-chrome: #000;
+	--sof-form-textarea-content: var(--sof-black);
+	--sof-text-quote-blockquote: var(--sof-black);
+	--sof-text-quote-chrome: var(--sof-black);
+	--sof-background-hr: var(--sof-black);
 
 	/* Named. */
 	--sof-grey: #ccc;
@@ -72,33 +78,32 @@
 	--sof-grey-light: #c0c0c0;
 	--sof-grey-darkish: #666;
 	/* Usage. */
-	--sof-background-hr: #ccc;
-	--sof-table-divider: #e6e6e6;
-	--sof-form-fieldset-border: #c0c0c0;
-	--sof-text-cite: #666;
+	--sof-table-divider: var(--sof-grey-lighter);
+	--sof-form-fieldset-border: var(--sof-grey-light);
+	--sof-text-cite: var(--sof-grey-darkish);
 
 	/* Named. */
 	--sof-white: #fff;
 
 	/* Text. */
-	--sof-background-body: #fff;
-	--sof-text-heading-overlaid: #fff;
-	--sof-text-heading-news: #fff;
-	--sof-text-footer: #fff;
-	--sof-text-teaser: #fff;
-	--sof-text-quote: #fff;
-	--sof-text-press: #fff;
-	--sof-text-pledgeball-form: #fff;
-	--sof-text-content: #fff;
-	--sof-text-highlight: #fff;
+	--sof-background-body: var(--sof-white);
+	--sof-text-heading-overlaid: var(--sof-white);
+	--sof-text-heading-news: var(--sof-white);
+	--sof-text-footer: var(--sof-white);
+	--sof-text-teaser: var(--sof-white);
+	--sof-text-quote: var(--sof-white);
+	--sof-text-press: var(--sof-white);
+	--sof-text-pledgeball-form: var(--sof-white);
+	--sof-text-content: var(--sof-white);
+	--sof-text-highlight: var(--sof-white);
 
 	/* Links. */
-	--sof-text-link: #fff;
-	--sof-text-link-header: #ffcc00;
-	--sof-text-link-hover: #ffcc00;
-	--sof-text-link-focus: #ffe299;
-	--sof-text-link-active: #ffe299;
-	--sof-text-link-visited: #fef6dd;
-	--sof-text-link-toggled: #fef6dd;
+	--sof-text-link: var(--sof-white);
+	--sof-text-link-header: var(--sof-yellow);
+	--sof-text-link-hover: var(--sof-yellow);
+	--sof-text-link-focus: var(--sof-yellow-darker);
+	--sof-text-link-active: var(--sof-yellow-darker);
+	--sof-text-link-visited: var(--sof-yellow-lighter);
+	--sof-text-link-toggled: var(--sof-yellow-lighter);
 
 }

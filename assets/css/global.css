@@ -433,10 +433,11 @@ q {
 }
 
 hr {
-	background-color: #var(--sof-background-hr);
+	clear: both;
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;
+	border-bottom: 1px solid var(--sof-background-hr);
 }
 
 ul,
@@ -1074,6 +1075,11 @@ ul.the-ball-v2-footer li:last-child:after {
 .archive .site-main
 {
 	background: var(--sof-background);
+}
+
+.archive #blog .blog-title
+{
+	margin: 2.8em 20% 0;
 }
 
 .archive-footer
@@ -2572,8 +2578,15 @@ img.avatar
 {
 	text-align: center;
 	padding: 0.5em 0;
+	margin-top: 3em;
 	color: var(--sof-text-link);
-	background-color: #696d8c;
+	background-color: var(--sof-background-submenu);
+}
+
+.single-event .has-post-thumbnail .the-ball-v2-page-menu
+{
+	/* No margin with feature image. */
+	margin-top: 0;
 }
 
 .single-event .the-ball-v2-page-menu ul
@@ -2687,7 +2700,9 @@ img.avatar
 
 #teaser .hentry .teaser-content a
 {
+/*
 	color: #111;
+ */
 }
 
 #teaser .loop-insert-footer a
@@ -3270,7 +3285,7 @@ img.avatar
 
 #individuals-supporters
 {
-	background-color: var(--sof-background);
+	background-color: var(--sof-background-people-supporters);
 }
 
 #individuals .individuals-inner
@@ -3347,10 +3362,17 @@ img.avatar
 	margin-bottom: 2em;
 }
 
+/*
 .individual.individual-type-the-squad,
 .individual.individual-type-advisory-board,
 .individual.individual-type-backroom-staff,
 .individual.individual-type-backroom-supporters
+{
+	background-color: inherit;
+}
+ */
+
+.individual
 {
 	background-color: inherit;
 }
@@ -3404,6 +3426,11 @@ img.avatar
 	display: none;
 }
 
+.post-type-archive-individual #primary .entry-footer
+{
+	width: auto;
+}
+
 /*--------------------------------------------------------------
 ## Map Page
 --------------------------------------------------------------*/
@@ -3435,6 +3462,98 @@ img.avatar
 .page-template-page-map #primary .entry-footer
 {
 	padding-bottom: 0.5em;
+}
+
+/*--------------------------------------------------------------
+## Awards Archive
+--------------------------------------------------------------*/
+
+.page-template-page-awards #primary #archive-header .hentry
+{
+/* 	margin-bottom: 0; */
+}
+
+#primary .awards-intro-inner
+{
+	width: 60%;
+	margin: 2em auto;
+}
+
+#primary .awards
+{
+	background-color: var(--sof-background);
+	color: var(--sof-text-content);
+}
+
+#primary .awards-inner
+{
+	width: 60%;
+	margin: 2em auto;
+}
+
+.page-template-page-awards #primary .entry-header
+{
+	width: auto;
+}
+
+.award .entry-title
+{
+/* 	text-transform: uppercase; */
+ 	margin: 0.3em 0 0.3em 0;
+	font-size: 150%;
+	line-height: 1.2;
+}
+
+.award .entry-title a
+{
+	text-decoration: none;
+}
+
+/*--------------------------------------------------------------
+## Awards Include Common
+--------------------------------------------------------------*/
+
+#primary .organisation-list.award-list .hentry > .entry-title
+{
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Single Award
+--------------------------------------------------------------*/
+
+.single-award .site-main
+{
+	background-color: var(--sof-background);
+	color: var(--sof-text-content);
+}
+
+.single-award .site-main .hentry
+{
+	margin: 0;
+}
+
+.single-award #primary .entry-content,
+{
+	margin: 2em auto;
+}
+
+.award-badge,
+.award-logo,
+.award-website,
+.award-social-links
+{
+	text-align: center;
+}
+
+.single-award .award-badge
+{
+	margin: 2em 0;
+}
+
+.award-website
+{
+	margin-bottom: 1em;
 }
 
 /*--------------------------------------------------------------

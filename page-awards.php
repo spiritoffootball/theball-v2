@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Partners Archive
+ * Template Name: Awards Archive
  *
- * The template for displaying the Partners archive page.
+ * The template for displaying the Awards archive page.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 
 ?>
-<!-- page-partner.php -->
+<!-- page-awards.php -->
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 
@@ -34,8 +34,8 @@ get_header();
 	<?php
 
 	// Define query args.
-	$partners_args = [
-		'post_type'      => 'partner',
+	$awards_args = [
+		'post_type'      => 'award',
 		'post_status'    => 'publish',
 		'order'          => 'ASC',
 		'orderby'        => 'title',
@@ -43,25 +43,25 @@ get_header();
 	];
 
 	// Do the query.
-	$partners = new WP_Query( $partners_args );
+	$awards = new WP_Query( $awards_args );
 
-	if ( $partners->have_posts() ) :
+	if ( $awards->have_posts() ) :
 		?>
 
-		<section class="organisation-list insert-area partner-list clear">
-			<div class="organisation-list-inner partner-list-inner">
+		<section class="organisation-list insert-area award-list clear">
+			<div class="organisation-list-inner award-list-inner">
 			<?php
 
 			// Init counter for giving items classes.
 			$post_loop_counter = new The_Ball_v2_Counter();
 
 			// Start the loop.
-			while ( $partners->have_posts() ) :
+			while ( $awards->have_posts() ) :
 
-				$partners->the_post();
+				$awards->the_post();
 
 				// Get logo template.
-				get_template_part( 'template-parts/content-partner-logo' );
+				get_template_part( 'template-parts/content-award-mini' );
 
 			endwhile;
 
@@ -71,7 +71,7 @@ get_header();
 
 			?>
 			</div>
-		</section><!-- .partner-list -->
+		</section><!-- .award-list -->
 
 		<?php
 

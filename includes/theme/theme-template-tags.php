@@ -272,15 +272,19 @@ if ( ! function_exists( 'the_ball_v2_get_feature_image_style' ) ) :
 		// Do we have a featured image?
 		if ( the_ball_v2_has_feature_image() ) {
 
-			// Get URL array for this post's feature image.
+			// Get URL array for this Post's Feature Image.
 			$image_url = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), $size );
+
+			// Return inline style if we have one.
 			if ( ! empty( $image_url[0] ) ) {
-
-				// Return inline style.
 				return ' style="background-image: url(' . esc_url( $image_url[0] ) . ');"';
-
 			}
 
+		}
+
+		// Apply default image on Event listings.
+		if ( 'event' === get_post_type( get_the_ID() ) && 'the-ball-v2-listings' === $size ) {
+			return ' style="background-image: url(' . esc_url( get_template_directory_uri() . '/assets/images/feature/sof-event-teaser.jpg' ) . ');"';
 		}
 
 		/*
@@ -366,6 +370,46 @@ if ( ! function_exists( 'the_ball_v2_partner_image' ) ) :
 		// Print to screen.
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo the_ball_v2_get_avatar_feature_image( $size );
+
+	}
+
+endif;
+
+
+
+if ( ! function_exists( 'the_ball_v2_award_image' ) ) :
+
+	/**
+	 * Show an "Award" image.
+	 *
+	 * @since 1.2.3
+	 *
+	 * @param string $size The name of the size of the "award" image.
+	 */
+	function the_ball_v2_award_image( $size = 'the-ball-v2-listings' ) {
+
+		// Try the ACF Field first.
+		if ( defined( 'ACF' ) ) {
+			$badge = get_field( 'image' );
+			if ( ! empty( $badge ) ) {
+				$src    = $badge['sizes'][ $size ];
+				$width  = ( $badge['sizes'][ $size . '-width' ] / 2 );
+				$height = ( $badge['sizes'][ $size . '-height' ] / 2 );
+				$width  = $badge['sizes'][ $size . '-width' ];
+				$height = $badge['sizes'][ $size . '-height' ];
+				$title  = empty( $badge['title'] ) ? __( 'Partner logo', 'the-ball-v2' ) : $badge['title'];
+				$alt    = empty( $badge['alt'] ) ? __( 'Partner logo', 'the-ball-v2' ) : $badge['alt'];
+				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo '<img src="' . $src . '" width="' . $width . '" height="' . $height . '" title="' . esc_attr( $title ) . '" alt="' . esc_attr( $title ) . '">';
+			}
+			return;
+		}
+
+		/*
+		// Print to screen.
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo the_ball_v2_get_avatar_feature_image( $size );
+		*/
 
 	}
 

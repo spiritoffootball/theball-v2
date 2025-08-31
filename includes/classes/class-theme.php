@@ -90,6 +90,9 @@ class The_Ball_v2_Theme {
 		// Set up this theme's defaults.
 		add_action( 'after_setup_theme', [ $this, 'theme_setup' ] );
 
+		// Remove the archive title prefix.
+		add_filter( 'get_the_archive_title_prefix', [ $this, 'archive_title_prefix' ] );
+
 	}
 
 	/**
@@ -108,6 +111,18 @@ class The_Ball_v2_Theme {
 			get_template_directory() . '/languages'
 		);
 
+	}
+
+	/**
+	 * Removes the archive title prefix.
+	 *
+	 * @since 1.2.3
+	 *
+	 * @param string $prefix Archive title prefix.
+	 * @return string $prefix The modified archive title prefix.
+	 */
+	public function archive_title_prefix( $prefix ) {
+		return '';
 	}
 
 	/**

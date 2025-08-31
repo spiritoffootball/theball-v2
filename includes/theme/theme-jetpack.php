@@ -14,6 +14,21 @@ defined( 'ABSPATH' ) || exit;
 add_filter( 'jetpack_enable_open_graph', '__return_true', 100 );
 
 /**
+ * Jetpack hook amends function.
+ *
+ * @since 1.2.3
+ */
+function the_ball_v2_jetpack_amends() {
+
+	// Disable Sharing on Excerpts.
+	remove_filter( 'the_excerpt', 'sharing_display', 19 );
+
+}
+
+// Add callback after JetPack.
+add_action( 'init', 'the_ball_v2_jetpack_amends', 100 );
+
+/**
  * Jetpack setup function.
  *
  * @since 1.0.0

@@ -251,7 +251,7 @@ function the_ball_v2_styles() {
 
 	// Define version.
 	$version = THE_BALL_V2_THEME_VERSION;
-	if ( true === THE_BALL_V2_THEME_DEBUG ) {
+	if ( defined( 'THE_BALL_V2_THEME_DEBUG' ) && true === THE_BALL_V2_THEME_DEBUG ) {
 		$version .= '-' . time();
 	}
 
