@@ -11,7 +11,7 @@
 defined( 'ABSPATH' ) || exit;
 
 // Define query args.
-$news_args = [
+$loop_include_args = [
 	'post_type'      => 'post',
 	'post_status'    => 'publish',
 	'posts_per_page' => 3,
@@ -19,49 +19,45 @@ $news_args = [
 ];
 
 // The query.
-$news = new WP_Query( $news_args );
+$loop_include = new WP_Query( $loop_include_args );
 
-if ( $news->have_posts() ) : ?>
+if ( $loop_include->have_posts() ) : ?>
 
 	<!-- loop-news.php -->
-	<section id="news" class="content-area insert-area clear">
-		<div class="news-inner">
+	<section id="news" class="loop-include loop-include-three content-area clear">
+		<div class="loop-include-inner">
 
-			<header class="news-header">
-				<h2 class="news-title"><?php esc_html_e( 'Latest News', 'the-ball-v2' ); ?></h2>
-			</header><!-- .news-header -->
+			<header class="loop-include-header">
+				<h2 class="loop-include-title"><?php esc_html_e( 'Latest News', 'the-ball-v2' ); ?></h2>
+			</header><!-- .loop-include-header -->
 
-			<?php
+			<div class="loop-include-posts">
+				<?php
 
-			// Init counter for giving items classes.
-			$post_loop_counter = new The_Ball_v2_Counter();
+				// Start the loop.
+				while ( $loop_include->have_posts() ) :
 
-			// Start the loop.
-			while ( $news->have_posts() ) :
+					$loop_include->the_post();
 
-				$news->the_post();
+					// Get mini template.
+					get_template_part( 'template-parts/content-news-mini' );
 
-				// Get mini template.
-				get_template_part( 'template-parts/content-news-mini' );
+				endwhile;
 
-			endwhile;
+				?>
+			</div><!-- .loop-include-posts -->
 
-			// Ditch counter.
-			$post_loop_counter->remove_filter();
-			unset( $post_loop_counter );
-
-			?>
-
-			<footer class="loop-insert-footer news-footer">
+			<footer class="loop-include-footer">
 				<p><a href="<?php echo esc_url( get_post_type_archive_link( 'post' ) ); ?>" class="archive-link"><?php esc_html_e( 'View All News', 'the-ball-v2' ); ?></a></p>
-			</footer><!-- .news-footer -->
+			</footer><!-- .loop-include-footer -->
 
-		</div><!-- .news-inner -->
-	</section><!-- #news -->
+		</div><!-- .loop-include-inner -->
+	</section><!-- .loop-include -->
 
 	<?php
 
-	// Prevent weirdness.
-	wp_reset_postdata();
-
 endif;
+
+// Prevent weirdness.
+wp_reset_postdata();
+unset( $loop_include_args, $loop_include );

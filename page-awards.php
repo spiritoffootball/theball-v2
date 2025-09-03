@@ -31,58 +31,9 @@ get_header();
 		?>
 	</section>
 
-	<?php
-
-	// Define query args.
-	$awards_args = [
-		'post_type'      => 'award',
-		'post_status'    => 'publish',
-		'order'          => 'ASC',
-		'orderby'        => 'title',
-		'posts_per_page' => -1,
-	];
-
-	// Do the query.
-	$awards = new WP_Query( $awards_args );
-
-	if ( $awards->have_posts() ) :
-		?>
-
-		<section class="organisation-list insert-area award-list clear">
-			<div class="organisation-list-inner award-list-inner">
-			<?php
-
-			// Init counter for giving items classes.
-			$post_loop_counter = new The_Ball_v2_Counter();
-
-			// Start the loop.
-			while ( $awards->have_posts() ) :
-
-				$awards->the_post();
-
-				// Get logo template.
-				get_template_part( 'template-parts/content-award-mini' );
-
-			endwhile;
-
-			// Ditch counter.
-			$post_loop_counter->remove_filter();
-			unset( $post_loop_counter );
-
-			?>
-			</div>
-		</section><!-- .award-list -->
-
-		<?php
-
-		the_posts_navigation();
-
-	else :
-
-		get_template_part( 'template-parts/content', 'coming-soon' );
-
-	endif;
-	?>
+	<?php if ( $awards_loop = locate_template( 'template-parts/loop-awards.php' ) ) : ?>
+		<?php load_template( $awards_loop ); ?>
+	<?php endif; ?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->

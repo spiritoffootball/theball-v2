@@ -22,9 +22,18 @@ class The_Ball_v2_Theme {
 	 *
 	 * @since 1.0.2
 	 * @access public
-	 * @var bool $suppress_link True of loop links are suppressed, false otherwise.
+	 * @var bool
 	 */
 	public $suppress_link = false;
+
+	/**
+	 * Has Featured Events flag.
+	 *
+	 * @since 1.2.4
+	 * @access public
+	 * @var bool
+	 */
+	public $featured_events = false;
 
 	/**
 	 * Initialises this object.
@@ -152,6 +161,24 @@ class The_Ball_v2_Theme {
 	 */
 	public function loop_shows_link() {
 		return ! $this->suppress_link;
+	}
+
+	/**
+	 * Sets a "Has Featured Events" flag.
+	 *
+	 * @since 1.2.4
+	 */
+	public function featured_events_set() {
+		$this->featured_events = true;
+	}
+
+	/**
+	 * Enable loop template(s) to show "View Entity" links.
+	 *
+	 * @since 1.2.4
+	 */
+	public function featured_events_get() {
+		return $this->featured_events;
 	}
 
 }

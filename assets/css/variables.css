@@ -57,10 +57,11 @@
 	--sof-red-wine: #95163d;
 	--sof-red-rust: #9c4f52;
 	--sof-red-salmon: #bf8083;
+	--sof-red-brown: #7a3e40;
 	/* Usage. */
 	--sof-background-events-ongoing: var(--sof-red-wine);
 	--sof-background-people-squad: var(--sof-red-rust);
-	--sof-background-people-board: var(--sof-red-salmon);
+	--sof-background-people-board: var(--sof-red-brown);
 	--sof-background-people-staff: var(--sof-red-wine);
 	--sof-background-people-supporters: var(--sof-background);
 

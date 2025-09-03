@@ -12,14 +12,11 @@ defined( 'ABSPATH' ) || exit;
 
 // Define query args.
 $loop_include_args = [
-	'post_type'          => 'event',
-	'post_status'        => 'publish',
-	'no_found_rows'      => true,
-	'suppress_filters'   => false,
-	'showpastevents'     => true,
-	'event_start_before' => 'today',
-	'event_end_before'   => 'now',
-	'posts_per_page'     => -1,
+	'post_type'       => 'event',
+	'post_status'     => 'publish',
+	'no_found_rows'   => true,
+	'event_end_after' => 'now',
+	'posts_per_page'  => -1,
 ];
 
 // Newest Events first.
@@ -33,12 +30,16 @@ remove_filter( 'posts_orderby', 'the_ball_v2_events_sort_desc', 20 );
 
 if ( $loop_include->have_posts() ) : ?>
 
-	<!-- loop-events-past.php -->
-	<section id="events-past" class="loop-include loop-include-three content-area clear">
+	<!-- loop-events-ongoing.php -->
+	<section id="events-ongoing" class="loop-include loop-include-three content-area clear">
 		<div class="loop-include-inner">
 
 			<header class="loop-include-header">
-				<h2 class="loop-include-title"><?php esc_html_e( 'Past Events', 'the-ball-v2' ); ?></h2>
+				<?php if ( false === the_ball_v2_theme()->featured_events_get() ) : ?>
+					<h2 class="loop-include-title"><?php esc_html_e( 'Ongoing Events', 'the-ball-v2' ); ?></h2>
+				<?php else : ?>
+					<h2 class="loop-include-title has-featured-event"><?php esc_html_e( 'Ongoing Events', 'the-ball-v2' ); ?></h2>
+				<?php endif; ?>
 			</header><!-- .loop-include-header -->
 
 			<div class="loop-include-posts">

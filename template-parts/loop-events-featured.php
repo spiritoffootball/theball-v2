@@ -10,11 +10,8 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-global $sof_featured_events;
-$sof_featured_events = false;
-
 // Define query args.
-$featured_events_args = [
+$loop_include_args = [
 	'post_type'     => 'event',
 	'post_status'   => 'publish',
 	'no_found_rows' => true,
@@ -29,52 +26,43 @@ $featured_events_args = [
 ];
 
 // The query.
-$featured_events = new WP_Query( $featured_events_args );
+$loop_include = new WP_Query( $loop_include_args );
 
-if ( $featured_events->have_posts() ) :
+if ( $loop_include->have_posts() ) : ?>
 
-	$sof_featured_events = true;
-
-	?>
+	<?php the_ball_v2_theme()->featured_events_set(); ?>
 
 	<!-- loop-events-featured.php -->
-	<section id="events" class="content-area insert-area events-featured clear">
-		<div class="events-inner clear">
+	<section id="events-featured" class="loop-include loop-include-one content-area clear">
+		<div class="loop-include-inner">
 
-			<header class="events-header">
-				<!--<h2 class="events-title"><?php esc_html_e( 'Featured', 'the-ball-v2' ); ?></h2>-->
-			</header><!-- .events-header -->
+			<header class="loop-include-header">
+				<h2 class="loop-include-title"><?php esc_html_e( 'Featured Events', 'the-ball-v2' ); ?></h2>
+			</header><!-- .loop-include-header -->
 
-			<?php
+			<div class="loop-include-posts">
+				<?php
 
-			// Init counter for giving items classes.
-			$post_loop_counter = new The_Ball_v2_Counter();
+				// Start the loop.
+				while ( $loop_include->have_posts() ) :
 
-			// Start the loop.
-			while ( $featured_events->have_posts() ) :
+					$loop_include->the_post();
 
-				$featured_events->the_post();
+					// Get mini template.
+					get_template_part( 'template-parts/content-event-featured' );
 
-				// Get mini template.
-				get_template_part( 'template-parts/content-event-featured' );
+				endwhile;
 
-			endwhile;
+				?>
+			</div><!-- .loop-include-posts -->
 
-			// Ditch counter.
-			$post_loop_counter->remove_filter();
-			unset( $post_loop_counter );
-
-			?>
-
-			<footer class="loop-insert-footer events-footer">
-			</footer><!-- .events-footer -->
-
-		</div><!-- .events-inner -->
-	</section><!-- #events -->
+		</div><!-- .loop-include-inner -->
+	</section><!-- .loop-include -->
 
 	<?php
 
-	// Prevent weirdness.
-	wp_reset_postdata();
-
 endif;
+
+// Prevent weirdness.
+wp_reset_postdata();
+unset( $loop_include_args, $loop_include );

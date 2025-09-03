@@ -57,7 +57,8 @@ if ( $hosts->have_posts() ) : ?>
 
 	<?php
 
-	// Prevent weirdness.
-	wp_reset_postdata();
-
 endif;
+
+// Prevent weirdness.
+wp_reset_postdata();
+unset( $loop_include_args, $loop_include );

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for embedding a display of Individuals in The Backroom Staff.
+ * Template part for embedding Partner logos in the footer.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -12,17 +12,16 @@ defined( 'ABSPATH' ) || exit;
 
 // Define query args.
 $loop_include_args = [
-	'post_type'      => 'individual',
-	'post_status'    => 'publish',
-	'order'          => 'ASC',
-	'orderby'        => 'title',
-	'posts_per_page' => -1,
+	'post_type'   => 'partner',
+	'post_status' => 'publish',
+	'order'       => 'ASC',
+	'orderby'     => 'title',
 	// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
-	'tax_query'      => [
+	'tax_query'   => [
 		[
-			'taxonomy' => 'individual-type',
+			'taxonomy' => 'partner-type',
 			'field'    => 'slug',
-			'terms'    => 'backroom-staff',
+			'terms'    => 'powered-by',
 		],
 	],
 ];
@@ -32,12 +31,12 @@ $loop_include = new WP_Query( $loop_include_args );
 
 if ( $loop_include->have_posts() ) : ?>
 
-	<!-- loop-individuals-staff.php -->
-	<section id="individuals-staff" class="loop-include loop-include-four content-area clear">
+	<!-- loop-footer-powered-by.php -->
+	<section id="footer-powered-by" class="loop-include loop-include-three content-area powered-by clear">
 		<div class="loop-include-inner">
 
 			<header class="loop-include-header">
-				<h2 class="loop-include-title"><?php esc_html_e( 'Backroom Staff', 'the-ball-v2' ); ?></h2>
+				<h2 class="loop-include-title screen-reader-text"><?php esc_html_e( 'Partners', 'the-ball-v2' ); ?></h2>
 			</header><!-- .loop-include-header -->
 
 			<div class="loop-include-posts">
@@ -49,7 +48,7 @@ if ( $loop_include->have_posts() ) : ?>
 					$loop_include->the_post();
 
 					// Get mini template.
-					get_template_part( 'template-parts/content-individual-mini' );
+					get_template_part( 'template-parts/content-organisation-logo' );
 
 				endwhile;
 
@@ -70,4 +69,3 @@ endif;
 // Prevent weirdness.
 wp_reset_postdata();
 unset( $loop_include_args, $loop_include );
-

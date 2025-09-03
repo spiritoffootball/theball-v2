@@ -39,7 +39,7 @@ get_header();
 	<?php load_template( $featured_event_loop ); ?>
 <?php endif; */ ?>
 
-<?php if ( $event_loop = locate_template( 'template-parts/loop-events.php' ) ) : ?>
+<?php if ( $event_loop = locate_template( 'template-parts/loop-events-ongoing.php' ) ) : ?>
 	<?php load_template( $event_loop ); ?>
 <?php endif; ?>
 

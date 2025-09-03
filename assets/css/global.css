@@ -2159,26 +2159,217 @@ img.avatar
 }
 
 /*--------------------------------------------------------------
+## Includes Layout (Grid)
+--------------------------------------------------------------*/
+
+/* Styles to define a Loop Include. */
+.loop-include-inner {
+	width: 60%;
+	margin: 0 auto 1rem;
+	background-color: inherit;
+}
+
+body.blog .site-content .loop-include-inner {
+	margin: 2rem auto;
+}
+
+@media all and (max-width: 1200px) {
+	.loop-include-inner {
+		width: 68%;
+	}
+}
+
+@media all and (max-width: 1024px) {
+	.loop-include-inner {
+		width: 80%;
+	}
+}
+
+@media all and (max-width: 876px) {
+	.loop-include-inner {
+		width: 96%;
+	}
+}
+
+.loop-include-header {
+	text-align: center;
+	text-transform: uppercase;
+	color: var(--sof-text-content);
+}
+
+.loop-include-posts {
+	display: grid;
+	grid-column-gap: 1em;
+	grid-row-gap: 1em;
+	background-color: inherit;
+}
+
+.loop-include .hentry {
+	color: var(--sof-text-content);
+	background-color: inherit;
+	position: relative;
+	overflow: visible;
+}
+
+#primary .loop-include .hentry .entry-header,
+#primary .loop-include .hentry .entry-content
+{
+    width: auto;
+    margin: 0 auto;
+}
+
+/* Styles to define a One Column layout include. */
+.loop-include-one .loop-include-posts {
+	grid-template-columns: repeat(1, 1fr);
+}
+
+.loop-include-one .loop-include-inner {
+	width: auto;
+}
+
+/* Styles to define a Two Column layout include. */
+.loop-include-two .loop-include-posts {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+@media all and (max-width: 640px) {
+	.loop-include-two .loop-include-posts {
+		/* Reduce to Three Column layout. */
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* Styles to define a Three Column layout include. */
+.loop-include-three .loop-include-posts {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+@media all and (max-width: 640px) {
+	.loop-include-three .loop-include-posts {
+		/* Reduce to Two Column layout. */
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* Styles to define a Four Column layout include. */
+.loop-include-four .loop-include-posts {
+	grid-template-columns: repeat(4, 1fr);
+}
+
+@media all and (max-width: 640px) {
+	.loop-include-four .loop-include-posts {
+		/* Reduce to Three Column layout. */
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* Styles to define a Five Column layout include. */
+.loop-include-five .loop-include-posts {
+	grid-template-columns: repeat(5, 1fr);
+}
+
+@media all and (max-width: 640px) {
+	.loop-include-five .loop-include-posts {
+		/* Reduce to Four Column layout. */
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+
+
+/*--------------------------------------------------------------
+## Footer Includes Layout (Flex)
+--------------------------------------------------------------*/
+
+#colophon .loop-include-posts {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	justify-content: center;
+	background-color: inherit;
+}
+
+#colophon .powered-by .loop-include-posts {
+	flex-direction: column;
+	align-items: center;
+}
+
+/* Styles to define a Two Column layout include. */
+#colophon .loop-include-two .hentry {
+	width: 48%;
+}
+
+@media all and (max-width: 640px) {
+	#colophon .loop-include-two .hentry {
+		/* Reduce to Three Column layout. */
+		width: 31%;
+	}
+}
+
+/* Styles to define a Three Column layout include. */
+#colophon .loop-include-three .hentry {
+	width: 31%;
+}
+
+@media all and (max-width: 640px) {
+	#colophon .loop-include-three .hentry {
+		/* Reduce to Two Column layout. */
+		width: 48%;
+	}
+}
+
+/* Styles to define a Four Column layout include. */
+#colophon .loop-include-four .hentry {
+	width: 23%;
+}
+
+@media all and (max-width: 640px) {
+	#colophon .loop-include-four .hentry {
+		/* Reduce to Three Column layout. */
+		width: 31%;
+	}
+}
+
+/* Styles to define a Five Column layout include. */
+#colophon .loop-include-five .hentry {
+	width: 18%;
+}
+
+@media all and (max-width: 640px) {
+	#colophon .loop-include-five .hentry {
+		/* Reduce to Four Column layout. */
+		width: 23%;
+	}
+}
+
+
+
+/*--------------------------------------------------------------
 ## Includes Common
 --------------------------------------------------------------*/
 
-.insert-area h3 a:visited {
+.loop-include-sub-title p
+{
+	text-transform: uppercase;
+	text-align: center;
+	padding: 0 0 0.5em 0;
+	margin: 0;
+}
+
+.loop-include h3 a:visited {
 	color: var(--sof-text-heading);
 }
 
-.loop-insert-footer
-{
-	clear: left;
-}
-
-.loop-insert-footer p
+.loop-include-footer p
 {
 	margin: 0 0 1.5em 0;
 	padding: 0;
 	text-align: center;
 }
 
-.loop-insert-footer a
+.loop-include-footer a
 {
 	display: inline-block;
 	text-decoration: none;
@@ -2188,165 +2379,51 @@ img.avatar
 	line-height: 1;
 	padding: 0.8em 1.2em;
 	margin: 0.8em 0 0.2em 0;
-	border: 1px solid --sof-text-link);
+	border: 1px solid var(--sof-text-link);
 	color: var(--sof-text-link);
 	position: relative;
 }
 
-/*
-.loop-insert-footer a:after {
-	height: 12px;
-	width: 12px;
-	background: var(--sof-text-link);
-	position: absolute;
-	content: '';
-	top: 0;
-	right: 1px;
-	border-left: 1px solid #E86362;
-	transform: rotate(-62deg) translate(83%);
-	-ms-transform: rotate(-62deg) translate(83%);
-	-webkit-transform: rotate(-62deg) translate(83%);
-	-moz-transform: rotate(-62deg) translate(83%);
-	-o-transform: rotate(-62deg) translate(83%);
-}
- */
+
 
 /*--------------------------------------------------------------
-## Events Archive and Events Includes Common
+## Events Common
 --------------------------------------------------------------*/
 
-#primary .event-list .event,
-#events .event,
-#events-past .event
-{
-	width: 32%;
-	margin-right: 2%;
-	margin-top: 1em;
-	margin-bottom: 1em;
-	float: left;
-	background-color: inherit;
-}
-
-#events.events-featured .event
-{
-	width: auto;
-	margin: 2em 0 1em 0;
-	float: none;
-	background-color: inherit;
-	/* Make text slightly larger */
-	font-size: 125%;
-}
-
-#events .event,
-#events-past .event
+.hentry.event
 {
 	background-color: inherit;
 }
 
-/* Every third-plus-one item starts a new row */
-#primary .event-list .event.third-plus-one,
-#events .event.third-plus-one,
-#events-past .event.third-plus-one
-{
-	clear: left;
-}
-
-/* Every third item ends a row */
-#primary .event-list .event.third,
-#events .event.third,
-#events-past .event.third
-{
-	margin-right: 0;
-}
-
-#primary .event-list .event .entry-header h3,
-#events .event .entry-header h3,
-#events-past .event .entry-header h3
+.hentry.event .entry-header h3
 {
 	margin: 0;
 }
 
-#primary .event-list .event .entry-header a,
-#events .event .entry-header a,
-#events-past .event .entry-header a
+.hentry.event .entry-header a
 {
 	width: 100%;
-/* 	border: 1px solid var(--sof-text-link); */
 	background-color: inherit;
 }
 
-#primary .event-list .event .entry-header a:hover,
-#events .event .entry-header a:hover,
-#events-past .event .entry-header a:hover,
-#primary .event-list .event .entry-header a:focus,
-#events .event .entry-header a:focus,
-#events-past .event .entry-header a:focus
-{
-/* 	border: 1px solid var(--sof-text-heading); */
-}
-
-#primary .event-list .event .entry-header a:active,
-#events .event .entry-header a:active,
-#events-past .event .entry-header a:active
-{
-/* 	border: 1px solid var(--sof-text-link-active); */
-}
-
-#primary .event-list .event .entry-header a:after,
-#events .event .entry-header a:after,
-#events-past .event .entry-header a:after
-{
-/* 	border-left: 1px solid var(--sof-text-link); */
-	background-color: inherit;
-}
-
-#events .event .entry-header a:after,
-#events-past .event .entry-header a:after
+.hentry.event .entry-header a:after
 {
 	background-color: inherit;
 }
 
-#primary .event-list .event .entry-header a:hover:after,
-#events .event .entry-header a:hover:after,
-#events-past .event .entry-header a:hover:after
-{
-/* 	border-left: 1px solid var(--sof-text-heading); */
-}
-
-#primary .event-list .event .entry-header a:focus:after,
-#events .event .entry-header a:focus:after,
-#events-past .event .entry-header a:focus:after
-{
-/* 	border-left: 1px solid var(--sof-text-link-focus); */
-}
-
-#primary .event-list .event .entry-header a:active:after,
-#events .event .entry-header a:active:after,
-#events-past .event .entry-header a:active:after
-{
-/* 	border-left: 1px solid var(--sof-text-link-active); */
-}
-
-#primary .event-list .event > .entry-title,
-#events .event > .entry-title,
-#events-past .event > .entry-title
+.hentry.event > .entry-title
 {
 	margin: 0.3em 0 0.3em 0;
 	font-size: 150%;
 	line-height: 1.2;
 }
 
-#primary .event-list .event > .entry-title a,
-#primary #event-the-ball .entry-title a,
-#events .event > .entry-title a,
-#events-past .event > .entry-title a
+.hentry.event > .entry-title a
 {
 	text-decoration: none;
 }
 
-#primary .event-list .event .entry-content,
-#events .event .entry-content,
-#events-past .event .entry-content
+.hentry.event .entry-content
 {
 	margin: 0;
 	color: var(--sof-text-content);
@@ -2354,12 +2431,12 @@ img.avatar
 	width: auto;
 }
 
-#primary .event-list .event .entry-content p,
-#events .event .entry-content p,
-#events-past .event .entry-content p
+.hentry.event .entry-content p
 {
 	margin-top: 0;
 }
+
+
 
 /*--------------------------------------------------------------
 ## Events Archive
@@ -2395,82 +2472,65 @@ img.avatar
 	background-color: inherit;
 }
 
+
+
 /*--------------------------------------------------------------
 ## Events Include
 --------------------------------------------------------------*/
 
-#events,
-#events-past,
-#events.events-featured
-{
-	padding: 1px 0;
-	background-color: var(--sof-background-events-ongoing);
-	color: var(--sof-text-content);
-}
-
-#events-past
-{
-	background-color: #f04845;
-}
-
-#events.events-featured,
-#events-past.events-featured
+#events-featured
 {
 	background-color: var(--sof-background);
 }
 
-#events .events-inner,
-#events-past .events-inner
+#events-ongoing
+{
+	background-color: var(--sof-background-events-ongoing);
+}
+
+#events-ongoing .has-featured-event
+{
+	visibility: hidden;
+	line-height: 0;
+}
+
+#events-past
+{
+	background-color: var(--sof-background-events-past);
+}
+
+#events-other
+{
+	background-color: var(--sof-background-events-past);
+}
+
+#event-ball-hosts
+{
+	background-color: var(--sof-background-events-hosts);
+}
+
+
+
+/*--------------------------------------------------------------
+## Featured Events Include
+--------------------------------------------------------------*/
+
+#events-featured .loop-include-inner
 {
 	width: 60%;
-	margin: 0 auto;
+	margin: 0 auto 1rem;
 	background-color: inherit;
 }
 
-#events .events-header,
-#events-past .events-header,
-#events .entry-header,
-#events-past .entry-header
+#events-featured .hentry.event
 {
+	width: auto;
 	background-color: inherit;
+	/* Make text slightly larger */
+	font-size: 125%;
 }
 
-#events a,
-#events-past a
-{
-/* 	color: var(--sof-text-link); */
-}
 
-#events .events-title,
-#events-past .events-title,
-.event-list-inner > .events-title
-{
-	text-transform: uppercase;
-	text-align: center;
-	padding: 1em 0 0.5em 0;
-	margin: 0;
-}
-
-.event-list-inner > .events-title
-{
-	padding-top: 0;
-}
-
-#events .loop-insert-footer a,
-#events-past .loop-insert-footer a
-{
-	border: 1px solid var(--sof-text-link);
-	color: var(--sof-text-link);
-}
-
-/*
-#events .loop-insert-footer a:after,
-#events-past .loop-insert-footer a:after
-{
-	background: #f04845;
-	border-left: 1px solid var(--sof-text-link);
-}
- */
 
 /*--------------------------------------------------------------
 ## "Make your Pledge with The Ball" Event Include
@@ -2481,6 +2541,11 @@ img.avatar
 	background-color: inherit;
 	width: 100%;
 	margin: 0 auto 2em 0;
+}
+
+#event-the-ball .loop-include-header
+{
+	display: none;
 }
 
 #primary #event-the-ball .hentry
@@ -2626,6 +2691,8 @@ img.avatar
 {
 /* 	text-decoration: none; */
 }
+
+
 
 /*--------------------------------------------------------------
 ## Teaser Include
@@ -3202,17 +3269,83 @@ img.avatar
 ## Individuals
 --------------------------------------------------------------*/
 
-.individual.hentry
+/* Colour scheme */
+#individuals
 {
-	padding-bottom: 2em;
+	background-color: var(--sof-background);
 }
 
+#individuals-squad
+{
+	background-color: var(--sof-background-people-squad);
+}
+
+#individuals-board
+{
+	background-color: var(--sof-background-people-board);
+}
+
+#individuals-staff
+{
+	background-color: var(--sof-background-people-staff);
+}
+
+#individuals-supporters
+{
+	background-color: var(--sof-background-people-supporters);
+}
+
+/* Layout */
 .individual .entry-title
 {
 	text-align: center;
-	margin: 0.5em 0 0;
+	margin: 0 0.5em 1em;
 	text-transform: uppercase;
 	font-size: 150%;
+	line-height: 1.3;
+}
+
+.loop-include-two .individual .entry-title
+{
+	font-size: 150%;
+}
+
+.loop-include-three .individual .entry-title
+{
+	font-size: 140%;
+}
+
+.loop-include-four .individual .entry-title
+{
+	font-size: 130%;
+}
+
+.loop-include-five .individual .entry-title
+{
+	font-size: 120%;
+}
+
+@media all and (max-width: 640px) {
+	.loop-include-two .individual .entry-title
+	{
+		font-size: 120%;
+	}
+
+	.loop-include-three .individual .entry-title
+	{
+		font-size: 110%;
+	}
+
+	.loop-include-four .individual .entry-title
+	{
+		font-size: 100%;
+	}
+
+	.loop-include-five .individual .entry-title
+	{
+		font-size: 90%;
+	}
+
 }
 
 .individual .entry-title a
@@ -3250,156 +3383,6 @@ img.avatar
 .individual .entry-header img.avatar
 {
 	width: 100%;
-}
-
-#individuals,
-#individuals-squad,
-#individuals-board,
-#individuals-staff,
-#individuals-supporters
-{
-	padding: 1px 0;
-	color: var(--sof-text-content);
-	overflow: hidden;
-}
-
-#individuals
-{
-	background-color: var(--sof-background);
-}
-
-#individuals-squad
-{
-	background-color: var(--sof-background-people-squad);
-}
-
-#individuals-board
-{
-	background-color: var(--sof-background-people-board);
-}
-
-#individuals-staff
-{
-	background-color: var(--sof-background-people-staff);
-}
-
-#individuals-supporters
-{
-	background-color: var(--sof-background-people-supporters);
-}
-
-#individuals .individuals-inner
-{
-	padding-top: 2em;
-}
-
-#individuals .individuals-inner,
-#individuals-squad .individuals-inner,
-#individuals-board .individuals-inner,
-#individuals-staff .individuals-inner,
-#individuals-supporters .individuals-inner
-{
-	width: 60%;
-	margin: 0 auto;
-	background-color: inherit;
-}
-
-#individuals .individuals-header,
-#individuals .entry-header,
-#individuals-squad .individuals-header,
-#individuals-squad .entry-inner,
-#individuals-board .individuals-header,
-#individuals-board .entry-inner,
-#individuals-staff .individuals-header,
-#individuals-staff .entry-inner,
-#individuals-supporters .individuals-header,
-#individuals-supporters .entry-inner
-{
-	background-color: inherit;
-}
-
-#individuals .individuals-title,
-#individuals-squad .individuals-title,
-#individuals-board .individuals-title,
-#individuals-staff .individuals-title,
-#individuals-supporters .individuals-title
-{
-	text-transform: uppercase;
-	text-align: center;
-	padding: 1em 0 0.5em 0;
-	margin: 0;
-}
-
-#individuals-squad .individuals-title
-{
-	padding: 1em 0 0 0;
-}
-
-#individuals .individuals-sub-title p,
-#individuals-squad .individuals-sub-title p,
-#individuals-board .individuals-sub-title p,
-#individuals-staff .individuals-sub-title p,
-#individuals-supporters .individuals-sub-title p
-{
-	text-transform: uppercase;
-	text-align: center;
-	padding: 0 0 0.5em 0;
-	margin: 0;
-}
-
-#individuals .individual,
-#individuals-squad .individual,
-#individuals-board .individual,
-#individuals-staff .individual,
-#individuals-supporters .individual
-{
-	width: 32%;
-	margin-right: 2%;
-	float: left;
-	color: var(--sof-text-content);
-	position: relative;
-	overflow: visible;
-	margin-bottom: 2em;
-}
-
-/*
-.individual.individual-type-the-squad,
-.individual.individual-type-advisory-board,
-.individual.individual-type-backroom-staff,
-.individual.individual-type-backroom-supporters
-{
-	background-color: inherit;
-}
- */
-
-.individual
-{
-	background-color: inherit;
-}
-
-.single #primary .individual
-{
-	background-color: var(--sof-background);
-}
-
-/* Every third item ends a row */
-#individuals .individual.third,
-#individuals-squad .individual.third,
-#individuals-board .individual.third,
-#individuals-staff .individual.third,
-#individuals-supporters .individual.third
-{
-	margin-right: 0;
-}
-
-/* Every third-plus-one item starts a new row */
-#individuals .individual.third-plus-one,
-#individuals-squad .individual.third-plus-one,
-#individuals-board .individual.third-plus-one,
-#individuals-staff .individual.third-plus-one,
-#individuals-supporters .individual.third-plus-one
-{
-	clear: left;
 }
 
 .individual-type
@@ -3462,98 +3445,6 @@ img.avatar
 .page-template-page-map #primary .entry-footer
 {
 	padding-bottom: 0.5em;
-}
-
-/*--------------------------------------------------------------
-## Awards Archive
---------------------------------------------------------------*/
-
-.page-template-page-awards #primary #archive-header .hentry
-{
-/* 	margin-bottom: 0; */
-}
-
-#primary .awards-intro-inner
-{
-	width: 60%;
-	margin: 2em auto;
-}
-
-#primary .awards
-{
-	background-color: var(--sof-background);
-	color: var(--sof-text-content);
-}
-
-#primary .awards-inner
-{
-	width: 60%;
-	margin: 2em auto;
-}
-
-.page-template-page-awards #primary .entry-header
-{
-	width: auto;
-}
-
-.award .entry-title
-{
-/* 	text-transform: uppercase; */
- 	margin: 0.3em 0 0.3em 0;
-	font-size: 150%;
-	line-height: 1.2;
-}
-
-.award .entry-title a
-{
-	text-decoration: none;
-}
-
-/*--------------------------------------------------------------
-## Awards Include Common
---------------------------------------------------------------*/
-
-#primary .organisation-list.award-list .hentry > .entry-title
-{
-	text-align: center;
-}
-
-/*--------------------------------------------------------------
-## Single Award
---------------------------------------------------------------*/
-
-.single-award .site-main
-{
-	background-color: var(--sof-background);
-	color: var(--sof-text-content);
-}
-
-.single-award .site-main .hentry
-{
-	margin: 0;
-}
-
-.single-award #primary .entry-content,
-{
-	margin: 2em auto;
-}
-
-.award-badge,
-.award-logo,
-.award-website,
-.award-social-links
-{
-	text-align: center;
-}
-
-.single-award .award-badge
-{
-	margin: 2em 0;
-}
-
-.award-website
-{
-	margin-bottom: 1em;
 }
 
 /*--------------------------------------------------------------
@@ -4272,16 +4163,13 @@ img.avatar
 }
 
 /*--------------------------------------------------------------
-## News Archive & News Include Common
+## Blog Archive
 --------------------------------------------------------------*/
 
-#blog,
-#news
+#blog
 {
-	padding: 1px 0;
 	color: var(--sof-text-content);
 	background-color: var(--sof-background);
-	overflow: hidden;
 }
 
 #blog .taxonomy-description
@@ -4291,137 +4179,50 @@ img.avatar
 	text-align: center;
 }
 
-#blog .blog-posts,
-#blog .blog-footer
-{
-	width: 60%;
-	margin: 0 auto;
-	padding: 2em 0;
-}
+/*--------------------------------------------------------------
+## News Include
+--------------------------------------------------------------*/
 
-#blog .entry-header
+#news
 {
-	width: auto;
-}
-
-#blog .has-post-thumbnail .entry-header a,
-#news .post .entry-header a
-{
-	width: 100%;
-/* 	border: 1px solid var(--sof-text-link); */
-}
-
-#blog .has-post-thumbnail .entry-header a:visited
-{
-	color: var(--sof-text-link);
+	background-color: var(--sof-background);
 }
 
 #blog .has-post-thumbnail .entry-header a:focus,
 #blog .has-post-thumbnail .entry-header a:active
 {
+	/* TODO: Make this a variable. */
 	color: #7c6f6a;
 }
 
-#blog .blog-title,
-#news .news-title
-{
-	text-transform: uppercase;
-	text-align: center;
-}
-
-#blog .blog-title
-{
-	font-size: 4em;
-	margin: 2.8em 0 0;
-	color: var(--sof-text-heading-news);
-}
-
-#blog .post,
-#news .post
-{
-	width: 32%;
-	margin-right: 2%;
-	float: left;
-	color: var(--sof-text-content);
-	position: relative;
-	overflow: visible;
-	margin-bottom: 2em;
-}
-
-/* Every third item ends a row */
-#blog .post.third,
-#news .post.third
-{
-	margin-right: 0;
-}
-
-/* Every third-plus-one item starts a new row */
-#blog .post.third-plus-one,
-#news .post.third-plus-one
-{
-	clear: left;
-}
-
-#blog .post .entry-header a,
-#news .post .entry-header a
+.loop-include .hentry.post .entry-header a
 {
 	width: 100%;
-/* 	border: 1px solid var(--sof-text-link); */
 }
 
-#blog .post .entry-header a:hover,
-#blog .post .entry-header a:focus,
-#news .post .entry-header a:hover,
-#news .post .entry-header a:focus
+.loop-include .hentry.post .entry-header a:after
 {
-/* 	border: 1px solid var(--sof-text-link-hover); */
+	background-color: inherit;
 }
 
-#blog .post .entry-header a:active,
-#blog .post .entry-header a:active,
-#news .post .entry-header a:active,
-#news .post .entry-header a:active
-{
-/* 	border: 1px solid var(--sof-text-link-active); */
-}
-
-#blog .post .entry-header a:after,
-#news .post .entry-header a:after
-{
-	background: var(--sof-background);
-/* 	border-left: 1px solid var(--sof-text-link); */
-}
-
-#blog .post .entry-header a:hover:after,
-#blog .post .entry-header a:focus:after,
-#news .post .entry-header a:hover:after,
-#news .post .entry-header a:focus:after
-{
-/* 	border-left: 1px solid var(--sof-text-link-hover); */
-}
-
-#blog .post .entry-header a:active:after,
-#news .post .entry-header a:active:after
-{
-/* 	border-left: 1px solid var(--sof-text-link-active); */
-}
-
-#blog .post .entry-title,
-#news .post .entry-title
+.loop-include .hentry.post .entry-title
 {
 	margin: 0.3em 0 0.3em 0;
 	font-size: 150%;
 	line-height: 1.2;
 }
 
-#blog .post .entry-title a,
-#news .post .entry-title a
+.loop-include .hentry.post .entry-title a
 {
 	text-decoration: none;
 }
 
-#blog .post .entry-content,
-#news .post .entry-content
+.loop-include .entry-header
+{
+	background-color: inherit;
+}
+
+.hentry.post .entry-content
 {
 	margin: 0;
 	color: var(--sof-text-content);
@@ -4429,15 +4230,9 @@ img.avatar
 	width: auto;
 }
 
-#blog .post .entry-content p,
-#news .post .entry-content p
+.hentry.post .entry-content p
 {
 	margin-top: 0;
-}
-
-#blog .post .entry-content p.read-more
-{
-	margin-bottom: 1.5em;
 }
 
 #blog .blog-footer a
@@ -4445,6 +4240,8 @@ img.avatar
 	text-decoration: none;
 	text-transform: uppercase;
 }
+
+
 
 /*--------------------------------------------------------------
 ## News Include
@@ -4456,20 +4253,9 @@ img.avatar
 	color: var(--sof-text-content);
 }
 
-#news .news-inner
+.loop-include .hentry.post
 {
-	width: 60%;
-	margin: 0 auto;
-}
-
-#news .hentry
-{
-	background-color: var(--sof-background-news);
-}
-
-#news a
-{
-/* 	color: var(--sof-text-link); */
+	background-color: inherit;
 }
 
 #news .news-title
@@ -4478,15 +4264,14 @@ img.avatar
 	padding: 1em 0;
 }
 
-#news .post .entry-header
+.hentry.post .entry-header
 {
 	background-color: inherit;
 }
 
-#news .post .entry-header a:after
+.hentry.post .entry-header a:after
 {
 	background-color: inherit;
-/* 	border-left: 1px solid var(--sof-text-link); */
 }
 
 #news .loop-insert-footer a
@@ -4495,13 +4280,7 @@ img.avatar
 	color: var(--sof-text-link);
 }
 
-/*
-#news .loop-insert-footer a:after
-{
-	background: var(--sof-background-news);
-	border-left: 1px solid var(--sof-text-link);
-}
- */
+
 
 /*--------------------------------------------------------------
 ## Author Archive
@@ -4623,18 +4402,9 @@ img.avatar
 	#pledge .pledge-inner,
 	#quotes-pledges .quotes-pledges-inner,
 	#quotes-statements .quotes-statements-inner,
-	#individuals .individuals-inner,
-	#individuals-squad .individuals-inner,
-	#individuals-board .individuals-inner,
-	#individuals-staff .individuals-inner,
-	#individuals-supporters .individuals-inner,
 	#primary .organisation-list-inner,
 	#primary .organisation-list-inner,
 	#organisations .organisations-inner,
-	#news .news-inner,
-	#blog .blog-posts,
-	#blog .blog-footer,
-	#blog-meta .blog-meta-inner,
 	#search .search-posts,
 	#subpages .subpages-inner,
 	.not-found-inner,
@@ -4709,17 +4479,8 @@ img.avatar
 	#pledge .pledge-inner,
 	#quotes-pledges .quotes-pledges-inner,
 	#quotes-statements .quotes-statements-inner,
-	#individuals .individuals-inner,
-	#individuals-squad .individuals-inner,
-	#individuals-board .individuals-inner,
-	#individuals-staff .individuals-inner,
-	#individuals-supporters .individuals-inner,
 	#primary .organisation-list-inner,
 	#organisations .organisations-inner,
-	#news .news-inner,
-	#blog .blog-posts,
-	#blog .blog-footer,
-	#blog-meta .blog-meta-inner,
 	#search .search-posts,
 	#subpages .subpages-inner,
 	.not-found-inner,
@@ -4785,18 +4546,9 @@ img.avatar
 	#pledge .pledge-inner,
 	#quotes-pledges .quotes-pledges-inner,
 	#quotes-statements .quotes-statements-inner,
-	#individuals .individuals-inner,
-	#individuals-squad .individuals-inner,
-	#individuals-board .individuals-inner,
-	#individuals-staff .individuals-inner,
-	#individuals-supporters .individuals-inner,
 	#primary .organisation-list-inner,
 	#primary .organisation-list-inner,
 	#organisations .organisations-inner,
-	#news .news-inner,
-	#blog .blog-posts,
-	#blog .blog-footer,
-	#blog-meta .blog-meta-inner,
 	#search .search-posts,
 	#subpages .subpages-inner,
 	.not-found-inner,
@@ -4895,13 +4647,6 @@ img.avatar
 	#events-past .event,
 	#primary .organisation-list .hentry,
 	#organisations .hentry,
-	#individuals .hentry,
-	#individuals-squad .hentry,
-	#individuals-board .hentry,
-	#individuals-staff .hentry,
-	#individuals-supporters .hentry,
-	#news .post,
-	#blog .post,
 	.archive #primary .press_resource
 	{
 		width: 48%;
@@ -4923,13 +4668,6 @@ img.avatar
 	#primary .organisation-list .partner.third-plus-one,
 	#primary .organisation-list .host.third-plus-one,
 	#organisations .hentry.third-plus-one,
-	#individuals .hentry.third-plus-one,
-	#individuals-squad .hentry.third-plus-one,
-	#individuals-board .hentry.third-plus-one,
-	#individuals-staff .hentry.third-plus-one,
-	#individuals-supporters .hentry.third-plus-one,
-	#news .post.third-plus-one,
-	#blog .post.third-plus-one
 	.archive #primary .press_resource.third-plus-one
 	{
 		clear: none;
@@ -4941,13 +4679,6 @@ img.avatar
 	#events-past .event.third,
 	#primary .organisation-list .hentry.third,
 	#organisations .hentry.third,
-	#individuals .hentry.third,
-	#individuals-squad .hentry.third,
-	#individuals-board .hentry.third,
-	#individuals-staff .hentry.third,
-	#individuals-supporters .hentry.third,
-	#news .post.third,
-	#blog .post.third,
 	.archive #primary .press_resource.third
 	{
 		margin-right: 4%;
@@ -4965,13 +4696,6 @@ img.avatar
 	#events-past .event.even-plus-one,
 	#primary .organisation-list .hentry.even-plus-one,
 	#organisations .hentry.even-plus-one,
-	#individuals .hentry.even-plus-one,
-	#individuals-squad .hentry.even-plus-one,
-	#individuals-board .hentry.even-plus-one,
-	#individuals-staff .hentry.even-plus-one,
-	#individuals-supporters .hentry.even-plus-one,
-	#news .post.even-plus-one,
-	#blog .post.even-plus-one,
 	.archive #primary .press_resource.even-plus-one
 	{
 		clear: left;
@@ -4983,13 +4707,6 @@ img.avatar
 	#events-past .event.even,
 	#primary .organisation-list .hentry.even,
 	#organisations .hentry.even,
-	#individuals .hentry.even,
-	#individuals-squad .hentry.even,
-	#individuals-board .hentry.even,
-	#individuals-staff .hentry.even,
-	#individuals-supporters .hentry.even,
-	#news .post.even,
-	#blog .post.even,
 	.archive #primary .press_resource.even
 	{
 		margin-right: 0;
@@ -5080,17 +4797,8 @@ img.avatar
 	#pledge .pledge-inner,
 	#quotes-pledges .quotes-pledges-inner,
 	#quotes-statements .quotes-statements-inner,
-	#individuals .individuals-inner,
-	#individuals-squad .individuals-inner,
-	#individuals-board .individuals-inner,
-	#individuals-staff .individuals-inner,
-	#individuals-supporters .individuals-inner,
 	#primary .organisation-list-inner,
 	#organisations .organisations-inner,
-	#news .news-inner,
-	#blog .blog-posts,
-	#blog .blog-footer,
-	#blog-meta .blog-meta-inner,
 	#search .search-posts,
 	#subpages .subpages-inner,
 	.not-found-inner,
@@ -5146,10 +4854,6 @@ img.avatar
 		padding: 0;
 	}
 
-	#news .news-inner,
-	#blog .blog-posts,
-	#blog .blog-footer,
-	#blog-meta .blog-meta-inner,
 	#search .search-posts,
 	#subpages .subpages-inner,
 	#events .events-inner,
@@ -5157,11 +4861,6 @@ img.avatar
 	#pledge .pledge-inner,
 	#quotes-pledges .quotes-pledges-inner,
 	#quotes-statements .quotes-statements-inner,
-	#individuals .individuals-inner,
-	#individuals-squad .individuals-inner,
-	#individuals-board .individuals-inner,
-	#individuals-staff .individuals-inner,
-	#individuals-supporters .individuals-inner,
 	#organisations .organisations-inner
 	{
 		width: 90%;
@@ -5186,12 +4885,6 @@ img.avatar
 	#events-past .event.even-plus-one,
 	#primary .organisation-list .hentry.even-plus-one,
 	#organisations .hentry.even-plus-one,
-	#individuals .hentry.even-plus-one,
-	#individuals-squad .hentry.even-plus-one,
-	#individuals-board .hentry.even-plus-one,
-	#individuals-supporters .hentry.even-plus-one,
-	#news .post.even-plus-one,
-	#blog .post.even-plus-one,
 	.archive #primary .press_resource.even-plus-one
 	{
 		clear: none;
@@ -5204,12 +4897,6 @@ img.avatar
 	#events-past .event.even,
 	#primary .organisation-list .hentry.even,
 	#organisations .hentry.even,
-	#individuals .hentry.even,
-	#individuals-squad .hentry.even,
-	#individuals-board .hentry.even,
-	#individuals-supporters .hentry.even,
-	#news .post.even,
-	#blog .post.even,
 	.archive #primary .press_resource.even
 	{
 		margin-right: 0;
@@ -5221,12 +4908,6 @@ img.avatar
 	#events-past .event,
 	#primary .organisation-list .hentry,
 	#organisations .hentry,
-	#individuals .hentry,
-	#individuals-squad .hentry,
-	#individuals-board .hentry,
-	#individuals-supporters .hentry,
-	#news .post,
-	#blog .post,
 	.archive #primary .press_resource
 	{
 		float: none;

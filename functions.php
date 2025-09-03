@@ -80,7 +80,7 @@ if ( ! function_exists( 'the_ball_v2_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		// Define a full-size custom image size, cropped to fit.
+		// Define a full-size custom image size, not cropped.
 		add_image_size(
 			'the-ball-v2-feature',
 			apply_filters( 'the_ball_v2_feature_image_width', 1280 ),
@@ -88,7 +88,7 @@ if ( ! function_exists( 'the_ball_v2_setup' ) ) :
 			false // Crop.
 		);
 
-		// Define a small custom image size, cropped to fit.
+		// Define a small custom image size, not cropped.
 		add_image_size(
 			'the-ball-v2-listings',
 			apply_filters( 'the_ball_v2_listings_image_width', 553 ),

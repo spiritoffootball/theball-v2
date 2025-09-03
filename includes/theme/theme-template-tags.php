@@ -351,15 +351,15 @@ if ( ! function_exists( 'the_ball_v2_partner_image' ) ) :
 	 *
 	 * @param string $size The name of the size of the "partner" image.
 	 */
-	function the_ball_v2_partner_image( $size = 'the-ball-v2-partner' ) {
+	function the_ball_v2_partner_image( $size = 'medium-640' ) {
 
 		// Try the ACF Field first.
 		if ( defined( 'ACF' ) ) {
 			$logo = get_field( 'logo' );
 			if ( ! empty( $logo ) ) {
-				$src    = $logo['sizes']['medium'];
-				$width  = ( $logo['sizes']['medium-width'] / 2 );
-				$height = ( $logo['sizes']['medium-height'] / 2 );
+				$src    = $logo['sizes'][ $size ];
+				$width  = ( $logo['sizes'][ $size . '-width' ] / 2 );
+				$height = ( $logo['sizes'][ $size . '-height' ] / 2 );
 				$title  = empty( $logo['title'] ) ? __( 'Partner logo', 'the-ball-v2' ) : $logo['title'];
 				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				echo '<img src="' . $src . '" width="' . $width . '" height="' . $height . '" title="' . esc_attr( $title ) . '">';
@@ -426,7 +426,7 @@ if ( ! function_exists( 'the_ball_v2_get_avatar_feature_image' ) ) :
 	 *
 	 * @param string $size The name of the size of the feature image.
 	 */
-	function the_ball_v2_get_avatar_feature_image( $size = 'the-ball-v2-partner' ) {
+	function the_ball_v2_get_avatar_feature_image( $size = 'medium' ) {
 
 		// Get image markup for this post's feature image if it has one.
 		if ( the_ball_v2_has_feature_image() ) {

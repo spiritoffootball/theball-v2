@@ -23,7 +23,17 @@ defined( 'ABSPATH' ) || exit;
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php $logo = get_field( 'logo' ); ?>
+		<?php $logo = get_field( 'logo' );
+
+		$e = new \Exception();
+		$trace = $e->getTraceAsString();
+		error_log( print_r( [
+			'method' => __METHOD__,
+			'logo' => $logo,
+			//'backtrace' => $trace,
+		], true ) );
+
+		?>
 		<?php if ( ! empty( $logo ) ) : ?>
 			<div class="organisation-logo">
 				<img src="<?php echo esc_url( $logo['sizes']['medium-640'] ); ?>" width="<?php echo esc_attr( $logo['sizes']['medium-640-width'] / 2 ); ?>" height="<?php echo esc_attr( $logo['sizes']['medium-640-height'] / 2 ); ?>">
@@ -48,7 +58,7 @@ defined( 'ABSPATH' ) || exit;
 
 		<?php
 		$social_links = [];
-		foreach ( [ 'facebook', 'instagram', 'twitter', 'tiktok', 'youtube' ] as $selector ) :
+		foreach ( [ 'facebook', 'instagram', 'twitter', 'tiktok', 'youtube', 'linkedin' ] as $selector ) :
 			$field = get_field( $selector );
 			if ( ! empty( $field ) ) :
 				$social_links[ $selector ] = $field;

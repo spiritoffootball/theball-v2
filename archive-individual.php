@@ -17,15 +17,14 @@ get_header();
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 
-		<section id="individuals" class="content-area has-post-thumbnail clear">
+		<section id="individuals" class="loop-include loop-include-four content-area clear">
+			<div class="loop-include-inner">
 
-			<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
-				<h2 class="entry-title"><?php esc_html_e( 'People', 'the-ball-v2' ); ?></h2>
-			</header><!-- .entry-header -->
+				<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
+					<h2 class="entry-title"><?php esc_html_e( 'People', 'the-ball-v2' ); ?></h2>
+				</header><!-- .entry-header -->
 
-			<div class="individuals-inner">
-				<div class="individuals-posts clear">
-
+				<div class="loop-include-posts">
 					<?php if ( have_posts() ) : ?>
 
 						<?php
@@ -54,15 +53,14 @@ get_header();
 					endif;
 
 					?>
+				</div><!-- .loop-include-posts -->
 
-				</div><!-- .individuals-posts -->
+				<footer class="loop-include-footer">
+					<?php the_posts_navigation(); ?>
+				</footer><!-- .loop-include-footer -->
 
-			</div><!-- .individuals-inner -->
-
-			<footer class="archive-footer">
-				<?php the_posts_navigation(); ?>
-			</footer><!-- .archive-footer -->
-		</section><!-- #individuals -->
+			</div><!-- .loop-include-inner -->
+		</section><!-- .loop-include -->
 
 	</main><!-- #main -->
 </div><!-- #primary -->

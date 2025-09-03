@@ -35,7 +35,15 @@ get_header();
 			<?php load_template( $featured_event_loop ); ?>
 		<?php endif; ?>
 
+		<?php if ( $event_loop = locate_template( 'template-parts/loop-events-ongoing.php' ) ) : ?>
+			<?php the_ball_v2_theme()->loop_link_disable(); ?>
+			<?php load_template( $event_loop ); ?>
+			<?php the_ball_v2_theme()->loop_link_enable(); ?>
+		<?php endif; ?>
+
 		<?php
+
+/*
 
 		// Define query args.
 		$events_args = [
@@ -93,7 +101,11 @@ get_header();
 
 			<?php get_template_part( 'template-parts/content', 'coming-soon' ); ?>
 
-		<?php endif; ?>
+		<?php endif;
+
+*/
+
+		?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->

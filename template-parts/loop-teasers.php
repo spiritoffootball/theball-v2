@@ -54,11 +54,13 @@ if ( $teasers->have_posts() ) :
 
 	the_posts_navigation();
 
-	// Prevent weirdness.
-	wp_reset_postdata();
-
 else :
 
 	get_template_part( 'template-parts/content', 'coming-soon' );
 
 endif;
+
+endif;
+
+// Prevent weirdness.
+wp_reset_postdata();

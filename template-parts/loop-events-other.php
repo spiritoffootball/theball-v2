@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
 $event = get_queried_object();
 
 // Define query args.
-$events_args = [
+$loop_include_args = [
 	'post_type'     => 'event',
 	'post_status'   => 'publish',
 	'no_found_rows' => true,
@@ -22,49 +22,47 @@ $events_args = [
 ];
 
 // The query.
-$events = new WP_Query( $events_args );
+$loop_include = new WP_Query( $loop_include_args );
 
-if ( $events->have_posts() ) : ?>
+if ( $loop_include->have_posts() ) : ?>
 
-	<!-- loop-events.php -->
-	<section id="events" class="content-area insert-area clear">
-		<div class="events-inner">
+	<!-- loop-events-other.php -->
+	<section id="events-other" class="loop-include loop-include-three content-area clear">
+		<div class="loop-include-inner">
 
-			<header class="events-header">
-				<h2 class="events-title"><?php esc_html_e( 'Other Events', 'the-ball-v2' ); ?></h2>
-			</header><!-- .events-header -->
+			<header class="loop-include-header">
+				<h2 class="loop-include-title"><?php esc_html_e( 'Other Events', 'the-ball-v2' ); ?></h2>
+			</header><!-- .loop-include-header -->
 
-			<?php
+			<div class="loop-include-posts">
+				<?php
 
-			// Init counter for giving items classes.
-			$post_loop_counter = new The_Ball_v2_Counter();
+				// Start the loop.
+				while ( $loop_include->have_posts() ) :
 
-			// Start the loop.
-			while ( $events->have_posts() ) :
+					$loop_include->the_post();
 
-				$events->the_post();
+					// Get mini template.
+					get_template_part( 'template-parts/content-event-mini' );
 
-				// Get mini template.
-				get_template_part( 'template-parts/content-event-mini' );
+				endwhile;
 
-			endwhile;
+				?>
+			</div><!-- .loop-include-posts -->
 
-			// Ditch counter.
-			$post_loop_counter->remove_filter();
-			unset( $post_loop_counter );
+			<footer class="loop-include-footer">
+				<?php if ( the_ball_v2_theme()->loop_shows_link() ) : ?>
+					<p><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'events' ) ) ); ?>" class="archive-link"><?php esc_html_e( 'View All Events', 'the-ball-v2' ); ?></a></p>
+				<?php endif; ?>
+			</footer><!-- .individuals-footer -->
 
-			?>
-
-			<footer class="loop-insert-footer events-footer">
-				<p><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'events' ) ) ); ?>" class="archive-link"><?php esc_html_e( 'View All Events', 'the-ball-v2' ); ?></a></p>
-			</footer><!-- .events-footer -->
-
-		</div><!-- .events-inner -->
-	</section><!-- #events -->
+		</div><!-- .loop-include-inner -->
+	</section><!-- .loop-include -->
 
 	<?php
 
-	// Prevent weirdness.
-	wp_reset_postdata();
-
 endif;
+
+// Prevent weirdness.
+wp_reset_postdata();
+unset( $loop_include_args, $loop_include );

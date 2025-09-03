@@ -43,7 +43,7 @@ if ( $partners->have_posts() ) : ?>
 				$partners->the_post();
 
 				// Get mini template.
-				get_template_part( 'template-parts/content-organisation-mini' );
+				get_template_part( 'template-parts/content-partner-logo' );
 
 			endwhile;
 
@@ -58,7 +58,8 @@ if ( $partners->have_posts() ) : ?>
 
 	<?php
 
-	// Prevent weirdness.
-	wp_reset_postdata();
-
 endif;
+
+// Prevent weirdness.
+wp_reset_postdata();
+unset( $loop_include_args, $loop_include );

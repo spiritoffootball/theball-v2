@@ -11,7 +11,7 @@
 defined( 'ABSPATH' ) || exit;
 
 // Define query args.
-$awards_args = [
+$loop_include_args = [
 	'post_type'      => 'award',
 	'post_status'    => 'publish',
 	'order'          => 'ASC',
@@ -20,45 +20,45 @@ $awards_args = [
 ];
 
 // The query.
-$awards = new WP_Query( $awards_args );
+$loop_include = new WP_Query( $loop_include_args );
 
-if ( $awards->have_posts() ) : ?>
+if ( $loop_include->have_posts() ) : ?>
 
 	<!-- loop-awards.php -->
-	<section id="awards" class="content-area insert-area clear">
-		<div class="awards-inner">
+	<section id="awards" class="loop-include loop-include-three content-area clear">
+		<div class="loop-include-inner">
 
-			<header class="awards-header">
-				<h2 class="awards-title"><?php esc_html_e( 'Awards', 'the-ball-v2' ); ?></h2>
-			</header><!-- .awards-header -->
+			<header class="loop-include-header">
+				<h2 class="loop-include-title"><?php esc_html_e( 'Awards', 'the-ball-v2-ev' ); ?></h2>
+			</header><!-- .loop-include-header -->
 
-			<?php
+			<div class="loop-include-posts">
+				<?php
 
-			// Init counter for giving items classes.
-			$post_loop_counter = new The_Ball_v2_Counter();
+				// Start the loop.
+				while ( $loop_include->have_posts() ) :
 
-			// Start the loop.
-			while ( $awards->have_posts() ) :
+					$loop_include->the_post();
 
-				$awards->the_post();
+					// Get mini template.
+					get_template_part( 'template-parts/content-award-mini' );
 
-				// Get mini template.
-				get_template_part( 'template-parts/content-award-mini' );
+				endwhile;
 
-			endwhile;
+				?>
+			</div><!-- .loop-include-posts -->
 
-			// Ditch counter.
-			$post_loop_counter->remove_filter();
-			unset( $post_loop_counter );
+			<footer class="loop-include-footer">
+				<?php /* the_posts_navigation(); */ ?>
+			</footer><!-- .loop-include-footer -->
 
-			?>
-
-		</div><!-- .awards-inner -->
-	</section><!-- #awards -->
+		</div><!-- .loop-include-inner -->
+	</section><!-- .loop-include -->
 
 	<?php
 
-	// Prevent weirdness.
-	wp_reset_postdata();
-
 endif;
+
+// Prevent weirdness.
+wp_reset_postdata();
+unset( $loop_include_args, $loop_include );

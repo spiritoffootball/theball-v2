@@ -19,45 +19,36 @@ get_header();
 
 	<?php if ( have_posts() ) : ?>
 
-		<section id="blog" class="content-area has-post-thumbnail clear">
+		<section id="blog" class="loop-include loop-include-three content-area has-post-thumbnail clear">
 
 			<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
 				<h2 class="blog-title"><?php esc_html_e( 'News', 'the-ball-v2' ); ?></h2>
 			</header><!-- .entry-header -->
 
-			<div class="blog-inner">
-				<div class="blog-posts clear">
+			<div class="loop-include-inner">
 
-				<?php
+				<div class="loop-include-posts">
+					<?php
 
-				// Init counter for giving items classes.
-				$post_loop_counter = new The_Ball_v2_Counter();
+					// Start the loop.
+					while ( have_posts() ) :
 
-				// Start the loop.
-				while ( have_posts() ) :
+						the_post();
 
-					the_post();
+						// Get mini template.
+						get_template_part( 'template-parts/content-news-mini' );
 
-					// Get mini template.
-					get_template_part( 'template-parts/content-news-mini' );
+					endwhile;
 
-				endwhile;
+					?>
+				</div><!-- .loop-include-posts -->
 
-				// Ditch counter.
-				$post_loop_counter->remove_filter();
-				unset( $post_loop_counter );
+				<footer class="loop-include-footer">
+					<?php the_posts_navigation(); ?>
+				</footer><!-- .loop-include-footer -->
 
-				?>
-
-				</div><!-- .blog-posts -->
-
-			</div><!-- .blog-inner -->
-
-			<footer class="archive-footer">
-				<?php the_posts_navigation(); ?>
-			</footer><!-- .archive-footer -->
-
-		</section><!-- #blog -->
+			</div><!-- .loop-include-inner -->
+		</section><!-- .loop-include -->
 
 	<?php else : ?>
 
