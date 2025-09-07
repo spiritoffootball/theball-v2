@@ -11,7 +11,7 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
-<!-- content-press-item.php -->
+<!-- content-press_coverage.php -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
 		<?php if ( is_single() ) : ?>
@@ -55,8 +55,8 @@ defined( 'ABSPATH' ) || exit;
 		<?php $website_link = get_field( 'link' ); ?>
 		<?php if ( ! empty( $website_link ) ) : ?>
 			<div class="press-item-link">
-				<?php /* translators: %s: The name of publisher. */ ?>
-				<a href="<?php echo esc_url( $website_link ); ?>"><?php printf( esc_html__( 'Visit the %s website', 'the-ball-v2' ), esc_html( $publisher ) ); ?></a>
+				<?php /* translators: %s: The name of the publisher. */ ?>
+				<a href="<?php echo esc_url( $website_link ); ?>"><?php printf( esc_html__( 'Visit the %s website', 'theball-v2' ), esc_html( $publisher ) ); ?></a>
 			</div>
 		<?php endif; ?>
 
@@ -65,13 +65,13 @@ defined( 'ABSPATH' ) || exit;
 		the_content(
 			sprintf(
 				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'the-ball-v2' ), [ 'span' => [ 'class' => [] ] ] ),
+				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'theball-v2' ), [ 'span' => [ 'class' => [] ] ] ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			)
 		);
 
 		$args = [
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'the-ball-v2' ),
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'theball-v2' ),
 			'after'  => '</div>',
 		];
 

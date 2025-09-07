@@ -20,11 +20,10 @@ get_header();
 	<?php while ( have_posts() ) : ?>
 
 		<?php the_post(); ?>
-		<?php global $post; ?>
 
 		<section class="press-resource-container clear">
 			<div class="press-resource-container-inner">
-				<?php get_template_part( 'template-parts/content', 'press-resource' ); ?>
+				<?php get_template_part( 'template-parts/content', get_post_type() ); ?>
 			</div>
 		</section><!-- .quote-container -->
 

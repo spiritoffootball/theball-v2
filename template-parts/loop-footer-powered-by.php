@@ -32,11 +32,11 @@ $loop_include = new WP_Query( $loop_include_args );
 if ( $loop_include->have_posts() ) : ?>
 
 	<!-- loop-footer-powered-by.php -->
-	<section id="footer-powered-by" class="loop-include loop-include-three content-area powered-by clear">
+	<section id="footer-powered-by" class="loop-include loop-include-flex loop-include-stacked loop-include-three content-area powered-by clear">
 		<div class="loop-include-inner">
 
 			<header class="loop-include-header">
-				<h2 class="loop-include-title screen-reader-text"><?php esc_html_e( 'Partners', 'the-ball-v2' ); ?></h2>
+				<h2 class="loop-include-title screen-reader-text"><?php esc_html_e( 'Partners', 'theball-v2' ); ?></h2>
 			</header><!-- .loop-include-header -->
 
 			<div class="loop-include-posts">

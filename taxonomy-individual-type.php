@@ -21,7 +21,7 @@ get_header();
 			<div class="loop-include-inner">
 
 			<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
-				<h2 class="entry-title"><?php esc_html_e( 'People', 'the-ball-v2' ); ?></h2>
+				<h2 class="entry-title"><?php esc_html_e( 'People', 'theball-v2' ); ?></h2>
 				<span class="individual-type"><?php single_cat_title(); ?></span>
 			</header><!-- .entry-header -->
 

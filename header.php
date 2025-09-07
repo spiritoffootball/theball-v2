@@ -26,7 +26,7 @@ defined( 'ABSPATH' ) || exit;
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'the-ball-v2' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'theball-v2' ); ?></a>
 
 	<?php
 
@@ -90,7 +90,7 @@ defined( 'ABSPATH' ) || exit;
 			?>
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<span class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'the-ball-v2' ); ?></span>
+				<span class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'theball-v2' ); ?></span>
 				<?php
 
 				$args = [

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for embedding a display of Ball Hosts on an Event page.
+ * Template part for embedding a display of Posts on an SDG page.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -10,22 +10,25 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-// Get current Event object.
-$event = get_queried_object();
+// Get current SDG object.
+$sdg = get_queried_object();
 
-// Get the Ball Host Post IDs from the ACF Field.
-$ball_host_ids = get_field( 'ball_hosts', $event->ID );
+// Get the Post IDs from the ACF Field.
+$post_ids = get_field( 'applies_to', $sdg->ID );
 
 // Skip if there aren't any.
-if ( ! empty( $ball_host_ids ) ) :
+if ( ! empty( $post_ids ) ) :
 
 	// Define query args.
 	$loop_include_args = [
-		'post_type'     => 'host',
-		'post_status'   => 'publish',
-		'post__in'      => $ball_host_ids,
-		'nopaging'      => true,
-		'no_found_rows' => true,
+		'post_type'      => 'post',
+		'post_status'    => 'publish',
+		'post__in'       => $post_ids,
+		'orderby'        => 'post__in',
+		'nopaging'       => true,
+		'no_found_rows'  => true,
+		// TODO: Change to 12 and implement AJAX.
+		'posts_per_page' => -1,
 	];
 
 	// The query.
@@ -33,12 +36,12 @@ if ( ! empty( $ball_host_ids ) ) :
 
 	if ( $loop_include->have_posts() ) : ?>
 
-		<!-- loop-hosts-by-event.php -->
-		<section id="event-ball-hosts" class="loop-include loop-include-five content-area clear">
+		<!-- loop-sdg-posts.php -->
+		<section id="sdg-posts" class="loop-include loop-include-grid loop-include-three content-area clear">
 			<div class="loop-include-inner">
 
 				<header class="loop-include-header">
-					<h2 class="loop-include-title"><?php esc_html_e( 'Hosted By', 'the-ball-v2' ); ?></h2>
+					<h2 class="loop-include-title"><?php esc_html_e( 'Linked Posts', 'theball-v2' ); ?></h2>
 				</header><!-- .loop-include-header -->
 
 				<div class="loop-include-posts">
@@ -50,7 +53,7 @@ if ( ! empty( $ball_host_ids ) ) :
 						$loop_include->the_post();
 
 						// Get mini template.
-						get_template_part( 'template-parts/content-organisation-logo' );
+						get_template_part( 'template-parts/content-post-mini' );
 
 					endwhile;
 
@@ -68,8 +71,8 @@ if ( ! empty( $ball_host_ids ) ) :
 
 	endif;
 
-endif;
+	// Prevent weirdness.
+	wp_reset_postdata();
+	unset( $loop_include_args, $loop_include );
 
-// Prevent weirdness.
-wp_reset_postdata();
-unset( $loop_include_args, $loop_include );
+endif;

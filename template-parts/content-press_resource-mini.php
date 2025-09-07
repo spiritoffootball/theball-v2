@@ -11,7 +11,7 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
-<!-- content-press-resource-mini.php -->
+<!-- content-press_resource-mini.php -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
@@ -24,24 +24,24 @@ defined( 'ABSPATH' ) || exit;
 	<?php if ( ! empty( $about ) ) : ?>
 		<div class="press-resource-about">
 			<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
-			<?php echo wp_trim_words( $about, 40, '... <a href="' . esc_url( get_permalink() ) . '" rel="bookmark">[' . __( 'Read More', 'the-ball-v2' ) . ']</a>' ); ?>
+			<?php echo wp_trim_words( $about, 40, '... <a href="' . esc_url( get_permalink() ) . '" rel="bookmark">[' . esc_html__( 'Read more', 'theball-v2' ) . ']</a>' ); ?>
 		</div>
 	<?php endif; ?>
 
 	<?php if ( have_rows( 'files' ) ) : ?>
 		<ul class="press-resource-files">
-		<?php while ( have_rows( 'files' ) ) : ?>
-			<?php the_row(); ?>
-			<?php $file = get_sub_field( 'file' ); ?>
-			<?php if ( ! empty( $file ) ) : ?>
-				<?php $file_title = empty( $file['title'] ) ? $file['filename'] : $file['title']; ?>
-				<?php $file_preview = get_sub_field( 'file_preview' ); ?>
-				<li>
-					<?php /* translators: %s: The name of the file. */ ?>
-					<a href="<?php echo esc_url( $file['url'] ); ?>"><?php printf( esc_html__( 'Download %s', 'the-ball-v2' ), esc_html( $file_title ) ); ?></a>
-				</li>
-			<?php endif; ?>
-		<?php endwhile; ?>
+			<?php while ( have_rows( 'files' ) ) : ?>
+				<?php the_row(); ?>
+				<?php $file = get_sub_field( 'file' ); ?>
+				<?php if ( ! empty( $file ) ) : ?>
+					<?php $file_title = empty( $file['title'] ) ? $file['filename'] : $file['title']; ?>
+					<?php $file_preview = get_sub_field( 'file_preview' ); ?>
+					<li>
+						<?php /* translators: %s: The name of the file. */ ?>
+						<a href="<?php echo esc_url( $file['url'] ); ?>"><?php printf( esc_html__( 'Download "%s"', 'theball-v2' ), esc_html( $file_title ) ); ?></a>
+					</li>
+				<?php endif; ?>
+			<?php endwhile; ?>
 		</ul>
 	<?php endif; ?>
 </article><!-- #post-->

@@ -67,13 +67,13 @@ if ( ! function_exists( 'the_ball_v2_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: The time */
-			esc_html_x( 'Posted on %s', 'post date', 'the-ball-v2' ),
+			esc_html_x( 'Posted on %s', 'post date', 'theball-v2' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
 		$byline = sprintf(
 			/* translators: %s: The Post author */
-			esc_html_x( 'by %s', 'post author', 'the-ball-v2' ),
+			esc_html_x( 'by %s', 'post author', 'theball-v2' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
@@ -99,22 +99,22 @@ if ( ! function_exists( 'the_ball_v2_entry_footer' ) ) :
 		if ( 'post' === get_post_type() ) {
 
 			/* translators: used between list items, there is a space after the comma. */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'the-ball-v2' ) );
+			$categories_list = get_the_category_list( esc_html__( ', ', 'theball-v2' ) );
 			if ( $categories_list && the_ball_v2_blog_has_multiple_categories() ) {
 				printf(
 					/* translators: %s: The list of categories */
-					'<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'the-ball-v2' ) . '</span>',
+					'<span class="cat-links">' . esc_html__( 'Posted in %s', 'theball-v2' ) . '</span>',
 					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					$categories_list
 				);
 			}
 
 			/* translators: used between list items, there is a space after the comma. */
-			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'the-ball-v2' ) );
+			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'theball-v2' ) );
 			if ( $tags_list ) {
 				printf(
 					/* translators: %s: The list of tags */
-					'<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'the-ball-v2' ) . '</span>',
+					'<span class="tags-links">' . esc_html__( 'Tagged %s', 'theball-v2' ) . '</span>',
 					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					$tags_list
 				);
@@ -128,7 +128,7 @@ if ( ! function_exists( 'the_ball_v2_entry_footer' ) ) :
 			comments_popup_link(
 				sprintf(
 					/* translators: %s: The post title. */
-					wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'the-ball-v2' ), [ 'span' => [ 'class' => [] ] ] ),
+					wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'theball-v2' ), [ 'span' => [ 'class' => [] ] ] ),
 					get_the_title()
 				)
 			);
@@ -139,7 +139,7 @@ if ( ! function_exists( 'the_ball_v2_entry_footer' ) ) :
 		edit_post_link(
 			sprintf(
 				/* translators: %s: Name of current post. */
-				esc_html__( 'Edit %s', 'the-ball-v2' ),
+				esc_html__( 'Edit %s', 'theball-v2' ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			),
 			'<span class="edit-link">',
@@ -282,8 +282,23 @@ if ( ! function_exists( 'the_ball_v2_get_feature_image_style' ) ) :
 
 		}
 
+		// Apply default image on 404.
+		if ( is_404() ) {
+			return ' style="background-image: url(' . esc_url( get_template_directory_uri() . '/assets/images/feature/sof-404-teaser.jpg' ) . ');"';
+		}
+
 		// Apply default image on Event listings.
 		if ( 'event' === get_post_type( get_the_ID() ) && 'the-ball-v2-listings' === $size ) {
+			return ' style="background-image: url(' . esc_url( get_template_directory_uri() . '/assets/images/feature/sof-event-teaser.jpg' ) . ');"';
+		}
+
+		// Apply default image on Events Archive.
+		if ( is_post_type_archive( 'event' ) ) {
+			return ' style="background-image: url(' . esc_url( get_template_directory_uri() . '/assets/images/feature/sof-event-teaser.jpg' ) . ');"';
+		}
+
+		// Apply default image on other Archives.
+		if ( is_post_type_archive() ) {
 			return ' style="background-image: url(' . esc_url( get_template_directory_uri() . '/assets/images/feature/sof-event-teaser.jpg' ) . ');"';
 		}
 
@@ -360,9 +375,10 @@ if ( ! function_exists( 'the_ball_v2_partner_image' ) ) :
 				$src    = $logo['sizes'][ $size ];
 				$width  = ( $logo['sizes'][ $size . '-width' ] / 2 );
 				$height = ( $logo['sizes'][ $size . '-height' ] / 2 );
-				$title  = empty( $logo['title'] ) ? __( 'Partner logo', 'the-ball-v2' ) : $logo['title'];
+				$title  = empty( $logo['title'] ) ? __( 'Partner logo', 'theball-v2' ) : $logo['title'];
+				$alt    = empty( $badge['alt'] ) ? __( 'Partner logo', 'theball-v2' ) : $badge['alt'];
 				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				echo '<img src="' . $src . '" width="' . $width . '" height="' . $height . '" title="' . esc_attr( $title ) . '">';
+				echo '<img src="' . $src . '" width="' . $width . '" height="' . $height . '" title="' . esc_attr( $alt ) . '">';
 			}
 			return;
 		}
@@ -384,7 +400,7 @@ if ( ! function_exists( 'the_ball_v2_award_image' ) ) :
 	 *
 	 * @since 1.2.3
 	 *
-	 * @param string $size The name of the size of the "award" image.
+	 * @param string $size The name of the size of the "Award" image.
 	 */
 	function the_ball_v2_award_image( $size = 'the-ball-v2-listings' ) {
 
@@ -397,10 +413,50 @@ if ( ! function_exists( 'the_ball_v2_award_image' ) ) :
 				$height = ( $badge['sizes'][ $size . '-height' ] / 2 );
 				$width  = $badge['sizes'][ $size . '-width' ];
 				$height = $badge['sizes'][ $size . '-height' ];
-				$title  = empty( $badge['title'] ) ? __( 'Partner logo', 'the-ball-v2' ) : $badge['title'];
-				$alt    = empty( $badge['alt'] ) ? __( 'Partner logo', 'the-ball-v2' ) : $badge['alt'];
+				$title  = empty( $badge['title'] ) ? __( 'Award image', 'theball-v2' ) : $badge['title'];
+				$alt    = empty( $badge['alt'] ) ? __( 'Award image', 'theball-v2' ) : $badge['alt'];
 				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				echo '<img src="' . $src . '" width="' . $width . '" height="' . $height . '" title="' . esc_attr( $title ) . '" alt="' . esc_attr( $title ) . '">';
+				echo '<img src="' . $src . '" width="' . $width . '" height="' . $height . '" title="' . esc_attr( $title ) . '" alt="' . esc_attr( $alt ) . '">';
+			}
+			return;
+		}
+
+		/*
+		// Print to screen.
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo the_ball_v2_get_avatar_feature_image( $size );
+		*/
+
+	}
+
+endif;
+
+
+
+if ( ! function_exists( 'the_ball_v2_sdg_image' ) ) :
+
+	/**
+	 * Show an "SDG" image.
+	 *
+	 * @since 1.2.4
+	 *
+	 * @param string $size The name of the size of the "SDG" image.
+	 */
+	function the_ball_v2_sdg_image( $size = 'the-ball-v2-listings' ) {
+
+		// Try the ACF Field first.
+		if ( defined( 'ACF' ) ) {
+			$icon = get_field( 'image' );
+			if ( ! empty( $icon ) ) {
+				$src    = $icon['sizes'][ $size ];
+				$width  = ( $icon['sizes'][ $size . '-width' ] / 2 );
+				$height = ( $icon['sizes'][ $size . '-height' ] / 2 );
+				$width  = $icon['sizes'][ $size . '-width' ];
+				$height = $icon['sizes'][ $size . '-height' ];
+				$title  = empty( $icon['title'] ) ? __( 'SDG Icon', 'theball-v2' ) : $icon['title'];
+				$alt    = empty( $icon['alt'] ) ? __( 'SDG Icon', 'theball-v2' ) : $icon['alt'];
+				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo '<img src="' . $src . '" width="' . $width . '" height="' . $height . '" title="' . esc_attr( $title ) . '" alt="' . esc_attr( $alt ) . '">';
 			}
 			return;
 		}
@@ -509,6 +565,50 @@ if ( ! function_exists( 'the_ball_v2_get_feature_image_caption' ) ) :
 
 		// Okay, return caption.
 		return $feature_image->post_excerpt;
+
+	}
+
+endif;
+
+
+
+if ( ! function_exists( 'the_ball_v2_acf_image' ) ) :
+
+	/**
+	 * Shows an image based on the return value of an ACF Image Field.
+	 *
+	 * @since 1.2.4
+	 *
+	 * @param array  $attachment The array of attachment information.
+	 * @param string $size The name of the size of the "award" image.
+	 */
+	function the_ball_v2_acf_image( $attachment, $size = 'the-ball-v2-listings' ) {
+
+		// Bail if no attachment found.
+		if ( empty( $attachment ) ) {
+			return '';
+		}
+
+		// Bail if no attachment size found.
+		if ( empty( $attachment['sizes'][ $size ] ) ) {
+			return '';
+		}
+
+		// Format the attachment data.
+		$src    = $attachment['sizes'][ $size ];
+		$width  = ( $attachment['sizes'][ $size . '-width' ] / 2 );
+		$height = ( $attachment['sizes'][ $size . '-height' ] / 2 );
+		$title  = empty( $attachment['title'] ) ? __( 'Partner logo', 'theball-v2' ) : $attachment['title'];
+		$alt    = empty( $attachment['alt'] ) ? __( 'Partner logo', 'theball-v2' ) : $attachment['alt'];
+
+		printf(
+			'<img src="%s" width="%s" height="%s" title="%s" alt="%s">',
+			esc_url( $src ),
+			esc_attr( $width ),
+			esc_attr( $height ),
+			esc_attr( $title ),
+			esc_attr( $title )
+		);
 
 	}
 

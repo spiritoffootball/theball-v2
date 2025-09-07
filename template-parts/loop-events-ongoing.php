@@ -36,9 +36,9 @@ if ( $loop_include->have_posts() ) : ?>
 
 			<header class="loop-include-header">
 				<?php if ( false === the_ball_v2_theme()->featured_events_get() ) : ?>
-					<h2 class="loop-include-title"><?php esc_html_e( 'Ongoing Events', 'the-ball-v2' ); ?></h2>
+					<h2 class="loop-include-title"><?php esc_html_e( 'Ongoing Events', 'theball-v2' ); ?></h2>
 				<?php else : ?>
-					<h2 class="loop-include-title has-featured-event"><?php esc_html_e( 'Ongoing Events', 'the-ball-v2' ); ?></h2>
+					<h2 class="loop-include-title has-featured-event"><?php esc_html_e( 'Ongoing Events', 'theball-v2' ); ?></h2>
 				<?php endif; ?>
 			</header><!-- .loop-include-header -->
 
@@ -60,7 +60,7 @@ if ( $loop_include->have_posts() ) : ?>
 
 			<footer class="loop-include-footer">
 				<?php if ( the_ball_v2_theme()->loop_shows_link() ) : ?>
-					<p><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'events' ) ) ); ?>" class="archive-link"><?php esc_html_e( 'View All Events', 'the-ball-v2' ); ?></a></p>
+					<p><a href="<?php echo esc_url( get_permalink( get_page_by_path( 'events' ) ) ); ?>" class="archive-link"><?php esc_html_e( 'View All Events', 'theball-v2' ); ?></a></p>
 				<?php endif; ?>
 			</footer><!-- .individuals-footer -->
 

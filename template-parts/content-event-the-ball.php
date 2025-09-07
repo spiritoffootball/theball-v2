@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 ?>
 <!-- content-event-the-ball.php -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<h3 class="entry-title"><a href="<?php echo esc_url( get_permalink() . '#pledge' ); ?>" rel="bookmark"><?php esc_html_e( 'Make your pledge with The Ball', 'the-ball-v2' ); ?></a></h3>
+	<h3 class="entry-title"><a href="<?php echo esc_url( get_permalink() . '#pledge' ); ?>" rel="bookmark"><?php esc_html_e( 'Make your pledge with The Ball', 'theball-v2' ); ?></a></h3>
 
 	<header class="entry-header">
 		<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
@@ -26,6 +26,6 @@ defined( 'ABSPATH' ) || exit;
 			<?php echo eo_format_event_occurrence(); ?>
 		</div>
 		<?php the_excerpt(); ?>
-		<h3><a class="button" href="<?php echo esc_url( get_permalink() . '#pledge' ); ?>"><?php echo esc_html_e( 'Pledge now!', 'the-ball-v2' ); ?></a></h3>
+		<h3><a class="button" href="<?php echo esc_url( get_permalink() . '#pledge' ); ?>"><?php echo esc_html_e( 'Pledge now!', 'theball-v2' ); ?></a></h3>
 	</div><!-- .entry-content -->
 </article><!-- #post-->

@@ -1,0 +1,540 @@
+# Copyright (C) 2025 Christian Wach
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: The Ball v2 1.2.4a\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/theball-v2\n"
+"Last-Translator: Christian Wach\n"
+"Language-Team: German\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-09-07T13:46:54+00:00\n"
+"PO-Revision-Date: 2025-09-07 16:39+0000\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Domain: theball-v2\n"
+"Language: de_DE\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Loco-Version: 2.8.0; wp-6.8.2; php-8.2.4"
+
+#. translators: %s: The category title.
+#: taxonomy-event-category.php:26
+#, php-format
+msgid "%s Events"
+msgstr "%s Termine"
+
+#. translators: %s: The name of the organisation.
+#: template-parts/content-organisation.php:80
+#, php-format
+msgid "%s website"
+msgstr "%s Website"
+
+#. translators: used between list items, there is a space after the comma.
+#: includes/theme/theme-template-tags.php:102
+#: includes/theme/theme-template-tags.php:113
+msgid ", "
+msgstr ", "
+
+#. Description of the theme
+#: style.css
+msgid "A generic parent theme for the Spirit of Football website."
+msgstr "Ein generisches Basisthema für die Website „Spirit of Football“."
+
+#: includes/theme/theme-extras.php:220
+msgid "About this Event"
+msgstr "Über diese Veranstaltung"
+
+#: template-parts/content-individual.php:89
+msgid "Achievements"
+msgstr "Erfolge"
+
+#: template-parts/loop-individuals-board.php:40
+msgid "Advisory Board"
+msgstr "Beiratsrat"
+
+#: functions.php:384
+msgid "An optional widget area in the footer of this theme"
+msgstr "Ein optionaler Widget-Bereich im Fußbereich dieses Themes"
+
+#: functions.php:371
+msgid "An optional widget area in the header of this theme"
+msgstr "Ein optionaler Widget-Bereich im Header dieses Themes"
+
+#: template-parts/content-individual.php:53
+msgid "Appearances"
+msgstr "Auftritte"
+
+#: includes/theme/theme-template-tags.php:416
+#: includes/theme/theme-template-tags.php:417
+msgid "Award image"
+msgstr "Auszeichnungsbild"
+
+#: template-parts/content-award.php:44
+msgid "Awarded by"
+msgstr "Vergeben von"
+
+#: template-parts/loop-awards.php:32
+msgid "Awards"
+msgstr "Auszeichnungen"
+
+#. Template Name of the theme
+msgid "Awards Archive"
+msgstr "Auszeichnungen Archiv"
+
+#: template-parts/loop-individuals-staff.php:40
+msgid "Backroom Staff"
+msgstr "Das Backoffice"
+
+#: template-parts/content-event.php:97
+msgid "Categories"
+msgstr "Kategorien"
+
+#. Author of the theme
+#: style.css
+msgid "Christian Wach"
+msgstr "Christian Wach"
+
+#: template-parts/content-coming-soon.php:18
+msgid "Coming Soon"
+msgstr "Bald verfügbar"
+
+#: comments.php:70
+msgid "Comments are closed."
+msgstr "Kommentare sind geschlossen."
+
+#. translators: 1: comment count number, 2: title.
+#: comments.php:44
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s Gedanke zu &ldquo;%2$s&rdquo;"
+msgstr[1] ""
+
+#. translators: %s: Name of current post.
+#: template-parts/content-award.php:88 template-parts/content-event.php:186
+#: template-parts/content-organisation.php:89
+#: template-parts/content-press_coverage.php:68 template-parts/content.php:36
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Weiterlesen %s <span class=\"meta-nav\">&rarr;</span>"
+
+#: template-parts/content-event.php:88
+msgid "Date"
+msgstr "Datum"
+
+#. translators: %s: The name of the file.
+#: template-parts/content-press_resource-mini.php:41
+#: template-parts/content-press_resource.php:59
+#, php-format
+msgid "Download \"%s\""
+msgstr "Laden Sie \"%s\" herunter"
+
+#: template-parts/content-press_resource.php:38
+msgid "Downloads"
+msgstr "Downloads"
+
+#. translators: %s: Name of current post.
+#: includes/theme/theme-template-tags.php:142
+#, php-format
+msgid "Edit %s"
+msgstr "Bearbeite %s"
+
+#: template-parts/content-event.php:42
+msgid "Event Details"
+msgstr "Veranstaltungsdetails"
+
+#: archive-event.php:23
+msgid "Events"
+msgstr "Veranstaltungen"
+
+#. Template Name of the theme
+msgid "Events Archive"
+msgstr "Veranstaltungsarchiv"
+
+#. translators: %s: The name of the venue.
+#: taxonomy-event-venue.php:28
+#, php-format
+msgid "Events at: %s"
+msgstr "Veranstaltungen um: %s"
+
+#. translators: %s: The name of the tag.
+#: taxonomy-event-tag.php:26
+#, php-format
+msgid "Events tagged with %s"
+msgstr "Veranstaltungen mit dem Schlagwort %s"
+
+#: template-parts/loop-events-featured.php:40
+msgid "Featured Events"
+msgstr "Empfohlene Veranstaltungen"
+
+#: functions.php:129 functions.php:382
+msgid "Footer"
+msgstr "Fußzeile"
+
+#: template-parts/content-individual.php:62
+msgid "Goals"
+msgstr "Ziele"
+
+#: functions.php:369
+msgid "Header"
+msgstr "Kopfzeile"
+
+#: template-parts/loop-event-acf-hosts.php:42
+#: template-parts/loop-event-ball-hosts.php:42
+msgid "Hosted By"
+msgstr "Gastgeber"
+
+#: template-parts/loop-event-acf-hosted-by.php:50
+msgid "Hosted Events"
+msgstr "Organisierte Veranstaltungen"
+
+#: includes/theme/theme-extras.php:228
+msgid "Hosts"
+msgstr "Gastgeber*innen"
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://github.com/spiritoffootball/theball-v2"
+msgstr "https://github.com/spiritoffootball/theball-v2"
+
+#. Author URI of the theme
+#: style.css
+msgid "https://www.haystack.co.uk"
+msgstr "https://www.haystack.co.uk"
+
+#: template-parts/content-quote-pledge-mini.php:26
+#: template-parts/content-quote-pledge.php:26
+msgid "I pledge"
+msgstr "Ich verpflichte mich"
+
+#: 404.php:27
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+"Es scheint, dass an diesem Ort nichts gefunden wurde. Versuchen Sie es "
+"vielleicht mit einem der untenstehenden Links oder einer Suche?"
+
+#: template-parts/content-none.php:42
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Es scheint, wir können nicht das finden, wonach Sie suchen. Vielleicht hilft "
+"Ihnen eine Suche weiter."
+
+#: template-parts/loop-news.php:31
+msgid "Latest News"
+msgstr "Neueste Nachrichten"
+
+#. translators: %s: The post title.
+#: includes/theme/theme-template-tags.php:131
+#, php-format
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+"Hinterlasse einen Kommentar<span class=\"screen-reader-text\"> zu %s</span>"
+
+#: template-parts/loop-sdg-events.php:51
+msgid "Linked Events"
+msgstr ""
+
+#: template-parts/loop-sdg-posts.php:44
+msgid "Linked Posts"
+msgstr ""
+
+#: template-parts/loop-sdg-linked.php:43
+msgid "Linked SDGs"
+msgstr "Verknüpfte SDGs"
+
+#: template-parts/content-individual.php:125
+msgid "Main website"
+msgstr "Hauptwebsite"
+
+#: includes/theme/theme-extras.php:234 template-parts/form-pledge-single.php:52
+msgid "Make a Pledge"
+msgstr "Machen Sie ein Versprechen"
+
+#: template-parts/content-event-the-ball.php:16
+#: template-parts/loop-events-the-ball.php:42
+msgid "Make your pledge with The Ball"
+msgstr "Geben Sie Ihr Versprechen mit The Ball ab"
+
+#. Template Name of the theme
+msgid "Map Page"
+msgstr "Karten-Seite"
+
+#: 404.php:40
+msgid "Most Used Categories"
+msgstr "Am häufigsten verwendete Kategorien"
+
+#: home.php:25
+msgid "News"
+msgstr "Nachrichten"
+
+#: template-parts/content-none.php:18
+msgid "Nothing Found"
+msgstr "Nichts gefunden"
+
+#: template-parts/content-individual.php:71
+msgid "On The Pitch"
+msgstr "Auf dem Spielfeld"
+
+#: template-parts/loop-individuals-squad.php:42
+msgid "On The Road With The Ball"
+msgstr "Auf Reisen mit dem Ball"
+
+#. translators: 1: title.
+#: comments.php:38
+#, php-format
+#| msgid "One thought on &ldquo;%1$s&rdquo;"
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr "Eine Anmerkung zu &ldquo;%s&rdquo;"
+
+#: taxonomy-event-category.php:44 template-parts/loop-events-ongoing.php:39
+#: template-parts/loop-events-ongoing.php:41
+msgid "Ongoing Events"
+msgstr "Aktuelle Veranstaltungen"
+
+#: template-parts/loop-events-other.php:34
+msgid "Other Events"
+msgstr "Andere Veranstaltungen"
+
+#. Template Name of the theme
+msgid "Page with News Loop"
+msgstr "Seite mit Nachrichten-Ticker"
+
+#: template-parts/content-award.php:94 template-parts/content-event.php:192
+#: template-parts/content-organisation.php:95
+#: template-parts/content-page.php:36
+#: template-parts/content-press_coverage.php:74 template-parts/content.php:43
+msgid "Pages:"
+msgstr "Seiten:"
+
+#: includes/theme/theme-template-tags.php:378
+#: includes/theme/theme-template-tags.php:379
+#: includes/theme/theme-template-tags.php:601
+#: includes/theme/theme-template-tags.php:602
+msgid "Partner logo"
+msgstr "Partnerlogo"
+
+#: template-parts/loop-footer-powered-by.php:39
+#: template-parts/loop-partners.php:32
+msgid "Partners"
+msgstr "Partner"
+
+#. Template Name of the theme
+msgid "Partners Archive"
+msgstr "Partnerarchiv"
+
+#: template-parts/loop-events-past.php:41
+msgid "Past Events"
+msgstr "Vergangene Veranstaltungen"
+
+#. Template Name of the theme
+#: taxonomy-individual-tag.php:24 taxonomy-individual-type.php:24
+msgid "People"
+msgstr "Leute"
+
+#: template-parts/content-event-the-ball.php:29
+msgid "Pledge now!"
+msgstr "Jetzt versprechen!"
+
+#: taxonomy-quote-type-pledge.php:25 template-parts/loop-quotes-pledges.php:39
+msgid "Pledges"
+msgstr "Versprechen"
+
+#. translators: %s: The Post author
+#: includes/theme/theme-template-tags.php:76
+#, php-format
+msgctxt "post author"
+msgid "by %s"
+msgstr "von %s"
+
+#. translators: %s: The time
+#: includes/theme/theme-template-tags.php:70
+#, php-format
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr "Veröffentlicht am %s"
+
+#. translators: %s: The list of categories
+#: includes/theme/theme-template-tags.php:106
+#, php-format
+msgid "Posted in %s"
+msgstr "Veröffentlicht in %s"
+
+#: archive-press_coverage.php:23 taxonomy-press-item-tag.php:23
+#: taxonomy-press-item-type.php:23
+msgid "Press Coverage"
+msgstr "Presseberichterstattung"
+
+#: archive-press_resource.php:25 taxonomy-press-resource-tag.php:23
+#: taxonomy-press-resource-type.php:23
+msgid "Press Resources"
+msgstr "Pressematerial"
+
+#: functions.php:128
+msgid "Primary"
+msgstr "Primär"
+
+#: header.php:93
+msgid "Primary Menu"
+msgstr "Hauptmenü"
+
+#: includes/theme/theme-extras.php:139 template-parts/content-award.php:64
+#: template-parts/content-post.php:24
+#: template-parts/content-press_resource-mini.php:27
+#: template-parts/content-quote.php:25 template-parts/content-sdg.php:43
+#: template-parts/content-search.php:48
+msgid "Read more"
+msgstr "Weiterlesen"
+
+#. translators: 1: The opening anchor tag, 2: The closing anchor tag.
+#: template-parts/content-none.php:28
+#, php-format
+msgid "Ready to publish your first post? %1$sGet started here%2$s."
+msgstr ""
+"Sind Sie bereit, Ihren ersten Beitrag zu veröffentlichen? %1$sHier geht's "
+"los!%2$s"
+
+#: includes/theme/theme-template-tags.php:456
+#: includes/theme/theme-template-tags.php:457
+msgid "SDG Icon"
+msgstr "SDG-Symbol"
+
+#: includes/theme/theme-extras.php:155
+msgid "Search"
+msgstr "Suche"
+
+#. translators: %s: The search query.
+#: search.php:24
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Suchergebnisse für: %s"
+
+#: includes/theme/theme-extras.php:159
+msgid "Search this website"
+msgstr "Diese Website durchsuchen"
+
+#: header.php:29
+msgid "Skip to content"
+msgstr "Zum Inhalt springen"
+
+#: template-parts/content-none.php:37
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Leider konnten wir keine Ergebnisse zu Ihrer Suchanfrage finden. Bitte "
+"versuchen Sie es erneut mit anderen Stichworten."
+
+#: footer.php:76
+msgid "Spirit of Football Brazil"
+msgstr "Spirit of Football Brasilien"
+
+#: footer.php:77
+msgid "Spirit of Football CIC"
+msgstr "Spirit of Football"
+
+#: footer.php:78
+msgid "Spirit of Football Germany"
+msgstr "Spirit of Football e.V"
+
+#: taxonomy-quote-type-statement.php:25
+#: template-parts/loop-quotes-statements.php:39
+msgid "Statements"
+msgstr "Erklärungen"
+
+#: template-parts/loop-individuals-supporters.php:40
+msgid "Supporters"
+msgstr "Unterstützer*innen"
+
+#. translators: %s: The list of tags
+#: includes/theme/theme-template-tags.php:117
+#, php-format
+#| msgid "Tagged %1$s"
+msgid "Tagged %s"
+msgstr "Markiert mit %s"
+
+#: template-parts/content-event.php:101
+msgid "Tags"
+msgstr "Schlagwörter"
+
+#: template-parts/content-individual.php:80
+msgid "Teams"
+msgstr "Teams"
+
+#. Theme Name of the theme
+#: style.css
+msgid "The Ball v2"
+msgstr "The Ball v2"
+
+#: footer.php:73
+msgid "The SOF Network"
+msgstr "Das SOF-Netzwerk"
+
+#: template-parts/loop-individuals-squad.php:40
+msgid "The Squad"
+msgstr "Der Kader"
+
+#. translators: 1: The schedule start, 2: The schedule end, 3: The next occurrence
+#: template-parts/content-event.php:72
+#, php-format
+msgid "This event finished on %s"
+msgstr "Diese Veranstaltung endete am %s"
+
+#. translators: 1: The schedule start, 2: The schedule end, 3: The next occurrence
+#: template-parts/content-event.php:56
+#, php-format
+msgid ""
+"This event is running from %1$s until %2$s. It is next occurring on %3$s"
+msgstr ""
+"Diese Veranstaltung findet vom %1$s bis zum %2$s statt. Der nächste Termin "
+"ist am %3$s."
+
+#. translators: %1$s: smiley
+#: 404.php:62
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Versuchen Sie, im monatlichen Archiv zu suchen.  %1$s"
+
+#: template-parts/content-event.php:124
+msgid "Upcoming Dates"
+msgstr "Kommende Termine"
+
+#: template-parts/loop-events-ongoing.php:63
+#: template-parts/loop-events-other.php:55
+#: template-parts/loop-events-past.php:62
+msgid "View All Events"
+msgstr "Alle Veranstaltungen anzeigen"
+
+#: template-parts/loop-news.php:51
+msgid "View All News"
+msgstr "Alle Nachrichten anzeigen"
+
+#. translators: %s: The name of the publisher.
+#: template-parts/content-press_coverage-mini.php:46
+#: template-parts/content-press_coverage.php:59
+#, php-format
+msgid "Visit the %s website"
+msgstr "Besuchen Sie die %s Website"
+
+#: template-parts/content-coming-soon.php:23
+msgid "We are busy building. Please check back later."
+msgstr ""
+"Wir sind derzeit mit Bauarbeiten beschäftigt. Bitte schauen Sie später noch "
+"einmal vorbei."
+
+#. translators: 1: The opening anchor tag, 2: The closing anchor tag, 3: The current year.
+#: footer.php:87
+#, php-format
+msgid ""
+"Website content &copy; %1$sSpirit of Football%2$s %3$s. All rights reserved."
+msgstr ""
+"Website-Content &copy; %1$sSpirit of Football%2$s %3$s. Alle Rechte "
+"vorbehalten."
+
+#: 404.php:23
+msgid "You&rsquo;re offside"
+msgstr "Du stehst im Abseits"

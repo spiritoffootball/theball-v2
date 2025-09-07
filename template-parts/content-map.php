@@ -54,7 +54,7 @@ defined( 'ABSPATH' ) || exit;
 			edit_post_link(
 				sprintf(
 					// Translators: %s: Name of current post
-					esc_html__( 'Edit %s', 'the-ball-v2' ),
+					esc_html__( 'Edit %s', 'theball-v2' ),
 					the_title( '<span class="screen-reader-text">"', '"</span>', false )
 				),
 				'<span class="edit-link">',

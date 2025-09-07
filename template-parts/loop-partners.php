@@ -11,7 +11,7 @@
 defined( 'ABSPATH' ) || exit;
 
 // Define query args.
-$partners_args = [
+$loop_include_args = [
 	'post_type'      => 'partner',
 	'post_status'    => 'publish',
 	'order'          => 'ASC',
@@ -20,41 +20,40 @@ $partners_args = [
 ];
 
 // The query.
-$partners = new WP_Query( $partners_args );
+$loop_include = new WP_Query( $loop_include_args );
 
-if ( $partners->have_posts() ) : ?>
+if ( $loop_include->have_posts() ) : ?>
 
 	<!-- loop-partners.php -->
-	<section id="organisations" class="content-area insert-area clear">
-		<div class="organisations-inner">
+	<section id="organisations-partners" class="loop-include loop-include-four content-area clear">
+		<div class="loop-include-inner">
 
-			<header class="organisations-header">
-				<h2 class="organisations-title"><?php esc_html_e( 'Partners', 'the-ball-v2' ); ?></h2>
-			</header><!-- .organisations-header -->
+			<header class="loop-include-header">
+				<h2 class="loop-include-title"><?php esc_html_e( 'Partners', 'theball-v2' ); ?></h2>
+			</header><!-- .loop-include-header -->
 
-			<?php
+			<div class="loop-include-posts">
+				<?php
 
-			// Init counter for giving items classes.
-			$post_loop_counter = new The_Ball_v2_Counter();
+				// Start the loop.
+				while ( $loop_include->have_posts() ) :
 
-			// Start the loop.
-			while ( $partners->have_posts() ) :
+					$loop_include->the_post();
 
-				$partners->the_post();
+					// Get mini template.
+					get_template_part( 'template-parts/content-partner-logo' );
 
-				// Get mini template.
-				get_template_part( 'template-parts/content-partner-logo' );
+				endwhile;
 
-			endwhile;
+				?>
+			</div><!-- .loop-include-posts -->
 
-			// Ditch counter.
-			$post_loop_counter->remove_filter();
-			unset( $post_loop_counter );
+			<footer class="loop-include-footer">
+				<?php /* the_posts_navigation(); */ ?>
+			</footer><!-- .loop-include-footer -->
 
-			?>
-
-		</div><!-- .organisations-inner -->
-	</section><!-- #organisations -->
+		</div><!-- .loop-include-inner -->
+	</section><!-- .loop-include -->
 
 	<?php
 

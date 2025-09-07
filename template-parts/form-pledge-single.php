@@ -49,7 +49,7 @@ if ( ! empty( $pledge_form_enabled ) && ! empty( $attr ) ) : ?>
 		<div class="pledge-inner">
 
 			<header class="pledge-header">
-				<h2 class="pledge-title"><?php esc_html_e( 'Make a Pledge', 'the-ball-v2' ); ?></h2>
+				<h2 class="pledge-title"><?php esc_html_e( 'Make a Pledge', 'theball-v2' ); ?></h2>
 			</header><!-- .pledge-header -->
 
 			<?php echo do_shortcode( '[sof_pledgeball_pledge_form' . $attr . ']' ); ?>

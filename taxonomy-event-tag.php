@@ -23,7 +23,7 @@ get_header();
 			<article <?php post_class(); ?>>
 				<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
 					<?php /* translators: %s: The name of the tag. */ ?>
-					<h2 class="blog-title"><?php printf( esc_html__( '%s Events', 'the-ball-v2' ), single_cat_title( '', false ) ); ?></h2>
+					<h2 class="blog-title"><?php printf( esc_html__( 'Events tagged with %s', 'theball-v2' ), single_cat_title( '', false ) ); ?></h2>
 
 					<?php
 					// If the category has a description display it.

@@ -17,52 +17,40 @@ get_header();
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 
-		<section id="blog" class="content-area has-post-thumbnail clear">
+		<section id="archive" class="content-area has-post-thumbnail clear">
 
 			<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
-				<h2 class="blog-title"><?php esc_html_e( 'Press Coverage', 'the-ball-v2' ); ?></h2>
+				<h2 class="entry-title"><?php esc_html_e( 'Press Coverage', 'theball-v2' ); ?></h2>
 			</header><!-- .entry-header -->
 
-			<div class="blog-inner">
-				<div class="blog-posts clear">
+			<div class="entry-content">
 
-					<?php if ( have_posts() ) : ?>
+				<?php if ( have_posts() ) : ?>
 
+					<?php while ( have_posts() ) : ?>
 						<?php
 
-						// Init counter for giving items classes.
-						$post_loop_counter = new The_Ball_v2_Counter();
+						the_post();
 
-						// Start the loop.
-						while ( have_posts() ) :
+						// Get mini template.
+						get_template_part( 'template-parts/content-press_coverage-mini' );
 
-							the_post();
+						?>
+					<?php endwhile; ?>
 
-							// Get mini template.
-							get_template_part( 'template-parts/content-press-item-mini' );
+				<?php else : ?>
 
-						endwhile;
+					<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-						// Ditch counter.
-						$post_loop_counter->remove_filter();
-						unset( $post_loop_counter );
+				<?php endif; ?>
 
-					else :
+			</div><!-- .entry-content -->
 
-						get_template_part( 'template-parts/content', 'none' );
-
-					endif;
-
-					?>
-
-				</div><!-- .blog-posts -->
-			</div><!-- .blog-inner -->
-
-			<footer class="archive-footer">
+			<footer class="entry-footer">
 				<?php the_posts_navigation(); ?>
-			</footer><!-- .archive-footer -->
+			</footer><!-- .entry-footer -->
 
-		</section><!-- #blog -->
+		</section><!-- #archive -->
 
 	</main><!-- #main -->
 </div><!-- #primary -->

@@ -21,6 +21,6 @@ defined( 'ABSPATH' ) || exit;
 	<div class="entry-content teaser-content">
 		<div class="teaser-content-inner">
 			<?php the_content(); ?>
-	</div><!-- .teaser-content-inner -->
+		</div><!-- .teaser-content-inner -->
 	</div><!-- .teaser-content -->
 </article><!-- #post-## -->

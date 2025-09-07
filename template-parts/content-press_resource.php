@@ -11,7 +11,7 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
-<!-- content-press-resource.php -->
+<!-- content-press_resource.php -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
 		<?php if ( is_single() ) : ?>
@@ -33,7 +33,9 @@ defined( 'ABSPATH' ) || exit;
 		<?php endif; ?>
 
 		<?php if ( have_rows( 'files' ) ) : ?>
+			<hr>
 			<div class="press-resource-files">
+				<h2><?php esc_html_e( 'Downloads', 'theball-v2' ); ?></h2>
 				<?php while ( have_rows( 'files' ) ) : ?>
 
 					<?php the_row(); ?>
@@ -43,10 +45,10 @@ defined( 'ABSPATH' ) || exit;
 						<?php $file_title = empty( $file['title'] ) ? $file['filename'] : $file['title']; ?>
 						<?php $file_preview = get_sub_field( 'file_preview' ); ?>
 						<div class="press-resource-file">
-							<h2><?php echo esc_html( $file_title ); ?></h2>
+							<h3><?php echo esc_html( $file_title ); ?></h3>
 							<?php if ( ! empty( $file_preview ) ) : ?>
 								<div class="press-resource-image">
-									<img src="<?php echo esc_url( $file_preview['sizes']['medium_large'] ); ?>">
+									<?php the_ball_v2_acf_image( $file_preview, 'medium-640' ); ?>
 								</div>
 							<?php endif; ?>
 							<?php if ( ! empty( $file['description'] ) ) : ?>
@@ -54,7 +56,7 @@ defined( 'ABSPATH' ) || exit;
 								<?php echo wpautop( wptexturize( $file['description'] ) ); ?>
 							<?php endif; ?>
 							<?php /* translators: %s: The name of the file. */ ?>
-							<p><a href="<?php echo esc_url( $file['url'] ); ?>"><?php printf( esc_html__( 'Download %s', 'the-ball-v2' ), esc_html( $file_title ) ); ?></a></p>
+							<p><a href="<?php echo esc_url( $file['url'] ); ?>"><?php printf( esc_html__( 'Download "%s"', 'theball-v2' ), esc_html( $file_title ) ); ?></a></p>
 						</div>
 					<?php endif; ?>
 

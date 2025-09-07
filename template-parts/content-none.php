@@ -13,9 +13,9 @@ defined( 'ABSPATH' ) || exit;
 ?>
 <!-- content-none.php -->
 <section class="no-results not-found">
-	<div class="not-found-inner">
+	<div class="entry-content not-found-inner">
 		<header class="page-header">
-			<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'the-ball-v2' ); ?></h1>
+			<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'theball-v2' ); ?></h1>
 		</header><!-- .page-header -->
 
 		<div class="page-content">
@@ -25,7 +25,7 @@ defined( 'ABSPATH' ) || exit;
 					<?php
 					printf(
 						/* translators: 1: The opening anchor tag, 2: The closing anchor tag. */
-						esc_html__( 'Ready to publish your first post? %1$sGet started here%2$s.', 'the-ball-v2' ),
+						esc_html__( 'Ready to publish your first post? %1$sGet started here%2$s.', 'theball-v2' ),
 						'<a href="' . esc_url( admin_url( 'post-new.php' ) ) . '">',
 						'</a>'
 					);
@@ -34,12 +34,12 @@ defined( 'ABSPATH' ) || exit;
 
 			<?php elseif ( is_search() ) : ?>
 
-				<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'the-ball-v2' ); ?></p>
+				<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'theball-v2' ); ?></p>
 				<?php get_search_form(); ?>
 
 			<?php else : ?>
 
-				<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'the-ball-v2' ); ?></p>
+				<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'theball-v2' ); ?></p>
 				<?php get_search_form(); ?>
 
 			<?php endif; ?>

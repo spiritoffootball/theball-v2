@@ -37,6 +37,10 @@ get_header();
 	</main><!-- #main -->
 </div><!-- #primary -->
 
+<?php if ( $sdgs_loop = locate_template( 'template-parts/loop-sdg-linked.php' ) ) : ?>
+	<?php load_template( $sdgs_loop ); ?>
+<?php endif; ?>
+
 <?php
 
 get_sidebar();

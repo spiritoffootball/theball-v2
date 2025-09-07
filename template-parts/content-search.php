@@ -45,7 +45,7 @@ defined( 'ABSPATH' ) || exit;
 			<?php if ( ! empty( $about ) ) : ?>
 				<div class="press-resource-about">
 					<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
-					<?php echo wp_trim_words( $about, 40, '... <a href="' . esc_url( get_permalink() ) . '" rel="bookmark">[' . esc_html__( 'Read More', 'the-ball-v2' ) . ']</a>' ); ?>
+					<?php echo wp_trim_words( $about, 40, '... <a href="' . esc_url( get_permalink() ) . '" rel="bookmark">[' . esc_html__( 'Read more', 'theball-v2' ) . ']</a>' ); ?>
 				</div>
 			<?php endif; ?>
 		<?php endif; ?>

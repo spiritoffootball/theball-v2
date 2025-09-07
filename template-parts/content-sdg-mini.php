@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying a News item.
+ * Template part for displaying an SDG.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -11,18 +11,21 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
-<!-- content-news-mini.php -->
+<!-- content-sdg-mini.php -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
-		<?php echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark"' . the_ball_v2_get_feature_image_style( 'the-ball-v2-listings' ) . ' class="angled-right"></a>'; ?>
+	<header class="text-align-center entry-header">
+		<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php the_ball_v2_sdg_image(); ?></a>
 	</header><!-- .entry-header -->
 
 	<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
 
-	<?php the_ball_v2_post_date(); ?>
-
 	<div class="entry-content">
-		<?php the_excerpt(); ?>
+		<?php $about = get_field( 'about' ); ?>
+		<?php if ( ! empty( $about ) ) : ?>
+			<div class="organisation-about">
+				<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
+				<?php echo $about; ?>
+			</div>
+		<?php endif; ?>
 	</div><!-- .entry-content -->
 </article><!-- #post-->

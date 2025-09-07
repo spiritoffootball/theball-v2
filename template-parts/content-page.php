@@ -33,7 +33,7 @@ defined( 'ABSPATH' ) || exit;
 		the_content();
 
 		$args = [
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'the-ball-v2' ),
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'theball-v2' ),
 			'after'  => '</div>',
 		];
 
@@ -48,7 +48,7 @@ defined( 'ABSPATH' ) || exit;
 			edit_post_link(
 				sprintf(
 					// Translators: %s: Name of current post.
-					esc_html__( 'Edit %s', 'the-ball-v2' ),
+					esc_html__( 'Edit %s', 'theball-v2' ),
 					the_title( '<span class="screen-reader-text">"', '"</span>', false )
 				),
 				'<span class="edit-link">',

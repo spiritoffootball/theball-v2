@@ -20,7 +20,6 @@ get_header();
 	<?php while ( have_posts() ) : ?>
 
 		<?php the_post(); ?>
-		<?php global $post; ?>
 
 		<section class="quote-container clear">
 			<div class="quote-container-inner">
@@ -30,7 +29,7 @@ get_header();
 				<?php elseif ( has_term( 'statement', 'quote-type' ) ) : ?>
 					<?php get_template_part( 'template-parts/content', 'quote-statement' ); ?>
 				<?php else : ?>
-					<?php get_template_part( 'template-parts/content', 'quote' ); ?>
+					<?php get_template_part( 'template-parts/content', get_post_type() ); ?>
 				<?php endif; ?>
 
 			</div>

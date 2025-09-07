@@ -22,7 +22,7 @@ get_header();
 		<section id="archive-header" class="content-area">
 			<article class="hentry">
 				<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
-					<h2 class="blog-title"><?php esc_html_e( 'Statements', 'the-ball-v2' ); ?></h2>
+					<h2 class="blog-title"><?php esc_html_e( 'Statements', 'theball-v2' ); ?></h2>
 
 					<?php
 					// If the category has a description display it.

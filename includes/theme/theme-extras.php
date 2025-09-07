@@ -123,7 +123,7 @@ function the_ball_v2_excerpt_length() {
 add_filter( 'excerpt_length', 'the_ball_v2_excerpt_length' );
 
 /**
- * Adds a custom "Read More" to excerpts.
+ * Adds a custom "Read more" to excerpts.
  *
  * @since 1.0.0
  *
@@ -136,7 +136,7 @@ function the_ball_v2_excerpt_more( $more ) {
 	return '... ' . sprintf(
 		'<a class="read-more" href="%1$s">[%2$s]</a>',
 		esc_url( get_permalink( get_the_ID() ) ),
-		esc_html__( 'Read More', 'the-ball-v2' )
+		esc_html__( 'Read more', 'theball-v2' )
 	);
 
 }
@@ -152,11 +152,11 @@ add_filter( 'excerpt_more', 'the_ball_v2_excerpt_more' );
 function the_ball_v2_add_search_box() {
 
 	// Show a trigger.
-	echo '<a href="#the-ball-v2-search" class="the-ball-v2-search-trigger">' . esc_html__( 'Search', 'the-ball-v2' ) . '</a>';
+	echo '<a href="#the-ball-v2-search" class="the-ball-v2-search-trigger">' . esc_html__( 'Search', 'theball-v2' ) . '</a>';
 
 	// Show wrapped search form.
 	echo '<div role="dialog" aria-labelledby="dialogTitle" aria-describedby="dialogDescription" id="the-ball-v2-search">' .
-		'<h2>' . esc_html__( 'Search The Ball 2022-2023', 'the-ball-v2' ) . '</h2>' .
+		'<h2>' . esc_html__( 'Search this website', 'theball-v2' ) . '</h2>' .
 		get_search_form( false ) .
 	'</div>';
 
@@ -217,7 +217,7 @@ function the_ball_v2_page_submenu() {
 
 	// Init menu with link to Event content.
 	$menu = [
-		'<li><a href="#event-content">' . esc_html__( 'About this Event', 'the-ball-v2' ) . '</a></li>',
+		'<li><a href="#event-content">' . esc_html__( 'About this Event', 'theball-v2' ) . '</a></li>',
 	];
 
 	// Get the Ball Host Post IDs from the ACF Field.
@@ -225,13 +225,13 @@ function the_ball_v2_page_submenu() {
 
 	// Add menu item if there are some.
 	if ( ! empty( $ball_host_ids ) ) {
-		$menu[] = '<li><a href="#organisations">' . esc_html__( 'Host Organisations', 'the-ball-v2' ) . '</a></li>';
+		$menu[] = '<li><a href="#event-hosts">' . esc_html__( 'Hosts', 'theball-v2' ) . '</a></li>';
 	}
 
 	// Get enabled status from the ACF Field.
 	$pledge_form_enabled = get_field( 'pledge_form_enabled' );
 	if ( ! empty( $pledge_form_enabled ) ) {
-		$menu[] = '<li><a href="#pledge">' . esc_html__( 'Make a Pledge', 'the-ball-v2' ) . '</a></li>';
+		$menu[] = '<li><a href="#pledge">' . esc_html__( 'Make a Pledge', 'theball-v2' ) . '</a></li>';
 	}
 
 	/*
@@ -253,7 +253,7 @@ function the_ball_v2_page_submenu() {
 	// The query.
 	$news = new WP_Query( $args );
 	if ( $news->have_posts() ) :
-		$menu[] = '<li><a href="#news">' . __( 'News', 'the-ball-v2' ) . '</a></li>';
+		$menu[] = '<li><a href="#news">' . __( 'News', 'theball-v2' ) . '</a></li>';
 	endif;
 
 	// Prevent weirdness.

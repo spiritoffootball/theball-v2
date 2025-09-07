@@ -21,7 +21,7 @@ get_header();
 
 			<header class="entry-header">
 				<?php /* translators: %s: The search query. */ ?>
-				<h1 class="blog-title"><?php printf( esc_html__( 'Search Results for: %s', 'the-ball-v2' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="blog-title"><?php printf( esc_html__( 'Search Results for: %s', 'theball-v2' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .entry-header -->
 
 			<?php if ( have_posts() ) : ?>

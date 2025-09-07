@@ -33,14 +33,14 @@ defined( 'ABSPATH' ) || exit;
 			the_content(
 				sprintf(
 				/* translators: %s: Name of current post. */
-					wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'the-ball-v2' ), [ 'span' => [ 'class' => [] ] ] ),
+					wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'theball-v2' ), [ 'span' => [ 'class' => [] ] ] ),
 					the_title( '<span class="screen-reader-text">"', '"</span>', false )
 				)
 			);
 
 			wp_link_pages(
 				[
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'the-ball-v2' ),
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'theball-v2' ),
 					'after'  => '</div>',
 				]
 			);

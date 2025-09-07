@@ -116,7 +116,7 @@ class The_Ball_v2_Theme {
 		 * Translations can be filed in the /languages/ directory.
 		 */
 		load_theme_textdomain(
-			'the-ball-v2',
+			'theball-v2',
 			get_template_directory() . '/languages'
 		);
 

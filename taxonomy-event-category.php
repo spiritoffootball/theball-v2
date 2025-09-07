@@ -23,7 +23,7 @@ get_header();
 			<article <?php post_class(); ?>>
 				<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
 					<?php /* translators: %s: The category title. */ ?>
-					<h2 class="blog-title"><?php printf( esc_html__( '%s Events', 'the-ball-v2' ), single_cat_title( '', false ) ); ?></h2>
+					<h2 class="blog-title"><?php printf( esc_html__( '%s Events', 'theball-v2' ), single_cat_title( '', false ) ); ?></h2>
 
 					<?php
 					// If the category has a description display it.
@@ -37,34 +37,32 @@ get_header();
 			</article><!-- #post-->
 		</section>
 
-		<section class="event-list insert-area clear">
-			<div class="event-list-inner">
-			<?php
+		<section id="events-ongoing" class="loop-include loop-include-three content-area clear">
+			<div class="loop-include-inner">
 
-			// Init counter for giving items classes.
-			$post_loop_counter = new The_Ball_v2_Counter();
+				<header class="loop-include-header">
+					<h2 class="loop-include-title has-featured-event"><?php esc_html_e( 'Ongoing Events', 'theball-v2' ); ?></h2>
+				</header><!-- .loop-include-header -->
 
-			// Start the loop.
-			while ( have_posts() ) :
+				<div class="loop-include-posts">
+					<?php while ( have_posts() ) : ?>
+						<?php
 
-				the_post();
+						the_post();
 
-				// Get mini template.
-				get_template_part( 'template-parts/content-event-mini' );
+						// Get mini template.
+						get_template_part( 'template-parts/content-event-mini' );
 
-			endwhile;
+						?>
+					<?php endwhile; ?>
+				</div><!-- .loop-include-posts -->
 
-			// Ditch counter.
-			$post_loop_counter->remove_filter();
-			unset( $post_loop_counter );
+				<footer class="archive-footer">
+					<?php the_posts_navigation(); ?>
+				</footer><!-- .archive-footer -->
 
-			?>
-			</div>
-		</section><!-- .event-list -->
-
-		<footer class="archive-footer">
-			<?php the_posts_navigation(); ?>
-		</footer><!-- .archive-footer -->
+			</div><!-- .loop-include-inner -->
+		</section><!-- .loop-include -->
 
 	<?php else : ?>
 

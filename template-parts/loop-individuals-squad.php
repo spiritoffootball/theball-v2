@@ -37,9 +37,9 @@ if ( $loop_include->have_posts() ) : ?>
 		<div class="loop-include-inner">
 
 			<header class="loop-include-header">
-				<h2 class="loop-include-title"><?php esc_html_e( 'The Squad', 'the-ball-v2' ); ?></h2>
+				<h2 class="loop-include-title"><?php esc_html_e( 'The Squad', 'theball-v2' ); ?></h2>
 				<div class="loop-include-sub-title">
-					<p><?php esc_html_e( 'On The Road With The Ball', 'the-ball-v2' ); ?></p>
+					<p><?php esc_html_e( 'On The Road With The Ball', 'theball-v2' ); ?></p>
 				</div>
 			</header><!-- .loop-include-header -->
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages.
+ * The default template for displaying archive pages.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -17,53 +17,52 @@ get_header();
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 
-		<section id="blog" class="content-area clear">
-			<div class="blog-inner">
+			<section id="archive" class="content-area has-post-thumbnail clear">
 
-				<header class="page-header">
-					<?php
-						the_archive_title( '<h1 class="blog-title">', '</h1>' );
-						the_archive_description( '<div class="taxonomy-description">', '</div>' );
-					?>
-				</header><!-- .page-header -->
+				<?php if ( have_posts() ) : ?>
+					<h1 class="entry-title">FFS</h1>
+				<?php endif; ?>
 
-				<div class="blog-posts clear">
+				<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
+					<?php the_archive_title( '<h1 class="entry-title">', '</h1>' ); ?>
+					<?php the_archive_description( '<div class="taxonomy-description"><div class="tax-description-inner">', '</div></div>' ); ?>
+				</header><!-- .entry-header -->
 
-					<?php if ( have_posts() ) : ?>
+				<?php if ( have_posts() ) : ?>
 
-						<?php
+					<section id="archive-loop" class="loop-include loop-include-three content-area clear">
+						<div class="loop-include-inner">
 
-						// Init counter for giving items classes.
-						$post_loop_counter = new The_Ball_v2_Counter();
+							<div class="loop-include-posts">
+								<?php
 
-						// Start the loop.
-						while ( have_posts() ) :
+								// Start the loop.
+								while ( have_posts() ) :
 
-							the_post();
+									the_post();
 
-							// Get mini template.
-							get_template_part( 'template-parts/content-news-mini' );
+									// Get mini template.
+									get_template_part( 'template-parts/content', get_post_type() . '-mini' );
 
-						endwhile;
+								endwhile;
 
-						// Ditch counter.
-						$post_loop_counter->remove_filter();
-						unset( $post_loop_counter );
+								?>
+							</div><!-- .loop-include-posts -->
 
-						?>
+						</div><!-- .loop-include-inner -->
+					</section><!-- .loop-include -->
 
-					<?php else : ?>
-						<?php get_template_part( 'template-parts/content', 'none' ); ?>
-					<?php endif; ?>
+				<?php else : ?>
 
-				</div><!-- .blog-posts -->
+					<?php get_template_part( 'template-parts/content', 'none' ); ?>
+
+				<?php endif; ?>
 
 				<footer class="archive-footer">
 					<?php the_posts_navigation(); ?>
 				</footer><!-- .archive-footer -->
 
-			</div><!-- .blog-inner -->
-		</section><!-- #blog -->
+			</section><!-- #archive -->
 
 	</main><!-- #main -->
 </div><!-- #primary -->

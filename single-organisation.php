@@ -30,6 +30,10 @@ get_header();
 	</main><!-- #main -->
 </div><!-- #primary -->
 
+<?php if ( $hosted_by_loop = locate_template( 'template-parts/loop-event-acf-hosted-by.php' ) ) : ?>
+	<?php load_template( $hosted_by_loop ); ?>
+<?php endif; ?>
+
 <?php
 
 get_sidebar();

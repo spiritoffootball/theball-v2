@@ -25,7 +25,7 @@ get_header();
 					<?php $venue_id = get_queried_object_id(); ?>
 					<h1 class="page-title">
 						<?php /* translators: %s: The name of the venue. */ ?>
-						<?php printf( esc_html__( 'Events at: %s', 'the-ball-v2' ), '<span>' . esc_html( eo_get_venue_name( $venue_id ) ) . '</span>' ); ?>
+						<?php printf( esc_html__( 'Events at: %s', 'theball-v2' ), '<span>' . esc_html( eo_get_venue_name( $venue_id ) ) . '</span>' ); ?>
 					</h1>
 
 					<?php if ( $venue_description = eo_get_venue_description( $venue_id ) ) : ?>

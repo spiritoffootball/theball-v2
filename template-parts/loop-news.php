@@ -28,7 +28,7 @@ if ( $loop_include->have_posts() ) : ?>
 		<div class="loop-include-inner">
 
 			<header class="loop-include-header">
-				<h2 class="loop-include-title"><?php esc_html_e( 'Latest News', 'the-ball-v2' ); ?></h2>
+				<h2 class="loop-include-title"><?php esc_html_e( 'Latest News', 'theball-v2' ); ?></h2>
 			</header><!-- .loop-include-header -->
 
 			<div class="loop-include-posts">
@@ -40,7 +40,7 @@ if ( $loop_include->have_posts() ) : ?>
 					$loop_include->the_post();
 
 					// Get mini template.
-					get_template_part( 'template-parts/content-news-mini' );
+					get_template_part( 'template-parts/content-post-mini' );
 
 				endwhile;
 
@@ -48,7 +48,7 @@ if ( $loop_include->have_posts() ) : ?>
 			</div><!-- .loop-include-posts -->
 
 			<footer class="loop-include-footer">
-				<p><a href="<?php echo esc_url( get_post_type_archive_link( 'post' ) ); ?>" class="archive-link"><?php esc_html_e( 'View All News', 'the-ball-v2' ); ?></a></p>
+				<p><a href="<?php echo esc_url( get_post_type_archive_link( 'post' ) ); ?>" class="archive-link"><?php esc_html_e( 'View All News', 'theball-v2' ); ?></a></p>
 			</footer><!-- .loop-include-footer -->
 
 		</div><!-- .loop-include-inner -->

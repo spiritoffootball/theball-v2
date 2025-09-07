@@ -32,6 +32,8 @@
 	## Galleries
 --------------------------------------------------------------*/
 
+
+
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -311,6 +313,8 @@ th {
 	padding: 0;
 }
 
+
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -403,6 +407,8 @@ big {
 	background: rgb(0 0 0 / 50%);
 }
 
+
+
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -476,6 +482,8 @@ table {
 	margin: 0 0 1.5em;
 	width: 100%;
 }
+
+
 
 /*--------------------------------------------------------------
 # Forms
@@ -585,6 +593,8 @@ textarea {
 	padding-left: 3px;
 	width: 100%;
 }
+
+
 
 /*--------------------------------------------------------------
 # Navigation
@@ -836,6 +846,7 @@ a:active {
 	}
 	.main-navigation li a:hover,
 	.main-navigation li.current-menu-ancestor > a,
+	.main-navigation li.current-menu-item > a,
 	.main-navigation li.current_page_item > a
 	{
 		background: transparent url("../images/textures/stripe-white-200.png") 0 0 no-repeat;
@@ -917,6 +928,8 @@ ul.the-ball-v2-footer li:last-child:after {
 	display: none;
 }
 
+
+
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -960,6 +973,8 @@ ul.the-ball-v2-footer li:last-child:after {
 	outline: 0;
 }
 
+
+
 /*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
@@ -992,6 +1007,11 @@ ul.the-ball-v2-footer li:last-child:after {
 	margin-bottom: 1.5em;
 }
 
+.text-align-center {
+	text-align: center;
+}
+
+
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
@@ -1021,9 +1041,12 @@ ul.the-ball-v2-footer li:last-child:after {
 	clear: both;
 }
 
+
+
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
+
 .widget {
 	margin: 0 0 1.5em;
 }
@@ -1032,6 +1055,8 @@ ul.the-ball-v2-footer li:last-child:after {
 .widget select {
 	max-width: 100%;
 }
+
+
 
 /*--------------------------------------------------------------
 # Content
@@ -1068,6 +1093,8 @@ ul.the-ball-v2-footer li:last-child:after {
 	margin: 0 0 1.5em;
 }
 
+
+
 /*--------------------------------------------------------------
 ## Archives
 --------------------------------------------------------------*/
@@ -1077,9 +1104,35 @@ ul.the-ball-v2-footer li:last-child:after {
 	background: var(--sof-background);
 }
 
-.archive #blog .blog-title
+#archive
 {
-	margin: 2.8em 20% 0;
+	background-color: inherit;
+}
+
+.taxonomy-description
+{
+	background: rgba(0, 0, 0, 0.5);
+	background: var(--sof-background);
+}
+
+.tax-description-inner
+{
+	width: 60%;
+	margin: 0 auto;
+}
+
+.taxonomy-description p
+{
+	margin: 0;
+	padding: 1em 0;
+	text-align: center;
+	text-shadow: 0 0 5px #0a0933;
+}
+
+#archive-loop
+{
+	margin-top: 2em;
+	margin-bottom: 2em;
 }
 
 .archive-footer
@@ -1095,6 +1148,8 @@ ul.the-ball-v2-footer li:last-child:after {
 	text-decoration: none;
 	text-transform: uppercase;
 }
+
+
 
 /*--------------------------------------------------------------
 ## Search Archive
@@ -1174,6 +1229,8 @@ ul.the-ball-v2-footer li:last-child:after {
 {
 	margin-top: 0;
 }
+
+
 
 /*--------------------------------------------------------------
 ## Search Form
@@ -1265,13 +1322,18 @@ ul.the-ball-v2-footer li:last-child:after {
 	}
 }
 
+
+
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
+
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
 	display: none;
 }
+
+
 
 /*--------------------------------------------------------------
 ## Comments
@@ -1352,6 +1414,8 @@ ol.comment-list ol {
 	float: right;
 }
 
+
+
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
@@ -1367,9 +1431,12 @@ ol.comment-list ol {
 	display: block;
 }
 
+
+
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
+
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
@@ -1386,9 +1453,12 @@ object {
 	max-width: 100%;
 }
 
+
+
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
+
 .wp-caption {
 	margin-bottom: 1.5em;
 	max-width: 100%;
@@ -1410,6 +1480,8 @@ object {
 .wp-caption-text {
 	text-align: center;
 }
+
+
 
 /*--------------------------------------------------------------
 ## Galleries
@@ -1463,6 +1535,8 @@ object {
 	display: block;
 }
 
+
+
 /*--------------------------------------------------------------
 ## Video
 --------------------------------------------------------------*/
@@ -1471,6 +1545,8 @@ object {
 {
 	width: 100% !important;
 }
+
+
 
 /*--------------------------------------------------------------
 ## The Ball v2 Custom
@@ -1725,6 +1801,8 @@ a.angled-right
 	background: var(--sof-background-donate-button);
 }
 
+
+
 /*--------------------------------------------------------------
 ## Article General
 --------------------------------------------------------------*/
@@ -1766,6 +1844,7 @@ img.avatar
 {
 	color: var(--sof-text-link);
 	text-decoration: none;
+	width: 100%;
 }
 
 #primary .entry-header h1,
@@ -1776,6 +1855,7 @@ img.avatar
 	color: var(--sof-text-heading-overlaid);
 	text-transform: uppercase;
 	text-align: center;
+	text-shadow: 0 0 15px #0a0933;
 }
 
 #primary .has-post-thumbnail .entry-header h1,
@@ -1966,6 +2046,8 @@ img.avatar
 	margin: 0 auto;
 }
 
+
+
 /*--------------------------------------------------------------
 ## Footer
 --------------------------------------------------------------*/
@@ -1993,16 +2075,18 @@ img.avatar
 	text-decoration: none;
 }
 
-#colophon .jetpack_widget_social_icons .widget-title
-{
-	display: none;
-}
-
 #colophon .hentry
 {
 	background: transparent;
 }
 
+/* Jetpack Social Widget styles. */
+#colophon .jetpack_widget_social_icons .widget-title
+{
+	display: none;
+}
+
+/* "SOF Network" styles. */
 #colophon .sof_network
 {
 	width: 300px;
@@ -2106,6 +2190,13 @@ img.avatar
 	height: 75px;
 }
 
+/* Modify the "Powered By" Loop Include. */
+#colophon .powered-by .loop-include-posts
+{
+	grid-column-gap: 0.5em;
+	grid-row-gap: 0.5em;
+}
+
 #colophon .powered-by
 {
 	margin-top: 1.5em;
@@ -2115,6 +2206,13 @@ img.avatar
 {
 	margin: 0 0 0.5em 0;
 }
+
+#colophon .loop-include-inner
+{
+	width: auto;
+}
+
+
 
 /*--------------------------------------------------------------
 ## Homepage
@@ -2158,11 +2256,174 @@ img.avatar
 	width: 100%;
 }
 
+
+
+/*--------------------------------------------------------------
+## Homepage Teaser Include
+--------------------------------------------------------------*/
+
+#teaser
+{
+	padding: 2.4em 0 1em 0;
+	background-color: var(--sof-background);
+	color: var(--sof-text-teaser);
+}
+
+#teaser .teaser-inner
+{
+/*
+	width: 60%;
+	margin: 0 auto;
+ */
+	background-color: inherit;
+}
+
+#teaser a
+{
+	color: var(--sof-text-link);
+}
+
+#teaser .hentry
+{
+	margin-bottom: 1.5em;
+	background-color: inherit;
+}
+
+#teaser .hentry .teaser-header
+{
+	background-color: inherit;
+	float: left;
+	width: 50%;
+	overflow: hidden;
+}
+
+#teaser .hentry .teaser-header span
+{
+	width: 100%;
+	background-color: inherit;
+}
+
+#teaser .hentry .teaser-title
+{
+	margin-bottom: 0;
+	font-size: 110%;
+}
+
+#teaser .hentry .teaser-content
+{
+	float: left;
+	width: 49%;
+	margin-top: 1.2em;
+	font-size: 110%;
+	color: var(--sof-text-content);
+}
+
+#teaser .hentry .teaser-content-inner
+{
+	padding: 0 4em 0;
+}
+
+#teaser .hentry .teaser-content p
+{
+	margin-top: 0;
+	margin-bottom: 0.5em;
+}
+
+#teaser .hentry .teaser-content a
+{
+/*
+	color: #111;
+ */
+}
+
+#teaser .loop-insert-footer a
+{
+	border: 1px solid var(--sof-text-link);
+	color: var(--sof-text-link);
+}
+
+/*
+#teaser .loop-insert-footer a:after {
+	background: var(--sof-background);
+	border-left: 1px solid var(--sof-text-link);
+}
+ */
+
+@media all and (max-width: 1200px) {
+
+	#teaser .hentry .teaser-content
+	{
+		font-size: 100%;
+	}
+
+}
+
+@media all and (max-width: 1024px) {
+
+	#teaser .hentry .teaser-content-inner
+	{
+		padding-left: 2.5em;
+		padding-right: 2em;
+	}
+
+}
+
+@media all and (max-width: 876px) {
+
+	#teaser .hentry .teaser-content
+	{
+		font-size: 95%;
+	}
+
+	#teaser .hentry .teaser-header
+	{
+		float: none;
+		width: 90%;
+	}
+
+	#teaser .hentry .teaser-content
+	{
+		float: none;
+		width: 90%;
+		margin: 1em auto 0;
+	}
+
+}
+
+@media all and (max-width: 640px) {
+
+	#teaser .hentry .teaser-content-inner
+	{
+		padding: 0;
+	}
+
+}
+
+@media all and (max-width: 440px) {
+
+	#teaser
+	{
+		padding-bottom: 0;
+	}
+
+	#teaser .hentry
+	{
+		margin-bottom: 0.5em;
+	}
+
+}
+
+
+
 /*--------------------------------------------------------------
 ## Includes Layout (Grid)
 --------------------------------------------------------------*/
 
-/* Styles to define a Loop Include. */
+/* Styles to centre the Loop Include. */
+.loop-include {
+	background-color: inherit;
+}
+
 .loop-include-inner {
 	width: 60%;
 	margin: 0 auto 1rem;
@@ -2191,17 +2452,19 @@ body.blog .site-content .loop-include-inner {
 	}
 }
 
+/* Loop Include layout. */
+.loop-include-posts {
+	display: grid;
+	grid-column-gap: 2em;
+	grid-row-gap: 2em;
+	background-color: inherit;
+}
+
+/* Styles for Loop Include elements. */
 .loop-include-header {
 	text-align: center;
 	text-transform: uppercase;
 	color: var(--sof-text-content);
-}
-
-.loop-include-posts {
-	display: grid;
-	grid-column-gap: 1em;
-	grid-row-gap: 1em;
-	background-color: inherit;
 }
 
 .loop-include .hentry {
@@ -2214,8 +2477,8 @@ body.blog .site-content .loop-include-inner {
 #primary .loop-include .hentry .entry-header,
 #primary .loop-include .hentry .entry-content
 {
-    width: auto;
-    margin: 0 auto;
+	width: auto;
+	margin: 0 auto;
 }
 
 /* Styles to define a One Column layout include. */
@@ -2278,10 +2541,10 @@ body.blog .site-content .loop-include-inner {
 
 
 /*--------------------------------------------------------------
-## Footer Includes Layout (Flex)
+## Includes Layout (Flex)
 --------------------------------------------------------------*/
 
-#colophon .loop-include-posts {
+.loop-include-flex .loop-include-posts {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -2291,54 +2554,54 @@ body.blog .site-content .loop-include-inner {
 	background-color: inherit;
 }
 
-#colophon .powered-by .loop-include-posts {
+.loop-include-flex.loop-include-stacked .loop-include-posts {
 	flex-direction: column;
 	align-items: center;
 }
 
 /* Styles to define a Two Column layout include. */
-#colophon .loop-include-two .hentry {
+.loop-include-flex.loop-include-two .hentry {
 	width: 48%;
 }
 
 @media all and (max-width: 640px) {
-	#colophon .loop-include-two .hentry {
+	.loop-include-flex.loop-include-two .hentry {
 		/* Reduce to Three Column layout. */
 		width: 31%;
 	}
 }
 
 /* Styles to define a Three Column layout include. */
-#colophon .loop-include-three .hentry {
+.loop-include-flex.loop-include-three .hentry {
 	width: 31%;
 }
 
 @media all and (max-width: 640px) {
-	#colophon .loop-include-three .hentry {
+	.loop-include-flex.loop-include-three .hentry {
 		/* Reduce to Two Column layout. */
 		width: 48%;
 	}
 }
 
 /* Styles to define a Four Column layout include. */
-#colophon .loop-include-four .hentry {
+.loop-include-flex.loop-include-four .hentry {
 	width: 23%;
 }
 
 @media all and (max-width: 640px) {
-	#colophon .loop-include-four .hentry {
+	.loop-include-flex.loop-include-four .hentry {
 		/* Reduce to Three Column layout. */
 		width: 31%;
 	}
 }
 
 /* Styles to define a Five Column layout include. */
-#colophon .loop-include-five .hentry {
+.loop-include-flex.loop-include-five .hentry {
 	width: 18%;
 }
 
 @media all and (max-width: 640px) {
-	#colophon .loop-include-five .hentry {
+	.loop-include-flex.loop-include-five .hentry {
 		/* Reduce to Four Column layout. */
 		width: 23%;
 	}
@@ -2439,7 +2702,7 @@ body.blog .site-content .loop-include-inner {
 
 
 /*--------------------------------------------------------------
-## Events Archive
+## Events Archives
 --------------------------------------------------------------*/
 
 .page-template-page-event #primary #archive-header .hentry
@@ -2472,10 +2735,25 @@ body.blog .site-content .loop-include-inner {
 	background-color: inherit;
 }
 
+.post-type-archive-event .not-found,
+.post-type-archive-event .archive-footer,
+.tax-event-category .not-found,
+.tax-event-category .archive-footer
+{
+	width: auto;
+	background-color: var(--sof-background-events-ongoing);
+}
+
+#archive-event
+{
+	padding-top: 2em;
+	background-color: var(--sof-background-events-ongoing);
+}
+
 
 
 /*--------------------------------------------------------------
-## Events Include
+## Events Includes
 --------------------------------------------------------------*/
 
 #events-featured
@@ -2504,7 +2782,7 @@ body.blog .site-content .loop-include-inner {
 	background-color: var(--sof-background-events-past);
 }
 
-#event-ball-hosts
+#event-hosts
 {
 	background-color: var(--sof-background-events-hosts);
 }
@@ -2693,97 +2971,6 @@ body.blog .site-content .loop-include-inner {
 }
 
 
-
-/*--------------------------------------------------------------
-## Teaser Include
---------------------------------------------------------------*/
-
-#teaser
-{
-	padding: 2.4em 0 1em 0;
-	background-color: var(--sof-background);
-	color: var(--sof-text-teaser);
-}
-
-#teaser .teaser-inner
-{
-/*
-	width: 60%;
-	margin: 0 auto;
- */
-	background-color: inherit;
-}
-
-#teaser a
-{
-	color: var(--sof-text-link);
-}
-
-#teaser .hentry
-{
-	margin-bottom: 1.5em;
-	background-color: inherit;
-}
-
-#teaser .hentry .teaser-header
-{
-	background-color: inherit;
-	float: left;
-	width: 50%;
-	overflow: hidden;
-}
-
-#teaser .hentry .teaser-header span
-{
-	width: 100%;
-	background-color: inherit;
-}
-
-#teaser .hentry .teaser-title
-{
-	margin-bottom: 0;
-	font-size: 110%;
-}
-
-#teaser .hentry .teaser-content
-{
-	float: left;
-	width: 49%;
-	margin-top: 1.2em;
-	font-size: 110%;
-	color: var(--sof-text-content);
-}
-
-#teaser .hentry .teaser-content-inner
-{
-	padding: 0 4em 0;
-}
-
-#teaser .hentry .teaser-content p
-{
-	margin-top: 0;
-	margin-bottom: 0.5em;
-}
-
-#teaser .hentry .teaser-content a
-{
-/*
-	color: #111;
- */
-}
-
-#teaser .loop-insert-footer a
-{
-	border: 1px solid var(--sof-text-link);
-	color: var(--sof-text-link);
-}
-
-/*
-#teaser .loop-insert-footer a:after {
-	background: var(--sof-background);
-	border-left: 1px solid var(--sof-text-link);
-}
- */
 
 /*--------------------------------------------------------------
 ## Pledge Form Include
@@ -3017,223 +3204,61 @@ body.blog .site-content .loop-include-inner {
 
 }
 
-/*--------------------------------------------------------------
-## Organisations Archive and Organisations Include Common
---------------------------------------------------------------*/
 
-#primary .organisation-list .hentry,
-#organisations .hentry
-{
-	width: 32%;
-	margin-right: 2%;
-	margin-top: 1em;
-	margin-bottom: 1em;
-	float: left;
-}
-
-/* Every third-plus-one item starts a new row */
-#primary .organisation-list .hentry.third-plus-one,
-#organisations .hentry.third-plus-one
-{
-	clear: left;
-}
-
-/* Every third item ends a row */
-#primary .organisation-list .hentry.third,
-#organisations .hentry.third
-{
-	margin-right: 0;
-}
-
-#primary .organisation-list .hentry .entry-header h3,
-#organisations .hentry .entry-header h3
-{
-	margin: 0;
-}
-
-#primary .organisation-list .hentry .entry-header a,
-#organisations .hentry .entry-header a
-{
-	width: 100%;
-	min-height: 160px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-#primary .organisation-list .hentry > .entry-title,
-#organisations .hentry > .entry-title
-{
-	margin: 0.5em 0 0 0;
-}
-
-#primary .organisation-list .hentry > .entry-title a,
-#organisations .hentry > .entry-title a
-{
-	text-decoration: none;
-	color: var(--sof-text-link-header);
-}
-
-#primary .organisation-list .hentry .entry-content,
-#organisations .hentry .entry-content
-{
-	margin: 0;
-	color: var(--sof-text-content);
-	font-size: 0.9em;
-	width: auto;
-}
-
-#primary .organisation-list .hentry .entry-content p,
-#organisations .hentry .entry-content p
-{
-	margin-top: 0;
-}
 
 /*--------------------------------------------------------------
-## Organisations Archive
+## SDG styles
 --------------------------------------------------------------*/
 
-.page-template-page-organisation #primary #archive-header .hentry
+#sdg-linked
 {
-	margin-bottom: 0;
+	background-color: var(--sof-background-people-supporters);
 }
 
-#primary .organisation-intro-inner
-{
-	width: 60%;
-	margin: 2em auto;
-}
-
-#primary .organisation-list
-{
-	background-color: var(--sof-background);
-	color: var(--sof-text-content);
-}
-
-#primary .organisation-list-inner
-{
-	width: 60%;
-	margin: 2em auto;
-}
-
-.page-template-page-organisation #primary .entry-header
-{
-	width: auto;
-}
-
-/*--------------------------------------------------------------
-## Organisations Include
---------------------------------------------------------------*/
-
-#organisations
-{
-	padding: 1px 0;
-	background-color: var(--sof-background);
-	color: var(--sof-text-content);
-}
-
-#organisations .organisations-inner
-{
-	width: 60%;
-	margin: 0 auto;
-}
-
-#organisations a
-{
-	color: var(--sof-text-link);
-}
-
-#organisations .organisations-title
-{
-	text-transform: uppercase;
-	text-align: center;
-	padding: 1em 0 0.5em 0;
-	margin: 0;
-}
-
-#organisations .hentry
-{
-	float: left;
-	width: 28%;
-	margin-right: 8%;
-	margin-bottom: 1.5em;
-	background: transparent;
-}
-
-/* Every third-plus-one item starts a new row */
-#organisations .hentry.third-plus-one
-{
-	clear: left;
-}
-
-/* Every third item ends a row */
-#organisations .hentry.third
-{
-	margin-right: 0;
-}
-
-#organisations .hentry .entry-header img
-{
-	display: block;
-	margin: 0;
-	padding: 0;
-	width: 80%;
-}
-
-#organisations .hentry .entry-title
-{
-	margin-bottom: 0;
-	font-size: 110%;
-}
-
-#organisations .hentry .entry-content
-{
-	margin-top: 0;
-	font-size: 0.9em;
-	color: var(--sof-text-content);
-}
-
-#organisations .hentry .entry-content p
-{
-	margin-top: 0;
-}
-
-#organisations .hentry .entry-content a
-{
-	color: #111;
-}
-
-#organisations .loop-insert-footer a
-{
-	border: 1px solid var(--sof-text-link);
-	color: var(--sof-text-link);
-}
-
-/*
-#organisations .loop-insert-footer a:after {
-	background: var(--sof-background);
-	border-left: 1px solid var(--sof-text-link);
-}
- */
-
-/*--------------------------------------------------------------
-## Organisations Include "Hosts by Event" in Single Events
---------------------------------------------------------------*/
-
-#organisations.hosts-by-event
+#sdg-posts
 {
 	background-color: var(--sof-background-events-hosts);
 }
 
-#organisations.hosts-by-event .entry-content,
-#organisations.hosts-by-event .entry-title
+#sdg-events
+{
+	background-color: var(--sof-background-people-supporters);
+	background-color: var(--sof-background-events-past);
+}
+
+.sdg-links-container ul
+{
+	list-style: none;
+    padding: 0;
+}
+
+.single-sdg .sdg .entry-title
+{
+	visibility: hidden;
+}
+
+
+
+/*--------------------------------------------------------------
+## Organisation styles
+--------------------------------------------------------------*/
+
+#organisations-partners
+{
+	background-color: var(--sof-background);
+}
+
+#organisations-partners .loop-include-posts
+{
+	grid-column-gap: 4em;
+	grid-row-gap: 4em;
+}
+
+/* Don't show include title on Partners page template. */
+.page-template-page-partner #organisations-partners .loop-include-header
 {
 	display: none;
 }
-
-/*--------------------------------------------------------------
-## Single Organisation
---------------------------------------------------------------*/
 
 .single-organisation .site-main
 {
@@ -3253,7 +3278,6 @@ body.blog .site-content .loop-include-inner {
 	margin: 2em auto;
 }
 
-.organisation-logo,
 .organisation-website,
 .organisation-social-links
 {
@@ -3264,6 +3288,8 @@ body.blog .site-content .loop-include-inner {
 {
 	margin-bottom: 1em;
 }
+
+
 
 /*--------------------------------------------------------------
 ## Individuals
@@ -3414,6 +3440,8 @@ body.blog .site-content .loop-include-inner {
 	width: auto;
 }
 
+
+
 /*--------------------------------------------------------------
 ## Map Page
 --------------------------------------------------------------*/
@@ -3446,6 +3474,8 @@ body.blog .site-content .loop-include-inner {
 {
 	padding-bottom: 0.5em;
 }
+
+
 
 /*--------------------------------------------------------------
 ## Forms, e.g. ACF, JetPack, Pledgeball etc
@@ -3519,6 +3549,8 @@ body.blog .site-content .loop-include-inner {
 	text-decoration: none;
 }
 
+
+
 /*--------------------------------------------------------------
 ## Single Quote
 --------------------------------------------------------------*/
@@ -3562,6 +3594,8 @@ body.blog .site-content .loop-include-inner {
 {
 	text-align: center;
 }
+
+
 
 /*--------------------------------------------------------------
 ## Single Statement Quote
@@ -3807,6 +3841,8 @@ body.blog .site-content .loop-include-inner {
 
 }
 
+
+
 /*--------------------------------------------------------------
 ## Single Pledge Quote
 --------------------------------------------------------------*/
@@ -3929,6 +3965,8 @@ body.blog .site-content .loop-include-inner {
 
 }
 
+
+
 /*--------------------------------------------------------------
 ## Statement Quotes and Pledge Quotes as Shortcodes and Sliders
 --------------------------------------------------------------*/
@@ -3988,9 +4026,17 @@ body.blog .site-content .loop-include-inner {
 	height: 50px;
 }
 
+
+
 /*--------------------------------------------------------------
 ## Press Coverage Archive & Include Common
 --------------------------------------------------------------*/
+
+.post-type-archive-press_coverage #primary .entry-content
+{
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
 
 .archive #primary .press_coverage
 {
@@ -4062,31 +4108,22 @@ body.blog .site-content .loop-include-inner {
 	background: rgba(0, 0, 0, 0.15);
 }
 
+
+
 /*--------------------------------------------------------------
 ## Press Resources Archive & Include Common
 --------------------------------------------------------------*/
 
-.archive #primary .press_resource
+.post-type-archive-press_resource #primary .loop-include-inner
 {
-	width: 32%;
-	margin-right: 2%;
-	float: left;
-	color: var(--sof-text-content);
-	position: relative;
-	overflow: visible;
+	margin-top: 2em;
 	margin-bottom: 2em;
 }
 
-/* Every third-plus-one item starts a new row */
-.archive #primary .press_resource.third-plus-one
+#press-resource-type
 {
-	clear: left;
-}
-
-/* Every third item ends a row */
-.archive #primary .press_resource.third
-{
-	margin-right: 0;
+	background-color: var(--sof-background);
+	padding-top: 2em;
 }
 
 .archive #primary .press_resource .entry-title
@@ -4144,6 +4181,7 @@ body.blog .site-content .loop-include-inner {
 	text-align: center;
 	text-transform: uppercase;
 	background: rgba(0, 0, 0, 0.15);
+	text-shadow: 0 0 15px #0a0933;
 }
 
 .press-resource-tags
@@ -4162,6 +4200,8 @@ body.blog .site-content .loop-include-inner {
 	text-transform: uppercase;
 }
 
+
+
 /*--------------------------------------------------------------
 ## Blog Archive
 --------------------------------------------------------------*/
@@ -4179,14 +4219,11 @@ body.blog .site-content .loop-include-inner {
 	text-align: center;
 }
 
-/*--------------------------------------------------------------
-## News Include
---------------------------------------------------------------*/
 
-#news
-{
-	background-color: var(--sof-background);
-}
+
+/*--------------------------------------------------------------
+## News styles
+--------------------------------------------------------------*/
 
 #blog .has-post-thumbnail .entry-header a:focus,
 #blog .has-post-thumbnail .entry-header a:active
@@ -4310,6 +4347,8 @@ body.blog .site-content .loop-include-inner {
 	margin-bottom: 1em;
 }
 
+
+
 /*--------------------------------------------------------------
 ## 404 - Not Found
 --------------------------------------------------------------*/
@@ -4318,28 +4357,23 @@ body.blog .site-content .loop-include-inner {
 {
 	width: auto;
 	padding: 1px 0 20px 0;
-	background-color: var(--sof-background);
 	color: var(--sof-text-content);
+	background-color: var(--sof-background);
 }
 
-.not-found .not-found-inner
-{
-	width: 60%;
-	margin: 2em auto;
-}
-
-.not-found .page-title
+.not-found .entry-title
 {
 	font-size: 1.5em;
-	margin: 1em 0;
 	color: var(--sof-text-heading);
 	text-transform: uppercase;
 }
 
-.not-found .page-content
+.not-found .entry-content
 {
-	margin-bottom: 3em;
+	padding: 2em 0;
 }
+
+
 
 /*--------------------------------------------------------------
 ## Navigation
@@ -4356,6 +4390,8 @@ body.blog .site-content .loop-include-inner {
 	width: 60%;
 	margin: 0 auto;
 }
+
+
 
 /*--------------------------------------------------------------
 ## Responsiveness
@@ -4384,11 +4420,6 @@ body.blog .site-content .loop-include-inner {
 	{
 	}
 
-	#teaser .hentry .teaser-content
-	{
-		font-size: 100%;
-	}
-
 	/* Widen column */
 	#primary #archive-header .entry-content,
 	#primary .entry-header,
@@ -4402,9 +4433,6 @@ body.blog .site-content .loop-include-inner {
 	#pledge .pledge-inner,
 	#quotes-pledges .quotes-pledges-inner,
 	#quotes-statements .quotes-statements-inner,
-	#primary .organisation-list-inner,
-	#primary .organisation-list-inner,
-	#organisations .organisations-inner,
 	#search .search-posts,
 	#subpages .subpages-inner,
 	.not-found-inner,
@@ -4415,7 +4443,6 @@ body.blog .site-content .loop-include-inner {
 	}
 
 	#primary .entry-content,
-	#organisations.hosts-by-event .organisations-inner,
 	#pledge .pledge-inner
 	{
 		width: 60%;
@@ -4461,12 +4488,6 @@ body.blog .site-content .loop-include-inner {
 	{
 	}
 
-	#teaser .hentry .teaser-content-inner
-	{
-		padding-left: 2.5em;
-		padding-right: 2em;
-	}
-
 	/* Widen column */
 	#primary #archive-header .entry-content,
 	#primary .entry-header,
@@ -4479,8 +4500,6 @@ body.blog .site-content .loop-include-inner {
 	#pledge .pledge-inner,
 	#quotes-pledges .quotes-pledges-inner,
 	#quotes-statements .quotes-statements-inner,
-	#primary .organisation-list-inner,
-	#organisations .organisations-inner,
 	#search .search-posts,
 	#subpages .subpages-inner,
 	.not-found-inner,
@@ -4490,8 +4509,8 @@ body.blog .site-content .loop-include-inner {
 		width: 80%;
 	}
 
+	.tax-description-inner,
 	#primary .entry-content,
-	#organisations.hosts-by-event .organisations-inner,
 	#pledge .pledge-inner
 	{
 		width: 72%;
@@ -4528,11 +4547,6 @@ body.blog .site-content .loop-include-inner {
 	{
 	}
 
-	#teaser .hentry .teaser-content
-	{
-		font-size: 95%;
-	}
-
 	/* Widen column */
 	#primary #archive-header .entry-content,
 	#primary .entry-header,
@@ -4546,9 +4560,6 @@ body.blog .site-content .loop-include-inner {
 	#pledge .pledge-inner,
 	#quotes-pledges .quotes-pledges-inner,
 	#quotes-statements .quotes-statements-inner,
-	#primary .organisation-list-inner,
-	#primary .organisation-list-inner,
-	#organisations .organisations-inner,
 	#search .search-posts,
 	#subpages .subpages-inner,
 	.not-found-inner,
@@ -4558,8 +4569,8 @@ body.blog .site-content .loop-include-inner {
 		width: 96%;
 	}
 
+	.tax-description-inner,
 	#primary .entry-content,
-	#organisations.hosts-by-event .organisations-inner,
 	#pledge .pledge-inner,
 	#primary .quote-container .quote
 	{
@@ -4577,19 +4588,6 @@ body.blog .site-content .loop-include-inner {
 }
 
 @media all and (max-width: 876px) {
-
-	#teaser .hentry .teaser-header
-	{
-		float: none;
-		width: 90%;
-	}
-
-	#teaser .hentry .teaser-content
-	{
-		float: none;
-		width: 90%;
-		margin: 1em auto 0;
-	}
 
 }
 
@@ -4641,77 +4639,6 @@ body.blog .site-content .loop-include-inner {
 		right: 23px;
 	}
 
-	/* Two items per row */
-	#primary .event-list .event,
-	#events .event,
-	#events-past .event,
-	#primary .organisation-list .hentry,
-	#organisations .hentry,
-	.archive #primary .press_resource
-	{
-		width: 48%;
-		margin-right: 4%;
-	}
-
-	#primary .organisation-list .hentry,
-	#organisations .hentry
-	{
-		width: 45%;
-		margin-right: 10%;
-	}
-
-	/* Every third-plus-one item no longer starts a new row */
-	#primary .event-list .event.third-plus-one,
-	#events .event.third-plus-one,
-	#events-past .event.third-plus-one,
-	#primary .organisation-list .organisation.third-plus-one,
-	#primary .organisation-list .partner.third-plus-one,
-	#primary .organisation-list .host.third-plus-one,
-	#organisations .hentry.third-plus-one,
-	.archive #primary .press_resource.third-plus-one
-	{
-		clear: none;
-	}
-
-	/* Every third item no longer ends a row */
-	#primary .event-list .event.third,
-	#events .event.third,
-	#events-past .event.third,
-	#primary .organisation-list .hentry.third,
-	#organisations .hentry.third,
-	.archive #primary .press_resource.third
-	{
-		margin-right: 4%;
-	}
-
-	#primary .organisation-list .hentry.third,
-	#organisations .hentry.third
-	{
-		margin-right: 10%;
-	}
-
-	/* Every even-plus-one item starts a new row */
-	#primary .event-list .event.even-plus-one,
-	#events .event.even-plus-one,
-	#events-past .event.even-plus-one,
-	#primary .organisation-list .hentry.even-plus-one,
-	#organisations .hentry.even-plus-one,
-	.archive #primary .press_resource.even-plus-one
-	{
-		clear: left;
-	}
-
-	/* Every even item ends a row */
-	#primary .event-list .event.even,
-	#events .event.even,
-	#events-past .event.even,
-	#primary .organisation-list .hentry.even,
-	#organisations .hentry.even,
-	.archive #primary .press_resource.even
-	{
-		margin-right: 0;
-	}
-
 	/* Singular Titles */
 	#primary .entry-header h1,
 	#primary .entry-header h2
@@ -4727,19 +4654,14 @@ body.blog .site-content .loop-include-inner {
 		padding: 7em 0 4em 0;
 	}
 
+	.tax-description-inner
+	{
+		width: 96%;
+	}
+
 	.home-page #primary .page .entry-content
 	{
 		width: 100%;
-	}
-
-	/* Hide third organisation status */
-	.third .organisation-status {
-		display: none;
-	}
-
-	#teaser .hentry .teaser-content-inner
-	{
-		padding: 0;
 	}
 
 }
@@ -4797,8 +4719,6 @@ body.blog .site-content .loop-include-inner {
 	#pledge .pledge-inner,
 	#quotes-pledges .quotes-pledges-inner,
 	#quotes-statements .quotes-statements-inner,
-	#primary .organisation-list-inner,
-	#organisations .organisations-inner,
 	#search .search-posts,
 	#subpages .subpages-inner,
 	.not-found-inner,
@@ -4813,9 +4733,7 @@ body.blog .site-content .loop-include-inner {
 	/* Exceptions */
 	#colophon .footer-inner,
 	#primary .event-list-inner,
-	#primary .organisation-list-inner,
 	#primary .entry-content,
-	#organisations.hosts-by-event .organisations-inner,
 	#pledge .pledge-inner,
 	#primary #archive-header .entry-content,
 	.event-intro
@@ -4840,9 +4758,7 @@ body.blog .site-content .loop-include-inner {
 	/* Adjust content of includes */
 	#primary .event-list .event,
 	#events .event,
-	#events-past .event,
-	#primary .organisation-list .hentry,
-	#organisations .hentry
+	#events-past .event
 	{
 		margin: 0.5em 0;
 	}
@@ -4860,8 +4776,7 @@ body.blog .site-content .loop-include-inner {
 	#events-past .events-inner,
 	#pledge .pledge-inner,
 	#quotes-pledges .quotes-pledges-inner,
-	#quotes-statements .quotes-statements-inner,
-	#organisations .organisations-inner
+	#quotes-statements .quotes-statements-inner
 	{
 		width: 90%;
 		margin: 0 auto;
@@ -4869,51 +4784,9 @@ body.blog .site-content .loop-include-inner {
 		padding-bottom: 0.5em;
 	}
 
-	#organisations .hentry .entry-header img
-	{
-		width: 50%;
-	}
-
 	.loop-insert-footer p
 	{
 		margin-bottom: 0.5em;
-	}
-
-	/* Every even-plus-one item no longer starts a new row */
-	#primary .event-list .event.even-plus-one,
-	#events .event.even-plus-one,
-	#events-past .event.even-plus-one,
-	#primary .organisation-list .hentry.even-plus-one,
-	#organisations .hentry.even-plus-one,
-	.archive #primary .press_resource.even-plus-one
-	{
-		clear: none;
-		margin-right: 0;
-	}
-
-	/* Every even item no longer ends a row */
-	#primary .event-list .event.even,
-	#events .event.even,
-	#events-past .event.even,
-	#primary .organisation-list .hentry.even,
-	#organisations .hentry.even,
-	.archive #primary .press_resource.even
-	{
-		margin-right: 0;
-	}
-
-	/* Every item starts a new row */
-	#primary .event-list .event,
-	#events .event,
-	#events-past .event,
-	#primary .organisation-list .hentry,
-	#organisations .hentry,
-	.archive #primary .press_resource
-	{
-		float: none;
-		clear: left;
-		width: auto;
-		margin-right: 0;
 	}
 
 	/* Singular Titles */
@@ -4922,16 +4795,6 @@ body.blog .site-content .loop-include-inner {
 	{
 		padding: 6em 0 1em 0;
 		font-size: 2.3em;
-	}
-
-	#teaser
-	{
-		padding-bottom: 0;
-	}
-
-	#teaser .hentry
-	{
-		margin-bottom: 0.5em;
 	}
 
 	.entry-content blockquote

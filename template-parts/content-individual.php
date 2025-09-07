@@ -24,7 +24,7 @@ defined( 'ABSPATH' ) || exit;
 
 	<div class="entry-content" style="text-align: center">
 		<?php $image = get_field( 'picture' ); ?>
-		<div class="individual-image">
+		<div class="text-align-center individual-image">
 			<?php if ( ! empty( $image ) ) : ?>
 				<img class="avatar" src="<?php echo esc_url( $image['sizes']['medium-640'] ); ?>" width="<?php echo esc_attr( $image['sizes']['medium-640-width'] / 2 ); ?>" height="<?php echo esc_attr( $image['sizes']['medium-640-height'] / 2 ); ?>">
 			<?php else : ?>
@@ -50,7 +50,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php $appearances = get_field( 'appearances' ); ?>
 		<?php if ( ! empty( $appearances ) ) : ?>
 			<div class="individual-appearances">
-				<h3><?php esc_html_e( 'Appearances', 'the-ball-v2' ); ?></h3>
+				<h3><?php esc_html_e( 'Appearances', 'theball-v2' ); ?></h3>
 				<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
 				<?php echo $appearances; ?>
 			</div>
@@ -59,7 +59,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php $goals = get_field( 'goals' ); ?>
 		<?php if ( ! empty( $goals ) ) : ?>
 			<div class="individual-goals">
-				<h3><?php esc_html_e( 'Goals', 'the-ball-v2' ); ?></h3>
+				<h3><?php esc_html_e( 'Goals', 'theball-v2' ); ?></h3>
 				<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
 				<?php echo $goals; ?>
 			</div>
@@ -68,7 +68,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php $on_the_pitch = get_field( 'on_the_pitch' ); ?>
 		<?php if ( ! empty( $on_the_pitch ) ) : ?>
 			<div class="individual-on_the_pitch">
-				<h3><?php esc_html_e( 'On The Pitch', 'the-ball-v2' ); ?></h3>
+				<h3><?php esc_html_e( 'On The Pitch', 'theball-v2' ); ?></h3>
 				<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
 				<?php echo $on_the_pitch; ?>
 			</div>
@@ -77,7 +77,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php $teams = get_field( 'teams' ); ?>
 		<?php if ( ! empty( $teams ) ) : ?>
 			<div class="individual-teams">
-				<h3><?php esc_html_e( 'Teams', 'the-ball-v2' ); ?></h3>
+				<h3><?php esc_html_e( 'Teams', 'theball-v2' ); ?></h3>
 				<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
 				<?php echo $teams; ?>
 			</div>
@@ -86,7 +86,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php $achievements = get_field( 'achievements' ); ?>
 		<?php if ( ! empty( $achievements ) ) : ?>
 			<div class="individual-achievements">
-				<h3><?php esc_html_e( 'Achievements', 'the-ball-v2' ); ?></h3>
+				<h3><?php esc_html_e( 'Achievements', 'theball-v2' ); ?></h3>
 				<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
 				<?php echo $achievements; ?>
 			</div>
@@ -122,7 +122,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php $website = get_field( 'website' ); ?>
 		<?php if ( ! empty( $website ) ) : ?>
 			<div class="individual-website">
-				<a href="<?php echo esc_url( $website ); ?>"><?php esc_html_e( 'Main website', 'the-ball-v2' ); ?></a>
+				<a href="<?php echo esc_url( $website ); ?>"><?php esc_html_e( 'Main website', 'theball-v2' ); ?></a>
 			</div>
 		<?php endif; ?>
 	</div><!-- .entry-content -->

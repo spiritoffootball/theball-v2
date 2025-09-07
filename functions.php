@@ -125,8 +125,8 @@ if ( ! function_exists( 'the_ball_v2_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			[
-				'primary' => esc_html__( 'Primary', 'the-ball-v2' ),
-				'footer'  => esc_html__( 'Footer', 'the-ball-v2' ),
+				'primary' => esc_html__( 'Primary', 'theball-v2' ),
+				'footer'  => esc_html__( 'Footer', 'theball-v2' ),
 			]
 		);
 
@@ -366,9 +366,9 @@ function the_ball_v2_register_widget_areas() {
 	// Define an area where a widget may be placed.
 	register_sidebar(
 		[
-			'name'          => __( 'Header', 'the-ball-v2' ),
+			'name'          => __( 'Header', 'theball-v2' ),
 			'id'            => 'header',
-			'description'   => __( 'An optional widget area in the header of this theme', 'the-ball-v2' ),
+			'description'   => __( 'An optional widget area in the header of this theme', 'theball-v2' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title">',
@@ -379,9 +379,9 @@ function the_ball_v2_register_widget_areas() {
 	// Define an area where a widget may be placed.
 	register_sidebar(
 		[
-			'name'          => __( 'Footer', 'the-ball-v2' ),
+			'name'          => __( 'Footer', 'theball-v2' ),
 			'id'            => 'footer',
-			'description'   => __( 'An optional widget area in the footer of this theme', 'the-ball-v2' ),
+			'description'   => __( 'An optional widget area in the footer of this theme', 'theball-v2' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title">',

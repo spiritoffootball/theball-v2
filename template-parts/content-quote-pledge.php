@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
 			<?php endif; ?>
 
 			<div class="quote-i-pledge">
-				<h2 class="quote-title"><?php esc_html_e( 'I pledge', 'the-ball-v2' ); ?></h2>
+				<h2 class="quote-title"><?php esc_html_e( 'I pledge', 'theball-v2' ); ?></h2>
 			</div>
 
 			<?php $content = get_field( 'content' ); ?>

@@ -11,7 +11,7 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
-<!-- content-press-item.php -->
+<!-- content-press_coverage-mini.php -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
 
@@ -43,7 +43,7 @@ defined( 'ABSPATH' ) || exit;
 	<?php if ( ! empty( $website_link ) ) : ?>
 		<div class="press-item-link">
 			<?php /* translators: %s: The name of the publisher. */ ?>
-			<a href="<?php echo esc_url( $website_link ); ?>"><?php printf( esc_html__( 'Visit the %s website', 'the-ball-v2' ), esc_html( $publisher ) ); ?></a>
+			<a href="<?php echo esc_url( $website_link ); ?>"><?php printf( esc_html__( 'Visit the %s website', 'theball-v2' ), esc_html( $publisher ) ); ?></a>
 		</div>
 	<?php endif; ?>
 </article><!-- #post-->

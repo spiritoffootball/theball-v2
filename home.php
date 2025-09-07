@@ -22,7 +22,7 @@ get_header();
 		<section id="blog" class="loop-include loop-include-three content-area has-post-thumbnail clear">
 
 			<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
-				<h2 class="blog-title"><?php esc_html_e( 'News', 'the-ball-v2' ); ?></h2>
+				<h2 class="blog-title"><?php esc_html_e( 'News', 'theball-v2' ); ?></h2>
 			</header><!-- .entry-header -->
 
 			<div class="loop-include-inner">
@@ -36,7 +36,7 @@ get_header();
 						the_post();
 
 						// Get mini template.
-						get_template_part( 'template-parts/content-news-mini' );
+						get_template_part( 'template-parts/content-post-mini' );
 
 					endwhile;
 

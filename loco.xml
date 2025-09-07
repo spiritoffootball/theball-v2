@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bundle name="The Ball v2">
+	<domain name="theball-v2">
+		<project name="The Ball v2" slug="theball-v2">
+			<source>
+				<directory>.</directory>
+			</source>
+			<target>
+				<directory>languages</directory>
+			</target>
+			<template>
+				<file>languages/theball-v2.pot</file>
+			</template>
+		</project>
+	</domain>
+</bundle>

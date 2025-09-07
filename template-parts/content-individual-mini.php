@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 ?>
 <!-- content-individual-mini.php -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header class="text-align-center entry-header">
 		<?php $image = get_field( 'picture' ); ?>
 		<?php if ( ! empty( $image ) ) : ?>
 			<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><img class="avatar" src="<?php echo esc_attr( $image['sizes']['medium-640'] ); ?>" width="<?php echo esc_attr( $image['sizes']['medium-640-width'] / 2 ); ?>" height="<?php echo esc_attr( $image['sizes']['medium-640-height'] / 2 ); ?>"></a>

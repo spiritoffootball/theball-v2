@@ -23,19 +23,9 @@ defined( 'ABSPATH' ) || exit;
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php $logo = get_field( 'logo' );
-
-		$e = new \Exception();
-		$trace = $e->getTraceAsString();
-		error_log( print_r( [
-			'method' => __METHOD__,
-			'logo' => $logo,
-			//'backtrace' => $trace,
-		], true ) );
-
-		?>
+		<?php $logo = get_field( 'logo' ); ?>
 		<?php if ( ! empty( $logo ) ) : ?>
-			<div class="organisation-logo">
+			<div class="text-align-center organisation-logo">
 				<img src="<?php echo esc_url( $logo['sizes']['medium-640'] ); ?>" width="<?php echo esc_attr( $logo['sizes']['medium-640-width'] / 2 ); ?>" height="<?php echo esc_attr( $logo['sizes']['medium-640-height'] / 2 ); ?>">
 			</div>
 		<?php endif; ?>
@@ -87,7 +77,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php if ( ! empty( $website ) ) : ?>
 			<div class="organisation-website">
 				<?php /* translators: %s: The name of the organisation. */ ?>
-				<a href="<?php echo esc_url( $website ); ?>"><?php printf( esc_html__( '%s website', 'the-ball-v2' ), esc_html( get_the_title() ) ); ?></a>
+				<a href="<?php echo esc_url( $website ); ?>"><?php printf( esc_html__( '%s website', 'theball-v2' ), esc_html( get_the_title() ) ); ?></a>
 			</div>
 		<?php endif; ?>
 
@@ -96,13 +86,13 @@ defined( 'ABSPATH' ) || exit;
 		the_content(
 			sprintf(
 				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'the-ball-v2' ), [ 'span' => [ 'class' => [] ] ] ),
+				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'theball-v2' ), [ 'span' => [ 'class' => [] ] ] ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			)
 		);
 
 		$args = [
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'the-ball-v2' ),
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'theball-v2' ),
 			'after'  => '</div>',
 		];
 

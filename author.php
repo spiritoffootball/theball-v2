@@ -69,7 +69,7 @@ get_header();
 						the_post();
 
 						// Get mini template.
-						get_template_part( 'template-parts/content-news-mini' );
+						get_template_part( 'template-parts/content-post-mini' );
 
 					endwhile;
 

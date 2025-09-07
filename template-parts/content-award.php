@@ -25,7 +25,7 @@ defined( 'ABSPATH' ) || exit;
 	<div class="entry-content">
 		<?php $badge = get_field( 'image' ); ?>
 		<?php if ( ! empty( $badge ) ) : ?>
-			<div class="award-badge">
+			<div class="text-align-center award-badge">
 				<img src="<?php echo esc_url( $badge['sizes']['the-ball-v2-feature'] ); ?>" width="<?php echo esc_attr( $badge['sizes']['the-ball-v2-feature-width'] / 2 ); ?>" height="<?php echo esc_attr( $badge['sizes']['the-ball-v2-feature-height'] / 2 ); ?>" alt="<?php echo esc_attr( $badge['alt'] ); ?>">
 			</div>
 		<?php endif; ?>
@@ -41,7 +41,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php $awarded_by = get_field( 'awarded_by' ); ?>
 		<?php if ( ! empty( $awarded_by ) ) : ?>
 			<div class="award-awarded-by">
-				<h4><?php esc_html_e( 'Awarded by', 'the-ball-v2' ); ?></h4>
+				<h4><?php esc_html_e( 'Awarded by', 'theball-v2' ); ?></h4>
 				<?php echo esc_html( $awarded_by ); ?>
 			</div>
 		<?php endif; ?>
@@ -61,7 +61,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php endif; ?>
 
 		<?php if ( have_rows( 'links' ) ) : ?>
-			<h4><?php esc_html_e( 'Read more', 'the-ball-v2' ); ?></h4>
+			<h4><?php esc_html_e( 'Read more', 'theball-v2' ); ?></h4>
 			<div class="award-links-container">
 				<ul>
 					<?php while ( have_rows( 'links' ) ) : ?>
@@ -85,13 +85,13 @@ defined( 'ABSPATH' ) || exit;
 		the_content(
 			sprintf(
 				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'the-ball-v2' ), [ 'span' => [ 'class' => [] ] ] ),
+				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'theball-v2' ), [ 'span' => [ 'class' => [] ] ] ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			)
 		);
 
 		$args = [
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'the-ball-v2' ),
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'theball-v2' ),
 			'after'  => '</div>',
 		];
 

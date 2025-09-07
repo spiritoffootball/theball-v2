@@ -22,7 +22,7 @@ defined( 'ABSPATH' ) || exit;
 
 		<div class="entry-content">
 			<?php the_excerpt(); ?>
-			<p class="read-more"><a href="<?php echo esc_url( get_permalink() ); ?>" class="read-more"><?php esc_html_e( 'Read more', 'the-ball-v2' ); ?></a></p>
+			<p class="read-more"><a href="<?php echo esc_url( get_permalink() ); ?>" class="read-more"><?php esc_html_e( 'Read more', 'theball-v2' ); ?></a></p>
 		</div><!-- .entry-content -->
 	</div>
 </article><!-- #post-->
