@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-09-07T13:46:54+00:00\n"
-"PO-Revision-Date: 2025-09-07 16:39+0000\n"
+"PO-Revision-Date: 2025-09-09 11:44+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: theball-v2\n"
 "Language: de_DE\n"
@@ -237,11 +237,11 @@ msgstr ""
 
 #: template-parts/loop-sdg-events.php:51
 msgid "Linked Events"
-msgstr ""
+msgstr "Veranstaltungen"
 
 #: template-parts/loop-sdg-posts.php:44
 msgid "Linked Posts"
-msgstr ""
+msgstr "Beiträge"
 
 #: template-parts/loop-sdg-linked.php:43
 msgid "Linked SDGs"
