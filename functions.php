@@ -122,6 +122,18 @@ if ( ! function_exists( 'the_ball_v2_setup' ) ) :
 		);
 		*/
 
+		// Add image sizes from "Simple Image Sizes" plugin.
+		add_image_size( 'medium_large', 768, 0, false );
+		add_image_size( '1536x1536', 1536, 1536, false );
+		add_image_size( '2048x2048', 2048, 2048, false );
+		add_image_size( 'medium_large', 768, 0, false );
+		add_image_size( 'thumbnail-240', 240, 240, false );
+		add_image_size( 'medium-640', 640, 640, false );
+		add_image_size( 'medium-618', 618, 618, false );
+		add_image_size( '980x980', 980, 980, false );
+		add_image_size( 'pledge-quote', 681, 980, true );
+		add_image_size( 'individual-avatar', 640, 640, true );
+
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			[
