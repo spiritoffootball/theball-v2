@@ -46,10 +46,6 @@ get_header();
 	<?php load_template( $sdgs_loop ); ?>
 <?php endif; ?>
 
-<?php if ( $news_loop = locate_template( 'template-parts/loop-news-by-event.php' ) ) : ?>
-	<?php load_template( $news_loop ); ?>
-<?php endif; ?>
-
 <?php if ( $event_loop = locate_template( 'template-parts/loop-events-other.php' ) ) : ?>
 	<?php load_template( $event_loop ); ?>
 <?php endif; ?>
