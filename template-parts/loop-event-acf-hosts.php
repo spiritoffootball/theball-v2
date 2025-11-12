@@ -34,7 +34,7 @@ if ( ! empty( $host_ids ) ) :
 
 	if ( $loop_include->have_posts() ) : ?>
 
-		<!-- loop-event-ball-hosts.php -->
+		<!-- loop-event-acf-hosts.php -->
 		<section id="event-hosts" class="loop-include loop-include-flex loop-include-five content-area clear">
 			<div class="loop-include-inner">
 
