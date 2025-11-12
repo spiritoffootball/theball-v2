@@ -15,14 +15,21 @@ $event = get_queried_object();
 
 // Define query args.
 $loop_include_args = [
-	'post_type'     => 'event',
-	'post_status'   => 'publish',
-	'no_found_rows' => true,
-	'post__not_in'  => [ $event->ID ],
+	'post_type'        => 'event',
+	'post_status'      => 'publish',
+	'no_found_rows'    => true,
+	'suppress_filters' => false,
+	'post__not_in'     => [ $event->ID ],
 ];
+
+// Newest Events first.
+add_filter( 'posts_orderby', 'the_ball_v2_events_sort_desc', 20, 2 );
 
 // The query.
 $loop_include = new WP_Query( $loop_include_args );
+
+// Clear sort order filter.
+remove_filter( 'posts_orderby', 'the_ball_v2_events_sort_desc', 20 );
 
 if ( $loop_include->have_posts() ) : ?>
 
