@@ -22,7 +22,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php the_ball_v2_feature_image_caption(); ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content" style="text-align: center">
+	<div class="entry-content" style="text-align: center; padding-bottom: 1em">
 		<?php $image = get_field( 'picture' ); ?>
 		<div class="text-align-center individual-image">
 			<?php if ( ! empty( $image ) ) : ?>
