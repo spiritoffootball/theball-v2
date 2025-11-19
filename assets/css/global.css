@@ -2080,6 +2080,11 @@ img.avatar
 	background: transparent;
 }
 
+#colophon .footer-menu
+{
+    margin: 0 0 1em 0;
+}
+
 /* Jetpack Social Widget styles. */
 #colophon .jetpack_widget_social_icons .widget-title
 {
