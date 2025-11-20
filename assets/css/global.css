@@ -2503,7 +2503,7 @@ body.blog .site-content .loop-include-inner {
 @media all and (max-width: 640px) {
 	.loop-include-two .loop-include-posts {
 		/* Reduce to Three Column layout. */
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(1, 1fr);
 	}
 }
 
@@ -2519,6 +2519,13 @@ body.blog .site-content .loop-include-inner {
 	}
 }
 
+@media all and (max-width: 480px) {
+	.loop-include-three .loop-include-posts {
+		/* Reduce to Two Column layout. */
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
 /* Styles to define a Four Column layout include. */
 .loop-include-four .loop-include-posts {
 	grid-template-columns: repeat(4, 1fr);
@@ -2531,6 +2538,13 @@ body.blog .site-content .loop-include-inner {
 	}
 }
 
+@media all and (max-width: 480px) {
+	.loop-include-four .loop-include-posts {
+		/* Reduce to Three Column layout. */
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
 /* Styles to define a Five Column layout include. */
 .loop-include-five .loop-include-posts {
 	grid-template-columns: repeat(5, 1fr);
@@ -2540,6 +2554,12 @@ body.blog .site-content .loop-include-inner {
 	.loop-include-five .loop-include-posts {
 		/* Reduce to Four Column layout. */
 		grid-template-columns: repeat(4, 1fr);
+	}
+}
+@media all and (max-width: 480px) {
+	.loop-include-five .loop-include-posts {
+		/* Reduce to Four Column layout. */
+		grid-template-columns: repeat(3, 1fr);
 	}
 }
 
