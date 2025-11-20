@@ -541,7 +541,7 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: #666;
+	color: #ccc;
 	border: 1px solid #ccc;
 	border-radius: 3px;
 }
@@ -562,7 +562,7 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-	color: #111;
+	color: #fff;
 }
 
 input[type="text"],
