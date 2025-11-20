@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) || exit;
  *
  * Bumping this will cause styles and scripts to be refreshed.
  */
-define( 'THE_BALL_V2_THEME_VERSION', '1.2.4a' );
+define( 'THE_BALL_V2_THEME_VERSION', '1.2.4' );
 
 // Set theme debugging state.
 if ( ! defined( 'THE_BALL_V2_THEME_DEBUG' ) ) {
