@@ -1,0 +1,285 @@
+/**
+ * The Ball v2 CiviCRM Stylesheet.
+ *
+ * Implements default styling for CiviCRM in all media.
+ *
+ * @package The_Ball_v2
+ */
+
+
+
+
+
+/* General. */
+#crm-container,
+#crm-container.crm-container
+{
+	background: transparent;
+	color: var(--sof-crm-text-color);
+	padding: 0;
+	margin: 0;
+}
+
+#crm-container.crm-public #crm-main-content-wrapper
+{
+	width: auto;
+	margin: 0;
+}
+
+#crm-container h1,
+#crm-container h2,
+#crm-container h4,
+#crm-container h5,
+#crm-container h6
+{
+	color: var(--sof-text-heading);
+}
+
+#crm-container .crm-socialnetwork h2
+{
+	margin-top: 0;
+}
+
+#crm-container table,
+#crm-container tr,
+#crm-container tr td,
+#crm-container p,
+#crm-container ul
+{
+	color: var(--sof-crm-form-text-color);
+}
+
+#crm-container th,
+#crm-container tr td
+{
+	color: var(--sof-crm-form-text-color);
+	background: var(--sof-crm-form-fieldset-bg-color);
+}
+
+#crm-container .crm-grid-table
+{
+	background: var(--sof-crm-form-fieldset-bg-color);
+}
+
+#crm-container a
+{
+	color: var(--sof-crm-form-text-color);
+	text-decoration: underline;
+}
+
+#crm-container button a,
+#crm-container a.button
+{
+	color: var(--sof-crm-form-button-color);
+	text-decoration: none;
+}
+
+#crm-container .select2-container a
+{
+	color: var(--sof-crm-form-select2-color);
+	text-decoration: none;
+}
+
+#crm-container .form-layout label,
+#crm-container .form-layout-compressed label,
+#crm-container .form-item label,
+#crm-container .crm-accordion-body label,
+#crm-container .crm-form-block label,
+#crm-container #task-section label
+{
+	color: var(--sof-crm-form-label-color);
+}
+
+#crm-container.crm-container.crm-public .price-set-row label,
+#crm-container.crm-container.crm-public .price-set-row .crm-price-amount-label,
+#crm-container.crm-container.crm-public .price-set-row .highlight label,
+#crm-container.crm-container.crm-public .price-set-row .highlight .crm-price-amount-label,
+#crm-container.crm-container.crm-public .price-set-row .crm-price-amount-amount
+{
+	color: var(--sof-crm-form-label-color);
+}
+
+#crm-container .required
+{
+	color: var(--sof-crm-form-required-color);
+	background-image: none;
+}
+
+#crm-container .required:focus
+{
+	color: var(--sof-crm-form-required-focus-color);
+}
+
+#crm-container button
+{
+	text-shadow: none;
+}
+
+
+
+/* Notices. */
+#crm-container .help,
+#crm-container .status,
+#crm-container .messages
+{
+	color: var(--sof-crm-form-text-color);
+	background: var(--sof-crm-messages-bg-color);
+	border: var(--sof-crm-messages-border);
+}
+
+#crm-container .status.alert,
+#crm-container .alert-warning,
+#crm-container .messages.warning
+{
+	color: var(--sof-crm-form-text-color);
+}
+
+#crm-container .help p,
+#crm-container .status p,
+#crm-container .messages p
+{
+	margin: 0;
+}
+
+
+
+/* Profiles. */
+#crm-container.crm-public .header-dark
+{
+	background: var(--sof-crm-header-dark-bg-color);
+}
+
+#crm-container.crm-public .amount_display-section,
+#crm-container.crm-public .contributor_email-section,
+#crm-container.crm-public .credit_card_details-section,
+#crm-container.crm-public #membership-listings,
+#crm-container.crm-public #premiums-listings,
+#crm-container.crm-public .amount_display-group .display-block,
+#crm-container.crm-public .event_fees-group > .crm-section
+{
+	margin: var(--crm-f-fieldset-margin);
+	padding: var(--sof-crm-form-fieldset-padding);
+	background: var(--sof-crm-form-fieldset-bg-color);
+}
+
+#crm-container.crm-public .event_fees-group > .crm-section
+{
+	margin: 0;
+}
+
+#crm-container.crm-public .event_fees-group .total-amount-section
+{
+	margin: var(--crm-f-fieldset-margin);
+}
+
+#crm-container.crm-public .billing_name_address-group
+{
+	margin: var(--crm-f-fieldset-margin);
+	padding: 0;
+}
+
+#crm-container.crm-public .billing_name-section,
+#crm-container.crm-public .billing_address-section
+{
+	padding: var(--sof-crm-form-fieldset-padding);
+	background: var(--sof-crm-form-fieldset-bg-color);
+}
+
+#crm-container.crm-public .intro_text-section
+{
+	padding: var(--sof-crm-form-fieldset-padding);
+}
+
+#crm-container.crm-public .display-block
+{
+	margin: var(--crm-f-fieldset-margin);
+	padding: var(--crm-f-form-padding);
+	border: var(--sof-crm-form-fieldset-border);
+	background: var(--sof-crm-form-fieldset-bg-color);
+}
+
+#crm-container table:not(.crm-inline-edit-form, .crm-table-group-summary),
+#crm-container table:not(thead) tr
+{
+	background: var(--sof-crm-form-fieldset-bg-color);
+	border: none;
+	box-shadow: none;
+}
+
+
+
+/* Price Set areas. */
+#priceset-div
+{
+	margin: var(--crm-f-fieldset-margin);
+	padding: var(--crm-f-form-padding);
+	border: var(--sof-crm-form-fieldset-border);
+	background: var(--sof-crm-form-fieldset-bg-color);
+}
+
+#pricevalue.calc-value
+{
+	font-size: 180%;
+}
+
+#pledge_frequency_interval,
+#pledge_frequency_unit,
+#pledge_installments
+{
+	width: auto;
+}
+
+
+
+/* Accordions. */
+#crm-container .crm-accordion-bold > .crm-accordion-body
+{
+	box-shadow: none;
+	border: var(--sof-crm-expand-border);
+	border-top: none;
+}
+
+
+
+/* Forms. */
+#crm-container.crm-public fieldset:not(.collapsed, .crm-inactive-dashlet-fieldset, .af-container-style-pane),
+#crm-container.crm-public .crm-event-info-form-block,
+#crm-container.crm-public #crm-profile-block,
+#crm-container.crm-public .crm-container.crm-public .af-container:not(.af-container-style-pane),
+#crm-container.crm-public .email-5-section
+{
+	border: var(--sof-crm-form-fieldset-border);
+	background: var(--sof-crm-form-fieldset-bg-color);
+	box-shadow: none;
+	padding: var(--sof-crm-form-fieldset-padding);
+}
+
+#crm-container.crm-public .crm-section.is_pledge-section .label
+{
+	background: none;
+}
+
+#crm-container.crm-public .crm-contribution-confirm-form-block fieldset
+{
+	padding: 0;
+}
+
+#crm-container.crm-public .crm-section:has( > .label):not(.crm-public-form-item)
+{
+	margin: 0;
+}
+
+#crm-container fieldset legend,
+#crm-container.crm-public .crm-section .label
+{
+	color: var(--sof-crm-form-label-color);
+	background: var(--sof-crm-form-fieldset-bg-color);
+	margin: 0;
+}
+
+#crm-container.crm-public .crm-section:has( > .content input:focus),
+#crm-container.crm-public .crm-section:has( > .content select:focus),
+#crm-container.crm-public .crm-section:has( > .content textarea:focus)
+{
+	background: transparent;
+}

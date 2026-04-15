@@ -318,12 +318,18 @@ th {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-body,
+body {
+	font-family: sans-serif;
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
 button,
 input,
 select,
 textarea {
-	color: #var(--sof-black);
+	color: var(--sof-black);
 	font-family: sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
@@ -361,6 +367,7 @@ address {
 }
 
 pre {
+	color: var(--sof-black);
 	background: #eee;
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 15px;
@@ -423,6 +430,7 @@ html {
 }
 
 body {
+	color: var(--sof-white);
 	background: var(--sof-background-body); /* Fallback for when there is no custom background color defined. */
 }
 
@@ -541,9 +549,10 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: #ccc;
+	color: #000;
 	border: 1px solid #ccc;
 	border-radius: 3px;
+	background: #ccc;
 }
 
 input[type="text"]:focus,
@@ -562,7 +571,7 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-	color: #fff;
+	color: #111;
 }
 
 input[type="text"],
@@ -596,9 +605,6 @@ textarea {
 
 
 
-/*--------------------------------------------------------------
-# Navigation
---------------------------------------------------------------*/
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
@@ -1925,10 +1931,16 @@ img.avatar
 	margin-bottom: 0.5em;
 }
 
+#primary .entry-content:not(.teaser-content) p,
+#primary .entry-content li
+{
+	font-size: 1.1rem;
+}
+
 .entry-content blockquote
 {
 	color: var(--sof-text-blockquote);
-	font-size: 1.4em;
+	font-size: 1.3em;
 	margin: 0;
 	font-style: italic;
 	line-height: 1.4em;
@@ -2319,7 +2331,7 @@ img.avatar
 	float: left;
 	width: 49%;
 	margin-top: 1.2em;
-	font-size: 110%;
+	font-size: 115%;
 	color: var(--sof-text-content);
 }
 
@@ -2484,6 +2496,7 @@ body.blog .site-content .loop-include-inner {
 {
 	width: auto;
 	margin: 0 auto;
+	word-break: break-all;
 }
 
 /* Styles to define a One Column layout include. */
@@ -2715,7 +2728,7 @@ body.blog .site-content .loop-include-inner {
 {
 	margin: 0;
 	color: var(--sof-text-content);
-	font-size: 0.9em;
+	font-size: 1em;
 	width: auto;
 }
 
@@ -4288,7 +4301,7 @@ body.blog .site-content .loop-include-inner {
 {
 	margin: 0;
 	color: var(--sof-text-content);
-	font-size: 0.9em;
+	font-size: 1em;
 	width: auto;
 }
 

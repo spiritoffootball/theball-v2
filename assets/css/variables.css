@@ -87,7 +87,7 @@
 	--sof-white: #fff;
 
 	/* Text. */
-	--sof-background-body: var(--sof-white);
+	--sof-background-body: var(--sof-black);
 	--sof-text-heading-overlaid: var(--sof-white);
 	--sof-text-heading-news: var(--sof-white);
 	--sof-text-footer: var(--sof-white);
@@ -105,5 +105,28 @@
 	--sof-text-link-active: var(--sof-yellow-darker);
 	--sof-text-link-visited: var(--sof-yellow-lighter);
 	--sof-text-link-toggled: var(--sof-yellow-lighter);
+
+	/* CiviCRM. */
+
+	/* CiviCRM General. */
+	--sof-crm-text-color: #fff;
+	--sof-crm-expand-border: 1px solid #c9d5d7;
+	--sof-crm-header-dark-bg-color: #3f4869;
+
+	/* CiviCRM Messages & Alerts. */
+	--sof-crm-messages-bg-color: var(--sof-crm-header-dark-bg-color);
+	--sof-crm-messages-border: none;
+
+	/* CiviCRM Forms. */
+	--sof-crm-form-fieldset-bg-color: #6a76a4;
+	--sof-crm-form-fieldset-border: 1px solid #fff;
+	--sof-crm-form-fieldset-border: none;
+	--sof-crm-form-fieldset-padding: 1rem;
+	--sof-crm-form-label-color: #fff;
+	--sof-crm-form-text-color: #fff;
+	--sof-crm-form-button-color: var(--crm-c-primary-text);
+	--sof-crm-form-select2-color: #000;
+	--sof-crm-form-required-color: #000;
+	--sof-crm-form-required-focus-color: #111;
 
 }

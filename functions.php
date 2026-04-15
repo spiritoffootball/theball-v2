@@ -287,6 +287,15 @@ function the_ball_v2_styles() {
 		'all' // Media.
 	);
 
+	// CiviCRM stylesheet.
+	wp_enqueue_style(
+		'the-ball-v2-civicrm',
+		get_template_directory_uri() . '/assets/css/civicrm.css',
+		[ 'the-ball-v2-global' ],
+		$version,
+		'all' // Media.
+	);
+
 	// Slider stylesheet.
 	wp_enqueue_style(
 		'quote-slider-css',
