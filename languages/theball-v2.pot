@@ -1,15 +1,15 @@
-# Copyright (C) 2025 Christian Wach
+# Copyright (C) 2026 Christian Wach
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: The Ball v2 1.2.4a\n"
+"Project-Id-Version: The Ball v2 1.2.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/theball-v2\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-09T11:42:38+00:00\n"
+"POT-Creation-Date: 2026-04-16T11:02:15+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: theball-v2\n"
@@ -114,24 +114,24 @@ msgstr ""
 msgid "Website content &copy; %1$sSpirit of Football%2$s %3$s. All rights reserved."
 msgstr ""
 
-#: functions.php:128
+#: functions.php:139
 msgid "Primary"
 msgstr ""
 
-#: functions.php:129
-#: functions.php:382
+#: functions.php:140
+#: functions.php:402
 msgid "Footer"
 msgstr ""
 
-#: functions.php:369
+#: functions.php:389
 msgid "Header"
 msgstr ""
 
-#: functions.php:371
+#: functions.php:391
 msgid "An optional widget area in the header of this theme"
 msgstr ""
 
-#: functions.php:384
+#: functions.php:404
 msgid "An optional widget area in the footer of this theme"
 msgstr ""
 
@@ -466,12 +466,12 @@ msgid "Featured Events"
 msgstr ""
 
 #: template-parts/loop-events-ongoing.php:63
-#: template-parts/loop-events-other.php:55
+#: template-parts/loop-events-other.php:62
 #: template-parts/loop-events-past.php:62
 msgid "View All Events"
 msgstr ""
 
-#: template-parts/loop-events-other.php:34
+#: template-parts/loop-events-other.php:41
 msgid "Other Events"
 msgstr ""
 
