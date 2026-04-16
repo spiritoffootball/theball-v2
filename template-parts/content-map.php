@@ -21,12 +21,21 @@ defined( 'ABSPATH' ) || exit;
 	<div class="entry-content sof-map">
 		<?php
 
+		// Define Post Types.
+		$map_post_types = [
+			'ball',
+			'event',
+			'host',
+			'partner',
+			'post',
+		];
+
 		// Skip if we do not have the Geo Mashup plugin.
 		if ( class_exists( 'GeoMashup' ) ) {
 			$map_args = [
 				'map_content'             => 'global',
 				'object_name'             => 'post',
-				'map_post_type'           => 'ball,event,host,partner,post',
+				'map_post_type'           => $map_post_types,
 				'zoom'                    => 'auto',
 				'remove_geo_mashup_logo'  => 'true',
 				'auto_info_open'          => 'false',
