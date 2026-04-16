@@ -2058,6 +2058,13 @@ img.avatar
 	margin: 0 auto;
 }
 
+#primary .entry-footer #geomashup-map
+{
+	border-top: 1px solid #fff;
+	padding-top: 2em;
+    margin: 2em 0;
+}
+
 
 
 /*--------------------------------------------------------------
@@ -4461,8 +4468,6 @@ body.blog .site-content .loop-include-inner {
 	/* Widen column */
 	#primary #archive-header .entry-content,
 	#primary .entry-header,
-	#primary .comments-area,
-	#primary .entry-footer,
 	#colophon .footer-inner,
 	.page-template-page-event #primary .event-intro-inner,
 	#primary .event-list-inner,
@@ -4474,14 +4479,16 @@ body.blog .site-content .loop-include-inner {
 	#search .search-posts,
 	#subpages .subpages-inner,
 	.not-found-inner,
-	.single .navigation,
 	.search.search-results #primary .site-main
 	{
 		width: 68%;
 	}
 
+	/* Exceptions */
 	#primary .entry-content,
-	#pledge .pledge-inner
+	#primary .entry-footer,
+	#pledge .pledge-inner,
+	#primary .comments-area .comments-inner
 	{
 		width: 60%;
 	}
@@ -4529,8 +4536,6 @@ body.blog .site-content .loop-include-inner {
 	/* Widen column */
 	#primary #archive-header .entry-content,
 	#primary .entry-header,
-	#primary .comments-area,
-	#primary .entry-footer,
 	#colophon .footer-inner,
 	#primary .event-list-inner,
 	#events .events-inner,
@@ -4541,15 +4546,17 @@ body.blog .site-content .loop-include-inner {
 	#search .search-posts,
 	#subpages .subpages-inner,
 	.not-found-inner,
-	.single .navigation,
 	.search.search-results #primary .site-main
 	{
 		width: 80%;
 	}
 
+	/* Exceptions */
 	.tax-description-inner,
 	#primary .entry-content,
-	#pledge .pledge-inner
+	#primary .entry-footer,
+	#pledge .pledge-inner,
+	#primary .comments-area .comments-inner
 	{
 		width: 72%;
 	}
@@ -4588,8 +4595,6 @@ body.blog .site-content .loop-include-inner {
 	/* Widen column */
 	#primary #archive-header .entry-content,
 	#primary .entry-header,
-	#primary .comments-area,
-	#primary .entry-footer,
 	#colophon .footer-inner,
 	.page-template-page-event #primary .event-intro-inner,
 	#primary .event-list-inner,
@@ -4601,16 +4606,18 @@ body.blog .site-content .loop-include-inner {
 	#search .search-posts,
 	#subpages .subpages-inner,
 	.not-found-inner,
-	.single .navigation,
 	.search.search-results #primary .site-main
 	{
 		width: 96%;
 	}
 
+	/* Exceptions */
 	.tax-description-inner,
 	#primary .entry-content,
+	#primary .entry-footer,
 	#pledge .pledge-inner,
-	#primary .quote-container .quote
+	#primary .quote-container .quote,
+	#primary .comments-area .comments-inner
 	{
 		width: 90%;
 	}
@@ -4749,7 +4756,6 @@ body.blog .site-content .loop-include-inner {
 	}
 
 	/* Widen column */
-	#primary .entry-footer,
 	.page-template-page-event #primary .event-intro-inner,
 	#primary .event-list-inner,
 	#events .events-inner,
@@ -4772,9 +4778,11 @@ body.blog .site-content .loop-include-inner {
 	#colophon .footer-inner,
 	#primary .event-list-inner,
 	#primary .entry-content,
+	#primary .entry-footer,
 	#pledge .pledge-inner,
 	#primary #archive-header .entry-content,
 	.event-intro
+	#primary .comments-area .comments-inner
 	{
 		width: 90%;
 		margin-left: auto;

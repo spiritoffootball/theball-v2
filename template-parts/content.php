@@ -48,5 +48,6 @@ defined( 'ABSPATH' ) || exit;
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
+		<?php the_ball_v2_geomashup_map_get(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-->

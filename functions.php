@@ -556,6 +556,7 @@ require get_template_directory() . '/includes/classes/class-counter.php';
 require get_template_directory() . '/includes/theme/theme-custom-header.php';
 require get_template_directory() . '/includes/theme/theme-template-tags.php';
 require get_template_directory() . '/includes/theme/theme-extras.php';
+require get_template_directory() . '/includes/theme/theme-geo-mashup.php';
 require get_template_directory() . '/includes/theme/theme-login-screen.php';
 require get_template_directory() . '/includes/theme/theme-customizer.php';
 require get_template_directory() . '/includes/theme/theme-jetpack.php';

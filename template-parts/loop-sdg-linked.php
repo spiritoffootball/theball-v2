@@ -10,13 +10,11 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-// Get current SDG object.
+// Get current object.
 $queried_object = get_queried_object();
 
-// Init.
+// Maybe get the Post IDs from the ACF Field.
 $post_ids = false;
-
-// Get the Post IDs from the ACF Field.
 if ( function_exists( 'get_field' ) ) :
 	$post_ids = get_field( 'sdgs', $queried_object->ID );
 endif;
