@@ -13,8 +13,13 @@ defined( 'ABSPATH' ) || exit;
 // Get current SDG object.
 $queried_object = get_queried_object();
 
+// Init.
+$post_ids = false;
+
 // Get the Post IDs from the ACF Field.
-$post_ids = get_field( 'sdgs', $queried_object->ID );
+if ( function_exists( 'get_field' ) ) :
+	$post_ids = get_field( 'sdgs', $queried_object->ID );
+endif;
 
 // Skip if there aren't any.
 if ( ! empty( $post_ids ) ) :
@@ -75,3 +80,6 @@ if ( ! empty( $post_ids ) ) :
 	unset( $loop_include_args, $loop_include );
 
 endif;
+
+// Clean up.
+unset( $post_ids );
