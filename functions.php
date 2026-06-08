@@ -528,6 +528,11 @@ function the_ball_v2_events_sort_desc( $orderby, $query ) {
 		return $orderby;
 	}
 
+	// Bail if EO is not present.
+	if ( ! function_exists( 'eventorganiser_is_event_query' ) ) {
+		return $orderby;
+	}
+
 	// Bail if not exclusively an EO orderby query.
 	if ( ! eventorganiser_is_event_query( $query, true ) ) {
 		return $orderby;
