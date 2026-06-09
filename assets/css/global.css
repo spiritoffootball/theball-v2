@@ -1722,7 +1722,7 @@ a.angled-right
 	height: 200px;
 	margin: 0;
 	padding: 0;
-	background: transparent url("../images/textures/stripe-lightblue.png") 0 0 no-repeat;
+	background: transparent var(--sof-header-stripe-image) 0 0 no-repeat;
 	background-size: 210%;
 	background-position: -350px 10px;
 	z-index: 1000;
@@ -2113,7 +2113,6 @@ img.avatar
 /* "SOF Network" styles. */
 #colophon .sof_network
 {
-	width: 300px;
 	margin: 0 auto;
 	padding: 6px 12px;
 	background: var(--sof-blue-light);
@@ -2137,13 +2136,20 @@ img.avatar
 	list-style: none;
 	margin: 0;
 	padding: 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	justify-content: center;
+	grid-column-gap: 1em;
+	grid-row-gap: 1em;
 }
 
 #colophon .sof_network ul li
 {
 	list-style: none;
 	list-style-image: none;
-	margin: 8px 12px 8px 0;
 	padding: 0 0 18px 0;
 	display: inline-block;
 	width: 75px;
@@ -2164,6 +2170,12 @@ img.avatar
 #colophon .sof_network ul li.germany_icon
 {
 	background: transparent url(../images/flags/de.jpg) no-repeat center bottom;
+	background-size: 15px;
+}
+
+#colophon .sof_network ul li.denmark_icon
+{
+	background: transparent url(../images/flags/dk.jpg) no-repeat center bottom;
 	background-size: 15px;
 }
 
@@ -2197,7 +2209,6 @@ img.avatar
 {
 	display: block;
 	float: none;
-	width: 300px;
 	margin: 0 auto;
 	background: transparent;
 }

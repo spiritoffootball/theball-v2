@@ -14,6 +14,7 @@
 	--sof-purple-lighter: #696d8c;
 	--sof-purple-menu: rgb(49 63 114 / 80%);
 	/* Usage. */
+	--sof-header-stripe-image: url("../images/textures/stripe-lightblue.png");
 	--sof-header-footer: var(--sof-purple);
 	--sof-background-caption: var(--sof-purple);
 	--sof-background: var(--sof-purple-light);
