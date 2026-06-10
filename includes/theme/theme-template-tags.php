@@ -328,6 +328,27 @@ endif;
 
 
 
+if ( ! function_exists( 'the_ball_v2_home_feature_image_style' ) ) :
+
+	/**
+	 * Shows the feature image as a background.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $size The name of the size of the feature image.
+	 */
+	function the_ball_v2_home_feature_image_style( $size = 'the-ball-v2-feature' ) {
+
+		// Print to screen.
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo the_ball_v2_get_home_feature_image_style( $size );
+
+	}
+
+endif;
+
+
+
 if ( ! function_exists( 'the_ball_v2_get_home_feature_image_style' ) ) :
 
 	/**
@@ -377,8 +398,14 @@ if ( ! function_exists( 'the_ball_v2_partner_image' ) ) :
 				$height = ( $logo['sizes'][ $size . '-height' ] / 2 );
 				$title  = empty( $logo['title'] ) ? __( 'Partner logo', 'theball-v2' ) : $logo['title'];
 				$alt    = empty( $badge['alt'] ) ? __( 'Partner logo', 'theball-v2' ) : $badge['alt'];
-				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				echo '<img src="' . $src . '" width="' . $width . '" height="' . $height . '" title="' . esc_attr( $alt ) . '">';
+				printf(
+					'<img src="%s" width="%s" height="%s" title="%s" alt="%s">',
+					esc_url( $src ),
+					esc_attr( $width ),
+					esc_attr( $height ),
+					esc_attr( $title ),
+					esc_attr( $alt )
+				);
 			}
 			return;
 		}
@@ -415,8 +442,14 @@ if ( ! function_exists( 'the_ball_v2_award_image' ) ) :
 				$height = $badge['sizes'][ $size . '-height' ];
 				$title  = empty( $badge['title'] ) ? __( 'Award image', 'theball-v2' ) : $badge['title'];
 				$alt    = empty( $badge['alt'] ) ? __( 'Award image', 'theball-v2' ) : $badge['alt'];
-				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				echo '<img src="' . $src . '" width="' . $width . '" height="' . $height . '" title="' . esc_attr( $title ) . '" alt="' . esc_attr( $alt ) . '">';
+				printf(
+					'<img src="%s" width="%s" height="%s" title="%s" alt="%s">',
+					esc_url( $src ),
+					esc_attr( $width ),
+					esc_attr( $height ),
+					esc_attr( $title ),
+					esc_attr( $alt )
+				);
 			}
 			return;
 		}
@@ -455,8 +488,14 @@ if ( ! function_exists( 'the_ball_v2_sdg_image' ) ) :
 				$height = $icon['sizes'][ $size . '-height' ];
 				$title  = empty( $icon['title'] ) ? __( 'SDG Icon', 'theball-v2' ) : $icon['title'];
 				$alt    = empty( $icon['alt'] ) ? __( 'SDG Icon', 'theball-v2' ) : $icon['alt'];
-				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				echo '<img src="' . $src . '" width="' . $width . '" height="' . $height . '" title="' . esc_attr( $title ) . '" alt="' . esc_attr( $alt ) . '">';
+				printf(
+					'<img src="%s" width="%s" height="%s" title="%s" alt="%s">',
+					esc_url( $src ),
+					esc_attr( $width ),
+					esc_attr( $height ),
+					esc_attr( $title ),
+					esc_attr( $alt )
+				);
 			}
 			return;
 		}
@@ -607,7 +646,7 @@ if ( ! function_exists( 'the_ball_v2_acf_image' ) ) :
 			esc_attr( $width ),
 			esc_attr( $height ),
 			esc_attr( $title ),
-			esc_attr( $title )
+			esc_attr( $alt )
 		);
 
 	}
