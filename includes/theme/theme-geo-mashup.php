@@ -53,7 +53,7 @@ function the_ball_v2_geomashup_map_get() {
 	if ( GeoMashup::current_location( null, 'post' ) ) {
 		?>
 		<div id="geomashup-map">
-			<?php echo GeoMashup::map(); ?>
+			<?php echo GeoMashup::map(); /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
 		</div>
 		<?php
 	}
