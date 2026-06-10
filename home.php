@@ -21,7 +21,7 @@ get_header();
 
 		<section id="blog" class="loop-include loop-include-three content-area has-post-thumbnail clear">
 
-			<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
+			<header class="entry-header"<?php the_ball_v2_home_feature_image_style(); ?>>
 				<h2 class="blog-title"><?php esc_html_e( 'News', 'theball-v2' ); ?></h2>
 			</header><!-- .entry-header -->
 

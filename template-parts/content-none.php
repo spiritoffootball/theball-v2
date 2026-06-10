@@ -13,12 +13,12 @@ defined( 'ABSPATH' ) || exit;
 ?>
 <!-- content-none.php -->
 <section class="no-results not-found">
-	<div class="entry-content not-found-inner">
-		<header class="page-header">
-			<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'theball-v2' ); ?></h1>
+	<div class="hentry not-found-inner has-post-thumbnail">
+		<header class="entry-header"<?php the_ball_v2_home_feature_image_style(); ?>>
+			<h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'theball-v2' ); ?></h1>
 		</header><!-- .page-header -->
 
-		<div class="page-content">
+		<div class="entry-content">
 			<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
 				<p>
