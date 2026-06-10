@@ -1926,7 +1926,8 @@ img.avatar
 .entry-content h6
 {
 	color: var(--sof-text-heading);
-	text-transform: uppercase;
+	font-family: var(--sof-text-heading-font);
+	text-transform: var(--sof-text-heading-transform);
 	line-height: 1.2;
 	margin-bottom: 0.5em;
 }
