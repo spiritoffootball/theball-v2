@@ -15,7 +15,11 @@ defined( 'ABSPATH' ) || exit;
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header"<?php the_ball_v2_feature_image_style(); ?>>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		<?php the_ball_v2_feature_image_caption(); ?>
+		<?php if ( is_front_page() ) : ?>
+			<span class="feature-image-caption"><?php bloginfo( 'description' ); ?></span>
+		<?php else : ?>
+			<?php the_ball_v2_feature_image_caption(); ?>
+		<?php endif; ?>
 	</header><!-- .entry-header -->
 
 	<?php if ( is_front_page() ) : ?>
