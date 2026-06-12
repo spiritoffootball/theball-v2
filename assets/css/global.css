@@ -1559,6 +1559,21 @@ object {
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
+## Spirit of Football logo SVG
+--------------------------------------------------------------*/
+
+svg.sof-logo-svg .sof-logo-svg-text *,
+svg.sof-logo-svg .sof-logo-svg-inner-star * {
+    fill: var(--sof-logo-svg-color, #fff);
+}
+
+svg.sof-logo-svg .sof-logo-svg-postmark-rings * {
+	stroke: var(--sof-logo-svg-color, #fff);
+}
+
+
+
+/*--------------------------------------------------------------
 ## "Angled Side" Feature Image Base CSS
 --------------------------------------------------------------*/
 
