@@ -4,7 +4,7 @@
  *
  * @since 1.2.6
  *
- * @package The_Ball_v2_2026
+ * @package The_Ball_v2
  */
 
 // Exit if accessed directly.
